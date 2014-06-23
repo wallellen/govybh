@@ -30,6 +30,11 @@
 			<result name="show_ybh">/WEB-INF/page/ybh/ybh_check.jsp</result>
 		</action>
 		
+		<!-- 样本户管理 -->
+		<action name="ybhManageAction_*" class="ybhManageAction" method="{1}">
+			<result name="show_ybh_manage">/WEB-INF/page/ybh/ybh_manage.jsp</result>
+		</action>
+		
 	</package>  
 	<package name="dot" namespace="/" extends="json-default">
 		<!-- login -->

@@ -12,7 +12,7 @@
 	<role roleid="2" describle="省管理员">
 		<grp name="日常工作">
       		<fun name="样本户勾选" action="ybhCheckAction_home.action" />
-      		<fun name="样本户管理" action="govIncomeAction_home.do" />	
+      		<fun name="样本户管理" action="ybhManageAction_home.action" />	
     </grp>
 	</role>
   	<role roleid="3" describle="市管理员">
