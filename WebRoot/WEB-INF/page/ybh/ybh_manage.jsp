@@ -46,7 +46,7 @@
 				<td align="right"><s:property value="#ls.cn"/>&nbsp;</td>
 				<td align="right"><s:property value="#ls.hm"/>&nbsp;</td>
 				<td class="tabtd1">
-					<a href="${pageContext.request.contextPath }/ybhCheckAction_viewYbh.action?viewBM=<s:property value="#ls.bm"/>">进入</a>
+					<a href="${pageContext.request.contextPath }/ybhManageAction_viewYbh.action?viewBM=<s:property value="#ls.bm"/>&oname=<s:property value="#ls.oname"/>">进入</a>
 				</td>
 				</s:if>
 				<s:else>

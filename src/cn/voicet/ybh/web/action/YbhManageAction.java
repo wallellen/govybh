@@ -13,7 +13,7 @@ import com.opensymphony.xwork2.ModelDriven;
 
 @Controller("ybhManageAction")
 @Scope(value="prototype")
-@SuppressWarnings("serial")
+@SuppressWarnings({"serial","unchecked"})
 public class YbhManageAction extends BaseAction implements ModelDriven<YbhManageForm>{
 	private static Logger log = Logger.getLogger(YbhManageAction.class);
 	
@@ -25,12 +25,13 @@ public class YbhManageAction extends BaseAction implements ModelDriven<YbhManage
 		return ybhManageForm;
 	}
 	
-	/** 样本户首页 */
+	/** 样本户管理首页 */
 	public String home(){
+		log.info("加载样本户首页...");
 		DotSession ds = DotSession.getVTSession(request);
 		ybhManageService.getYbhListByCurBM(ds);
-		if(null!=viewBM&&viewBM.length()>0){
-			if(viewBM.length()<=ds.rbm.length()){
+		if(null!=ybhManageForm.getViewBM()&&ybhManageForm.getViewBM().length()>0){
+			if(ybhManageForm.getViewBM().length()<=ds.rbm.length()){
 				ds.subPathTitle.setRoot(String.valueOf(ds.map.get("name")),ds.curBM, ds.rbm);
 			} else {
 				ds.subPathTitle.setInfoByEx(String.valueOf(ds.map.get("name")),ds.curBM, ds.curBM);
@@ -39,24 +40,25 @@ public class YbhManageAction extends BaseAction implements ModelDriven<YbhManage
 		if(!ds.subPathTitle.hasRoot()) {
 			ds.subPathTitle.setRoot(String.valueOf(ds.map.get("name")),ds.curBM, ds.rbm);
 		}
+		ds.subPathTitle.setYbhflag("manage");
 		ds.navPath=ds.subPathTitle.getHtmlString();
 		return "show_ybh_manage";
 	}
 	
-	/** 进入操作 */
-	public String viewYbh(){
-		System.out.println("viewBM:"+viewBM);
+	public String viewNavYbh(){
 		DotSession ds = DotSession.getVTSession(request);
-		ds.curBM = viewBM;
+		ds.curBM = ybhManageForm.getViewBM();
+		ds.map.put("name",ybhManageForm.getOname());
 		return home();
 	}
 	
-	private String viewBM;
-	public String getViewBM() {
-		return viewBM;
+	/** 进入操作 */
+	public String viewYbh(){
+		DotSession ds = DotSession.getVTSession(request);
+		ds.curBM = ybhManageForm.getViewBM();
+		ds.map.put("name",ybhManageForm.getOname());
+		return home();
 	}
-	public void setViewBM(String viewBM) {
-		this.viewBM = viewBM;
-	}
+	
 	
 }

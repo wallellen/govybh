@@ -39,6 +39,7 @@ public class YbhCheckAction extends BaseAction implements ModelDriven<YbhCheckFo
 		if(!ds.subPathTitle.hasRoot()) {
 			ds.subPathTitle.setRoot(String.valueOf(ds.map.get("name")),ds.curBM, ds.rbm);
 		}
+		ds.subPathTitle.setYbhflag("check");
 		ds.navPath=ds.subPathTitle.getHtmlString();
 		return "show_ybh";
 	}

@@ -1,13 +1,14 @@
 package cn.voicet.ybh.util;
 
 /**
- * @see 瀵艰埅璺緞宸ュ叿绫?
+ * @see 导航路径工具类
  */
 public class SubPathTitle {
 	
 	private final int MAXSUBITEMNUM = 16;
 	private SubPathItem[] subPathItem;
 	private int curPos;
+	private String ybhflag;
 	
 	public SubPathTitle(){
 		curPos = 0;
@@ -17,7 +18,7 @@ public class SubPathTitle {
 		}
 	}
 	
-	/** 鍒濆鍖?*/
+	/** 初始化 */
 	public void initPath(){
 		curPos=0;
 	}
@@ -51,9 +52,9 @@ public class SubPathTitle {
 	
 	/**
 	 * 
-	 * @param sName 鍦板尯鍚嶇О
-	 * @param sExt	褰撳墠缂栫爜
-	 * @param stag	鏍圭紪鐮?
+	 * @param sName 地区名称
+	 * @param sExt	当前编码
+	 * @param stag	根编码
 	 */
 	private void setNextInfo(String sName, String sExt,String stag) {
 		if (curPos < MAXSUBITEMNUM) {
@@ -63,8 +64,8 @@ public class SubPathTitle {
 	}
 	
 	/**
-	 * 鐩存帴杩涘叆鎿嶄綔锛屼慨鏀瑰綋鍓嶅湴鍖哄鑸?
-	 * @param sListStr eg:姹熻嫃鐪?32;32;鍗椾含甯?3208;32;
+	 * 直接进入操作，修改当前地区导航
+	 * @param sListStr eg:江苏省;32;32;南京市;3208;32;
 	 */
 	public void setFullPath(String sListStr)
 	{
@@ -90,7 +91,7 @@ public class SubPathTitle {
 		}
 	}
 
-	/** 椤甸潰杩斿洖 */
+	/** 页面返回 */
 	public void rollBack() {
 		if(curPos>1)
 			curPos--;
@@ -102,12 +103,20 @@ public class SubPathTitle {
 		subPathItem[curPos].stag=stag;
 	}
 
-	/** 瀵艰埅璺緞 */
+	/** 导航路径 */
 	public String getHtmlString() {
 		String navPath = "";
 		for (int i = 0; i < curPos; i++) {
+			if(ybhflag.equals("check"))
+			{
 			navPath += "<a href='ybhCheckAction_viewNavYbh.action?viewBM="
-					+ subPathItem[i].sExt + "&oname="+subPathItem[i].sName+"'";
+					+ subPathItem[i].sExt + "&oname=" + subPathItem[i].sName + "'";
+			}
+			else if(ybhflag.equals("manage"))
+			{
+				navPath += "<a href='ybhManageAction_viewNavYbh.action?viewBM="
+					+ subPathItem[i].sExt + "&oname=" + subPathItem[i].sName + "'";
+			}
 			navPath += " style='cursor:pointer; color:#fff' target='mainFrame' class='toolbar_eixt'>";
 			navPath += subPathItem[i].sName;
 			navPath += "</a>";
@@ -122,6 +131,13 @@ public class SubPathTitle {
 		if (iPos > 0 && iPos < MAXSUBITEMNUM && iPos <= curPos) {
 			curPos = iPos;
 		}
+	}
+
+	public String getYbhflag() {
+		return ybhflag;
+	}
+	public void setYbhflag(String ybhflag) {
+		this.ybhflag = ybhflag;
 	}
 	
 }
