@@ -23,14 +23,11 @@
 			<result name="show_logout" type="redirectAction">index</result>
 			<!-- 处理验证登录失败, 跳转到login.jsp -->
 			<result name="show_error">/WEB-INF/page/admin/login.jsp</result>
-			
-			<result name="show_register">/WEB-INF/page/admin/userRegister.jsp</result>
 		</action>
 		
-		<!-- 订单管理 -->
-		<action name="orderAction_*" class="orderAction" method="{1}">
-			<result name="show_order">/WEB-INF/page/order/menu_order.jsp</result>
-			<result name="show_order_detail">/WEB-INF/page/order/menu_order_detail.jsp</result>
+		<!-- 样本户勾选 -->
+		<action name="ybhCheckAction_*" class="ybhCheckAction" method="{1}">
+			<result name="show_ybh">/WEB-INF/page/ybh/ybh_check.jsp</result>
 		</action>
 		
 	</package>  
