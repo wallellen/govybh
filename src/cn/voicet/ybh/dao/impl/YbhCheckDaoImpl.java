@@ -14,6 +14,7 @@ import org.springframework.stereotype.Repository;
 
 import cn.voicet.ybh.dao.YbhCheckDao;
 import cn.voicet.ybh.util.DotSession;
+import cn.voicet.ybh.web.form.YbhCheckForm;
 
 @Repository(YbhCheckDao.SERVICE_NAME)
 @SuppressWarnings({"unchecked","static-access"})
@@ -40,6 +41,20 @@ public class YbhCheckDaoImpl extends BaseDaoImpl implements YbhCheckDao {
 		        		ds.list.add(map);
 					}
 				}
+				return null;
+			}
+		});
+	}
+
+	public void selectYbhWithOpcode(final YbhCheckForm ybhCheckForm) {
+		this.getJdbcTemplate().execute(new ConnectionCallback() {
+			public Object doInConnection(Connection conn) throws SQLException,
+					DataAccessException {
+				CallableStatement cs = conn.prepareCall("{call ybh_hu_select(?,?,?)}");
+				cs.setString(1, ybhCheckForm.getHm());
+				cs.setInt(2, ybhCheckForm.getOpcode());
+				cs.setInt(3, 1);
+				cs.execute();
 				return null;
 			}
 		});
