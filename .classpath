@@ -3,7 +3,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="melibrary.com.genuitec.eclipse.j2eedt.core.MYECLIPSE_JAVAEE_5_CONTAINER"/>
-	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/QRCode.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/antlr-2.7.6.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/asm-2.2.3.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/asm-commons-2.2.3.jar"/>
@@ -24,7 +23,6 @@
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/commons-lang3-3.1.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/commons-logging-1.1.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/dom4j-1.6.1.jar"/>
-	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/dom4j-1.6.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/ehcache-1.5.0.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/ezmorph-1.0.6.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/freemarker-2.3.8.jar"/>
@@ -34,9 +32,7 @@
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jaxen-1.1.1.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jcommon-1.0.17.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jdom.jar"/>
-	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jfreechart-1.0.1.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/json-lib-2.1-jdk15.jar"/>
-	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/json-simple-1.1.1.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jstl.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jta.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/junit-4.8.2.jar"/>
@@ -44,7 +40,6 @@
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/log4j-1.2.15.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/mail.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/ognl-3.0.6.jar"/>
-	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/ojdbc14_10g.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/slf4j-api-1.5.8.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/slf4j-log4j12.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/spring-mock.jar"/>
