@@ -56,7 +56,7 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
 				new ConnectionCallback() {
 					public Object doInConnection(Connection conn)
 							throws SQLException, DataAccessException {
-						CallableStatement cs = conn.prepareCall("{call sys_accountchgpwd(?,?,?,?)}");
+						CallableStatement cs = conn.prepareCall("{call ybh_accountchgpwd(?,?,?,?)}");
 						cs.setString(1, ds.account);
 						cs.setString(2, ds.roleID);
 						cs.setString(3, userForm.getOldpwd());
