@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dot2014 product="扶贫观察点管理系统" provider="江苏省扶贫办" customer="江苏省扶贫办"
+	fax="02584868924" tel="02584869817" url="http://www.voicet.com.cn"
+	mail="jime6688@163.com" version="1.0">
+	<role roleid="0" describle="未登录"></role>
+	<role roleid="1" describle="系统管理员">
+		<grp name="日常工作">
+      <fun name="工作簿管理" action="govBrowerAction_home.do" />
+      <fun name="数据年计划" action="govBrowerAction_home.do" />
+		</grp>
+	</role>
+	<role roleid="2" describle="省管理员">
+		<grp name="日常工作">
+      <fun name="样本户勾选" action="govBrowerAction_home.do" />
+      <fun name="样本户管理" action="govIncomeAction_home.do" />	
+    </grp>
+	</role>
+  	<role roleid="3" describle="市管理员">
+    	<grp name="日常工作">
+        <fun name="样本户管理" action="govIncomeAction_home.do" />	/>
+      </grp>
+  	</role>
+	<role roleid="4" describle="县管理员">
+		<grp name="日常工作">
+      <fun name="样本户管理" action="govIncomeAction_home.do" />
+ 	</grp>
+	</role>
+	<list name="yesno" describle="是与否列表">
+		<item id="1" name="1:是" />
+		<item id="2" name="2:否" />
+	</list>
+	<list name="yesnoex" describle="是与否列表">
+		<item id="0" name="不限" />
+		<item id="1" name="1:是" />
+		<item id="2" name="2:否" />
+	</list>
+	<list name="education" describle="文化程度">
+		<item id="1" name="1:文盲、半文盲" />
+		<item id="2" name="2:小学" />
+		<item id="3" name="3:初中" />
+		<item id="4" name="4:高中" />
+		<item id="5" name="5:中专" />
+		<item id="6" name="6:大专以上" />
+		<item id="7" name="7:学龄儿童" />
+	</list>
+	<list name="educationex" describle="文化程度">
+		<item id="0" name="不限" />
+		<item id="1" name="1:文盲、半文盲" />
+		<item id="2" name="2:小学" />
+		<item id="3" name="3:初中" />
+		<item id="4" name="4:高中" />
+		<item id="5" name="5:中专" />
+		<item id="6" name="6:大专以上" />
+		<item id="7" name="7:学龄儿童" />
+	</list>
+	<list name="health" describle="健康状况">
+		<item id="1" name="1:健康" />
+		<item id="2" name="2:体弱多病" />
+		<item id="3" name="3:长期慢性病" />
+		<item id="4" name="4:患有大病" />
+		<item id="5" name="5:残疾人" />
+	</list>
+	<list name="healthex" describle="健康状况">
+		<item id="0" name="不限" />
+		<item id="1" name="1:健康" />
+		<item id="2" name="2:体弱多病" />
+		<item id="3" name="3:长期慢性病" />
+		<item id="4" name="4:患有大病" />
+		<item id="5" name="5:残疾人" />
+	</list>
+	<list name="family" describle="家庭属性">
+		<item id="1" name="1:扶贫户" />
+		<item id="2" name="2:低保户" />
+		<item id="3" name="3:五保户" />
+	</list>
+	<list name="familyex" describle="家庭属性">
+		<item id="0" name="不限" />
+		<item id="1" name="1:扶贫户" />
+		<item id="2" name="2:低保户" />
+		<item id="3" name="3:五保户" />
+	</list>
+	<list name="dcause" describle="贫困类型">
+		<item id="1" name="1:因灾" />
+		<item id="2" name="2:因病" />
+		<item id="3" name="3:因残" />
+		<item id="4" name="4:因学" />
+		<item id="5" name="5:缺技术" />
+		<item id="6" name="6:缺劳动力" />
+		<item id="7" name="7:缺资金" />
+		<item id="8" name="8:其它" />
+	</list>
+	<list name="dcauseex" describle="贫困类型">
+		<item id="0" name="不限" />
+		<item id="1" name="1:因灾" />
+		<item id="2" name="2:因病" />
+		<item id="3" name="3:因残" />
+		<item id="4" name="4:因学" />
+		<item id="5" name="5:缺技术" />
+		<item id="6" name="6:缺劳动力" />
+		<item id="7" name="7:缺资金" />
+		<item id="8" name="8:其它" />
+	</list>
+	<list name="sex" describle="性别">
+		<item id="1" name="1:男" />
+		<item id="2" name="2:女" />
+	</list>
+	<list name="sexex" describle="性别">
+		<item id="0" name="不限" />
+		<item id="1" name="1:男" />
+		<item id="2" name="2:女" />
+	</list>
+	<list name="work" describle="打工状况">
+		<item id="1" name="1:在家务家" />
+		<item id="2" name="2:县内务工" />
+		<item id="3" name="3:县外省内务工" />
+		<item id="4" name="4:省外务工" />
+		<item id="5" name="5:其他(国外)" />
+	</list>
+	<list name="workex" describle="打工状况">
+		<item id="0" name="不限" />
+		<item id="1" name="1:在家务家" />
+		<item id="2" name="2:县内务工" />
+		<item id="3" name="3:县外省内务工" />
+		<item id="4" name="4:省外务工" />
+		<item id="5" name="5:其他(国外)" />
+	</list>
+	<list name="workexex" describle="打工状况">
+		<item id="0" name="" />
+		<item id="1" name="1:在家务家" />
+		<item id="2" name="2:县内务工" />
+		<item id="3" name="3:县外省内务工" />
+		<item id="4" name="4:省外务工" />
+		<item id="5" name="5:其他(国外)" />
+	</list>
+	<list name="labor" describle="劳动力状况">
+		<item id="1" name="1:劳动力" />
+		<item id="2" name="2:丧失劳动力" />
+		<item id="3" name="3:非劳动力" />
+	</list>
+	<list name="laborex" describle="劳动力状况">
+		<item id="0" name="不限" />
+		<item id="1" name="1:劳动力" />
+		<item id="2" name="2:丧失劳动力" />
+		<item id="3" name="3:非劳动力" />
+	</list>
+	<list name="opt" describle="选项">
+		<item id="0" name="不限" />
+		<item id="1" name="&gt;=" />
+		<item id="2" name="&lt;=" />
+	</list>
+	<list name="bfdept" describle="选项">
+		<item id="1" name="省有关部门和单位" />
+		<item id="2" name="部省属企业" />
+		<item id="3" name="部省属有关高校、科研院所" />
+		<item id="4" name="苏南挂钩县" />
+	</list>
+	<list name="reportlist" describle="报告类型">
+		<item id="1" name="年收入及帮扶情况" />
+		<item id="2" name="片区关键工程项目" />
+		<item id="3" name="村级集体经济发展项目" />
+		<item id="4" name="奖补资金到户项目" />
+		<item id="5" name="省后方单位挂钩帮扶" />
+		<item id="6" name="扶贫小额贷款年项目" />
+		<item id="7" name="扶贫小额贷款月项目" />
+	</list>
+	<list name="monthlist" describle="月份">
+		<item id="1" name="1" />
+		<item id="2" name="2" />
+		<item id="3" name="3" />
+		<item id="4" name="4" />
+		<item id="5" name="5" />
+		<item id="6" name="6" />
+		<item id="7" name="7" />
+		<item id="8" name="8" />
+		<item id="9" name="9" />
+		<item id="10" name="10" />
+		<item id="11" name="11" />
+		<item id="12" name="12" />
+	</list>
+	<list name="delfamcause" describle="删除农户原因">
+		<item id="10" name="10:脱贫" />
+		<item id="100" name="100:纠正错档" />
+	</list>
+</dot2014>
