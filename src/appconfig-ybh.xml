@@ -13,11 +13,12 @@
 		<grp name="日常工作">
       		<fun name="样本户勾选" action="ybhCheckAction_home.action" />
       		<fun name="样本户管理" action="ybhManageAction_home.action" />	
+      		<fun name="年数据录入" action="yearDataAction_home.action" />
     	</grp>
 	</role>
   	<role roleid="3" describle="市管理员">
     	<grp name="日常工作">
-        	<fun name="样本户管理" action="ybhManageAction_home.action" />	/>
+        	<fun name="样本户管理" action="ybhManageAction_home.action" />
       	</grp>
   	</role>
 	<role roleid="4" describle="县管理员">
