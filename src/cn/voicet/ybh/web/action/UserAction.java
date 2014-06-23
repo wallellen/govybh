@@ -29,6 +29,7 @@ public class UserAction extends BaseAction implements ModelDriven<UserForm>{
 		return userForm;
 	}
 	
+	@SuppressWarnings("unchecked")
 	public String ajaxlogin(){
 		log.info("account:"+userForm.getAccount()+", password:"+userForm.getPassword());
 		JSONObject json = new JSONObject();
@@ -39,6 +40,7 @@ public class UserAction extends BaseAction implements ModelDriven<UserForm>{
 		DotSession ds=DotSession.getVTSession(request);
 		Map<String, String> map = userService.userLogin(userForm);
 		log.info("user login: "+map);
+		ds.map.put("name", map.get("username"));
 		ds.username=map.get("username");
 		ds.password = userForm.getPassword();
 		ds.account=userForm.getAccount();

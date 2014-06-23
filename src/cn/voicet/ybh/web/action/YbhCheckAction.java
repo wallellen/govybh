@@ -13,7 +13,7 @@ import com.opensymphony.xwork2.ModelDriven;
 
 @Controller("ybhCheckAction")
 @Scope(value="prototype")
-@SuppressWarnings("serial")
+@SuppressWarnings({"serial","unchecked"})
 public class YbhCheckAction extends BaseAction implements ModelDriven<YbhCheckForm>{
 	private static Logger log = Logger.getLogger(YbhCheckAction.class);
 	
@@ -29,8 +29,8 @@ public class YbhCheckAction extends BaseAction implements ModelDriven<YbhCheckFo
 	public String home(){
 		DotSession ds = DotSession.getVTSession(request);
 		ybhCheckService.getYbhListByCurBM(ds);
-		if(null!=viewBM&&viewBM.length()>0){
-			if(viewBM.length()<=ds.rbm.length()){
+		if(null!=ybhCheckForm.getViewBM()&&ybhCheckForm.getViewBM().length()>0){
+			if(ybhCheckForm.getViewBM().length()<=ds.rbm.length()){
 				ds.subPathTitle.setRoot(String.valueOf(ds.map.get("name")),ds.curBM, ds.rbm);
 			} else {
 				ds.subPathTitle.setInfoByEx(String.valueOf(ds.map.get("name")),ds.curBM, ds.curBM);
@@ -43,11 +43,18 @@ public class YbhCheckAction extends BaseAction implements ModelDriven<YbhCheckFo
 		return "show_ybh";
 	}
 	
+	public String viewNavYbh(){
+		DotSession ds = DotSession.getVTSession(request);
+		ds.curBM = ybhCheckForm.getViewBM();
+		ds.map.put("name",ybhCheckForm.getOname());
+		return home();
+	}
+	
 	/** ½øÈë²Ù×÷ */
 	public String viewYbh(){
-		System.out.println("viewBM:"+viewBM);
 		DotSession ds = DotSession.getVTSession(request);
-		ds.curBM = viewBM;
+		ds.curBM = ybhCheckForm.getViewBM();
+		ds.map.put("name",ybhCheckForm.getOname());
 		return home();
 	}
 	
@@ -56,13 +63,4 @@ public class YbhCheckAction extends BaseAction implements ModelDriven<YbhCheckFo
 		ybhCheckService.selectYbhWithOpcode(ybhCheckForm);
 		return home();
 	}
-	
-	private String viewBM;
-	public String getViewBM() {
-		return viewBM;
-	}
-	public void setViewBM(String viewBM) {
-		this.viewBM = viewBM;
-	}
-	
 }
