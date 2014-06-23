@@ -13,17 +13,17 @@
 		<grp name="日常工作">
       		<fun name="样本户勾选" action="ybhCheckAction_home.action" />
       		<fun name="样本户管理" action="ybhManageAction_home.action" />	
-    </grp>
+    	</grp>
 	</role>
   	<role roleid="3" describle="市管理员">
     	<grp name="日常工作">
-        <fun name="样本户管理" action="govIncomeAction_home.do" />	/>
-      </grp>
+        	<fun name="样本户管理" action="ybhManageAction_home.action" />	/>
+      	</grp>
   	</role>
 	<role roleid="4" describle="县管理员">
 		<grp name="日常工作">
-      <fun name="样本户管理" action="govIncomeAction_home.do" />
- 	</grp>
+      		<fun name="样本户管理" action="ybhManageAction_home.action" />
+ 		</grp>
 	</role>
 	<list name="yesno" describle="是与否列表">
 		<item id="1" name="1:是" />
