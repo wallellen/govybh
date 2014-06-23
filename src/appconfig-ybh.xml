@@ -5,14 +5,14 @@
 	<role roleid="0" describle="未登录"></role>
 	<role roleid="1" describle="系统管理员">
 		<grp name="日常工作">
-      <fun name="工作簿管理" action="govBrowerAction_home.do" />
-      <fun name="数据年计划" action="govBrowerAction_home.do" />
+      		<fun name="工作簿管理" action="govBrowerAction_home.do" />
+      		<fun name="数据年计划" action="govBrowerAction_home.do" />
 		</grp>
 	</role>
 	<role roleid="2" describle="省管理员">
 		<grp name="日常工作">
-      <fun name="样本户勾选" action="govBrowerAction_home.do" />
-      <fun name="样本户管理" action="govIncomeAction_home.do" />	
+      		<fun name="样本户勾选" action="ybhCheckAction_home.action" />
+      		<fun name="样本户管理" action="govIncomeAction_home.do" />	
     </grp>
 	</role>
   	<role roleid="3" describle="市管理员">
