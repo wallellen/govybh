@@ -4,6 +4,20 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
 	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 	
+	<!-- logon filter -->
+	<filter>
+		<filter-name>LogonFilter</filter-name>
+		<filter-class>cn.voicet.ybh.filter.LogonFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>LogonFilter</filter-name>
+		<url-pattern>*.action</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>LogonFilter</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+	
 	<!-- 使用Struts2整合Spring, web服务器启动时, 需要加载beans.xml -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
