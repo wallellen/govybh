@@ -44,6 +44,7 @@ public class YbhCheckAction extends BaseAction implements ModelDriven<YbhCheckFo
 		return "show_ybh";
 	}
 	
+	/** 样本户勾选导航操作 */
 	public String viewNavYbh(){
 		DotSession ds = DotSession.getVTSession(request);
 		ds.curBM = ybhCheckForm.getViewBM();
@@ -51,7 +52,7 @@ public class YbhCheckAction extends BaseAction implements ModelDriven<YbhCheckFo
 		return home();
 	}
 	
-	/** 进入操作 */
+	/** 样本户勾选进入操作 */
 	public String viewYbh(){
 		DotSession ds = DotSession.getVTSession(request);
 		ds.curBM = ybhCheckForm.getViewBM();
@@ -59,7 +60,7 @@ public class YbhCheckAction extends BaseAction implements ModelDriven<YbhCheckFo
 		return home();
 	}
 	
-	/** 勾选 */
+	/** 样本户勾选 */
 	public String selectYbh(){
 		ybhCheckService.selectYbhWithOpcode(ybhCheckForm);
 		return home();

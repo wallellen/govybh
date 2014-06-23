@@ -45,6 +45,7 @@ public class YbhManageAction extends BaseAction implements ModelDriven<YbhManage
 		return "show_ybh_manage";
 	}
 	
+	/** 样本户管理导航操作 */
 	public String viewNavYbh(){
 		DotSession ds = DotSession.getVTSession(request);
 		ds.curBM = ybhManageForm.getViewBM();
@@ -52,7 +53,7 @@ public class YbhManageAction extends BaseAction implements ModelDriven<YbhManage
 		return home();
 	}
 	
-	/** 进入操作 */
+	/** 样本户管理进入操作 */
 	public String viewYbh(){
 		DotSession ds = DotSession.getVTSession(request);
 		ds.curBM = ybhManageForm.getViewBM();
