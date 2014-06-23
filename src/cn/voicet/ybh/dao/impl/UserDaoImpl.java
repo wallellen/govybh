@@ -25,7 +25,7 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
 				new ConnectionCallback() {
 					public Object doInConnection(Connection conn)
 							throws SQLException, DataAccessException {
-						CallableStatement cs = conn.prepareCall("{call sys_userlogin(?,?)}");
+						CallableStatement cs = conn.prepareCall("{call ybh_userlogin(?,?)}");
 						cs.setString(1, userForm.getAccount());
 						cs.setString(2, userForm.getPassword());
 						cs.execute();

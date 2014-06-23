@@ -42,13 +42,17 @@ public class UserAction extends BaseAction implements ModelDriven<UserForm>{
 		ds.username=map.get("username");
 		ds.password = userForm.getPassword();
 		ds.account=userForm.getAccount();
-		ds.rbm = map.get("rbm");
 		ds.rbn = map.get("rbn");
+		ds.rbm = map.get("rbm");
 		ds.roleName = map.get("rolename");
 		ds.roleID=map.get("roleid");
 		ds.isedit = Integer.valueOf(map.get("isedit"));
 		ds.workyear=Integer.valueOf(map.get("workyear"));
 		ds.yearlock=Integer.valueOf(map.get("yearlock"));
+		
+		ds.curBM = ds.rbm;
+		ds.subPathTitle.initPath();
+		
 		if(!ds.roleID.equals("0")){
 			json.put("status", "ok");
 		}else{
@@ -92,7 +96,7 @@ public class UserAction extends BaseAction implements ModelDriven<UserForm>{
 		return null;
 	}
 	
-	/** 注销登录 */
+	/**  */
 	public String logout() {
 		DotSession ds=DotSession.getVTSession(request);
 		ds.clear();
