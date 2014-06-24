@@ -33,4 +33,32 @@ public class YearDataAction extends BaseAction implements ModelDriven<YearDataFo
 		return "show_year";
 	}
 	
+	/** 根据年查看样本户数据 */
+	public String viewData(){
+		DotSession ds = DotSession.getVTSession(request);
+		yearDataService.getYbhListByCurBM(ds);
+		if(null!=yearDataForm.getViewBM()&&yearDataForm.getViewBM().length()>0){
+			if(yearDataForm.getViewBM().length()<=ds.rbm.length()){
+				ds.subPathTitle.setRoot(String.valueOf(ds.map.get("name")),ds.curBM, ds.rbm);
+			} else {
+				ds.subPathTitle.setInfoByEx(String.valueOf(ds.map.get("name")),ds.curBM, ds.curBM);
+			}
+		}
+		if(!ds.subPathTitle.hasRoot()) {
+			ds.subPathTitle.setRoot(String.valueOf(ds.map.get("name")),ds.curBM, ds.rbm);
+		}
+		ds.subPathTitle.setYbhflag("check");
+		ds.navPath=ds.subPathTitle.getHtmlString();
+		return "show_data";
+	}
+	
+	/** 样本户列表页面进入操作 */
+	public String viewYbh(){
+		DotSession ds = DotSession.getVTSession(request);
+		ds.curBM = yearDataForm.getViewBM();
+		ds.map.put("name",yearDataForm.getOname());
+		log.info("查看年："+yearDataForm.getYear());
+		return viewData();
+	}
+	
 }

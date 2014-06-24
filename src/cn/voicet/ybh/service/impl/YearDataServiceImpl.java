@@ -20,4 +20,8 @@ public class YearDataServiceImpl implements YearDataService{
 		yearDataDao.getYbhYearInfo(ds);
 	}
 
+	public void getYbhListByCurBM(DotSession ds) {
+		yearDataDao.getYbhListByCurBM(ds);
+	}
+
 }

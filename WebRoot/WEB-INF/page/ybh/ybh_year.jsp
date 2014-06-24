@@ -29,7 +29,7 @@
         <td><s:property value="#ls.fdt"/></td>
         <td><s:property value="#ls.tdt"/></td>
         <td>
-        	<a href="${pageContext.request.contextPath }/yearDataAction_view.action">查看</a>
+        	<a href="${pageContext.request.contextPath }/yearDataAction_viewData.action?year=<s:property value='#ls.rid'/>">查看</a>
         </td>
     </tr>
     </s:iterator>
