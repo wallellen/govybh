@@ -35,6 +35,11 @@
 			<result name="show_ybh_manage">/WEB-INF/page/ybh/ybh_manage.jsp</result>
 		</action>
 		
+		<!-- 年数据录入 -->
+		<action name="yearDataAction_*" class="yearDataAction" method="{1}">
+			<result name="show_year">/WEB-INF/page/ybh/ybh_year.jsp</result>
+		</action>
+		
 	</package>  
 	<package name="dot" namespace="/" extends="json-default">
 		<!-- login -->
