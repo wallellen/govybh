@@ -8,7 +8,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>电子菜单管理系统</title>
+	<title>扶贫观察点管理系统</title>
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/style/layout.css"/>
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/style/style.css"/>
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/style/style-b.css"/>
