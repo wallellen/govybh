@@ -24,10 +24,11 @@ public class YbhManageDaoImpl extends BaseDaoImpl implements YbhManageDao {
 		this.getJdbcTemplate().execute(new ConnectionCallback() {
 			public Object doInConnection(Connection conn) throws SQLException,
 					DataAccessException {
-				CallableStatement cs = conn.prepareCall("{call ybh_bm_describle(?,?,?)}");
+				CallableStatement cs = conn.prepareCall("{call ybh_bm_describle(?,?,?,?)}");
 				cs.setString(1, ds.curBM);
 				cs.setInt(2, 1);
-				cs.setInt(3, 1);
+				cs.setInt(3, 2014);
+				cs.setInt(4, 1);
 				cs.execute();
 				ResultSet rs = cs.getResultSet();
 				ds.initData();
