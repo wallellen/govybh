@@ -54,6 +54,9 @@
 				<td align="right"><s:property value="#ls.hm"/>&nbsp;</td>
 				<td class="tabtd1">
 					<a href="${pageContext.request.contextPath }/yearDataAction_viewYbh.action?viewBM=<s:property value="#ls.bm"/>&oname=<s:property value="#ls.oname"/>&year=<s:property value="year"/>">进入</a>
+					<s:if test="#session.vts.curBM.length()==9">
+						<a href="${pageContext.request.contextPath }/yearDataAction_updateCun.action?cunbm=<s:property value="#ls.bm"/>&oname=<s:property value="#ls.oname"/>&year=<s:property value="year"/>">填写</a>
+					</s:if>
 				</td>
 				</s:if>
 				<s:else>
@@ -67,12 +70,7 @@
 					<td align="left">&nbsp;<s:property value="#ls.property"/></td>
 					<td align="left">&nbsp;<s:property value="#ls.dcause"/></td>
 					<td class="tabtd1">
-						<s:if test="#ls.t==1">
-						<input type="checkbox" checked="checked" onclick="location.href='${pageContext.request.contextPath }/ybhCheckAction_selectYbh.action?hm=<s:property value="#ls.hm"/>&opcode=0'"/>勾选
-						</s:if>
-						<s:else>
-						<input type="checkbox" onclick="location.href='${pageContext.request.contextPath }/ybhCheckAction_selectYbh.action?hm=<s:property value="#ls.hm"/>&opcode=1'"/>勾选
-						</s:else>
+						修改
 					</td>
 				</s:else>
 			</tr>

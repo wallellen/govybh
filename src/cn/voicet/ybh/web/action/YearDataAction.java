@@ -47,7 +47,7 @@ public class YearDataAction extends BaseAction implements ModelDriven<YearDataFo
 		if(!ds.subPathTitle.hasRoot()) {
 			ds.subPathTitle.setRoot(String.valueOf(ds.map.get("name")),ds.curBM, ds.rbm);
 		}
-		ds.subPathTitle.setYbhflag("check");
+		ds.subPathTitle.setYbhflag("yeardata");
 		ds.navPath=ds.subPathTitle.getHtmlString();
 		return "show_data";
 	}
@@ -59,6 +59,12 @@ public class YearDataAction extends BaseAction implements ModelDriven<YearDataFo
 		ds.map.put("name",yearDataForm.getOname());
 		log.info("查看年："+yearDataForm.getYear());
 		return viewData();
+	}
+	
+	/** 村级填写页面 */
+	public String updateCun(){
+		
+		return "show_ybh_cunupdate";
 	}
 	
 }

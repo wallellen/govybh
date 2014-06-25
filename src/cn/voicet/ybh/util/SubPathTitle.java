@@ -117,6 +117,11 @@ public class SubPathTitle {
 				navPath += "<a href='ybhManageAction_viewNavYbh.action?viewBM="
 					+ subPathItem[i].sExt + "&oname=" + subPathItem[i].sName + "'";
 			}
+			else if(ybhflag.equals("yeardata"))
+			{
+				navPath += "<a href='yearDataAction_viewYbh.action?viewBM="
+					+ subPathItem[i].sExt + "&oname=" + subPathItem[i].sName + "'";
+			}
 			navPath += " style='cursor:pointer; color:#fff' target='mainFrame' class='toolbar_eixt'>";
 			navPath += subPathItem[i].sName;
 			navPath += "</a>";

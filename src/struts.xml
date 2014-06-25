@@ -39,6 +39,7 @@
 		<action name="yearDataAction_*" class="yearDataAction" method="{1}">
 			<result name="show_year">/WEB-INF/page/ybh/ybh_year.jsp</result>
 			<result name="show_data">/WEB-INF/page/ybh/ybh_year_data.jsp</result>
+			<result name="show_ybh_cunupdate">/WEB-INF/page/ybh/ybh_cun_update.jsp</result>
 		</action>
 		
 	</package>  
