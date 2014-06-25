@@ -174,10 +174,14 @@ public class YearDataDaoImpl extends BaseDaoImpl implements YearDataDao {
 		this.getJdbcTemplate().execute(new ConnectionCallback() {
 			public Object doInConnection(Connection conn) throws SQLException,
 					DataAccessException {
-				CallableStatement cs = conn.prepareCall("{call ybh_family_detail(?)}");
+				CallableStatement cs = conn.prepareCall("{call ybh_family_detail(?,?)}");
 				cs.setString(1, ds.curHM);
+				cs.setInt(2, 1);
 				cs.execute();
 				ResultSet rs = null;
+				ds.initData();
+				ds.list = new ArrayList();
+				ds.list2 = new ArrayList();
 				int rid=0;
 				int updateCount = -1;
 				Map map;

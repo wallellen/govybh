@@ -20,7 +20,7 @@ ul{margin:0; padding:0; list-style:none;}
 .button46{width:72px; height:18px; line-height:18px; background:url(../images/bt45.png) no-repeat; display:inline; color:#FFF; border:medium none; cursor:pointer;}
 
 /* leftCon */
-#leftCon{width:666px; height:672px; float:left; text-align:center;}
+#leftCon{width:666px; height:672px; float:right; text-align:center;}
 #leftCon .input-goto{width:100px; height:18px;}
 #leftCon ul{width:655px; height:40px; border:1px solid #3B9FFF; padding-left:10px; margin-top:1px;}
 #leftCon li{float:left; margin-right:10px; display:inline; padding:10px 0 0 0;}
@@ -50,7 +50,7 @@ ul{margin:0; padding:0; list-style:none;}
 .split-page a:hover{color:#00f;text-decoration:underline;}
 
 /* rightCon */
-#rightCon{width:198px; height:672px; float:right; background:url(../images/over-bg.png) repeat-x; border-left:1px solid #3B9FFF; border-right:1px solid #3B9FFF;}
+#rightCon{width:198px; height:672px; float:left; background:url(../images/over-bg.png) repeat-x; border-left:1px solid #3B9FFF; border-right:1px solid #3B9FFF;}
 #rightCon span{width:198px; height:30px; line-height:30px; text-align:center; display:block; font-size:16px; color:#8F2629; font-weight:bold;}
 #rightCon table{width:188px; height:100px; text-align:center; line-height:20px; margin:5px 5px; 0 5px;}
 #rightCon table{border-right:1px solid #FFF; border-bottom:1px solid #FFF;}

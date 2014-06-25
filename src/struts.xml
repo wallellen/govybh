@@ -40,6 +40,17 @@
 			<result name="show_year">/WEB-INF/page/ybh/ybh_year.jsp</result>
 			<result name="show_data">/WEB-INF/page/ybh/ybh_year_data.jsp</result>
 			<result name="show_ybh_cunupdate">/WEB-INF/page/ybh/ybh_cun_update.jsp</result>
+			<result name="show_family_detail">/WEB-INF/page/ybh/ybh_family_detail.jsp</result>
+		</action>
+		
+		<!-- 农户查询 -->
+		<action name="ybhFarmerAction_*" class="ybhFarmerAction" method="{1}">
+			<result name="show_farmer">/WEB-INF/page/ybh/ybh_farmer_query.jsp</result>
+		</action>
+		
+		<!-- 人口查询 -->
+		<action name="ybhPeopleAction_*" class="ybhPeopleAction" method="{1}">
+			<result name="show_people">/WEB-INF/page/ybh/ybh_people_query.jsp</result>
 		</action>
 		
 	</package>  

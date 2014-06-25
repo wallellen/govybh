@@ -86,7 +86,7 @@ public class YearDataAction extends BaseAction implements ModelDriven<YearDataFo
 			ds.curHM= yearDataForm.getViewBM();
 		ds.pushAllList();
 		yearDataService.getYbhFamilyDetailInfo(ds);
-		return "detail";
+		return "show_family_detail";
 	}
 	
 	private Map cunMap;
