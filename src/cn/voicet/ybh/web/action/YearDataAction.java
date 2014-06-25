@@ -1,4 +1,6 @@
 package cn.voicet.ybh.web.action;
+import java.util.Map;
+
 import javax.annotation.Resource;
 
 import org.apache.log4j.Logger;
@@ -63,8 +65,35 @@ public class YearDataAction extends BaseAction implements ModelDriven<YearDataFo
 	
 	/** 村级填写页面 */
 	public String updateCun(){
-		
+		DotSession ds = DotSession.getVTSession(request);
+		cunMap = yearDataService.queryCunYbhInfoWithYear(ds, yearDataForm);
+		request.setAttribute("cunMap", cunMap);
+		log.info("cunMap data:"+cunMap);
 		return "show_ybh_cunupdate";
 	}
 	
+	/** 保存 */
+	public String saveCunYbh(){
+		log.info("save cun ybh data cuntxtArr size:"+yearDataForm.getCuntxt().length);
+		yearDataService.saveCunYbhData(yearDataForm);
+		return updateCun();
+	}
+	
+	/** 编辑 */
+	public String detail(){
+		DotSession ds = DotSession.getVTSession(request);
+		if(null!=yearDataForm.getViewBM() && yearDataForm.getViewBM().length()>0)
+			ds.curHM= yearDataForm.getViewBM();
+		ds.pushAllList();
+		yearDataService.getYbhFamilyDetailInfo(ds);
+		return "detail";
+	}
+	
+	private Map cunMap;
+	public Map getCunMap() {
+		return cunMap;
+	}
+	public void setCunMap(Map cunMap) {
+		this.cunMap = cunMap;
+	}
 }

@@ -26,9 +26,9 @@
 			<s:if test="#session.vts.curBM.length()<=9">
 				<td height="20px" width="20%">地区编码</td>
 				<td width="20%">地区名称</td>
-				<td width="20%">村数</td>
-				<td width="20%">户数</td>
-				<td width="20%" class="tabtd1">操作</td>
+				<td width="15%">村数</td>
+				<td width="15%">户数</td>
+				<td width="30%" class="tabtd1">操作</td>
 			</s:if>
 			<s:else>
 				<td height="20px" width="12%">农户编码</td>
@@ -55,7 +55,7 @@
 				<td class="tabtd1">
 					<a href="${pageContext.request.contextPath }/yearDataAction_viewYbh.action?viewBM=<s:property value="#ls.bm"/>&oname=<s:property value="#ls.oname"/>&year=<s:property value="year"/>">进入</a>
 					<s:if test="#session.vts.curBM.length()==9">
-						<a href="${pageContext.request.contextPath }/yearDataAction_updateCun.action?cunbm=<s:property value="#ls.bm"/>&oname=<s:property value="#ls.oname"/>&year=<s:property value="year"/>">填写</a>
+						<a href="${pageContext.request.contextPath }/yearDataAction_updateCun.action?cunbm=<s:property value="#ls.bm"/>&oname=<s:property value="#ls.oname"/>&year=<s:property value="year"/>">村级指标录入</a>
 					</s:if>
 				</td>
 				</s:if>
@@ -70,7 +70,8 @@
 					<td align="left">&nbsp;<s:property value="#ls.property"/></td>
 					<td align="left">&nbsp;<s:property value="#ls.dcause"/></td>
 					<td class="tabtd1">
-						修改
+						<a href="${pageContext.request.contextPath }/yearDataAction_detail.do?viewBM=<s:property value="#ls.hm"/>&rtf=home">编辑</a>
+						
 					</td>
 				</s:else>
 			</tr>

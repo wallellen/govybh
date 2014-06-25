@@ -234,3 +234,13 @@ ul{margin:0; padding:0; list-style:none;}
 .view-report-tip{float:left; padding-left:40px;}
 .view-report-tip1{float:left; padding-left:64px;}
 
+/** 2014-06-25 */
+.cunwrap{width:868px; height:672px; line-height:26px;}
+.cunwrap table{text-align:center; border-right:1px solid #3B9FFF; border-bottom:1px solid #3B9FFF; margin-top:2px;}
+.cunwrap table td{border-top:1px solid #3B9FFF; border-left:1px solid #3B9FFF; empty-cells:show;}
+.cunwrap input{height:22px; width:140px; border:1px solid gray; padding-left:2px;}
+.cunwrap .cuncbox{height:22px; width:24px;}
+
+.cun-bottom{height:26px; line-height:26px;}
+.cun-bottom span{display: block; width:220px; height:26px; float:left;text-align:center}
+.cun-bottom .button4{width:65px; height:22px; color:#FFF; background:url(../images/bt4.png) no-repeat; display:inline; border:medium none; cursor:pointer;}
