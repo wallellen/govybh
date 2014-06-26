@@ -1,7 +1,9 @@
 package cn.voicet.ybh.util;
 
+import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -188,6 +190,41 @@ public class DotSession {
 			}
 		} catch (Exception e) {
 			System.out.println("");
+		}
+	}
+
+	
+	/**
+	 * m money
+	 * i int
+	 * f float
+	 * String ix[][]={{"-1","o"},{"2","m"},{"3","i"},{"4","f"}}; 
+	 * @param cs
+	 * @param sr String	页面参数数组 
+	 * @param ix index	以存储过程入参顺序为下标,从0开始定义,参数类型数组	
+	 * @throws NumberFormatException
+	 * @throws SQLException
+	 */
+	public static void prepareParamFromInputArray(CallableStatement cs, String sr[],String ix[][]) throws NumberFormatException, SQLException
+	{
+		for(int i=0;i<ix.length;i++)
+		{
+			if(ix[i][1].equalsIgnoreCase("s"))
+			{
+				cs.setString(i+1,sr[Integer.parseInt(ix[i][0])]);
+			}
+			else if(ix[i][1].equalsIgnoreCase("m") || ix[i][1].equalsIgnoreCase("f"))
+			{
+				cs.setFloat(i+1,Float.parseFloat(sr[Integer.parseInt(ix[i][0])]));
+			}
+			else if(ix[i][1].equalsIgnoreCase("i"))
+			{
+				cs.setInt(i+1,Integer.parseInt(sr[Integer.parseInt(ix[i][0])]));
+			}
+			else if(ix[i][1].equalsIgnoreCase("o"))
+			{
+				//--discard 
+			}
 		}
 	}
 }

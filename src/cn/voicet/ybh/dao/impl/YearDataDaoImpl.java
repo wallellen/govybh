@@ -126,10 +126,48 @@ public class YearDataDaoImpl extends BaseDaoImpl implements YearDataDao {
 		this.getJdbcTemplate().execute(new ConnectionCallback() {
 			public Object doInConnection(Connection conn) throws SQLException,
 					DataAccessException {
+				
 				CallableStatement cs = conn.prepareCall("{call ybh_chunyear_update(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
+				
+				
 				cs.setString(1, yearDataForm.getCunbm());
 				cs.setInt(2, yearDataForm.getYear());
+				cs.setInt(29, 1);
+				String ix[][] = 
+					{
+						{"","o"},
+						{"","o"},
+						{"0","s"},
+						{"2","s"},
+						{"4","s"},
+						{"6","s"},
+						{"8","f"},
+						{"9","f"},
+						{"10","f"},
+						{"1","s"},
+						{"3","s"},
+						{"5","s"},
+						{"7","s"},
+						{"11","s"},
+						{"13","s"},
+						{"15","s"},
+						{"12","f"},
+						{"14","f"},
+						{"16","s"},
+						{"18","s"},
+						{"20","f"},
+						{"22","f"},
+						{"24","f"},
+						{"17","s"},
+						{"19","s"},
+						{"21","s"},
+						{"23","s"},
+						{"25","s"},
+						{"","o"}
+					};
+				DotSession.prepareParamFromInputArray(cs, yearDataForm.getCuntxt(), ix);
 				//村基本情况
+				/*
 				cs.setString(3, yearDataForm.getCuntxt()[0]);
 				cs.setString(4,  yearDataForm.getCuntxt()[2]);
 				cs.setString(5,  yearDataForm.getCuntxt()[4]);
@@ -163,7 +201,7 @@ public class YearDataDaoImpl extends BaseDaoImpl implements YearDataDao {
 				cs.setString(26, yearDataForm.getCuntxt()[21]);
 				cs.setString(27, yearDataForm.getCuntxt()[23]);
 				cs.setString(28, yearDataForm.getCuntxt()[25]);
-				cs.setInt(29, 1);
+				*/
 				cs.execute();
 				return null;
 			}
