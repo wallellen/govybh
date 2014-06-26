@@ -79,6 +79,7 @@ public class YearDataAction extends BaseAction implements ModelDriven<YearDataFo
 		return updateCun();
 	}
 	
+	
 	/** 编辑 */
 	public String detail(){
 		DotSession ds = DotSession.getVTSession(request);
@@ -89,13 +90,46 @@ public class YearDataAction extends BaseAction implements ModelDriven<YearDataFo
 		return "show_family_detail";
 	}
 	
-	/** 添加家庭户主信息 */
+	/** 更新家庭户主信息 */
 	public String saveFamily(){
 		DotSession ds = DotSession.getVTSession(request);
 		yearDataService.saveFamilyInfo(ds, yearDataForm);
 		log.info("save family base info success");
 		yearDataService.getYbhFamilyDetailInfo(ds);
 		return "show_family_detail";
+	}
+	
+	/** 家庭基本信息页面，保存并返回  */
+	public String saveFamilyEx(){
+		DotSession ds = DotSession.getVTSession(request);
+		yearDataService.saveFamilyInfo(ds, yearDataForm);
+		yearDataService.getYbhFamilyDetailInfo(ds);
+		ds.opCode = "saveFamily";
+		ds.map.put("rtf","home");
+		return viewData();
+	}
+	
+	public String backup() {
+		DotSession ds = DotSession.getVTSession(request);
+		ds.popAllList();
+		return viewData();
+	}
+	
+	/** 更新家庭成员信息 */
+	public String saveMember(){
+		DotSession ds = DotSession.getVTSession(request);
+		yearDataService.saveMemberInfo(ds, yearDataForm);
+		ds.opCode = "saveMember";
+		ds.map.put("rtf","home");
+		return detail();
+	}
+	
+	/** 删除家庭成员信息 */
+	public String deleteMember(){
+		DotSession ds = DotSession.getVTSession(request);
+		//yearDataService.deleteMemberInfo(ds, yearDataForm);
+		ds.opCode = "deleteMember";
+		return detail();
 	}
 	
 	/** 家庭收入及帮扶情况  */
@@ -113,10 +147,17 @@ public class YearDataAction extends BaseAction implements ModelDriven<YearDataFo
 	}
 	
 	private Map cunMap;
+	private String rtf;
 	public Map getCunMap() {
 		return cunMap;
 	}
 	public void setCunMap(Map cunMap) {
 		this.cunMap = cunMap;
+	}
+	public String getRtf() {
+		return rtf;
+	}
+	public void setRtf(String rtf) {
+		this.rtf = rtf;
 	}
 }

@@ -14,4 +14,6 @@ public interface YearDataDao extends BaseDao{
 	void getYbhFamilyDetailInfo(DotSession ds);
 	void getFamilyIncome(DotSession ds);
 	void saveFamilyInfo(DotSession ds, YearDataForm yearDataForm);
+	void saveMemberInfo(DotSession ds, YearDataForm yearDataForm);
+	void deleteMemberInfo(DotSession ds, YearDataForm yearDataForm);
 }

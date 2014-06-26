@@ -40,9 +40,11 @@
 		<li>家庭人口：<s:property value="#session.vts.map.population"/></li>
 	    <li>劳动力：<s:property value="#session.vts.map.labornum"/></li>
 	    <li class="add-member-bt">
+	    <!-- 
 	    <s:if test="#session.vts.isedit==1">
 	    <input type="button" onclick="popSaveMember('0','add','0')" value="添加人口" class="button4"/>
 	    </s:if>
+	    -->
 	   	</li>
 	</ul>
 	<table class="tab-member" cellpadding="0" cellspacing="0">
@@ -69,7 +71,7 @@
 				<label id="sex<s:property value="#sc.count"/>"><s:property value="#ls.sex"/></label>
 			</td>
 			<td>
-				<label id="age<s:property value="#sc.count"/>"><s:property value="#ls.age"/></label>
+				<label id="age<s:property value="#sc.count"/>"><s:property value="#ls.year"/></label>
 			</td>
 			<td>
 				<label id="sch<s:property value="#sc.count"/>"><s:property value="#ls.school"/></label>
@@ -98,7 +100,7 @@
 			<td>
 			<s:if test="#session.vts.isedit==1">
 				<a href="javascript:popSaveMember('<s:property value="#ls.mid"/>','edit','<s:property value="#sc.count"/>')">修改</a>
-				<a href="${pageContext.request.contextPath }/system/govBrowerAction_deleteMember.do?mid=<s:property value="#ls.mid"/>" onclick="return confirm('您确定要删除 <s:property value="%{#ls.uname}"/>&nbsp;吗?')">删除</a>
+				<a href="${pageContext.request.contextPath }/yearDataAction_deleteMember.action?mid=<s:property value="#ls.mid"/>" onclick="return confirm('您确定要删除吗?')">删除</a>
 			</s:if>
 			</td>
 		</tr>

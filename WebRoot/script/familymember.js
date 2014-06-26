@@ -163,7 +163,7 @@ function popSaveMember(m,s,c){
 	}; 
 }
 function subMemberBt(){
-	document.memberForm.action="govBrowerAction_saveMember.do";
+	document.memberForm.action="yearDataAction_saveMember.action";
 	if(!checkName(document.all.duname)) return;
 	if(!checkAge(document.all.dage)) return;
 	if(!checkDcno(document.all.ddcno)) return;

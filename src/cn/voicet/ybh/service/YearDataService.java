@@ -5,6 +5,7 @@ import java.util.Map;
 import cn.voicet.ybh.util.DotSession;
 import cn.voicet.ybh.web.form.YearDataForm;
 
+@SuppressWarnings("unchecked")
 public interface YearDataService {
 	public final static String SERVICE_NAME = "cn.voicet.ybh.service.impl.YearDataServiceImpl";
 	void getYbhYearInfo(DotSession ds);
@@ -14,4 +15,6 @@ public interface YearDataService {
 	void getYbhFamilyDetailInfo(DotSession ds);
 	void getFamilyIncome(DotSession ds);
 	void saveFamilyInfo(DotSession ds, YearDataForm yearDataForm);
+	void saveMemberInfo(DotSession ds, YearDataForm yearDataForm);
+	void deleteMemberInfo(DotSession ds, YearDataForm yearDataForm);
 }

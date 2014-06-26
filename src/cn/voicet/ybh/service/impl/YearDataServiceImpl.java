@@ -47,4 +47,12 @@ public class YearDataServiceImpl implements YearDataService{
 		yearDataDao.saveFamilyInfo(ds, yearDataForm);
 	}
 
+	public void saveMemberInfo(DotSession ds, YearDataForm yearDataForm) {
+		yearDataDao.saveMemberInfo(ds, yearDataForm);
+	}
+
+	public void deleteMemberInfo(DotSession ds, YearDataForm yearDataForm) {
+		yearDataDao.deleteMemberInfo(ds, yearDataForm);
+	}
+
 }

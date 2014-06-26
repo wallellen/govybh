@@ -258,9 +258,53 @@ public class YearDataDaoImpl extends BaseDaoImpl implements YearDataDao {
 		});
 	}
 
+	/** 更新家庭成员信息 */
+	public void saveMemberInfo(final DotSession ds, final YearDataForm yearDataForm) {
+		this.getJdbcTemplate().execute(new ConnectionCallback() {
+			public Object doInConnection(Connection conn) throws SQLException,
+					DataAccessException {
+				CallableStatement cs = null;
+				cs = conn.prepareCall("{call ybh_member_update(?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
+				cs.setString(1, ds.curHM);
+				cs.setInt(2, yearDataForm.getMid());
+				cs.setString(3, yearDataForm.getUname());
+				cs.setInt(4, yearDataForm.getSex());
+				cs.setInt(5, yearDataForm.getAge());
+				cs.setInt(6, yearDataForm.getSchool());
+				cs.setInt(7, yearDataForm.getEducation());
+				cs.setInt(8, yearDataForm.getHealth());
+				cs.setString(9, yearDataForm.getDcno());
+				cs.setInt(10, yearDataForm.getLabors());
+				cs.setInt(11, yearDataForm.getWorks());
+				cs.setInt(12, yearDataForm.getBla());
+				cs.setInt(13, yearDataForm.getTbfd());
+				cs.setInt(14, 1);
+				cs.execute();
+				return null;
+			}
+		});
+	}
+	
+	/** 删除家庭成员 */
+	public void deleteMemberInfo(final DotSession ds, final YearDataForm yearDataForm) {
+		this.getJdbcTemplate().execute(new ConnectionCallback() {
+			public Object doInConnection(Connection conn) throws SQLException,
+					DataAccessException {
+				CallableStatement cs = null;
+				cs = conn.prepareCall("{call ybh_member_delete(?,?,?)}");
+				cs.setString(1, ds.rbm);
+				cs.setString(2, ds.curHM);
+				cs.setInt(3, yearDataForm.getMid());
+				cs.execute();
+				return null;
+			}
+		});
+	}
+
+
 	public void getFamilyIncome(final DotSession ds) {
 		
 	}
 
-
+	
 }
