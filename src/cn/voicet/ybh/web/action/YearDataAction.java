@@ -89,6 +89,29 @@ public class YearDataAction extends BaseAction implements ModelDriven<YearDataFo
 		return "show_family_detail";
 	}
 	
+	/** 添加家庭户主信息 */
+	public String saveFamily(){
+		DotSession ds = DotSession.getVTSession(request);
+		yearDataService.saveFamilyInfo(ds, yearDataForm);
+		log.info("save family base info success");
+		yearDataService.getYbhFamilyDetailInfo(ds);
+		return "show_family_detail";
+	}
+	
+	/** 家庭收入及帮扶情况  */
+	public String familyIncome() {
+		DotSession ds = DotSession.getVTSession(request);
+		ds.pushAllList();
+		yearDataService.getFamilyIncome(ds);
+		return "show_family_income";
+	}
+	
+	/** 家庭成员信息 */
+	public String itemFamily(){
+		DotSession ds = DotSession.getVTSession(request);
+		return "show_family_detail";
+	}
+	
 	private Map cunMap;
 	public Map getCunMap() {
 		return cunMap;

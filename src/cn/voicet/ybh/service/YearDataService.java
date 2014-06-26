@@ -12,4 +12,6 @@ public interface YearDataService {
 	Map queryCunYbhInfoWithYear(DotSession ds, YearDataForm yearDataForm);
 	void saveCunYbhData(YearDataForm yearDataForm);
 	void getYbhFamilyDetailInfo(DotSession ds);
+	void getFamilyIncome(DotSession ds);
+	void saveFamilyInfo(DotSession ds, YearDataForm yearDataForm);
 }

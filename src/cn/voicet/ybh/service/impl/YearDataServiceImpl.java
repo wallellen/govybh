@@ -39,4 +39,12 @@ public class YearDataServiceImpl implements YearDataService{
 		yearDataDao.getYbhFamilyDetailInfo(ds);
 	}
 
+	public void getFamilyIncome(DotSession ds) {
+		yearDataDao.getFamilyIncome(ds);
+	}
+
+	public void saveFamilyInfo(DotSession ds, YearDataForm yearDataForm) {
+		yearDataDao.saveFamilyInfo(ds, yearDataForm);
+	}
+
 }

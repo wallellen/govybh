@@ -211,30 +211,12 @@ public class YearDataDaoImpl extends BaseDaoImpl implements YearDataDao {
 								ds.map.put("frtel", rs.getString(i++));
 								ds.map.put("frwork", rs.getString(i++));
 							}else if (rid == 1 ){
-								int i=1;
 								map = new HashMap();
-								map.put("mid", rs.getString(i++));
-								map.put("uname", rs.getString(i++));
-								map.put("sex", rs.getString(i++));
-								map.put("age", rs.getString(i++));
-								map.put("school", rs.getString(i++));
-								map.put("education", rs.getString(i++));
-								map.put("health", rs.getString(i++));
-								map.put("dcno", rs.getString(i++));
-								map.put("labors", rs.getString(i++));
-								map.put("works", rs.getString(i++));
-								map.put("bla", rs.getString(i++));
-								map.put("tbfd", rs.getString(i++));
+								ds.putMapDataByColName(map, rs);
 								ds.list.add(map);
 							}else if(rid == 2){
-								int i=1;
 								map = new HashMap();
-								map.put("year", rs.getString(i++));
-								map.put("inTotal", rs.getString(i++));
-								map.put("injy", rs.getString(i++));
-								map.put("inWork", rs.getString(i++));
-								map.put("incz", rs.getString(i++));
-								map.put("inPersonal", rs.getString(i++));
+								ds.putMapDataByColName(map, rs);
 								ds.list2.add(map);
 							}
 						}
@@ -250,5 +232,35 @@ public class YearDataDaoImpl extends BaseDaoImpl implements YearDataDao {
 		});
 		
 	}
+	
+	/** 保存家庭基本信息 */
+	public void saveFamilyInfo(final DotSession ds, final YearDataForm yearDataForm) {
+		this.getJdbcTemplate().execute(new ConnectionCallback() {
+			public Object doInConnection(Connection conn) throws SQLException,
+					DataAccessException {
+				CallableStatement cs = conn.prepareCall("{call ybh_family_update(?,?,?,?,?,?,?,?,?,?,?,?,?)}");
+				cs.setString(1, ds.curHM);
+				cs.setString(2, yearDataForm.getHname());
+				cs.setString(3, yearDataForm.getZhu());
+				cs.setString(4, yearDataForm.getFields());
+				cs.setString(5, yearDataForm.getHouse());
+				cs.setInt(6, yearDataForm.getProperty());
+				cs.setInt(7, yearDataForm.getDcause());
+				cs.setString(8, yearDataForm.getIdcno());
+				cs.setString(9, yearDataForm.getHtel());
+				cs.setString(10, yearDataForm.getFrname());
+				cs.setString(11, yearDataForm.getFrtel());
+				cs.setString(12, yearDataForm.getFrwork());
+				cs.setInt(13, 1);
+				cs.execute();
+				return null;
+			}
+		});
+	}
+
+	public void getFamilyIncome(final DotSession ds) {
+		
+	}
+
 
 }

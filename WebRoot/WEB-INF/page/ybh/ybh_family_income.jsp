@@ -26,7 +26,7 @@
 <s:if test="%{#session.vts.map.hname!=''}">
 <div id="member-info-ul">
 	<ul>
-		<li><a href="${pageContext.request.contextPath }/yearDataAction_itemFamily.do">家庭成员信息</a></li>
+		<li><a href="${pageContext.request.contextPath }/yearDataAction_itemFamily.action">家庭成员信息</a></li>
 		<li style="background:url(${pageContext.request.contextPath }/images/tab-bg2.png); color:#FFF;">家庭收入及帮扶情况</li>
 	</ul>
 </div>

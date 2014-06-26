@@ -60,45 +60,45 @@
 			<td width="8%">领取低保金、残疾金(元)</td>
 			<td width="6%">操作</td>
 	    </tr>
-	    <s:iterator value="#session.vts.list" var="ls2" status="sc">
+	    <s:iterator value="#session.vts.list" var="ls" status="sc">
 		<tr>
 			<td>
-				<label id="una<s:property value="#sc.count"/>"><s:property value="#ls2.uname"/></label>
+				<label id="una<s:property value="#sc.count"/>"><s:property value="#ls.uname"/></label>
 			</td>
 			<td>
-				<label id="sex<s:property value="#sc.count"/>"><s:property value="#ls2.sex"/></label>
+				<label id="sex<s:property value="#sc.count"/>"><s:property value="#ls.sex"/></label>
 			</td>
 			<td>
-				<label id="age<s:property value="#sc.count"/>"><s:property value="#ls2.age"/></label>
+				<label id="age<s:property value="#sc.count"/>"><s:property value="#ls.age"/></label>
 			</td>
 			<td>
-				<label id="sch<s:property value="#sc.count"/>"><s:property value="#ls2.school"/></label>
+				<label id="sch<s:property value="#sc.count"/>"><s:property value="#ls.school"/></label>
 			</td>
 			<td>
-				<label id="edu<s:property value="#sc.count"/>"><s:property value="#ls2.education"/></label>
+				<label id="edu<s:property value="#sc.count"/>"><s:property value="#ls.education"/></label>
 			</td>
 			<td>
-				<label id="hea<s:property value="#sc.count"/>"><s:property value="#ls2.health"/></label>
+				<label id="hea<s:property value="#sc.count"/>"><s:property value="#ls.health"/></label>
 			</td>
 			<td>
-				<label id="dcn<s:property value="#sc.count"/>"><s:property value="#ls2.dcno"/></label>
+				<label id="dcn<s:property value="#sc.count"/>"><s:property value="#ls.dcno"/></label>
 			</td>
 			<td>
-				<label id="lab<s:property value="#sc.count"/>"><s:property value="#ls2.labors"/></label>
+				<label id="lab<s:property value="#sc.count"/>"><s:property value="#ls.labors"/></label>
 			</td>
 			<td>
-				<label id="wor<s:property value="#sc.count"/>"><s:property value="#ls2.works"/></label>
+				<label id="wor<s:property value="#sc.count"/>"><s:property value="#ls.works"/></label>
 			</td>
 			<td>
-				<label id="bla<s:property value="#sc.count"/>"><s:property value="#ls2.bla"/></label>
+				<label id="bla<s:property value="#sc.count"/>"><s:property value="#ls.bla"/></label>
 			</td>
 			<td>
-				<label id="tbf<s:property value="#sc.count"/>"><s:property value="#ls2.tbfd"/></label>
+				<label id="tbf<s:property value="#sc.count"/>"><s:property value="#ls.tbfd"/></label>
 			</td>
 			<td>
 			<s:if test="#session.vts.isedit==1">
-				<a href="javascript:popSaveMember('<s:property value="#ls2.mid"/>','edit','<s:property value="#sc.count"/>')">修改</a>
-				<a href="${pageContext.request.contextPath }/system/govBrowerAction_deleteMember.do?mid=<s:property value="#ls2.mid"/>" onclick="return confirm('您确定要删除 <s:property value="%{#ls2.uname}"/>&nbsp;吗?')">删除</a>
+				<a href="javascript:popSaveMember('<s:property value="#ls.mid"/>','edit','<s:property value="#sc.count"/>')">修改</a>
+				<a href="${pageContext.request.contextPath }/system/govBrowerAction_deleteMember.do?mid=<s:property value="#ls.mid"/>" onclick="return confirm('您确定要删除 <s:property value="%{#ls.uname}"/>&nbsp;吗?')">删除</a>
 			</s:if>
 			</td>
 		</tr>
