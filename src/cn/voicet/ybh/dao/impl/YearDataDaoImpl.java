@@ -306,5 +306,18 @@ public class YearDataDaoImpl extends BaseDaoImpl implements YearDataDao {
 		
 	}
 
+	public void saveYearInfo(final DotSession ds, final YearDataForm yearDataForm) {
+		this.getJdbcTemplate().execute(new ConnectionCallback() {
+			public Object doInConnection(Connection conn) throws SQLException,
+					DataAccessException {
+				CallableStatement cs = null;
+				cs = conn.prepareCall("{call ybh_year_update(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
+				cs.setString(1, ds.curHM);
+				cs.execute();
+				return null;
+			}
+		});
+	}
+
 	
 }

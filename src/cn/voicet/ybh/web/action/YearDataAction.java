@@ -140,6 +140,13 @@ public class YearDataAction extends BaseAction implements ModelDriven<YearDataFo
 		return "show_family_income";
 	}
 	
+	/** 更新家庭收入及帮扶情况 */
+	public String saveYear(){
+		DotSession ds = DotSession.getVTSession(request);
+		//yearDataService.saveYearInfo(ds, yearDataForm);
+		return familyIncome();
+	}
+	
 	/** 家庭成员信息 */
 	public String itemFamily(){
 		DotSession ds = DotSession.getVTSession(request);

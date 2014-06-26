@@ -33,7 +33,11 @@ public class YearDataForm {
 	private int bla;
 	private int tbfd;
 	
+	/* 村信息数组 */
 	private String[] cuntxt;
+
+	/* 家庭收入级帮扶情况数组 */
+	private String[] incomearr; 
 	
 	public String getViewBM() {
 		return viewBM;
@@ -202,5 +206,11 @@ public class YearDataForm {
 	}
 	public void setTbfd(int tbfd) {
 		this.tbfd = tbfd;
+	}
+	public String[] getIncomearr() {
+		return incomearr;
+	}
+	public void setIncomearr(String[] incomearr) {
+		this.incomearr = incomearr;
 	}
 }

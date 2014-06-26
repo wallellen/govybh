@@ -17,4 +17,5 @@ public interface YearDataService {
 	void saveFamilyInfo(DotSession ds, YearDataForm yearDataForm);
 	void saveMemberInfo(DotSession ds, YearDataForm yearDataForm);
 	void deleteMemberInfo(DotSession ds, YearDataForm yearDataForm);
+	void saveYearInfo(DotSession ds, YearDataForm yearDataForm);
 }
