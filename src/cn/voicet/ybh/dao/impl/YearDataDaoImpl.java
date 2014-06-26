@@ -15,6 +15,7 @@ import org.springframework.stereotype.Repository;
 
 import cn.voicet.ybh.dao.YearDataDao;
 import cn.voicet.ybh.util.DotSession;
+import cn.voicet.ybh.util.VTJime;
 import cn.voicet.ybh.web.form.YearDataForm;
 
 @Repository(YearDataDao.SERVICE_NAME)
@@ -126,10 +127,7 @@ public class YearDataDaoImpl extends BaseDaoImpl implements YearDataDao {
 		this.getJdbcTemplate().execute(new ConnectionCallback() {
 			public Object doInConnection(Connection conn) throws SQLException,
 					DataAccessException {
-				
 				CallableStatement cs = conn.prepareCall("{call ybh_chunyear_update(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
-				
-				
 				cs.setString(1, yearDataForm.getCunbm());
 				cs.setInt(2, yearDataForm.getYear());
 				cs.setInt(29, 1);
@@ -165,7 +163,7 @@ public class YearDataDaoImpl extends BaseDaoImpl implements YearDataDao {
 						{"25","s"},
 						{"","o"}
 					};
-				DotSession.prepareParamFromInputArray(cs, yearDataForm.getCuntxt(), ix);
+				VTJime.prepareParamFromInputArray(cs, yearDataForm.getCuntxt(), ix);
 				//村基本情况
 				/*
 				cs.setString(3, yearDataForm.getCuntxt()[0]);
