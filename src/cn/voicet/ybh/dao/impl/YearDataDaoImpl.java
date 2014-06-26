@@ -3,9 +3,9 @@ package cn.voicet.ybh.dao.impl;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -233,7 +233,15 @@ public class YearDataDaoImpl extends BaseDaoImpl implements YearDataDao {
 					if(null != rs){
 						while(rs.next()){
 							if(rid ==0){
-								int i=1;
+								ResultSetMetaData rsm =rs.getMetaData();
+								int colCount = rsm.getColumnCount();
+								String colName;
+								for(int i=1; i<=colCount; i++)
+								{
+									colName=rsm.getColumnName(i);
+									ds.map.put(colName, rs.getString(i));
+								}
+								/*
 								ds.map.put("hm", rs.getString(i++));
 								ds.map.put("hname", rs.getString(i++));
 								ds.map.put("zhu", rs.getString(i++));
@@ -248,6 +256,7 @@ public class YearDataDaoImpl extends BaseDaoImpl implements YearDataDao {
 								ds.map.put("frname", rs.getString(i++));
 								ds.map.put("frtel", rs.getString(i++));
 								ds.map.put("frwork", rs.getString(i++));
+								*/
 							}else if (rid == 1 ){
 								map = new HashMap();
 								ds.putMapDataByColName(map, rs);
