@@ -70,8 +70,7 @@
 					<td align="left">&nbsp;<s:property value="#ls.property"/></td>
 					<td align="left">&nbsp;<s:property value="#ls.dcause"/></td>
 					<td class="tabtd1">
-						<a href="${pageContext.request.contextPath }/yearDataAction_detail.action?viewBM=<s:property value="#ls.hm"/>&rtf=home">编辑</a>
-						
+						<a href="javascript:void(0)">编辑</a>
 					</td>
 				</s:else>
 			</tr>

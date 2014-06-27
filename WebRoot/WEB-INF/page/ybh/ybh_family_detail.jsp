@@ -30,7 +30,7 @@
 <div id="member-info-ul">
 	<ul>
 		<li style="background:url(${pageContext.request.contextPath }/images/tab-bg2.png); color:#FFF;">家庭成员信息</li>
-		<li><a href="${pageContext.request.contextPath }/yearDataAction_familyIncome.action">家庭收入及帮扶情况</a> </li>
+		<li><a href="${pageContext.request.contextPath }/ybhManageAction_familyIncome.action">家庭收入及帮扶情况</a> </li>
 	</ul>
 </div>
 
@@ -100,7 +100,7 @@
 			<td>
 			<s:if test="#session.vts.isedit==1">
 				<a href="javascript:popSaveMember('<s:property value="#ls.mid"/>','edit','<s:property value="#sc.count"/>')">修改</a>
-				<a href="${pageContext.request.contextPath }/yearDataAction_deleteMember.action?mid=<s:property value="#ls.mid"/>" onclick="return confirm('您确定要删除吗?')">删除</a>
+				<a href="${pageContext.request.contextPath }/ybhManageAction_deleteMember.action?mid=<s:property value="#ls.mid"/>" onclick="return confirm('您确定要删除吗?')">删除</a>
 			</s:if>
 			</td>
 		</tr>

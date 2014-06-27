@@ -163,7 +163,7 @@ function popSaveMember(m,s,c){
 	}; 
 }
 function subMemberBt(){
-	document.memberForm.action="yearDataAction_saveMember.action";
+	document.memberForm.action="ybhManageAction_saveMember.action";
 	if(!checkName(document.all.duname)) return;
 	if(!checkAge(document.all.dage)) return;
 	if(!checkDcno(document.all.ddcno)) return;
@@ -431,7 +431,7 @@ function checkBanfTelphone(obj)
 //
 function checkPersonForm()
 {
-	document.personForm.action="yearDataAction_saveFamily.action";
+	document.personForm.action="ybhManageAction_saveFamily.action";
 	if(!checkHuName(document.all.hname)) return;
 	if(!checkIDCard(document.all.idcno)) return;
 	if(!checkTelphone(document.all.htel)) return;

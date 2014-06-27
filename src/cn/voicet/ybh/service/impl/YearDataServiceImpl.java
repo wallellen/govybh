@@ -34,29 +34,4 @@ public class YearDataServiceImpl implements YearDataService{
 	public void saveCunYbhData(YearDataForm yearDataForm) {
 		yearDataDao.saveCunYbhData(yearDataForm);
 	}
-
-	public void getYbhFamilyDetailInfo(DotSession ds) {
-		yearDataDao.getYbhFamilyDetailInfo(ds);
-	}
-
-	public void getFamilyIncome(DotSession ds) {
-		yearDataDao.getFamilyIncome(ds);
-	}
-
-	public void saveFamilyInfo(DotSession ds, YearDataForm yearDataForm) {
-		yearDataDao.saveFamilyInfo(ds, yearDataForm);
-	}
-
-	public void saveMemberInfo(DotSession ds, YearDataForm yearDataForm) {
-		yearDataDao.saveMemberInfo(ds, yearDataForm);
-	}
-
-	public void deleteMemberInfo(DotSession ds, YearDataForm yearDataForm) {
-		yearDataDao.deleteMemberInfo(ds, yearDataForm);
-	}
-
-	public void saveYearInfo(DotSession ds, YearDataForm yearDataForm) {
-		yearDataDao.saveYearInfo(ds, yearDataForm);
-	}
-
 }

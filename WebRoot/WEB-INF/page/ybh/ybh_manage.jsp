@@ -67,7 +67,7 @@
 					<td align="left">&nbsp;<s:property value="#ls.property"/></td>
 					<td align="left">&nbsp;<s:property value="#ls.dcause"/></td>
 					<td class="tabtd1">
-						<a href="javascript:void(0)">修改</a>
+						<a href="${pageContext.request.contextPath }/ybhManageAction_detail.action?viewBM=<s:property value="#ls.hm"/>&rtf=home">编辑</a>
 					</td>
 				</s:else>
 			</tr>

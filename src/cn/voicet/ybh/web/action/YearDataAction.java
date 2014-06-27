@@ -80,94 +80,13 @@ public class YearDataAction extends BaseAction implements ModelDriven<YearDataFo
 		return updateCun();
 	}
 	
-	
-	/** 编辑 */
-	public String detail(){
-		DotSession ds = DotSession.getVTSession(request);
-		if(null!=yearDataForm.getViewBM() && yearDataForm.getViewBM().length()>0)
-			ds.curHM= yearDataForm.getViewBM();
-		ds.pushAllList();
-		yearDataService.getYbhFamilyDetailInfo(ds);
-		return "show_family_detail";
-	}
-	
-	/** 更新家庭户主信息 */
-	public String saveFamily(){
-		DotSession ds = DotSession.getVTSession(request);
-		yearDataService.saveFamilyInfo(ds, yearDataForm);
-		log.info("save family base info success");
-		yearDataService.getYbhFamilyDetailInfo(ds);
-		return "show_family_detail";
-	}
-	
-	/** 家庭基本信息页面，保存并返回  */
-	public String saveFamilyEx(){
-		DotSession ds = DotSession.getVTSession(request);
-		yearDataService.saveFamilyInfo(ds, yearDataForm);
-		yearDataService.getYbhFamilyDetailInfo(ds);
-		ds.opCode = "saveFamily";
-		ds.map.put("rtf","home");
-		return viewData();
-	}
-	
-	public String backup() {
-		DotSession ds = DotSession.getVTSession(request);
-		ds.popAllList();
-		return viewData();
-	}
-	
-	/** 更新家庭成员信息 */
-	public String saveMember(){
-		DotSession ds = DotSession.getVTSession(request);
-		yearDataService.saveMemberInfo(ds, yearDataForm);
-		ds.opCode = "saveMember";
-		ds.map.put("rtf","home");
-		return detail();
-	}
-	
-	/** 删除家庭成员信息 */
-	public String deleteMember(){
-		DotSession ds = DotSession.getVTSession(request);
-		//yearDataService.deleteMemberInfo(ds, yearDataForm);
-		ds.opCode = "deleteMember";
-		return detail();
-	}
-	
-	/** 家庭收入及帮扶情况  */
-	public String familyIncome() {
-		DotSession ds = DotSession.getVTSession(request);
-		ds.pushAllList();
-		yearDataService.getFamilyIncome(ds);
-		return "show_family_income";
-	}
-	
-	/** 更新家庭收入及帮扶情况 */
-	public String saveYear(){
-		DotSession ds = DotSession.getVTSession(request);
-		//yearDataService.saveYearInfo(ds, yearDataForm);
-		return familyIncome();
-	}
-	
-	/** 家庭成员信息 */
-	public String itemFamily(){
-		DotSession ds = DotSession.getVTSession(request);
-		return "show_family_detail";
-	}
-	
 	private Map cunMap;
-	private String rtf;
 	private int rflag=1;	//更新村指标录入页面，返回标记
 	public Map getCunMap() {
 		return cunMap;
 	}
 	public void setCunMap(Map cunMap) {
 		this.cunMap = cunMap;
-	}
-	public String getRtf() {
-		return rtf;
-	}
-	public void setRtf(String rtf) {
-		this.rtf = rtf;
 	}
 	public int getRflag() {
 		return rflag;

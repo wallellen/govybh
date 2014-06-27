@@ -61,5 +61,87 @@ public class YbhManageAction extends BaseAction implements ModelDriven<YbhManage
 		return home();
 	}
 	
+	/*********************************************/
+	/** 编辑 */
+	public String detail(){
+		DotSession ds = DotSession.getVTSession(request);
+		if(null!=ybhManageForm.getViewBM() && ybhManageForm.getViewBM().length()>0)
+			ds.curHM= ybhManageForm.getViewBM();
+		ds.pushAllList();
+		ybhManageService.getYbhFamilyDetailInfo(ds);
+		return "show_family_detail";
+	}
+	
+	/** 更新家庭户主信息 */
+	public String saveFamily(){
+		DotSession ds = DotSession.getVTSession(request);
+		ybhManageService.saveFamilyInfo(ds, ybhManageForm);
+		log.info("save family base info success");
+		ybhManageService.getYbhFamilyDetailInfo(ds);
+		return "show_family_detail";
+	}
+	
+	/** 家庭基本信息页面，保存并返回  */
+	public String saveFamilyEx(){
+		DotSession ds = DotSession.getVTSession(request);
+		ybhManageService.saveFamilyInfo(ds, ybhManageForm);
+		ybhManageService.getYbhFamilyDetailInfo(ds);
+		ds.opCode = "saveFamily";
+		ds.map.put("rtf","home");
+		return home();
+	}
+	
+	public String backup() {
+		DotSession ds = DotSession.getVTSession(request);
+		ds.popAllList();
+		return home();
+	}
+	
+	/** 更新家庭成员信息 */
+	public String saveMember(){
+		DotSession ds = DotSession.getVTSession(request);
+		ybhManageService.saveMemberInfo(ds, ybhManageForm);
+		ds.opCode = "saveMember";
+		ds.map.put("rtf","home");
+		return detail();
+	}
+	
+	/** 删除家庭成员信息 */
+	public String deleteMember(){
+		DotSession ds = DotSession.getVTSession(request);
+		//ybhManageService.deleteMemberInfo(ds, ybhManageForm);
+		ds.opCode = "deleteMember";
+		return detail();
+	}
+	
+	/** 家庭收入及帮扶情况  */
+	public String familyIncome() {
+		DotSession ds = DotSession.getVTSession(request);
+		ds.pushAllList();
+		ybhManageService.getFamilyIncome(ds);
+		return "show_family_income";
+	}
+	
+	/** 更新家庭收入及帮扶情况 */
+	public String saveYear(){
+		DotSession ds = DotSession.getVTSession(request);
+		//ybhManageService.saveYearInfo(ds, ybhManageForm);
+		return familyIncome();
+	}
+	
+	/** 家庭成员信息 */
+	public String itemFamily(){
+		DotSession ds = DotSession.getVTSession(request);
+		return "show_family_detail";
+	}
+	
+	private String rtf;
+	public String getRtf() {
+		return rtf;
+	}
+	public void setRtf(String rtf) {
+		this.rtf = rtf;
+	}
+	
 	
 }

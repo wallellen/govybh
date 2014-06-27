@@ -33,6 +33,8 @@
 		<!-- 样本户管理 -->
 		<action name="ybhManageAction_*" class="ybhManageAction" method="{1}">
 			<result name="show_ybh_manage">/WEB-INF/page/ybh/ybh_manage.jsp</result>
+			<result name="show_family_detail">/WEB-INF/page/ybh/ybh_family_detail.jsp</result>
+			<result name="show_family_income">/WEB-INF/page/ybh/ybh_family_income.jsp</result>
 		</action>
 		
 		<!-- 年数据录入 -->
@@ -40,8 +42,6 @@
 			<result name="show_year">/WEB-INF/page/ybh/ybh_year.jsp</result>
 			<result name="show_data">/WEB-INF/page/ybh/ybh_year_data.jsp</result>
 			<result name="show_ybh_cunupdate">/WEB-INF/page/ybh/ybh_cun_update.jsp</result>
-			<result name="show_family_detail">/WEB-INF/page/ybh/ybh_family_detail.jsp</result>
-			<result name="show_family_income">/WEB-INF/page/ybh/ybh_family_income.jsp</result>
 		</action>
 		
 		<!-- 农户查询 -->

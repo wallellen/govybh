@@ -6,7 +6,7 @@
 		document.all.zhu.focus();
 	}
 	function saveReturnFamily(){
-		document.personForm.action="yearDataAction_saveFamilyEx.action";
+		document.personForm.action="ybhManageAction_saveFamilyEx.action";
 		document.personForm.submit();
 	}
 	
@@ -50,7 +50,7 @@
 			<s:if test="%{#session.vts.map.hname!=''}">
 			<input type="button" value="保存返回" class="button4" onclick="saveReturnFamily()"/>
 			</s:if>
-			<input type="button" value="返回" class="button4" onclick="location.href='${pageContext.request.contextPath }/yearDataAction_backup.action?viewBM=<s:property value="#session.vts.curBM"/>'"/>
+			<input type="button" value="返回" class="button4" onclick="location.href='${pageContext.request.contextPath }/ybhManageAction_backup.action?viewBM=<s:property value="#session.vts.curBM"/>'"/>
         </li>
     </ul>
 </div>
