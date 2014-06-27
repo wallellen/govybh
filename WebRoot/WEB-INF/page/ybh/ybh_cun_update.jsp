@@ -169,7 +169,7 @@
     <div class="cun-bottom">
     	<span></span>
     	<span><input type="button" value="保存" class="button4" onclick="saveCunBt()"/></span>
-    	<span><input type="button" value="返回" class="button4" onclick="history.go(-1)"/></span>
+    	<span><input type="button" value="返回" class="button4" onclick="history.go(-<s:property value="rflag"/>)"/></span>
     	<span></span>
     </div>
     </form>

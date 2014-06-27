@@ -76,6 +76,7 @@ public class YearDataAction extends BaseAction implements ModelDriven<YearDataFo
 	public String saveCunYbh(){
 		log.info("save cun ybh data cuntxtArr size:"+yearDataForm.getCuntxt().length);
 		yearDataService.saveCunYbhData(yearDataForm);
+		rflag = rflag + 1;
 		return updateCun();
 	}
 	
@@ -155,6 +156,7 @@ public class YearDataAction extends BaseAction implements ModelDriven<YearDataFo
 	
 	private Map cunMap;
 	private String rtf;
+	private int rflag=1;	//更新村指标录入页面，返回标记
 	public Map getCunMap() {
 		return cunMap;
 	}
@@ -167,4 +169,11 @@ public class YearDataAction extends BaseAction implements ModelDriven<YearDataFo
 	public void setRtf(String rtf) {
 		this.rtf = rtf;
 	}
+	public int getRflag() {
+		return rflag;
+	}
+	public void setRflag(int rflag) {
+		this.rflag = rflag;
+	}
+	
 }
