@@ -17,7 +17,7 @@
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
 		destroy-method="close">
 		<property name="driverClass" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
-		<property name="jdbcUrl" value="jdbc:sqlserver://192.168.1.222:5566;databaseName=gov2014" />
+		<property name="jdbcUrl" value="jdbc:sqlserver://218.94.123.43:5566;databaseName=gov2014" />
 		<property name="user" value="govadmin" />
 		<property name="password" value="begin110" />
 		<property name="minPoolSize" value="5" />
