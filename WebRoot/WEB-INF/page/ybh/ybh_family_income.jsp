@@ -35,37 +35,37 @@
 	<table class="tab-member" cellpadding="0" cellspacing="0">
 		<thead>
 		<tr>
-	    	<td colspan="4">四</td>
-	        <td>五</td>
-	        <td colspan="6">七</td>
-	        <td colspan="3">八</td>
-	        <td>九</td>
-	        <td colspan="4">十、参加社会保障情况</td>
-	    </tr>
-	    <tr>
-	    	<td width="6%">家庭年总纯收入(元)</td>
+	    	<td width="4%">年份</td>
+	    	<td width="6%">4、家庭年总纯收入(元)</td>
 	        <td width="6%">其中:(1)家庭经营性收入(元)</td>
 	        <td width="6%">(2)工资性收入(元)</td>
 	        <td width="6%">(3)财产性及转移性收入(元)</td>
-	        <td width="6%">家庭年人均纯收入(元)</td>
-	        <td width="4%">享受扶贫项目支持情况</td>
-	        <td width="4%">其中:(1)产业发展项目</td>
-	        <td width="4%">(2)帮助就业项目</td>
-	        <td width="4%">(3)小额扶贫贷款项目</td>
-	        <td width="4%">(4)入股收益分红类项目</td>
-	        <td width="4%">(5)其它项目</td>
-	        <td width="6%">得到帮扶资金(元)</td>
+	        <td width="6%">5、家庭年人均纯收入(元)</td>
+	        <td width="6%">7、享受扶贫项目支持情况</td>
+	        <td width="6%">8、得到帮扶资金(元)</td>
 	        <td width="6%">其中:(1)省级扶贫资金(元)</td>
 	        <td width="6%">(2)市、县级扶贫资金(元)</td>
-	        <td width="6%">使用小额扶贫贷款数量(元)</td>
-	        <td width="4%">新农合</td>
-	        <td width="4%">新农保</td>
-	        <td width="4%">大病医疗救助</td>
-	        <td width="4%">未参加或享受任何保障</td>
+	        <td width="6%">9、使用小额扶贫贷款数量(元)</td>
+	        <td width="6%">操作</td>
 	    </tr>
 	    </thead>
 	    <tbody>
-	    
+		    <s:iterator id="ls2" value="#session.vts.list2">
+		    <tr>
+		    	<td><s:property value="#ls2.year"/></td>
+		    	<td><s:property value="#ls2.intotal"/></td>
+		    	<td><s:property value="#ls2.injy"/></td>
+		    	<td><s:property value="#ls2.inwork"/></td>
+		    	<td><s:property value="#ls2.incz"/></td>
+		    	<td><s:property value="#ls2.inpersonal"/></td>
+		    	<td><s:property value="#ls2.fs"/></td>
+		    	<td><s:property value="#ls2.v"/></td>
+		    	<td><s:property value="#ls2.v1"/></td>
+		    	<td><s:property value="#ls2.v2"/></td>
+		    	<td><s:property value="#ls2.xe"/></td>
+		    	<td>修改</td>
+		    </tr>
+		    </s:iterator>
 	    </tbody>
 	</table>
 </div>
