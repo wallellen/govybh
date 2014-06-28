@@ -15,6 +15,7 @@
 	<input type="hidden" name="year" value="<s:property value='year'/>"/>
 	<input type="hidden" name="oname" value="<s:property value='oname'/>"/>
 	<input type="hidden" name="viewBM" value="<s:property value='#session.vts.curBM'/>"/>
+	<input type="hidden" name="rflag" value="<s:property value='rflag'/>"/>
 	<table cellpadding="0" cellspacing="0" width="100%">
     	<tr>
         	<td colspan="2" align="center">一、村基本情况</td>

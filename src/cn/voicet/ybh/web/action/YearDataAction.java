@@ -77,6 +77,7 @@ public class YearDataAction extends BaseAction implements ModelDriven<YearDataFo
 		log.info("save cun ybh data cuntxtArr size:"+yearDataForm.getCuntxt().length);
 		yearDataService.saveCunYbhData(yearDataForm);
 		rflag = rflag + 1;
+		log.info("return flag:"+rflag);
 		return updateCun();
 	}
 	
