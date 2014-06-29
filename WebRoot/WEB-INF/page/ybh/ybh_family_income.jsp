@@ -63,7 +63,9 @@
 		    	<td><s:property value="#ls2.v1"/></td>
 		    	<td><s:property value="#ls2.v2"/></td>
 		    	<td><s:property value="#ls2.xe"/></td>
-		    	<td>修改</td>
+		    	<td>
+		    		<a href="${pageContext.request.contextPath }/ybhManageAction_editIncome.action?hum=<s:property value="#session.vts.curHM"/>&year=<s:property value="#ls2.year"/>">编辑</a>
+		    	</td>
 		    </tr>
 		    </s:iterator>
 	    </tbody>
