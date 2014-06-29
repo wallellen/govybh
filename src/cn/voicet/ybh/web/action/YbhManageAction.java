@@ -135,6 +135,12 @@ public class YbhManageAction extends BaseAction implements ModelDriven<YbhManage
 		return "show_family_detail";
 	}
 	
+	/** 家庭基本信息年收入更新页面 */
+	public String editIncome(){
+		
+		return "show_family_income_update";
+	}
+	
 	private String rtf;
 	public String getRtf() {
 		return rtf;
