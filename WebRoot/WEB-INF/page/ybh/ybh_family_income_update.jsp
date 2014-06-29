@@ -17,9 +17,9 @@
 	<table cellpadding="0" cellspacing="0" width="100%">
     	<tr>
         	<td width="30%" align="right">4、家庭年总纯收入(元):&nbsp;</td>
-            <td width="20%" align="left"><s:property value="intotal"/></td>
+            <td width="20%" align="left">&nbsp;<s:property value="intotal"/></td>
             <td width="30%" align="right">8、得到帮扶资金(元):&nbsp;</td>
-            <td width="20%" align="left"><s:property value="vv"/></td>
+            <td width="20%" align="left">&nbsp;<s:property value="vv"/></td>
         </tr>
         <tr>
         	<td align="right">其中:(1)家庭经营性收入(元):&nbsp;</td>
@@ -44,7 +44,7 @@
     <table cellpadding="0" cellspacing="0" width="100%">
     	<tr>
         	<td width="30%" align="right">5、家庭年人均纯收入(元):&nbsp;</td>
-			<td width="20%" align="left"><s:property value="inpersonal"/></td>
+			<td width="20%" align="left">&nbsp;<s:property value="inpersonal"/></td>
             <td width="30%" align="right">9、使用小额扶贫贷款数量(元):&nbsp;</td>
 			<td align="left"><input type="text" id="incId6" name="incometxt" value="<s:property value='xxe'/>" maxlength="10" onblur="checkXe(this)"/></td>
         </tr>
