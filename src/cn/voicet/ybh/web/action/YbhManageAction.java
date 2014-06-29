@@ -137,17 +137,30 @@ public class YbhManageAction extends BaseAction implements ModelDriven<YbhManage
 	
 	/** 家庭基本信息年收入更新页面 */
 	public String editIncome(){
-		
 		return "show_family_income_update";
 	}
 	
+	/** 家庭基本信息年收入更新页面 */
+	public String saveIncome(){
+		log.info("save income data incometxt array size:"+ybhManageForm.getIncometxt().length);
+		ybhManageService.saveYbhIncome(ybhManageForm);
+		rflag = rflag+1;
+		return familyIncome();
+	}
+	
+	
 	private String rtf;
+	private int rflag=1;
 	public String getRtf() {
 		return rtf;
 	}
 	public void setRtf(String rtf) {
 		this.rtf = rtf;
 	}
-	
-	
+	public int getRflag() {
+		return rflag;
+	}
+	public void setRflag(int rflag) {
+		this.rflag = rflag;
+	}
 }

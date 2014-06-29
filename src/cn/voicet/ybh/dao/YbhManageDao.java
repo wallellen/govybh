@@ -12,4 +12,5 @@ public interface YbhManageDao extends BaseDao{
 	void saveMemberInfo(DotSession ds, YbhManageForm ybhManageForm);
 	void deleteMemberInfo(DotSession ds, YbhManageForm ybhManageForm);
 	void saveYearInfo(DotSession ds, YbhManageForm ybhManageForm);
+	void saveYbhIncome(YbhManageForm ybhManageForm);
 }

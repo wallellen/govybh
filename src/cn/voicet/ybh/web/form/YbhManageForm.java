@@ -38,6 +38,37 @@ public class YbhManageForm {
 	/* 家庭收入级帮扶情况数组 */
 	private String[] incomearr; 
 	
+	/* 样本户年收入 */
+	private int year;
+	//家庭年总纯收入
+	private float intotal;
+	private float injy;
+	private float inwork;
+	private float incz;
+	//家庭年人均纯收入
+	private float inpersonal;
+	//享受扶贫项目支持情况
+	private String fs;
+	private String fs1;
+	private String fs2;
+	private String fs3;
+	private String fs4;
+	private String fs5;
+	//得到帮扶资金
+	private float vv;
+	private float vv1;
+	private float vv2;
+	//使用小额扶贫贷款数量
+	private float xxe;
+	//参加社会保障情况
+	private String bb;
+	private String bb1;
+	private String bb2;
+	private String bb3;
+	private String bb4;
+	
+	private String[] incometxt;
+	
 	public String getViewBM() {
 		return viewBM;
 	}
@@ -205,5 +236,137 @@ public class YbhManageForm {
 	}
 	public void setIncomearr(String[] incomearr) {
 		this.incomearr = incomearr;
+	}
+	public float getIntotal() {
+		return intotal;
+	}
+	public void setIntotal(float intotal) {
+		this.intotal = intotal;
+	}
+	public float getInjy() {
+		return injy;
+	}
+	public void setInjy(float injy) {
+		this.injy = injy;
+	}
+	public float getInwork() {
+		return inwork;
+	}
+	public void setInwork(float inwork) {
+		this.inwork = inwork;
+	}
+	public float getIncz() {
+		return incz;
+	}
+	public void setIncz(float incz) {
+		this.incz = incz;
+	}
+	public float getInpersonal() {
+		return inpersonal;
+	}
+	public void setInpersonal(float inpersonal) {
+		this.inpersonal = inpersonal;
+	}
+	public int getYear() {
+		return year;
+	}
+	public void setYear(int year) {
+		this.year = year;
+	}
+	public String getFs() {
+		return fs;
+	}
+	public void setFs(String fs) {
+		this.fs = fs;
+	}
+	public String getFs1() {
+		return fs1;
+	}
+	public void setFs1(String fs1) {
+		this.fs1 = fs1;
+	}
+	public String getFs2() {
+		return fs2;
+	}
+	public void setFs2(String fs2) {
+		this.fs2 = fs2;
+	}
+	public String getFs3() {
+		return fs3;
+	}
+	public void setFs3(String fs3) {
+		this.fs3 = fs3;
+	}
+	public String getFs4() {
+		return fs4;
+	}
+	public void setFs4(String fs4) {
+		this.fs4 = fs4;
+	}
+	public String getFs5() {
+		return fs5;
+	}
+	public void setFs5(String fs5) {
+		this.fs5 = fs5;
+	}
+	public float getVv() {
+		return vv;
+	}
+	public void setVv(float vv) {
+		this.vv = vv;
+	}
+	public float getVv1() {
+		return vv1;
+	}
+	public void setVv1(float vv1) {
+		this.vv1 = vv1;
+	}
+	public float getVv2() {
+		return vv2;
+	}
+	public void setVv2(float vv2) {
+		this.vv2 = vv2;
+	}
+	public float getXxe() {
+		return xxe;
+	}
+	public void setXxe(float xxe) {
+		this.xxe = xxe;
+	}
+	public String getBb() {
+		return bb;
+	}
+	public void setBb(String bb) {
+		this.bb = bb;
+	}
+	public String getBb1() {
+		return bb1;
+	}
+	public void setBb1(String bb1) {
+		this.bb1 = bb1;
+	}
+	public String getBb2() {
+		return bb2;
+	}
+	public void setBb2(String bb2) {
+		this.bb2 = bb2;
+	}
+	public String getBb3() {
+		return bb3;
+	}
+	public void setBb3(String bb3) {
+		this.bb3 = bb3;
+	}
+	public String getBb4() {
+		return bb4;
+	}
+	public void setBb4(String bb4) {
+		this.bb4 = bb4;
+	}
+	public String[] getIncometxt() {
+		return incometxt;
+	}
+	public void setIncometxt(String[] incometxt) {
+		this.incometxt = incometxt;
 	}
 }

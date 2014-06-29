@@ -43,5 +43,9 @@ public class YbhManageServiceImpl implements YbhManageService{
 	public void saveYearInfo(DotSession ds, YbhManageForm ybhManageForm) {
 		ybhManageDao.saveYearInfo(ds, ybhManageForm);
 	}
+	
+	public void saveYbhIncome(YbhManageForm ybhManageForm) {
+		ybhManageDao.saveYbhIncome(ybhManageForm);
+	}
 
 }
