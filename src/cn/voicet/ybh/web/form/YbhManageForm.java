@@ -41,12 +41,12 @@ public class YbhManageForm {
 	/* 样本户年收入 */
 	private int year;
 	//家庭年总纯收入
-	private float intotal;
-	private float injy;
-	private float inwork;
-	private float incz;
+	private String intotal;
+	private String injy;
+	private String inwork;
+	private String incz;
 	//家庭年人均纯收入
-	private float inpersonal;
+	private String inpersonal;
 	//享受扶贫项目支持情况
 	private String fs;
 	private String fs1;
@@ -55,11 +55,11 @@ public class YbhManageForm {
 	private String fs4;
 	private String fs5;
 	//得到帮扶资金
-	private float vv;
-	private float vv1;
-	private float vv2;
+	private String vv;
+	private String vv1;
+	private String vv2;
 	//使用小额扶贫贷款数量
-	private float xxe;
+	private String xxe;
 	//参加社会保障情况
 	private String bb;
 	private String bb1;
@@ -234,44 +234,41 @@ public class YbhManageForm {
 	public String[] getIncomearr() {
 		return incomearr;
 	}
-	public void setIncomearr(String[] incomearr) {
-		this.incomearr = incomearr;
-	}
-	public float getIntotal() {
-		return intotal;
-	}
-	public void setIntotal(float intotal) {
-		this.intotal = intotal;
-	}
-	public float getInjy() {
-		return injy;
-	}
-	public void setInjy(float injy) {
-		this.injy = injy;
-	}
-	public float getInwork() {
-		return inwork;
-	}
-	public void setInwork(float inwork) {
-		this.inwork = inwork;
-	}
-	public float getIncz() {
-		return incz;
-	}
-	public void setIncz(float incz) {
-		this.incz = incz;
-	}
-	public float getInpersonal() {
-		return inpersonal;
-	}
-	public void setInpersonal(float inpersonal) {
-		this.inpersonal = inpersonal;
-	}
 	public int getYear() {
 		return year;
 	}
 	public void setYear(int year) {
 		this.year = year;
+	}
+	public String getIntotal() {
+		return intotal;
+	}
+	public void setIntotal(String intotal) {
+		this.intotal = intotal;
+	}
+	public String getInjy() {
+		return injy;
+	}
+	public void setInjy(String injy) {
+		this.injy = injy;
+	}
+	public String getInwork() {
+		return inwork;
+	}
+	public void setInwork(String inwork) {
+		this.inwork = inwork;
+	}
+	public String getIncz() {
+		return incz;
+	}
+	public void setIncz(String incz) {
+		this.incz = incz;
+	}
+	public String getInpersonal() {
+		return inpersonal;
+	}
+	public void setInpersonal(String inpersonal) {
+		this.inpersonal = inpersonal;
 	}
 	public String getFs() {
 		return fs;
@@ -309,28 +306,28 @@ public class YbhManageForm {
 	public void setFs5(String fs5) {
 		this.fs5 = fs5;
 	}
-	public float getVv() {
+	public String getVv() {
 		return vv;
 	}
-	public void setVv(float vv) {
+	public void setVv(String vv) {
 		this.vv = vv;
 	}
-	public float getVv1() {
+	public String getVv1() {
 		return vv1;
 	}
-	public void setVv1(float vv1) {
+	public void setVv1(String vv1) {
 		this.vv1 = vv1;
 	}
-	public float getVv2() {
+	public String getVv2() {
 		return vv2;
 	}
-	public void setVv2(float vv2) {
+	public void setVv2(String vv2) {
 		this.vv2 = vv2;
 	}
-	public float getXxe() {
+	public String getXxe() {
 		return xxe;
 	}
-	public void setXxe(float xxe) {
+	public void setXxe(String xxe) {
 		this.xxe = xxe;
 	}
 	public String getBb() {
@@ -368,5 +365,8 @@ public class YbhManageForm {
 	}
 	public void setIncometxt(String[] incometxt) {
 		this.incometxt = incometxt;
+	}
+	public void setIncomearr(String[] incomearr) {
+		this.incomearr = incomearr;
 	}
 }
