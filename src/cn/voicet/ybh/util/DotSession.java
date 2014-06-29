@@ -183,7 +183,17 @@ public class DotSession {
 			for(int i=1; i<=col; i++) {
 				sColName=rsm.getColumnName(i);
 				if(null!=rs.getString(i) && !rs.getString(i).equals("")){
-					map.put(sColName, rs.getString(i));
+					//获取数据类型
+					int dataType = rsm.getColumnType(i);
+					if(dataType==3)
+					{
+						map.put(sColName, rs.getFloat(i));
+					}
+					else
+					{
+						map.put(sColName, rs.getString(i));
+					}
+					
 				}else{
 					map.put(sColName, "");
 				}
