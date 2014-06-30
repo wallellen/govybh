@@ -8,7 +8,7 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/ybh_income.js"></script>
 </head>
 <body style="background:#E0EEFB;">
-<h3 class="jiangbu-title"><s:property value="hname"/></h3>
+<h3 class="jiangbu-title">[<s:property value="#session.vts.curHM"/>&nbsp;<s:property value="hname"/>]家庭年收入及帮扶情况</h3>
 <div class="cunwrap">
 	<form name="form1" action="" method="post">
 	<input type="hidden" name="rflag" value="<s:property value='rflag'/>"/>
