@@ -109,7 +109,7 @@
 		<item id="2" name="2:女" />
 	</list>
 	<list name="work" describle="打工状况">
-		<item id="1" name="1:在家务家" />
+		<item id="1" name="1:在家务农" />
 		<item id="2" name="2:县内务工" />
 		<item id="3" name="3:县外省内务工" />
 		<item id="4" name="4:省外务工" />
@@ -117,7 +117,7 @@
 	</list>
 	<list name="workex" describle="打工状况">
 		<item id="0" name="不限" />
-		<item id="1" name="1:在家务家" />
+		<item id="1" name="1:在家务农" />
 		<item id="2" name="2:县内务工" />
 		<item id="3" name="3:县外省内务工" />
 		<item id="4" name="4:省外务工" />
@@ -125,7 +125,7 @@
 	</list>
 	<list name="workexex" describle="打工状况">
 		<item id="0" name="" />
-		<item id="1" name="1:在家务家" />
+		<item id="1" name="1:在家务农" />
 		<item id="2" name="2:县内务工" />
 		<item id="3" name="3:县外省内务工" />
 		<item id="4" name="4:省外务工" />
