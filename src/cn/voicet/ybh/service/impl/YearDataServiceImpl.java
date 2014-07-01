@@ -23,8 +23,8 @@ public class YearDataServiceImpl implements YearDataService{
 		yearDataDao.getYbhYearInfo(ds);
 	}
 
-	public void getYbhListByCurBM(DotSession ds) {
-		yearDataDao.getYbhListByCurBM(ds);
+	public void getYbhListByCurBM(DotSession ds, YearDataForm yearDataForm) {
+		yearDataDao.getYbhListByCurBM(ds, yearDataForm);
 	}
 
 	public Map queryCunYbhInfoWithYear(DotSession ds, YearDataForm yearDataForm) {

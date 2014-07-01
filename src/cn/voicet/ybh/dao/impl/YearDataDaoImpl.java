@@ -47,14 +47,14 @@ public class YearDataDaoImpl extends BaseDaoImpl implements YearDataDao {
 		});
 	}
 
-	public void getYbhListByCurBM(final DotSession ds) {
+	public void getYbhListByCurBM(final DotSession ds, final YearDataForm yearDataForm) {
 		this.getJdbcTemplate().execute(new ConnectionCallback() {
 			public Object doInConnection(Connection conn) throws SQLException,
 					DataAccessException {
 				CallableStatement cs = conn.prepareCall("{call ybh_bm_describle(?,?,?,?)}");
-				cs.setString(1, ds.curBM);
+				cs.setString(1, ds.rbm);
 				cs.setInt(2, 1);
-				cs.setInt(3, 2014);
+				cs.setString(3, yearDataForm.getYear());
 				cs.setInt(4, 1);
 				cs.execute();
 				ResultSet rs = cs.getResultSet();

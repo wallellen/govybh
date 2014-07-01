@@ -38,7 +38,7 @@ public class YearDataAction extends BaseAction implements ModelDriven<YearDataFo
 	/** 根据年查看样本户数据 */
 	public String viewData(){
 		DotSession ds = DotSession.getVTSession(request);
-		yearDataService.getYbhListByCurBM(ds);
+		yearDataService.getYbhListByCurBM(ds, yearDataForm);
 		if(null!=yearDataForm.getViewBM()&&yearDataForm.getViewBM().length()>0){
 			if(yearDataForm.getViewBM().length()<=ds.rbm.length()){
 				ds.subPathTitle.setRoot(String.valueOf(ds.map.get("name")),ds.curBM, ds.rbm);

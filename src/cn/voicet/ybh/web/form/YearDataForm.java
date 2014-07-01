@@ -81,7 +81,15 @@ public class YearDataForm {
 		return curhm;
 	}
 	public void setCurhm(String curhm) {
-		this.curhm = curhm;
+		if(curhm.length()==0)
+		{
+			this.curhm = null;
+		}
+		else
+		{
+			this.curhm = curhm;	
+		}
+		
 	}
 	public String getHname() {
 		return hname;

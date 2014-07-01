@@ -9,7 +9,7 @@ import cn.voicet.ybh.web.form.YearDataForm;
 public interface YearDataService {
 	public final static String SERVICE_NAME = "cn.voicet.ybh.service.impl.YearDataServiceImpl";
 	void getYbhYearInfo(DotSession ds);
-	void getYbhListByCurBM(DotSession ds);
+	void getYbhListByCurBM(DotSession ds, YearDataForm yearDataForm);
 	Map queryCunYbhInfoWithYear(DotSession ds, YearDataForm yearDataForm);
 	void saveCunYbhData(YearDataForm yearDataForm);
 	void saveYbhIncome(YearDataForm yearDataForm);
