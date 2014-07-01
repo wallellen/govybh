@@ -27,11 +27,11 @@
 <div id="member-info-ul">
 	<ul>
 		<li><a href="${pageContext.request.contextPath }/ybhManageAction_itemFamily.action">家庭成员信息</a></li>
-		<li style="background:url(${pageContext.request.contextPath }/images/tab-bg2.png); color:#FFF;">家庭收入及帮扶情况</li>
+		<li style="background:url(${pageContext.request.contextPath }/images/tab-bg2.png); color:#FFF;">样本户基础信息</li>
 	</ul>
 </div>
 <div id="member-info-data">
-	<h3 id="base-title" style="float:left">家庭收入及帮扶情况</h3>
+	<h3 id="base-title" style="float:left">样本户基础监测统计</h3>
 	<table class="tab-member" cellpadding="0" cellspacing="0">
 		<thead>
 		<tr>

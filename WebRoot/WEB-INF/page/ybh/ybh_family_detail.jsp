@@ -30,7 +30,7 @@
 <div id="member-info-ul">
 	<ul>
 		<li style="background:url(${pageContext.request.contextPath }/images/tab-bg2.png); color:#FFF;">家庭成员信息</li>
-		<li><a href="${pageContext.request.contextPath }/ybhManageAction_familyIncome.action">家庭收入及帮扶情况</a> </li>
+		<li><a href="${pageContext.request.contextPath }/ybhManageAction_familyIncome.action">样本户基础信息</a> </li>
 	</ul>
 </div>
 
