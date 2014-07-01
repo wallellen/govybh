@@ -58,7 +58,14 @@
 		    	<td><s:property value="#ls2.inwork"/></td>
 		    	<td><s:property value="#ls2.incz"/></td>
 		    	<td><s:property value="#ls2.inpersonal"/></td>
-		    	<td><s:property value="#ls2.fs"/></td>
+		    	<td>
+		    		<s:if test="#ls2.fs==1">
+		    		√
+		    		</s:if>
+		    		<s:else>
+		    		&nbsp;
+		    		</s:else>
+		    	</td>
 		    	<td><s:property value="#ls2.v"/></td>
 		    	<td><s:property value="#ls2.v1"/></td>
 		    	<td><s:property value="#ls2.v2"/></td>
