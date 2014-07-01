@@ -43,6 +43,7 @@
 			<result name="show_year">/WEB-INF/page/ybh/ybh_year.jsp</result>
 			<result name="show_data">/WEB-INF/page/ybh/ybh_year_data.jsp</result>
 			<result name="show_ybh_cunupdate">/WEB-INF/page/ybh/ybh_cun_update.jsp</result>
+			<result name="show_ybh_income_update">/WEB-INF/page/ybh/ybh_income_update.jsp</result>
 		</action>
 		
 		<!-- 农户查询 -->

@@ -5,14 +5,14 @@
 <head>
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/style/style.css" />
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/jquery-1.5.1.min.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath }/script/ybh_income.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath }/script/yeardata_income.js"></script>
 </head>
 <body style="background:#E0EEFB;">
-<h3 class="jiangbu-title">[<s:property value="#session.vts.curHM"/>&nbsp;<s:property value="hname"/>]家庭年收入及帮扶情况</h3>
+<h3 class="jiangbu-title">[<s:property value="curhm"/>&nbsp;<s:property value="hname"/>]家庭年收入及帮扶情况</h3>
 <div class="cunwrap">
 	<form name="form1" action="" method="post">
 	<input type="hidden" name="rflag" value="<s:property value='rflag'/>"/>
-	<input type="hidden" name="incometxt" value="<s:property value='#session.vts.curHM'/>"/>
+	<input type="hidden" name="incometxt" value="<s:property value='curhm'/>"/>
 	<input type="hidden" name="incometxt" value="<s:property value='year'/>"/>
 	<table cellpadding="0" cellspacing="0" width="100%">
     	<tr>
@@ -178,7 +178,7 @@
     <div style="height:26px; line-height:26px; color:#F00" id="errTip3"></div>
     <div class="cun-bottom">
     	<span></span>
-    	<span><input type="button" value="保存" class="button4" onclick="saveIncomeBt()"/></span>
+    	<span><input type="button" value="保存" class="button4" onclick="saveYearDataBt()"/></span>
     	<span><input type="button" value="返回" class="button4" onclick="history.go(-<s:property value='rflag'/>)"/></span>
     	<span></span>
     </div>

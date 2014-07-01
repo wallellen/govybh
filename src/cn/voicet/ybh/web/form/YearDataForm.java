@@ -5,9 +5,13 @@ public class YearDataForm {
 	private String oname;
 	private int year;
 	private String cunbm;
+	private String curhm;
+	private String hname;
 	
 	/* 村信息数组 */
 	private String[] cuntxt;
+	
+	private String[] incometxt;
 	public String getViewBM() {
 		return viewBM;
 	}
@@ -37,5 +41,23 @@ public class YearDataForm {
 	}
 	public void setCuntxt(String[] cuntxt) {
 		this.cuntxt = cuntxt;
+	}
+	public String getCurhm() {
+		return curhm;
+	}
+	public void setCurhm(String curhm) {
+		this.curhm = curhm;
+	}
+	public String getHname() {
+		return hname;
+	}
+	public void setHname(String hname) {
+		this.hname = hname;
+	}
+	public String[] getIncometxt() {
+		return incometxt;
+	}
+	public void setIncometxt(String[] incometxt) {
+		this.incometxt = incometxt;
 	}
 }

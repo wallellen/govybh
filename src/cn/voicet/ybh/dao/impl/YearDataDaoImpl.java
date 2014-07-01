@@ -205,4 +205,37 @@ public class YearDataDaoImpl extends BaseDaoImpl implements YearDataDao {
 			}
 		});
 	}
+
+	public void saveYbhIncome(final YearDataForm yearDataForm) {
+		this.getJdbcTemplate().execute(new ConnectionCallback() {
+			public Object doInConnection(Connection conn) throws SQLException,
+					DataAccessException {
+				CallableStatement cs = conn.prepareCall("{call ybh_year_update(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
+				cs.setInt(18, 1);
+				String ix[][] = 
+					{
+						{"0","s"},
+						{"1","i"},
+						{"2","f"},
+						{"4","f"},
+						{"6","f"},
+						{"8","i"},
+						{"10","i"},
+						{"12","i"},
+						{"14","i"},
+						{"16","i"},
+						{"3","f"},
+						{"5","f"},
+						{"7","f"},
+						{"9","i"},
+						{"11","i"},
+						{"13","i"},
+						{"15","i"}
+					};
+				VTJime.prepareParamFromInputArray(cs, yearDataForm.getIncometxt(), ix);
+				cs.execute();
+				return null;
+			}
+		});
+	}
 }

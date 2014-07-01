@@ -12,4 +12,5 @@ public interface YearDataService {
 	void getYbhListByCurBM(DotSession ds);
 	Map queryCunYbhInfoWithYear(DotSession ds, YearDataForm yearDataForm);
 	void saveCunYbhData(YearDataForm yearDataForm);
+	void saveYbhIncome(YearDataForm yearDataForm);
 }

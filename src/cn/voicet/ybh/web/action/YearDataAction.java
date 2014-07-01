@@ -81,6 +81,19 @@ public class YearDataAction extends BaseAction implements ModelDriven<YearDataFo
 		return updateCun();
 	}
 	
+	/** 家庭基本信息年收入更新页面 */
+	public String editIncome(){
+		return "show_ybh_income_update";
+	}
+	
+	/** 家庭基本信息年收入更新页面 */
+	public String saveIncome(){
+		log.info("save income data incometxt array size:"+yearDataForm.getIncometxt().length);
+		yearDataService.saveYbhIncome(yearDataForm);
+		rflag = rflag+1;
+		return editIncome();
+	}
+	
 	private Map cunMap;
 	private int rflag=1;	//更新村指标录入页面，返回标记
 	public Map getCunMap() {

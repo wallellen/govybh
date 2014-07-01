@@ -34,4 +34,8 @@ public class YearDataServiceImpl implements YearDataService{
 	public void saveCunYbhData(YearDataForm yearDataForm) {
 		yearDataDao.saveCunYbhData(yearDataForm);
 	}
+
+	public void saveYbhIncome(YearDataForm yearDataForm) {
+		yearDataDao.saveYbhIncome(yearDataForm);
+	}
 }
