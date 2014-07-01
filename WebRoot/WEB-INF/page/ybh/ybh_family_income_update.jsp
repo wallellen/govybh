@@ -16,10 +16,10 @@
 	<input type="hidden" name="incometxt" value="<s:property value='year'/>"/>
 	<table cellpadding="0" cellspacing="0" width="100%">
     	<tr>
-        	<td width="30%" align="right">4、家庭年总纯收入(元):&nbsp;</td>
-            <td width="20%" align="left">&nbsp;<s:property value="intotal"/></td>
-            <td width="30%" align="right">8、得到帮扶资金(元):&nbsp;</td>
-            <td width="20%" align="left">&nbsp;<s:property value="vv"/></td>
+        	<td width="25%" align="right">4、家庭年总纯收入(元):&nbsp;</td>
+            <td width="25%" align="left">&nbsp;<s:property value="intotal"/></td>
+            <td width="25%" align="right">8、得到帮扶资金(元):&nbsp;</td>
+            <td width="25%" align="left">&nbsp;<s:property value="vv"/></td>
         </tr>
         <tr>
         	<td align="right">其中:(1)家庭经营性收入(元):&nbsp;</td>
@@ -43,17 +43,17 @@
     <div style="height:26px; line-height:26px; color:#F00" id="errTip1"></div>
     <table cellpadding="0" cellspacing="0" width="100%">
     	<tr>
-        	<td width="30%" align="right">5、家庭年人均纯收入(元):&nbsp;</td>
-			<td width="20%" align="left">&nbsp;<s:property value="inpersonal"/></td>
-            <td width="30%" align="right">9、使用小额扶贫贷款数量(元):&nbsp;</td>
-			<td align="left"><input type="text" id="incId6" name="incometxt" value="<s:property value='xxe'/>" maxlength="10" onblur="checkXe(this)"/></td>
+        	<td width="25%" align="right">5、家庭年人均纯收入(元):&nbsp;</td>
+			<td width="25%" align="left">&nbsp;<s:property value="inpersonal"/></td>
+            <td width="25%" align="right">9、使用小额扶贫贷款数量(元):&nbsp;</td>
+			<td width="25%" align="left"><input type="text" id="incId6" name="incometxt" value="<s:property value='xxe'/>" maxlength="10" onblur="checkXe(this)"/></td>
         </tr>
     </table>
     <div style="height:26px; line-height:26px; color:#F00" id="errTip2"></div>
     <table cellpadding="0" cellspacing="0" width="100%">
     	<tr>
-        	<td width="30%" align="right">7、享受扶贫项目支持情况:&nbsp;</td>
-			<td width="20%" align="left">
+        	<td width="25%" align="right">7、享受扶贫项目支持情况:&nbsp;</td>
+			<td width="25%" align="left">
 				<s:if test="fs==1">
 				<input type="checkbox" class="cuncbox" checked="checked" disabled="disabled"/>
 				</s:if>
@@ -75,8 +75,8 @@
 				<input type="hidden" id="fsbox1" name="incometxt" value="0"/>
 				</s:else>
 			</td>
-            <td width="30%" align="right">新农合:&nbsp;</td>
-			<td width="20%" align="left">
+            <td width="25%" align="right">新农合:&nbsp;</td>
+			<td width="25%" align="left">
 				<s:if test="bb1==1">
 				<input type="checkbox" class="cuncbox" checked="checked" onclick="selectBb1(this)"/>
 				<input type="hidden" id="bbox1" name="incometxt" value="1"/>
