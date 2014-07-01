@@ -82,7 +82,8 @@ public class YearDataAction extends BaseAction implements ModelDriven<YearDataFo
 	}
 	
 	public String income(){
-		
+		DotSession ds = DotSession.getVTSession(request);
+		yearDataService.getYbhIncome(ds, yearDataForm);
 		return "show_ybh_income";
 	}
 	
@@ -96,7 +97,7 @@ public class YearDataAction extends BaseAction implements ModelDriven<YearDataFo
 		log.info("save income data incometxt array size:"+yearDataForm.getIncometxt().length);
 		yearDataService.saveYbhIncome(yearDataForm);
 		rflag = rflag+1;
-		return editIncome();
+		return income();
 	}
 	
 	private Map cunMap;

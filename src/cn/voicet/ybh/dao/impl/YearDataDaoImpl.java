@@ -79,7 +79,7 @@ public class YearDataDaoImpl extends BaseDaoImpl implements YearDataDao {
 					DataAccessException {
 				CallableStatement cs = conn.prepareCall("{call ybh_chunyear_query(?,?,?)}");
 				cs.setString(1, yearDataForm.getCunbm());
-				cs.setInt(2, yearDataForm.getYear());
+				cs.setString(2, yearDataForm.getYear());
 				cs.setInt(3, 1);
 				cs.execute();
 				ResultSet rs = cs.getResultSet();
@@ -129,7 +129,7 @@ public class YearDataDaoImpl extends BaseDaoImpl implements YearDataDao {
 					DataAccessException {
 				CallableStatement cs = conn.prepareCall("{call ybh_chunyear_update(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
 				cs.setString(1, yearDataForm.getCunbm());
-				cs.setInt(2, yearDataForm.getYear());
+				cs.setString(2, yearDataForm.getYear());
 				cs.setInt(29, 1);
 				String ix[][] = 
 					{
@@ -234,6 +234,32 @@ public class YearDataDaoImpl extends BaseDaoImpl implements YearDataDao {
 					};
 				VTJime.prepareParamFromInputArray(cs, yearDataForm.getIncometxt(), ix);
 				cs.execute();
+				return null;
+			}
+		});
+	}
+
+	public void getYbhIncome(final DotSession ds, final YearDataForm yearDataForm) {
+		this.getJdbcTemplate().execute(new ConnectionCallback() {
+			public Object doInConnection(Connection conn) throws SQLException,
+					DataAccessException {
+				CallableStatement cs = conn.prepareCall("{call ybh_year_query(?,?,?,?)}");
+				cs.setString(1, ds.rbm);
+				cs.setString(2, yearDataForm.getCurhm());
+				cs.setString(3, yearDataForm.getYear());
+				cs.setInt(4, 1);
+				cs.execute();
+				ResultSet rs = cs.getResultSet();
+				ds.initData();
+				ds.list = new ArrayList();	
+				Map map;
+				if(rs!=null){
+					while (rs.next()) {
+						map = new HashMap();
+						ds.putMapDataByColName(map, rs);
+		        		ds.list.add(map);
+					}
+				}
 				return null;
 			}
 		});

@@ -20,7 +20,7 @@
 	<s:property value="#session.vts.navPath" escape="false"/>
 </div>
 <h3 class="jiangbu-title">[<s:property value="curhm"/>&nbsp;<s:property value="hname"/>]家庭年收入及帮扶情况</h3>
-<div id="jiangbu-data">
+<div id="jiangbu-data1">
 <table class="data_list" cellpadding="0" cellspacing="0" width="100%">
    	<thead>
     <tr>
@@ -39,21 +39,21 @@
     </tr>
 	</thead>
 	<tbody id="splitpage">
-	<s:iterator id="ls2" value="#session.vts.list2">
+	<s:iterator id="ls" value="#session.vts.list">
     <tr>
-    	<td><s:property value="#ls2.year"/></td>
-    	<td><s:property value="#ls2.intotal"/></td>
-    	<td><s:property value="#ls2.injy"/></td>
-    	<td><s:property value="#ls2.inwork"/></td>
-    	<td><s:property value="#ls2.incz"/></td>
-    	<td><s:property value="#ls2.inpersonal"/></td>
-    	<td><s:property value="#ls2.fs"/></td>
-    	<td><s:property value="#ls2.v"/></td>
-    	<td><s:property value="#ls2.v1"/></td>
-    	<td><s:property value="#ls2.v2"/></td>
-    	<td><s:property value="#ls2.xe"/></td>
+    	<td><s:property value="#ls.year"/></td>
+    	<td><s:property value="#ls.intotal"/></td>
+    	<td><s:property value="#ls.injy"/></td>
+    	<td><s:property value="#ls.inwork"/></td>
+    	<td><s:property value="#ls.incz"/></td>
+    	<td><s:property value="#ls.inpersonal"/></td>
+    	<td><s:property value="#ls.fs"/></td>
+    	<td><s:property value="#ls.v"/></td>
+    	<td><s:property value="#ls.v1"/></td>
+    	<td><s:property value="#ls.v2"/></td>
+    	<td><s:property value="#ls.xe"/></td>
     	<td>
-    		<a href="${pageContext.request.contextPath }/ybhManageAction_editIncome.action?hname=<s:property value="#session.vts.map.hname"/>&year=<s:property value="#ls2.year"/>&intotal=<s:property value="#ls2.intotal"/>&injy=<s:property value="#ls2.injy"/>&inwork=<s:property value="#ls2.inwork"/>&incz=<s:property value="#ls2.incz"/>&inpersonal=<s:property value="#ls2.inpersonal"/>&fs=<s:property value="#ls2.fs"/>&fs1=<s:property value="#ls2.fs1"/>&fs2=<s:property value="#ls2.fs2"/>&fs3=<s:property value="#ls2.fs3"/>&fs4=<s:property value="#ls2.fs4"/>&fs5=<s:property value="#ls2.fs5"/>&vv=<s:property value="#ls2.v"/>&vv1=<s:property value="#ls2.v1"/>&vv2=<s:property value="#ls2.v2"/>&xxe=<s:property value="#ls2.xe"/>&bb=<s:property value="#ls2.b"/>&bb1=<s:property value="#ls2.b1"/>&bb2=<s:property value="#ls2.b2"/>&bb3=<s:property value="#ls2.b3"/>&bb4=<s:property value="#ls2.b4"/>">编辑</a>
+    		<a href="${pageContext.request.contextPath }/yearDataAction_editIncome.action?year=<s:property value="year"/>&curhm=<s:property value="curhm"/>&hname=<s:property value="hname"/>&intotal=<s:property value="#ls.intotal"/>&injy=<s:property value="#ls.injy"/>&inwork=<s:property value="#ls.inwork"/>&incz=<s:property value="#ls.incz"/>&inpersonal=<s:property value="#ls.inpersonal"/>&fs=<s:property value="#ls.fs"/>&fs1=<s:property value="#ls.fs1"/>&fs2=<s:property value="#ls.fs2"/>&fs3=<s:property value="#ls.fs3"/>&fs4=<s:property value="#ls.fs4"/>&fs5=<s:property value="#ls.fs5"/>&vv=<s:property value="#ls.v"/>&vv1=<s:property value="#ls.v1"/>&vv2=<s:property value="#ls.v2"/>&xxe=<s:property value="#ls.xe"/>&bb=<s:property value="#ls.b"/>&bb1=<s:property value="#ls.b1"/>&bb2=<s:property value="#ls.b2"/>&bb3=<s:property value="#ls.b3"/>&bb4=<s:property value="#ls.b4"/>">编辑</a>
     	</td>
     </tr>
     </s:iterator>

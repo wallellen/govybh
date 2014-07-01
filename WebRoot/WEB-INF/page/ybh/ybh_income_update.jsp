@@ -14,6 +14,9 @@
 	<input type="hidden" name="rflag" value="<s:property value='rflag'/>"/>
 	<input type="hidden" name="incometxt" value="<s:property value='curhm'/>"/>
 	<input type="hidden" name="incometxt" value="<s:property value='year'/>"/>
+	<input type="hidden" name="curhm" value="<s:property value='curhm'/>"/>
+	<input type="hidden" name="hname" value="<s:property value='hname'/>"/>
+	<input type="hidden" name="year" value="<s:property value='year'/>"/>
 	<table cellpadding="0" cellspacing="0" width="100%">
     	<tr>
         	<td width="30%" align="right">4、家庭年总纯收入(元):&nbsp;</td>

@@ -38,4 +38,8 @@ public class YearDataServiceImpl implements YearDataService{
 	public void saveYbhIncome(YearDataForm yearDataForm) {
 		yearDataDao.saveYbhIncome(yearDataForm);
 	}
+
+	public void getYbhIncome(DotSession ds, YearDataForm yearDataForm) {
+		yearDataDao.getYbhIncome(ds, yearDataForm);
+	}
 }
