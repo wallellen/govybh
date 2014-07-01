@@ -81,6 +81,11 @@ public class YearDataAction extends BaseAction implements ModelDriven<YearDataFo
 		return updateCun();
 	}
 	
+	public String income(){
+		
+		return "show_ybh_income";
+	}
+	
 	/** 家庭基本信息年收入更新页面 */
 	public String editIncome(){
 		return "show_ybh_income_update";
