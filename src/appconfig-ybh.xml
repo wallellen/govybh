@@ -5,25 +5,38 @@
 	<role roleid="0" describle="未登录"></role>
 	<role roleid="1" describle="系统管理员">
 		<grp name="日常工作">
-			<!--  
-      		<fun name="工作簿管理" action="govBrowerAction_home.do" />
-      		<fun name="数据年计划" action="govBrowerAction_home.do" />
-      		-->
-      		<fun name="年数据录入" action="yearDataAction_home.action" />
+      		<fun name="样本户勾选" action="ybhCheckAction_home.action" />
+			<fun name="样本户管理" action="ybhManageAction_home.action" />
+			<fun name="样本村管理" action="ybhManageAction_home.action" />
+			<fun name="年数据录入" action="yearDataAction_home.action" />
+			<fun name="人口查询" action="ybhPeopleAction_home.action" />
+			<fun name="农户查询" action="ybhFarmerAction_home.action" />
 		</grp>
 	</role>
 	<role roleid="2" describle="省管理员">
 		<grp name="日常工作">
       		<fun name="样本户勾选" action="ybhCheckAction_home.action" />
-      		<fun name="样本户管理" action="ybhManageAction_home.action" />	
-      		<fun name="农户查询" action="ybhFarmerAction_home.action" />	
-          	<fun name="人口查询" action="ybhPeopleAction_home.action" />	
+	      	<fun name="样本户管理" action="ybhManageAction_home.action" />
+	        <fun name="样本村管理" action="ybhManageAction_home.action" />
+	        <fun name="农户查询" action="ybhFarmerAction_home.action" />	
+	        <fun name="人口查询" action="ybhPeopleAction_home.action" />
+	        <fun name="汇总统计" action="ybhPeopleAction_home.action" />
     	</grp>
 	</role>
+	<role roleid="3" describle="市管理员">
+    	<grp name="日常工作">
+			<fun name="样本户管理" action="ybhManageAction_home.action" />
+			<fun name="样本村管理" action="ybhManageAction_home.action" />
+			<fun name="年数据录入" action="yearDataAction_home.action" />
+			<fun name="汇总统计" action="ybhPeopleAction_home.action" />
+    	</grp>
+  	</role>
 	<role roleid="4" describle="县管理员">
 		<grp name="日常工作">
       		<fun name="样本户管理" action="ybhManageAction_home.action" />
+          	<fun name="样本村管理" action="ybhManageAction_home.action" />
       		<fun name="年数据录入" action="yearDataAction_home.action" />
+          	<fun name="汇总统计" action="ybhPeopleAction_home.action" />
  		</grp>
 	</role>
 	<list name="yesno" describle="是与否列表">
