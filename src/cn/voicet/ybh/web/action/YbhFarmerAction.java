@@ -1,9 +1,13 @@
 package cn.voicet.ybh.web.action;
 
+import javax.annotation.Resource;
+
 import org.apache.log4j.Logger;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
+import cn.voicet.ybh.service.YbhFarmerService;
+import cn.voicet.ybh.util.DotSession;
 import cn.voicet.ybh.web.form.YbhFarmerForm;
 
 import com.opensymphony.xwork2.ModelDriven;
@@ -14,8 +18,8 @@ import com.opensymphony.xwork2.ModelDriven;
 public class YbhFarmerAction extends BaseAction implements ModelDriven<YbhFarmerForm>{
 	private static Logger log = Logger.getLogger(YbhFarmerAction.class);
 	
-	//@Resource(name=YbhFarmerService.SERVICE_NAME)
-	//private YbhFarmerService ybhFarmerService;
+	@Resource(name=YbhFarmerService.SERVICE_NAME)
+	private YbhFarmerService ybhFarmerService;
 	private YbhFarmerForm ybhFarmerForm = new YbhFarmerForm();
 	
 	public YbhFarmerForm getModel() {
