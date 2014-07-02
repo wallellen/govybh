@@ -57,6 +57,11 @@
 			<result name="show_people">/WEB-INF/page/ybh/ybh_people_query.jsp</result>
 		</action>
 		
+		<!-- 汇总统计 -->
+		<action name="ybhTotalAction_*" class="ybhTotalAction" method="{1}">
+			<result name="show_total">/WEB-INF/page/work/ybh_total.jsp</result>
+		</action>
+		
 	</package>  
 	<package name="dot" namespace="/" extends="json-default">
 		<!-- login -->
