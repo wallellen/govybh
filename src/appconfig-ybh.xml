@@ -195,4 +195,15 @@
 		<item id="10" name="10:脱贫" />
 		<item id="100" name="100:纠正错档" />
 	</list>
+	
+	<!-- ybh -->
+	<list name="subeimode" describle="报告类型">
+		<item id="1" name="1:全部" />
+		<item id="2" name="2:苏北五市" />
+		<item id="3" name="3:苏北22县" />
+		<item id="4" name="4:茅山革命老区" />
+		<item id="5" name="5:黄桥革命老区" />
+		<item id="6" name="6:苏北苏中结合部" />
+	</list>
+	
 </dot2014>

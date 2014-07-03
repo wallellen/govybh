@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import cn.voicet.ybh.service.YbhTotalService;
+import cn.voicet.ybh.util.DotSession;
 import cn.voicet.ybh.web.form.YbhTotalForm;
 
 import com.opensymphony.xwork2.ModelDriven;
@@ -26,7 +27,12 @@ public class YbhTotalAction extends BaseAction implements ModelDriven<YbhTotalFo
 	}
 	
 	public String home(){
-		
+		return "show_total";
+	}
+	
+	public String stats(){
+		DotSession ds = DotSession.getVTSession(request);
+		ybhFarmerService.getYbhTotalInfo(ds, ybhTotalForm);
 		return "show_total";
 	}
 	
