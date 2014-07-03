@@ -24,6 +24,11 @@
 			}
 		}
 	</script>
+	<style type="text/css">
+		.aleft{text-align:left}
+		.acenter{text-align:center}
+		.aright{text-align:right}
+	</style>
 </head>
 <body onload="loadParam()" style="background:#E0EEFB;">
 <div style="float:right; width:868px; height:668px;">
@@ -79,281 +84,281 @@
 	
 		<table class="data_list" cellpadding="0" cellspacing="0"  width="100%">
 			<tr>
-				<td rowspan="9" width="25%">一、观察点村基本情况</td>			
-				<td width="25%">总农户（户）</td>
-				<td width="15%"><s:property value="#session.vts.map.hnt"/></td>
+				<td rowspan="9" width="25%" class="aleft">&nbsp;一、观察点村基本情况</td>			
+				<td width="25%" class="aleft">&nbsp;总农户（户）</td>
+				<td width="15%" class="aright"><s:property value="#session.vts.map.hnt"/>&nbsp;</td>
 				<td width="35%"></td>
 			</tr>
 			<tr>			
-				<td>总人口（人）</td>
-				<td><s:property value="#session.vts.map.rnt"/></td>
+				<td class="aleft">&nbsp;总人口（人）</td>
+				<td class="aright"><s:property value="#session.vts.map.rnt"/>&nbsp;</td>
 				<td></td>
 			</tr>
 			<tr>			
-				<td>总劳动力（个）</td>
-				<td><s:property value="#session.vts.map.lnt"/></td>
+				<td class="aleft">&nbsp;总劳动力（个）</td>
+				<td class="aright"><s:property value="#session.vts.map.lnt"/>&nbsp;</td>
 				<td></td>
 			</tr>
 			<tr>			
-				<td>承包耕地（亩）</td>
-				<td><s:property value="#session.vts.map.ft"/></td>
+				<td class="aleft">&nbsp;承包耕地（亩）</td>
+				<td class="aright"><s:property value="#session.vts.map.ft"/>&nbsp;</td>
 				<td></td>
 			</tr>
 			<tr>			
-				<td>年人均纯收入（元）</td>
-				<td><s:property value="#session.vts.map.inTotal_ap"/></td>
+				<td class="aleft">&nbsp;年人均纯收入（元）</td>
+				<td class="aright"><s:property value="#session.vts.map.inTotal_ap"/>&nbsp;</td>
 				<td></td>
 			</tr>
 			<tr>			
-				<td>村集体经营性收入总量（万元）</td>
-				<td><s:property value="#session.vts.map.inJY"/></td>
+				<td class="aleft">&nbsp;村集体经营性收入总量（万元）</td>
+				<td class="aright"><s:property value="#session.vts.map.inJY"/>&nbsp;</td>
 				<td></td>
 			</tr>
 			<tr>			
-				<td>村均集体经性营收入（万元）</td>
-				<td><s:property value="#session.vts.map.inJy_Ac"/></td>
+				<td class="aleft">&nbsp;村均集体经性营收入（万元）</td>
+				<td class="aright"><s:property value="#session.vts.map.inJy_Ac"/>&nbsp;</td>
 				<td></td>
 			</tr>
 			<tr>			
-				<td>村集体负债总额（万元）</td>
-				<td><s:property value="#session.vts.map.fze"/></td>
+				<td class="aleft">&nbsp;村集体负债总额（万元）</td>
+				<td class="aright"><s:property value="#session.vts.map.fze"/>&nbsp;</td>
 				<td></td>
 			</tr>
 			<tr>			
-				<td>村均集体负债额（万元）</td>
-				<td><s:property value="#session.vts.map.fze_a"/></td>
+				<td class="aleft">&nbsp;村均集体负债额（万元）</td>
+				<td class="aright"><s:property value="#session.vts.map.fze_a"/>&nbsp;</td>
 				<td></td>
 			</tr>
 			
 	        <tr>
-	        	<td rowspan="4">二、村建档户基本情况</td>
-	            <td>村建档户总户数（户）</td>
-	            <td><s:property value="#session.vts.map.hnl"/></td>
+	        	<td rowspan="4" align="left">&nbsp;二、村建档户基本情况</td>
+	            <td class="aleft">&nbsp;村建档户总户数（户）</td>
+	            <td class="aright"><s:property value="#session.vts.map.hnl"/>&nbsp;</td>
 				<td></td>
 	        </tr>
 	        <tr>
-	        	<td>村建档户总人口数（人）</td>
-	            <td><s:property value="#session.vts.map.rnl"/></td>
+	        	<td class="aleft">&nbsp;村建档户总人口数（人）</td>
+	            <td class="aright"><s:property value="#session.vts.map.rnl"/>&nbsp;</td>
 				<td></td>
 	        </tr>
 	        <tr>
-	        	<td>村建档户总劳动力数（个）</td>
-	            <td><s:property value="#session.vts.map.lnl"/></td>
+	        	<td class="aleft">&nbsp;村建档户总劳动力数（个）</td>
+	            <td class="aright"><s:property value="#session.vts.map.lnl"/>&nbsp;</td>
 				<td></td>
 	        </tr>
 	        <tr>
-	        	<td>村建档户总承包耕地面积（亩）</td>
-	            <td><s:property value="#session.vts.map.fl"/></td>
-				<td></td>
-	        </tr>
-	        
-	        <tr>
-	        	<td rowspan="4">三、样本户收入情况</td>
-	            <td>样本户户均家庭纯收入（元/年）</td>
-	            <td><s:property value="#session.vts.map.inTotal_a"/></td>
-				<td></td>
-	        </tr>
-	        <tr>
-	        	<td>其中：①经营性收入（元）</td>
-	            <td><s:property value="#session.vts.map.inJY_ah"/></td>
-				<td></td>
-	        </tr>
-	        <tr>
-	        	<td>②工资性收入（元）</td>
-	            <td><s:property value="#session.vts.map.inWork_a"/></td>
-				<td></td>
-	        </tr>
-	        <tr>
-	        	<td>③财产性和转移性收入（元）</td>
-	            <td><s:property value="#session.vts.map.inCZ_a"/></td>
+	        	<td class="aleft">&nbsp;村建档户总承包耕地面积（亩）</td>
+	            <td class="aright"><s:property value="#session.vts.map.fl"/>&nbsp;</td>
 				<td></td>
 	        </tr>
 	        
 	        <tr>
-	        	<td rowspan="3">四、村建档户主要类型</td>
-	            <td>①扶贫户（户）</td>
-	            <td><s:property value="#session.vts.map.p1"/></td>
+	        	<td rowspan="4" align="left">&nbsp;三、样本户收入情况</td>
+	            <td class="aleft">&nbsp;样本户户均家庭纯收入（元/年）</td>
+	            <td class="aright"><s:property value="#session.vts.map.inTotal_a"/>&nbsp;</td>
 				<td></td>
 	        </tr>
 	        <tr>
-	        	<td>②低保户（户）</td>
-	            <td><s:property value="#session.vts.map.p2"/></td>
+	        	<td class="aleft">&nbsp;其中：①经营性收入（元）</td>
+	            <td class="aright"><s:property value="#session.vts.map.inJY_ah"/>&nbsp;</td>
 				<td></td>
 	        </tr>
 	        <tr>
-	        	<td>③五保户（户）</td>
-	            <td><s:property value="#session.vts.map.p3"/></td>
-				<td></td>
-	        </tr>
-	        
-	        <tr>
-	        	<td rowspan="8">五、村建档户致贫原因</td>
-	            <td>①因灾致贫（户）</td>
-	            <td><s:property value="#session.vts.map.dc1"/></td>
+	        	<td class="aleft">&nbsp;②工资性收入（元）</td>
+	            <td class="aright"><s:property value="#session.vts.map.inWork_a"/>&nbsp;</td>
 				<td></td>
 	        </tr>
 	        <tr>
-	        	<td>②因病致贫户（户）</td>
-	            <td><s:property value="#session.vts.map.dc2"/></td>
-				<td></td>
-	        </tr>
-	        <tr>
-	        	<td>③因残致贫户（户）</td>
-	            <td><s:property value="#session.vts.map.dc3"/></td>
-				<td></td>
-	        </tr>
-	        <tr>
-	        	<td>④因学致贫（户）</td>
-	            <td><s:property value="#session.vts.map.dc4"/></td>
-				<td></td>
-	        </tr>
-	        <tr>
-	        	<td>⑤因缺技术致贫（户）</td>
-	            <td><s:property value="#session.vts.map.dc5"/></td>
-				<td></td>
-	        </tr>
-	        <tr>
-	        	<td>⑥因缺劳力致贫（户）</td>
-	            <td><s:property value="#session.vts.map.dc6"/></td>
-				<td></td>
-	        </tr>
-	        <tr>
-	        	<td>⑦因缺资金致贫（户）</td>
-	            <td><s:property value="#session.vts.map.dc7"/></td>
-				<td></td>
-	        </tr>
-	        <tr>
-	        	<td>⑧其他原因致贫（户）</td>
-	            <td><s:property value="#session.vts.map.dc8"/></td>
+	        	<td class="aleft">&nbsp;③财产性和转移性收入（元）</td>
+	            <td class="aright"><s:property value="#session.vts.map.inCZ_a"/>&nbsp;</td>
 				<td></td>
 	        </tr>
 	        
 	        <tr>
-	            <td rowspan="5">六、村扶贫项目落实情况</td>
-	            <td>得到扶贫项目支持村数（个）</td>
-	            <td><s:property value="#session.vts.map.fps"/></td>
+	        	<td rowspan="3" class="aleft">&nbsp;四、村建档户主要类型</td>
+	            <td class="aleft">&nbsp;①扶贫户（户）</td>
+	            <td class="aright"><s:property value="#session.vts.map.p1"/>&nbsp;</td>
 				<td></td>
 	        </tr>
 	        <tr>
-	            <td>其中：①产业发展项目支持村（个）</td>
-	            <td><s:property value="#session.vts.map.fps1"/></td>
+	        	<td class="aleft">&nbsp;②低保户（户）</td>
+	            <td class="aright"><s:property value="#session.vts.map.p2"/>&nbsp;</td>
 				<td></td>
 	        </tr>
 	        <tr>
-	            <td>②基础设施项目支持村（个）</td>
-	            <td><s:property value="#session.vts.map.fps2"/></td>
-				<td></td>
-	        </tr>
-	        <tr>
-	            <td>③公益事业项目支持村（个）</td>
-	            <td><s:property value="#session.vts.map.fps3"/></td>
-				<td></td>
-	        </tr>
-	        <tr>
-	            <td>④未得到任何项目支持村（个）</td>
-	            <td><s:property value="#session.vts.map.fps0"/></td>
+	        	<td class="aleft">&nbsp;③五保户（户）</td>
+	            <td class="aright"><s:property value="#session.vts.map.p3"/>&nbsp;</td>
 				<td></td>
 	        </tr>
 	        
 	        <tr>
-	            <td rowspan="5">七、村扶贫资金落实情况</td>
-	            <td>得到扶贫资金支持村数（个）</td>
-	            <td><s:property value="#session.vts.map.fpcn"/></td>
+	        	<td rowspan="8" class="aleft">&nbsp;五、村建档户致贫原因</td>
+	            <td class="aleft">&nbsp;①因灾致贫（户）</td>
+	            <td class="aright"><s:property value="#session.vts.map.dc1"/>&nbsp;</td>
 				<td></td>
 	        </tr>
 	        <tr>
-	            <td>得到扶贫资金总量（万元）</td>
-	            <td><s:property value="#session.vts.map.fpv"/></td>
+	        	<td class="aleft">&nbsp;②因病致贫户（户）</td>
+	            <td class="aright"><s:property value="#session.vts.map.dc2"/>&nbsp;</td>
 				<td></td>
 	        </tr>
 	        <tr>
-	            <td>其中：①省级扶贫资金（万元）</td>
-	            <td><s:property value="#session.vts.map.fpv1"/></td>
+	        	<td class="aleft">&nbsp;③因残致贫户（户）</td>
+	            <td class="aright"><s:property value="#session.vts.map.dc3"/>&nbsp;</td>
 				<td></td>
 	        </tr>
 	        <tr>
-	            <td>②市县级扶贫资金（万元）</td>
-	            <td><s:property value="#session.vts.map.fpv2"/></td>
+	        	<td class="aleft">&nbsp;④因学致贫（户）</td>
+	            <td class="aright"><s:property value="#session.vts.map.dc4"/>&nbsp;</td>
 				<td></td>
 	        </tr>
 	        <tr>
-	            <td>村均得到扶贫资金数（万元）</td>
-	            <td><s:property value="#session.vts.map.fpv_a"/></td>
-				<td></td>
-	        </tr>
-	        
-	        <tr>
-	            <td rowspan="6">八、村扶贫小额贷款使用情况</td>
-	            <td>使用贷款村数（个）</td>
-	            <td><s:property value="#session.vts.map.udcn"/></td>
+	        	<td class="aleft">&nbsp;⑤因缺技术致贫（户）</td>
+	            <td class="aright"><s:property value="#session.vts.map.dc5"/>&nbsp;</td>
 				<td></td>
 	        </tr>
 	        <tr>
-	            <td>使用贷款总农户数（户）</td>
-	            <td><s:property value="#session.vts.map.hndt"/></td>
+	        	<td class="aleft">&nbsp;⑥因缺劳力致贫（户）</td>
+	            <td class="aright"><s:property value="#session.vts.map.dc6"/>&nbsp;</td>
 				<td></td>
 	        </tr>
 	        <tr>
-	            <td>其中：建档户数（户）</td>
-	            <td><s:property value="#session.vts.map.nhdl"/></td>
+	        	<td class="aleft">&nbsp;⑦因缺资金致贫（户）</td>
+	            <td class="aright"><s:property value="#session.vts.map.dc7"/>&nbsp;</td>
 				<td></td>
 	        </tr>
 	        <tr>
-	            <td>使用贷款总量（万元）</td>
-	            <td><s:property value="#session.vts.map.vdt"/></td>
-				<td></td>
-	        </tr>
-	        <tr>
-	            <td>其中：建档户使用总量（万元）</td>
-	            <td><s:property value="#session.vts.map.vdt1"/></td>
-				<td></td>
-	        </tr>
-	        <tr>
-	            <td>户均使用贷款额度（万元）</td>
-	            <td><s:property value="#session.vts.map.vdt_ha"/></td>
+	        	<td class="aleft">&nbsp;⑧其他原因致贫（户）</td>
+	            <td class="aright"><s:property value="#session.vts.map.dc8"/>&nbsp;</td>
 				<td></td>
 	        </tr>
 	        
 	        <tr>
-	            <td rowspan="5">九、村建档户参加社会保障情况</td>
-	            <td>①参加新农合（户）</td>
-	            <td><s:property value="#session.vts.map.b1"/></td>
+	            <td rowspan="5" class="aleft">&nbsp;六、村扶贫项目落实情况</td>
+	            <td class="aleft">&nbsp;得到扶贫项目支持村数（个）</td>
+	            <td class="aright"><s:property value="#session.vts.map.fps"/>&nbsp;</td>
 				<td></td>
 	        </tr>
 	        <tr>
-	            <td>②参加新农保（户）</td>
-	            <td><s:property value="#session.vts.map.b2"/></td>
+	            <td class="aleft">&nbsp;其中：①产业发展项目支持村（个）</td>
+	            <td class="aright"><s:property value="#session.vts.map.fps1"/>&nbsp;</td>
 				<td></td>
 	        </tr>
 	        <tr>
-	            <td>③参加大病医疗救助（户）</td>
-	            <td><s:property value="#session.vts.map.b3"/></td>
+	            <td class="aleft">&nbsp;②基础设施项目支持村（个）</td>
+	            <td class="aright"><s:property value="#session.vts.map.fps2"/>&nbsp;</td>
 				<td></td>
 	        </tr>
 	        <tr>
-	            <td>④参加享受其它保障（户）</td>
-	            <td><s:property value="#session.vts.map.b4"/></td>
+	            <td class="aleft">&nbsp;③公益事业项目支持村（个）</td>
+	            <td class="aright"><s:property value="#session.vts.map.fps3"/>&nbsp;</td>
 				<td></td>
 	        </tr>
 	        <tr>
-	            <td>⑤未参加或享受任何保障（户）</td>
-	            <td><s:property value="#session.vts.map.b0"/></td>
+	            <td class="aleft">&nbsp;④未得到任何项目支持村（个）</td>
+	            <td class="aright"><s:property value="#session.vts.map.fps0"/>&nbsp;</td>
+				<td></td>
+	        </tr>
+	        
+	        <tr>
+	            <td rowspan="5" class="aleft">&nbsp;七、村扶贫资金落实情况</td>
+	            <td class="aleft">&nbsp;得到扶贫资金支持村数（个）</td>
+	            <td class="aright"><s:property value="#session.vts.map.fpcn"/>&nbsp;</td>
 				<td></td>
 	        </tr>
 	        <tr>
-	            <td rowspan="3">十、村建档户脱贫情况</td>
-	            <td>村建档户当年脱贫数（户）</td>
-	            <td><s:property value="#session.vts.map.tph"/></td>
+	            <td class="aleft">&nbsp;得到扶贫资金总量（万元）</td>
+	            <td class="aright"><s:property value="#session.vts.map.fpv"/>&nbsp;</td>
 				<td></td>
 	        </tr>
 	        <tr>
-	            <td>村建档户当年脱贫人口（人）</td>
-	            <td><s:property value="#session.vts.map.tprk"/></td>
+	            <td class="aleft">&nbsp;其中：①省级扶贫资金（万元）</td>
+	            <td class="aright"><s:property value="#session.vts.map.fpv1"/>&nbsp;</td>
 				<td></td>
 	        </tr>
 	        <tr>
-	            <td>村百村建档户当年人口脱贫率（%）</td>
-	            <td><s:property value="#session.vts.map.tpn"/></td>
+	            <td class="aleft">&nbsp;②市县级扶贫资金（万元）</td>
+	            <td class="aright"><s:property value="#session.vts.map.fpv2"/>&nbsp;</td>
+				<td></td>
+	        </tr>
+	        <tr>
+	            <td class="aleft">&nbsp;村均得到扶贫资金数（万元）</td>
+	            <td class="aright"><s:property value="#session.vts.map.fpv_a"/>&nbsp;</td>
+				<td></td>
+	        </tr>
+	        
+	        <tr>
+	            <td rowspan="6" class="aleft">&nbsp;八、村扶贫小额贷款使用情况</td>
+	            <td class="aleft">&nbsp;使用贷款村数（个）</td>
+	            <td class="aright"><s:property value="#session.vts.map.udcn"/>&nbsp;</td>
+				<td></td>
+	        </tr>
+	        <tr>
+	            <td class="aleft">&nbsp;使用贷款总农户数（户）</td>
+	            <td class="aright"><s:property value="#session.vts.map.hndt"/>&nbsp;</td>
+				<td></td>
+	        </tr>
+	        <tr>
+	            <td class="aleft">&nbsp;其中：建档户数（户）</td>
+	            <td class="aright"><s:property value="#session.vts.map.nhdl"/>&nbsp;</td>
+				<td></td>
+	        </tr>
+	        <tr>
+	            <td class="aleft">&nbsp;使用贷款总量（万元）</td>
+	            <td class="aright"><s:property value="#session.vts.map.vdt"/>&nbsp;</td>
+				<td></td>
+	        </tr>
+	        <tr>
+	            <td class="aleft">&nbsp;其中：建档户使用总量（万元）</td>
+	            <td class="aright"><s:property value="#session.vts.map.vdt1"/>&nbsp;</td>
+				<td></td>
+	        </tr>
+	        <tr>
+	            <td class="aleft">&nbsp;户均使用贷款额度（万元）</td>
+	            <td class="aright"><s:property value="#session.vts.map.vdt_ha"/>&nbsp;</td>
+				<td></td>
+	        </tr>
+	        
+	        <tr>
+	            <td rowspan="5" class="aleft">&nbsp;九、村建档户参加社会保障情况</td>
+	            <td class="aleft">&nbsp;①参加新农合（户）</td>
+	            <td class="aright"><s:property value="#session.vts.map.b1"/>&nbsp;</td>
+				<td></td>
+	        </tr>
+	        <tr>
+	            <td class="aleft">&nbsp;②参加新农保（户）</td>
+	            <td class="aright"><s:property value="#session.vts.map.b2"/>&nbsp;</td>
+				<td></td>
+	        </tr>
+	        <tr>
+	            <td class="aleft">&nbsp;③参加大病医疗救助（户）</td>
+	            <td class="aright"><s:property value="#session.vts.map.b3"/>&nbsp;</td>
+				<td></td>
+	        </tr>
+	        <tr>
+	            <td class="aleft">&nbsp;④参加享受其它保障（户）</td>
+	            <td class="aright"><s:property value="#session.vts.map.b4"/>&nbsp;</td>
+				<td></td>
+	        </tr>
+	        <tr>
+	            <td class="aleft">&nbsp;⑤未参加或享受任何保障（户）</td>
+	            <td class="aright"><s:property value="#session.vts.map.b0"/>&nbsp;</td>
+				<td></td>
+	        </tr>
+	        <tr>
+	            <td rowspan="3" class="aleft">&nbsp;十、村建档户脱贫情况</td>
+	            <td class="aleft">&nbsp;村建档户当年脱贫数（户）</td>
+	            <td class="aright"><s:property value="#session.vts.map.tph"/>&nbsp;</td>
+				<td></td>
+	        </tr>
+	        <tr>
+	            <td class="aleft">&nbsp;村建档户当年脱贫人口（人）</td>
+	            <td class="aright"><s:property value="#session.vts.map.tprk"/>&nbsp;</td>
+				<td></td>
+	        </tr>
+	        <tr>
+	            <td class="aleft">&nbsp;村百村建档户当年人口脱贫率（%）</td>
+	            <td class="aright"><s:property value="#session.vts.map.tpn"/>&nbsp;</td>
 				<td></td>
 	        </tr>
 		</table>
@@ -381,228 +386,228 @@
 			<table class="data_list" cellpadding="0" cellspacing="0"  width="100%">
 				<tr>
 					<td width="10%">1</td>			
-					<td width="25%">总人口（人）</td>
-					<td width="15%"><s:property value="#session.vts.map.population_t"/></td>
+					<td width="25%" class="aleft">&nbsp;总人口（人）</td>
+					<td width="15%" class="aright"><s:property value="#session.vts.map.population_t"/>&nbsp;</td>
 					<td width="50%"></td>
 				</tr>
 		        <tr>
 		            <td rowspan="2">2</td>
-		            <td>总劳动力（个）</td>
-		            <td><s:property value="#session.vts.map.labornum_t"/></td>
+		            <td class="aleft">&nbsp;总劳动力（个）</td>
+		            <td class="aright"><s:property value="#session.vts.map.labornum_t"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td>其中：务工劳动力（个）</td>
-		            <td><s:property value="#session.vts.map.wlabornum_t"/></td>
+		            <td class="aleft">&nbsp;其中：务工劳动力（个）</td>
+		            <td class="aright"><s:property value="#session.vts.map.wlabornum_t"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
 		            <td rowspan="2">3</td>
-		            <td>承包耕地总面积（亩）</td>
-		            <td><s:property value="#session.vts.map.fields_t"/></td>
+		            <td class="aleft">&nbsp;承包耕地总面积（亩）</td>
+		            <td class="aright"><s:property value="#session.vts.map.fields_t"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td>户均耕地面积（亩）</td>
-		            <td><s:property value="#session.vts.map.fields_a"/></td>
+		            <td class="aleft">&nbsp;户均耕地面积（亩）</td>
+		            <td class="aright"><s:property value="#session.vts.map.fields_a"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
 		            <td rowspan="5">4</td>
-		            <td>年总纯收入（万元/年）</td>
-		            <td><s:property value="#session.vts.map.intotal_t"/></td>
+		            <td class="aleft">&nbsp;年总纯收入（万元/年）</td>
+		            <td class="aright"><s:property value="#session.vts.map.intotal_t"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td>户均年纯收入（元/年）</td>
-		            <td><s:property value="#session.vts.map.inTotal_a"/></td>
+		            <td class="aleft">&nbsp;户均年纯收入（元/年）</td>
+		            <td class="aright"><s:property value="#session.vts.map.inTotal_a"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td>其中：①经营性收入（元）</td>
-		            <td><s:property value="#session.vts.map.inJy_a"/></td>
+		            <td class="aleft">&nbsp;其中：①经营性收入（元）</td>
+		            <td class="aright"><s:property value="#session.vts.map.inJy_a"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td>②工资性收入（元）</td>
-		            <td><s:property value="#session.vts.map.inWork_a"/></td>
+		            <td class="aleft">&nbsp;②工资性收入（元）</td>
+		            <td class="aright"><s:property value="#session.vts.map.inWork_a"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td>③财产性及转移性收入（元）</td>
-		            <td><s:property value="#session.vts.map.incz_a"/></td>
+		            <td class="aleft">&nbsp;③财产性及转移性收入（元）</td>
+		            <td class="aright"><s:property value="#session.vts.map.incz_a"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
 		            <td>5</td>
-		            <td>年人均纯收入（元/年）</td>
-		            <td><s:property value="#session.vts.map.inTotal_ah"/></td>
+		            <td class="aleft">&nbsp;年人均纯收入（元/年）</td>
+		            <td class="aright"><s:property value="#session.vts.map.inTotal_ah"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
 		            <td rowspan="6">6</td>
-		            <td>①因病致贫（户）</td>
-		            <td><s:property value="#session.vts.map.dc1"/></td>
+		            <td class="aleft">&nbsp;①因病致贫（户）</td>
+		            <td class="aright"><s:property value="#session.vts.map.dc1"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td>②因残致贫（户）</td>
-		            <td><s:property value="#session.vts.map.dc2"/></td>
+		            <td class="aleft">&nbsp;②因残致贫（户）</td>
+		            <td class="aright"><s:property value="#session.vts.map.dc2"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td>③因灾致贫（户）</td>
-		            <td><s:property value="#session.vts.map.dc3"/></td>
+		            <td class="aleft">&nbsp;③因灾致贫（户）</td>
+		            <td class="aright"><s:property value="#session.vts.map.dc3"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td>④因学致贫（户）</td>
-		            <td><s:property value="#session.vts.map.dc4"/></td>
+		            <td class="aleft">&nbsp;④因学致贫（户）</td>
+		            <td class="aright"><s:property value="#session.vts.map.dc4"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td>⑤因缺劳力致贫（户）</td>
-		            <td><s:property value="#session.vts.map.dc5"/></td>
+		            <td class="aleft">&nbsp;⑤因缺劳力致贫（户）</td>
+		            <td class="aright"><s:property value="#session.vts.map.dc5"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td>⑥因其它原因致贫（户）</td>
-		            <td><s:property value="#session.vts.map.dc6"/></td>
+		            <td class="aleft">&nbsp;⑥因其它原因致贫（户）</td>
+		            <td class="aright"><s:property value="#session.vts.map.dc6"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
 		            <td rowspan="7">7</td>
-		            <td>得到扶贫项目支持的户数（户）</td>
-		            <td><s:property value="#session.vts.map.fs"/></td>
+		            <td class="aleft">&nbsp;得到扶贫项目支持的户数（户）</td>
+		            <td class="aright"><s:property value="#session.vts.map.fs"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td>①得到产业发展项目支持（户）</td>
-		            <td><s:property value="#session.vts.map.fs1"/></td>
+		            <td class="aleft">&nbsp;①得到产业发展项目支持（户）</td>
+		            <td class="aright"><s:property value="#session.vts.map.fs1"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td>②得到就业项目支持（户）</td>
-		            <td><s:property value="#session.vts.map.fs2"/></td>
+		            <td class="aleft">&nbsp;②得到就业项目支持（户）</td>
+		            <td class="aright"><s:property value="#session.vts.map.fs2"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td>③得到小额扶贫贷款支持（户）</td>
-		            <td><s:property value="#session.vts.map.fs3"/></td>
+		            <td class="aleft">&nbsp;③得到小额扶贫贷款支持（户）</td>
+		            <td class="aright"><s:property value="#session.vts.map.fs3"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td>④得到入股收益分红项目支持（户）</td>
-		            <td><s:property value="#session.vts.map.fs4"/></td>
+		            <td class="aleft">&nbsp;④得到入股收益分红项目支持（户）</td>
+		            <td class="aright"><s:property value="#session.vts.map.fs4"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td>⑤得到其它项目支持（户）</td>
-		            <td><s:property value="#session.vts.map.fs5"/></td>
+		            <td class="aleft">&nbsp;⑤得到其它项目支持（户）</td>
+		            <td class="aright"><s:property value="#session.vts.map.fs5"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td>⑥未得到任何项目支持（户）</td>
-		            <td><s:property value="#session.vts.map.fs0"/></td>
+		            <td class="aleft">&nbsp;⑥未得到任何项目支持（户）</td>
+		            <td class="aright"><s:property value="#session.vts.map.fs0"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
 		            <td rowspan="6">8</td>
-		            <td>得到扶贫资金支持的户数（户）</td>
-		            <td><s:property value="#session.vts.map.v_hn"/></td>
+		            <td class="aleft">&nbsp;得到扶贫资金支持的户数（户）</td>
+		            <td class="aright"><s:property value="#session.vts.map.v_hn"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td>得到的扶贫资金总量（万元）</td>
-		            <td><s:property value="#session.vts.map.v"/></td>
+		            <td class="aleft">&nbsp;得到的扶贫资金总量（万元）</td>
+		            <td class="aright"><s:property value="#session.vts.map.v"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td>其中：①省级扶贫资金（万元）</td>
-		            <td><s:property value="#session.vts.map.v1"/></td>
+		            <td class="aleft">&nbsp;其中：①省级扶贫资金（万元）</td>
+		            <td class="aright"><s:property value="#session.vts.map.v1"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td>②市县级扶贫资金（万元）</td>
-		            <td><s:property value="#session.vts.map.v2"/></td>
+		            <td class="aleft">&nbsp;②市县级扶贫资金（万元）</td>
+		            <td class="aright"><s:property value="#session.vts.map.v2"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td>户均得到扶贫资金（元）</td>
-		            <td><s:property value="#session.vts.map.v_a"/></td>
+		            <td class="aleft">&nbsp;户均得到扶贫资金（元）</td>
+		            <td class="aright"><s:property value="#session.vts.map.v_a"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td>未得到扶贫资金支持的户数（户）</td>
-		            <td><s:property value="#session.vts.map.v0_hn"/></td>
+		            <td class="aleft">&nbsp;未得到扶贫资金支持的户数（户）</td>
+		            <td class="aright"><s:property value="#session.vts.map.v0_hn"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
 		            <td rowspan="4">9</td>
-		            <td>使用扶贫小额贷款户数（户）</td>
-		            <td><s:property value="#session.vts.map.xe_hn"/></td>
+		            <td class="aleft">&nbsp;使用扶贫小额贷款户数（户）</td>
+		            <td class="aright"><s:property value="#session.vts.map.xe_hn"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td>使用贷款总量（万元）</td>
-		            <td><s:property value="#session.vts.map.xe_t"/></td>
+		            <td class="aleft">&nbsp;使用贷款总量（万元）</td>
+		            <td class="aright"><s:property value="#session.vts.map.xe_t"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td>户均使用贷款（万元）</td>
-		            <td><s:property value="#session.vts.map.xe_a"/></td>
+		            <td class="aleft">&nbsp;户均使用贷款（万元）</td>
+		            <td class="aright"><s:property value="#session.vts.map.xe_a"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td>未使用扶贫小额贷款的户数（户）</td>
-		            <td><s:property value="#session.vts.map.xe0_hn"/></td>
+		            <td class="aleft">&nbsp;未使用扶贫小额贷款的户数（户）</td>
+		            <td class="aright"><s:property value="#session.vts.map.xe0_hn"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
 		            <td rowspan="6">10</td>
-		            <td>参加社会保障情况（户有交叉）</td>
-		            <td><s:property value="#session.vts.map.b"/></td>
+		            <td class="aleft">&nbsp;参加社会保障情况（户有交叉）</td>
+		            <td class="aright"><s:property value="#session.vts.map.b"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td>①参加新农合（户）</td>
-		            <td><s:property value="#session.vts.map.b1"/></td>
+		            <td class="aleft">&nbsp;①参加新农合（户）</td>
+		            <td class="aright"><s:property value="#session.vts.map.b1"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td>②参加新农保（户）</td>
-		            <td><s:property value="#session.vts.map.b2"/></td>
+		            <td class="aleft">&nbsp;②参加新农保（户）</td>
+		            <td class="aright"><s:property value="#session.vts.map.b2"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td>③参加大病医疗救助（户）</td>
-		            <td><s:property value="#session.vts.map.b3"/></td>
+		            <td class="aleft">&nbsp;③参加大病医疗救助（户）</td>
+		            <td class="aright"><s:property value="#session.vts.map.b3"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td>④参加其它保障（户）</td>
-		            <td><s:property value="#session.vts.map.b4"/></td>
+		            <td class="aleft">&nbsp;④参加其它保障（户）</td>
+		            <td class="aright"><s:property value="#session.vts.map.b4"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td>⑤未参加或享受任何保障（户）</td>
-		            <td><s:property value="#session.vts.map.b0"/></td>
+		            <td class="aleft">&nbsp;⑤未参加或享受任何保障（户）</td>
+		            <td class="aright"><s:property value="#session.vts.map.b0"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
 		            <td rowspan="3">11</td>
-		            <td>当年脱贫户数（户）</td>
-		            <td><s:property value="#session.vts.map.tph"/></td>
+		            <td class="aleft">&nbsp;当年脱贫户数（户）</td>
+		            <td class="aright"><s:property value="#session.vts.map.tph"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td>当年脱贫人口（人）</td>
-		            <td><s:property value="#session.vts.map.tprk"/></td>
+		            <td class="aleft">&nbsp;当年脱贫人口（人）</td>
+		            <td class="aright"><s:property value="#session.vts.map.tprk"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td>当年人口脱贫率（%）</td>
-		            <td><s:property value="#session.vts.map.tpn"/></td>
+		            <td class="aleft">&nbsp;当年人口脱贫率（%）</td>
+		            <td class="aright"><s:property value="#session.vts.map.tpn"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 			</table>
