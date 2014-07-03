@@ -58,7 +58,7 @@
 		<table cellpadding="0" cellspacing="0">
 			<tr>
 				<td width="10%" align="right"><input type="checkbox"/>全部村范围</td>
-				<td width="10%" align="right"><input type="button" value="选择村" onclick="popTips()"/></td>
+				<td width="10%" align="right"><input type="button" value="选择县" onclick="popTips()"/></td>
 				<td width="10%"></td>
 				<td width="10%"></td>
 				<td width="10%" align="center"></td>
@@ -189,7 +189,7 @@
 <script type="text/javascript">
 //弹出层调用
 function popTips(){
-	showTipsWindown("选择村", 'simTestContent', 300, 255);
+	showTipsWindown("选择县", 'simTestContent', 150, 300);
 }
 function showTipsWindown(title,id,width,height){
 	tipsWindown(title,"id:"+id,width,height,"true","","true",id);
@@ -201,37 +201,19 @@ function showTipsWindown(title,id,width,height){
 <div id="simTestContent" class="simScrollCont">
 	<div class="mainlist">
 		<table cellpadding="0" cellspacing="0" width="100%">
-           	<tr style="background:#C0C0C0">
-              	<td colspan="2" align="left">淮安市-清浦区-盐河镇</td>
-			</tr>
-            <tr>
-              	<td align="right">&nbsp;&nbsp;<input type="checkbox"/></td>
-              	<td align="left">&nbsp;盐河居委会</td>
-             </tr>
-             <tr>
-              	<td align="right">&nbsp;&nbsp;<input type="checkbox"/></td>
-              	<td align="left">&nbsp;杨庙村委会</td>
-              </tr>
-              <tr>
-              	<td align="right">&nbsp;&nbsp;<input type="checkbox"/></td>
-              	<td align="left">&nbsp;甘露村委会</td>
-              </tr>
-              <tr style="background:#C0C0C0">
-              	<td colspan="2" align="left">淮安市-清浦区-黄码乡</td>
-			</tr>
-            <tr>
-              	<td align="right">&nbsp;&nbsp;<input type="checkbox"/></td>
-              	<td align="left">&nbsp;运西村委会</td>
-             </tr>
-             <tr>
-              	<td align="right">&nbsp;&nbsp;<input type="checkbox"/></td>
-              	<td align="left">&nbsp;运南村委会</td>
-              </tr>
-              <tr>
-              	<td align="right">&nbsp;&nbsp;<input type="checkbox"/></td>
-              	<td align="left">&nbsp;吴圩村委会</td>
-              </tr>
-           </table>
+           	<s:iterator id="ls" value="#session.vts.list">
+           		<tr>
+           			<s:if test="#ls.st==0">
+           			<td align="left" style="background:gray"><s:property value="#ls.oname"/></td>
+           			</s:if>
+           			<s:elseif test="#ls.st==1">
+           			<td align="center">
+           				<input type="checkbox" /><s:property value="#ls.oname"/>
+           			</td>
+           			</s:elseif>
+           		</tr>
+           	</s:iterator>
+		</table>
 	</div>
 </div>
 </div>

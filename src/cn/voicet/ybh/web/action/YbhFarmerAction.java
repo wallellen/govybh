@@ -26,8 +26,10 @@ public class YbhFarmerAction extends BaseAction implements ModelDriven<YbhFarmer
 		return ybhFarmerForm;
 	}
 	
-	/** 样本户管理首页 */
+	/** 样本户农户查询 */
 	public String home(){
+		DotSession ds = DotSession.getVTSession(request);
+		ybhFarmerService.getSelectedXianList(ds);
 		return "show_farmer";
 	}
 	

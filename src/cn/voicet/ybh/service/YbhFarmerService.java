@@ -8,4 +8,5 @@ import cn.voicet.ybh.web.form.YearDataForm;
 @SuppressWarnings("unchecked")
 public interface YbhFarmerService {
 	public final static String SERVICE_NAME = "cn.voicet.ybh.service.impl.YbhFarmerServiceImpl";
+	void getSelectedXianList(DotSession ds);
 }
