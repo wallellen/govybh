@@ -76,4 +76,31 @@ public class VTJime {
 		}
 	}
 	
+	public static void putMapDataByColNameWithColType(Map map,ResultSet rs) {
+		String sColName;
+		try {
+			ResultSetMetaData rsm =rs.getMetaData();
+			int col = rsm.getColumnCount();
+			for(int i=1; i<=col; i++) {
+				sColName=rsm.getColumnName(i);
+				if(null!=rs.getString(i) && !rs.getString(i).equals("")){
+					int dataType = rsm.getColumnType(i);
+					if(dataType==3)
+					{
+						map.put(sColName, rs.getFloat(i));
+					}
+					else
+					{
+						map.put(sColName, rs.getString(i));
+					}
+					
+				}else{
+					map.put(sColName, "");
+				}
+			}
+		} catch (Exception e) {
+			System.out.println("");
+		}
+	}
+	
 }
