@@ -32,7 +32,8 @@
 </head>
 <body onload="loadParam()" style="background:#E0EEFB;">
 <div style="float:right; width:868px; height:668px;">
-	<div style="width:640px; height:22px; margin-top:10px;" class="title-stats">农户查询&nbsp;[<s:property value="#session.vts.map.name"/>]</div>
+	<div style="width:868px; height:22px; margin-top:1px;" class="title-stats"><s:property value="year"/>年度扶贫观察点<s:if test="zhibiao=='cun'">村级</s:if><s:elseif test="zhibiao=='hu'">户级</s:elseif><s:else></s:else>监测数据汇总
+	</div>
 	<form name="form1" action="${pageContext.request.contextPath }/ybhTotalAction_stats.action" method="post" onsubmit="return checkZhibiao()">
 	<fieldset style="border:1px solid #3B9FFF; margin:0; padding:0; width:99%;">
 	<legend>查询条件</legend>
@@ -80,7 +81,7 @@
 			</tr>
 	        </table>
 	    </div>
-		<div class="table-c" style="height:524px; width:868px; line-height:22px; overflow-y:auto;">
+		<div class="table-c" style="height:546px; width:868px; line-height:22px; overflow-y:auto;">
 	
 		<table class="data_list" cellpadding="0" cellspacing="0"  width="100%">
 			<tr>
@@ -382,7 +383,7 @@
 			</tr>
 	        </table>
 	    </div>
-		<div class="table-c" style="height:524px; width:868px; line-height:22px; overflow-y:auto;">
+		<div class="table-c" style="height:546px; width:868px; line-height:22px; overflow-y:auto;">
 			<table class="data_list" cellpadding="0" cellspacing="0"  width="100%">
 				<tr>
 					<td width="10%">1</td>			
