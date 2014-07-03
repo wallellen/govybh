@@ -48,15 +48,15 @@
                 <td></td>
             </tr>
             <tr>
-            	<td width="20%" align="right">年份：</td>
-                <td width="20%" align="left">
+            	<td width="10%" align="right">年份：</td>
+                <td width="10%" align="left">
                     <s:select name="year" list="{'2014','2015'}" value="%{year}"></s:select> 
                 </td>
-                <td width="20%" align="right">范围：</td>
+                <td width="10%" align="right">范围：</td>
                 <td width="20%" align="left">
                     <s:select name="mode" list="#application.vta.GetList('subeimode')" listKey="id" listValue="str" value="%{mode}" cssClass="sele"></s:select></li>
                 </td>
-                <td width="20%"><input id="searchImg" type="submit" value="立即查询" class="button4"/></td>
+                <td width="50%"><input id="searchImg" type="submit" value="立即查询" class="button4"/></td>
             </tr>
         </table>
 	</div>
