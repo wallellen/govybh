@@ -2,7 +2,7 @@ package cn.voicet.ybh.web.form;
 
 public class YbhTotalForm {
 	private String zhibiao;
-	private int year;
+	private String year;
 	private int mode;
 	public String getZhibiao() {
 		return zhibiao;
@@ -10,10 +10,10 @@ public class YbhTotalForm {
 	public void setZhibiao(String zhibiao) {
 		this.zhibiao = zhibiao;
 	}
-	public int getYear() {
+	public String getYear() {
 		return year;
 	}
-	public void setYear(int year) {
+	public void setYear(String year) {
 		this.year = year;
 	}
 	public int getMode() {

@@ -32,7 +32,7 @@ public class YbhTotalDaoImpl extends BaseDaoImpl implements YbhTotalDao {
 					cs = conn.prepareCall("{call ybh_look_1000hu(?,?,?,?)}");
 				}
 				cs.setString(1, ds.rbm);
-				cs.setInt(2, ybhTotalForm.getYear());
+				cs.setString(2, ybhTotalForm.getYear());
 				cs.setInt(3, ybhTotalForm.getMode());
 				cs.setInt(4, 1);
 				cs.execute();
