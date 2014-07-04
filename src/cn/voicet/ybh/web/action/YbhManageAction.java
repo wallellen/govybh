@@ -61,6 +61,17 @@ public class YbhManageAction extends BaseAction implements ModelDriven<YbhManage
 		return home();
 	}
 	
+	/** 样本村管理->样本户管理编辑操作 */
+	public String viewYbcToYbh(){
+		DotSession ds = DotSession.getVTSession(request);
+		ds.curBM = ybhManageForm.getViewBM();
+		ds.bmhm = ybhManageForm.getViewBM();
+		ds.map.put("name",ybhManageForm.getOname());
+		String sListStr = ybhManageService.findNavListStr(ds);
+		ds.subPathTitle.setFullPath(sListStr);
+		return home();
+	}
+	
 	/*********************************************/
 	/** 编辑 */
 	public String detail(){

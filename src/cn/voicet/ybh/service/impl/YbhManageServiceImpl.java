@@ -47,5 +47,8 @@ public class YbhManageServiceImpl implements YbhManageService{
 	public void saveYbhIncome(YbhManageForm ybhManageForm) {
 		ybhManageDao.saveYbhIncome(ybhManageForm);
 	}
+	public String findNavListStr(DotSession ds) {
+		return ybhManageDao.findNavListStr(ds);
+	}
 
 }

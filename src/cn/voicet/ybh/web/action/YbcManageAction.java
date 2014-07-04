@@ -107,7 +107,7 @@ public class YbcManageAction extends BaseAction implements
 				
 				h_content += "<td>" + map.get("hn").toString() + "</td>";
 				h_content += "<td>" +
-						"<a href='ybhManageAction_viewYbh.action?viewBM="+map.get("bm")+"&oname="+map.get("oname")+"'>±à¼­</a>" +
+						"<a href='ybhManageAction_viewYbcToYbh.action?viewBM="+map.get("bm")+"&oname="+map.get("oname")+"'>±à¼­</a>" +
 						"</td>";
 				h_content += "</tr>";
 			}

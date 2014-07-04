@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.sql.Types;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -272,6 +273,22 @@ public class YbhManageDaoImpl extends BaseDaoImpl implements YbhManageDao {
 				return null;
 			}
 		});
+	}
+
+	public String findNavListStr(final DotSession ds) {
+		String str = (String)this.getJdbcTemplate().execute(new ConnectionCallback() {
+			public Object doInConnection(Connection conn) throws SQLException,
+					DataAccessException {
+				CallableStatement cs = null;
+				cs = conn.prepareCall("{call sp_bm_getfullpath(?,?,?)}");
+				cs.setString(1, ds.bmhm);
+				cs.setString(2, ds.rbm);
+				cs.registerOutParameter(3, Types.VARCHAR);
+				cs.execute();
+				return cs.getObject(3);
+			}
+		});
+		return str;
 	}
 
 	
