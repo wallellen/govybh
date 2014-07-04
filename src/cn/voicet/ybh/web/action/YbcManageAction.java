@@ -44,7 +44,6 @@ public class YbcManageAction extends BaseAction implements
 		int rtpn = 0;// Tab count
 		DotSession ds = DotSession.getVTSession(request);
 		ybcManageService.getSelectedCunList(ds);
-		//
 		//省
 		if(ds.rbm.length()==2)
 		{
@@ -106,7 +105,7 @@ public class YbcManageAction extends BaseAction implements
 							+ map.get("oname") + "</td>";
 					bf2 = false;
 				} else {
-					h_content += "<td title='村数:"+map.get("cn")+"，户数:"+map.get("hn")+"'>" 
+					h_content += "<td title='户数:"+map.get("hn")+"'>" 
 							+ map.get("oname").toString() + "</td>";
 					
 					h_content += "<td>" + map.get("hn").toString() + "</td>";
@@ -156,7 +155,7 @@ public class YbcManageAction extends BaseAction implements
 							+ map.get("oname") + "</td>";
 					bf2 = false;
 				}else {
-					h_content += "<td title='村数:"+map.get("cn")+"，户数:"+map.get("hn")+"'>" 
+					h_content += "<td title='户数:"+map.get("hn")+"'>" 
 					+ map.get("oname").toString() + "</td>";
 			
 					h_content += "<td>" + map.get("hn").toString() + "</td>";
@@ -182,7 +181,7 @@ public class YbcManageAction extends BaseAction implements
 			for (int i=0; i<ds.list.size(); i++) {
 				map = (Map) ds.list.get(i);
 				h_content += "<tr>";
-				h_content += "<td title='村数:"+map.get("cn")+"，户数:"+map.get("hn")+"'>" 
+				h_content += "<td title='户数:"+map.get("hn")+"'>" 
 				+ map.get("oname").toString() + "</td>";
 		
 				h_content += "<td>" + map.get("hn").toString() + "</td>";
