@@ -62,6 +62,12 @@
 			<result name="show_total">/WEB-INF/page/work/ybh_total.jsp</result>
 		</action>
 		
+		<!-- 样本村管理 -->
+		<action name="ybcManageAction_*" class="ybcManageAction" method="{1}">
+			<result name="show_ybc">/WEB-INF/page/work/ybh_test.jsp</result>
+		</action>
+		
+		
 	</package>  
 	<package name="dot" namespace="/" extends="json-default">
 		<!-- login -->
