@@ -37,7 +37,7 @@
 <body style="background:#E0EEFB;">
 <div style="float:left; width:868px; height:668px;">
 	<div style="width:640px; height:22px; margin-top:10px;" class="title-stats">人口查询&nbsp;[<s:property value="#session.vts.map.name"/>]</div>
-	<form name="memberForm" action="${pageContext.request.contextPath }/system/govFarmerQueryAction_member.do" method="post" onsubmit="return changeCurPage()">
+	<form name="memberForm" action="${pageContext.request.contextPath }/ybhMemberAction_queryMember.action" method="post" onsubmit="return changeCurPage()">
 	<fieldset style="border:1px solid #3B9FFF; margin:0; padding:0; width:99%;">
 	<legend>查询条件</legend>
 	<div style="height:60px;">
@@ -76,7 +76,7 @@
 				<td width="10%" align="left">
 					<input type="text" name="memberstr" value="<s:property value="#session.vts.map.marr[3]"/>" maxlength="15" class="inptxt12" onfocus="this.className='input_on12'" onblur="this.className='input_off12'" onkeyup="checkIntInput(this)"/>
 				</td>
-				<td width="20%" align="center"><input id="searchImg" type="button" value="立即查询" class="button4"/></td>
+				<td width="20%" align="center"><input id="searchImg" type="submit" value="立即查询" class="button4"/></td>
 			</tr>
 		</table>	
 	</div>
@@ -121,9 +121,9 @@
 	</div>
 	</fieldset>
 	</form>
-	<s:if test="#session.vts.list!=null && #session.vts.list.size()>0">
+	<s:if test="#session.vts.list2!=null && #session.vts.list2.size()>0">
 	<div style="height:18px; line-height:18px; padding-top:2px;">
-		<span>符合查询条件人口数：<s:property value="#session.vts.map.membernt"/>2人</span>
+		<span>符合查询条件人口数：<s:property value="#session.vts.map.membernt"/>人</span>
 		<span style="float:right; width:60px;">
 			<!--  
 			<input type="button" value="导出" onclick="location.href='${pageContext.request.contextPath }/system/govFarmerQueryAction_exportMemberInfo.do?memberstr=<s:property value="memberstr"/>'" class="button43"/>
@@ -150,36 +150,23 @@
 			</tr>
 			</thead>
 			<tbody id="splitpage">
+				<s:iterator value="#session.vts.list2" var="ls2">
 				<tr align="center" style="height:20px; display:none;">
-					<td> 秦海强</td>
-					<td>男</td>
-					<td>56</td>
-					<td>否 </td>
-					<td>2:小学</td>
-					<td>3:长期慢性病</td>
-					<td>1:劳动力</td>
-					<td>1:在家务家</td>
-					<td>是</td>
-					<td>2420</td>
+					<td align="left">&nbsp;<s:property value="#ls2.uname"/></td>
+					<td><s:property value="#ls2.sex"/></td>
+					<td align="right"><s:property value="#ls2.age"/>&nbsp;</td>
+					<td><s:property value="#ls2.school"/></td>
+					<td align="left">&nbsp;<s:property value="#ls2.education"/></td>
+					<td align="left">&nbsp;<s:property value="#ls2.hearth"/></td>
+					<td align="left">&nbsp;<s:property value="#ls2.labors"/></td>
+					<td align="left">&nbsp;<s:property value="#ls2.works"/></td>
+					<td><s:property value="#ls2.bla"/></td>
+					<td align="right"><s:property value="#ls2.tbfd"/>&nbsp;</td>
 					<td>
-						<a href="javascript:void(0)">查看</a>
+						<a href="${pageContext.request.contextPath }/system/govBrowerAction_viewReportFamilyWithQuery.do?viewBM=<s:property value="#ls.c0"/>">查看</a>
 					</td>
 				</tr>
-				<tr align="center" style="height:20px; display:none;">
-					<td> 刘玉且</td>
-					<td>男</td>
-					<td>73</td>
-					<td>否 </td>
-					<td>2:小学</td>
-					<td>3:长期慢性病</td>
-					<td>1:劳动力</td>
-					<td>1:在家务家</td>
-					<td>是</td>
-					<td>1420</td>
-					<td>
-						<a href="javascript:void(0)">查看</a>
-					</td>
-				</tr>
+				</s:iterator>
 			</tbody>
 		</table>
 	</div>

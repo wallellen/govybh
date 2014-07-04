@@ -33,6 +33,11 @@ public class YbhMemberAction extends BaseAction implements ModelDriven<YbhMember
 		return "show_member";
 	}
 	
-	
+	public String queryMember(){
+		DotSession ds = DotSession.getVTSession(request);
+		ds.map.put("marr", ybhMemberForm.getMemberstr());
+		ybhMemberService.getMemberInfoList(ds);
+		return "show_member";
+	}
 	
 }

@@ -20,4 +20,8 @@ public class YbhMemberServiceImpl implements YbhMemberService{
 		ybhMemberDao.getSelectedXianList(ds);
 	}
 
+	public void getMemberInfoList(DotSession ds) {
+		ybhMemberDao.getMemberInfoList(ds);		
+	}
+
 }
