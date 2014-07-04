@@ -57,7 +57,7 @@
 	<div style="height:60px;">
 		<table cellpadding="0" cellspacing="0">
 			<tr>
-				<td width="10%" align="right"><input type="checkbox"/>全部村范围</td>
+				<td width="10%" align="right"><input type="checkbox"/>全省范围</td>
 				<td width="10%" align="right"><input type="button" value="选择县" onclick="popTips()"/></td>
 				<td width="10%"></td>
 				<td width="10%"></td>
