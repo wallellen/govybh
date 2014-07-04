@@ -45,11 +45,11 @@
 			<tr>
 				<td width="10%" align="right"></td>
 				<td width="10%">
-					<input type="checkbox"/>全部村范围
+					<input type="checkbox"/>全省范围
 				</td>
 				<td width="10%" align="right"></td>
 				<td width="10%">
-				<input type="button" value="选择村" onclick="popTips()"/>
+				<input type="button" value="选择县" onclick="popTips()"/>
 				</td>
 				<td width="10%" align="right"></td>
 				<td width="8%" align="left">
