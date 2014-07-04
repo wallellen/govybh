@@ -15,7 +15,7 @@ import cn.voicet.ybh.util.DotSession;
 import cn.voicet.ybh.web.form.YbhTotalForm;
 
 @Repository(YbhTotalDao.SERVICE_NAME)
-@SuppressWarnings({"unchecked","static-access"})
+@SuppressWarnings("unchecked")
 public class YbhTotalDaoImpl extends BaseDaoImpl implements YbhTotalDao {
 
 	public void getYbhTotalInfo(final DotSession ds, final YbhTotalForm ybhTotalForm) {

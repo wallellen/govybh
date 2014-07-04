@@ -14,6 +14,7 @@ import cn.voicet.ybh.web.form.YearDataForm;
 
 @Transactional(readOnly=true)
 @Service(YearDataService.SERVICE_NAME)
+@SuppressWarnings("unchecked")
 public class YearDataServiceImpl implements YearDataService{
 	
 	@Resource(name=YearDataDao.SERVICE_NAME)
