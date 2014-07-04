@@ -40,7 +40,9 @@
 				<td width="8%">住房(m<sup>2</sup>)</td>
 				<td width="10%">农户属性</td>
 				<td width="10%">贫困原因</td>
-				<td width="12%" class="tabtd1">操作</td>
+				<td width="12%">
+					<input type="button" value="返回" onclick="javascript:history.go(-1)" class="button43"/>
+				</td>
 			</s:else>
              </tr>
          </thead>
