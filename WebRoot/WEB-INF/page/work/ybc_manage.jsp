@@ -19,6 +19,10 @@
 		.Contentbox table{border-right:1px solid #3B9FFF; border-bottom:1px solid #3B9FFF; margin-top:2px;}
 		.Contentbox table td{border-top:1px solid #3B9FFF; border-left:1px solid #3B9FFF; empty-cells:show;}
 		
+		.Contentbox_shi{clear:both;margin-top:0px;border-top:none;height:620px; overflow-y:auto; padding-top:4px;text-align:center; line-height:22px;}
+		.Contentbox_shi table{border-right:1px solid #3B9FFF; border-bottom:1px solid #3B9FFF; margin-top:2px;}
+		.Contentbox_shi table td{border-top:1px solid #3B9FFF; border-left:1px solid #3B9FFF; empty-cells:show;}
+		
 	</style>
     <script type="text/javascript">
 		function setTab(name,cursel,n){
