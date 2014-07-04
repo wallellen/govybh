@@ -11,7 +11,6 @@
 			<fun name="年数据录入" action="yearDataAction_home.action" />
 			<fun name="农户查询" action="ybhFarmerAction_home.action" />
 			<fun name="人口查询" action="ybhPeopleAction_home.action" />
-			<fun name="查询" action="ybhQueryAction_home.action" />
 		</grp>
 	</role>
 	<role roleid="2" describle="省管理员">
