@@ -20,4 +20,8 @@ public class YbhFarmerServiceImpl implements YbhFarmerService{
 		ybhFarmerDao.getSelectedXianList(ds);
 	}
 
+	public void getFarmerInfoList(DotSession ds) {
+		ybhFarmerDao.getFarmerInfoList(ds);
+	}
+
 }

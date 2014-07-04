@@ -50,7 +50,7 @@
 <body onload="loadParam()" style="background:#E0EEFB;">
 <div style="float:right; width:868px; height:668px;">
 	<div style="width:640px; height:22px; margin-top:10px;" class="title-stats">农户查询&nbsp;[<s:property value="#session.vts.map.name"/>]</div>
-	<form name="farmerForm" action="${pageContext.request.contextPath }/system/govFarmerQueryAction_home.do" method="post" onsubmit="return changeCurPage()">
+	<form name="farmerForm" action="${pageContext.request.contextPath }/ybhFarmerAction_queryFarmer.action" method="post" onsubmit="return changeCurPage()">
 	<input type="hidden" id="qparam" name="qparam" value="<s:property value="qstr"/>"/>
 	<fieldset style="border:1px solid #3B9FFF; margin:0; padding:0; width:99%;">
 	<legend>查询条件</legend>
@@ -68,7 +68,7 @@
 				<td width="10%"><input type="text" name="qstr" value="<s:property value="#session.vts.map.qarr[0]"/>" maxlength="15" onkeyup="value=value.replace(/[^\d]/g,'')" class="inptxt1" onfocus="this.className='input_on1'" onblur="this.className='input_off1'"/></td>
 				<td width="10%" align="right">户主姓名:&nbsp;</td>
 				<td width="10%"><input type="text" name="qstr" value="<s:property value="#session.vts.map.qarr[1]"/>" maxlength="10" class="inptxt1" onfocus="this.className='input_on1'" onblur="this.className='input_off1'"/></td>
-				<td width="10%" align="center"><input id="searchImg" type="button" value="立即查询" class="button4"/></td>
+				<td width="10%" align="center"><input id="searchImg" type="submit" value="立即查询" class="button4"/></td>
 			</tr>
 		</table>	
 	</div>
@@ -135,7 +135,9 @@
 	<div style="height:16px; padding-top:2px; border:0px solid red;">
 	<span>符合查询条件农户数：<s:property value="#session.vts.map.farmernt"/>户</span>
 		<span style="float:right; width:60px;">
-			<input type="button" value="导出" onclick="location.href='${pageContext.request.contextPath }/system/govFarmerQueryAction_exportFarmerInfo.do'" class="button43"/>
+			<!-- 
+			<input type="button" value="导出" onclick="location.href='${pageContext.request.contextPath }/ybhFarmerAction_exportFarmerInfo.action'" class="button43"/>
+			-->
 		</span>
 	</div>
 	</s:if>
@@ -150,30 +152,20 @@
 			</tr>
 			</thead>
 			<tbody id="splitpage">
-				<tr align="center" style="height:20px;">
-					<td align="left">320826100009001</td>
-					<td align="left">江苏省淮安市涟水县涟城镇黄河社区居</td>
-					<td align="left"> 张连桂</td>
-					<td class="tabtd1">编辑</td>
+				<s:iterator value="#session.vts.list5" var="ls5">
+				<tr align="center" style="height:20px; display:none;">
+					<td align="left">&nbsp;<s:property value="#ls5.c0"/></td>
+					<td align="left" title="<s:property value='#ls5.c1'/>">&nbsp;<s:property value="#ls5.c1.length()>26?#ls5.c1.substring(0,25)+'...':#ls5.c1"/></td>
+					<td align="left" title="<s:property value='#ls5.c2'/>">&nbsp;<s:property value="#ls5.c2.length()>7?#ls5.c2.substring(0,6)+'...':#ls5.c2"/></td>
+					<td class="tabtd1">
+						<s:if test="#session.vts.isedit==1">
+						<a href="${pageContext.request.contextPath }/system/govBrowerAction_detail.do?viewBM=<s:property value="#ls5.c0"/>&rtf=farmer">编辑</a>
+						</s:if>
+						<a href="${pageContext.request.contextPath }/system/govBrowerAction_viewReportFamilyWithQuery.do?viewBM=<s:property value="#ls5.c0"/>">查看</a>
+						<a id="printBt" href="${pageContext.request.contextPath }/system/govBrowerAction_printFamily.do?viewBM=<s:property value="#ls5.c0"/>" target="printFrame">打印</a>
+					</td>
 				</tr>
-				<tr align="center" style="height:20px;">
-					<td align="left">320826100009002</td>
-					<td align="left">江苏省淮安市涟水县涟城镇黄河社区居</td>
-					<td align="left"> 二组肖素梅</td>
-					<td class="tabtd1">编辑</td>
-				</tr>
-				<tr align="center" style="height:20px;">
-					<td align="left">320826100009003</td>
-					<td align="left">江苏省淮安市涟水县涟城镇黄河社区居</td>
-					<td align="left"> 二组汤志刚</td>
-					<td class="tabtd1">编辑</td>
-				</tr>
-				<tr align="center" style="height:20px;">
-					<td align="left">320826100009004</td>
-					<td align="left">江苏省淮安市涟水县涟城镇黄河社区居</td>
-					<td align="left"> 二组谷寿文</td>
-					<td class="tabtd1">编辑</td>
-				</tr>
+				</s:iterator>
 			</tbody>
 		</table>
 	</div>
