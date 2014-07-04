@@ -31,13 +31,13 @@ var responseLogin = function(data, textStatus, jqXHR)
 	{
 		if($("#rememberPass").attr("checked")==true)
 		{
-			Cookie.setCookie("account2",$("#account").val());
-			Cookie.setCookie("password2",$("#password").val());
+			Cookie.setCookie("accountybh",$("#account").val());
+			Cookie.setCookie("passwordybh",$("#password").val());
 		}
 		else
 		{
-			Cookie.clearCookie("account2");	
-			Cookie.clearCookie("password2");	
+			Cookie.clearCookie("accountybh");	
+			Cookie.clearCookie("passwordybh");	
 		}
 		window.location.href="userAction_home.action";
 	}

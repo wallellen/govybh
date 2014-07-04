@@ -13,8 +13,8 @@
  	$(document).ready(function() {
  		document.all.account.focus();
 		try {
-			var account = Cookie.getCookie("account2");
-			var password =  Cookie.getCookie("password2");
+			var account = Cookie.getCookie("accountybh");
+			var password =  Cookie.getCookie("passwordybh");
 			if(account!="" && account!=null){
 				$("#account").val(account);
 				$("#password").val(password);
