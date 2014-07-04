@@ -16,7 +16,7 @@
 		.Contentbox ul{list-style:none;margin:7px;padding:0;}
 		.Contentbox ul li{line-height:24px; width:158px; float:left; margin-right:5px;}	
 		
-		.Contentbox table{text-align:center; line-height:20px; border-right:1px solid #3B9FFF; border-bottom:1px solid #3B9FFF; margin-top:2px;}
+		.Contentbox table{border-right:1px solid #3B9FFF; border-bottom:1px solid #3B9FFF; margin-top:2px;}
 		.Contentbox table td{border-top:1px solid #3B9FFF; border-left:1px solid #3B9FFF; empty-cells:show;}
 		
 	</style>
