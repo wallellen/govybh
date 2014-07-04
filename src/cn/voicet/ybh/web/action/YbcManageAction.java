@@ -63,7 +63,13 @@ public class YbcManageAction extends BaseAction implements
 					h_content += "<div id='con_menu_" + tid + "'>";
 				}
 				h_content += "<table cellpadding='0' width='100%'>";
-				h_content += "<tr><td>市别</td><td>县别</td><td>村名</td><td>村数</td><td>户数</td></tr>";
+				h_content += "<tr class='tabtr1'>" +
+						"<td width='20%'>市别</td>" +
+						"<td width='20%'>县别</td>" +
+						"<td width='20%'>村名</td>" +
+						"<td width='20%'>户数</td>" +
+						"<td width='20%'>操作</td>" +
+						"</tr>";
 				h_tab += "<li id=\"menu"
 						+ tid
 						+ "\" onmouseover=\"setTab('menu',"
@@ -88,17 +94,21 @@ public class YbcManageAction extends BaseAction implements
 
 			if (bf1) {
 				h_content += "<tr>";
-				h_content += "<td rowspan='" + map.get("t") + "'>"
+				h_content += "<td rowspan='" + map.get("t") + "' title='村数:"+map.get("cn")+"，户数:"+map.get("hn")+"'>"
 						+ map.get("oname") + "</td>";
 				bf1 = false;
 			} else if (bf2) {
-				h_content += "<td rowspan='" + map.get("t") + "'>"
+				h_content += "<td rowspan='" + map.get("t") + "' title='村数:"+map.get("cn")+"，户数:"+map.get("hn")+"'>"
 						+ map.get("oname") + "</td>";
 				bf2 = false;
 			} else {
-				h_content += "<td>" + map.get("oname").toString() + "</td>";
-				h_content += "<td>" + map.get("cn").toString() + "</td>";
+				h_content += "<td title='村数:"+map.get("cn")+"，户数:"+map.get("hn")+"'>" 
+						+ map.get("oname").toString() + "</td>";
+				
 				h_content += "<td>" + map.get("hn").toString() + "</td>";
+				h_content += "<td>" +
+						"<a href='ybhManageAction_viewYbh.action?viewBM="+map.get("bm")+"&oname="+map.get("oname")+"'>编辑</a>" +
+						"</td>";
 				h_content += "</tr>";
 			}
 		}
