@@ -121,11 +121,8 @@ public class YbcManageAction extends BaseAction implements
 		h_tab += "</div>";
 		h_tab = h_tab.replace("#tabnum#", String.valueOf(rtpn));
 		html = "<div id='Tab'>" + h_tab + h_content + "</div>";
-		// h_tab.replace("#","\"");
-		// String html =
-		// "<table cellpadding='0' cellpadding='0' border='1' width='100%'><th rowspan='3'>A</th><td rowspan='2'>AA</td><td>AAA</td></tr><tr><td>AAA</td></tr><tr><td>AA</td><td>AAA</td></tr></table>";
 		request.setAttribute("h", html);
-		return "show_test";
+		return "show_ybc_manage";
 	}
 
 }
