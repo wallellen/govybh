@@ -53,8 +53,8 @@
 		</action>
 		
 		<!-- 人口查询 -->
-		<action name="ybhPeopleAction_*" class="ybhPeopleAction" method="{1}">
-			<result name="show_people">/WEB-INF/page/ybh/ybh_people_query.jsp</result>
+		<action name="ybhMemberAction_*" class="ybhMemberAction" method="{1}">
+			<result name="show_member">/WEB-INF/page/ybh/ybh_member_query.jsp</result>
 		</action>
 		
 		<!-- 汇总统计 -->

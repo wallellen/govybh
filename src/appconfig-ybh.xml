@@ -10,7 +10,7 @@
 			<fun name="样本村管理" action="ybcManageAction_home.action" />
 			<fun name="年数据录入" action="yearDataAction_home.action" />
 			<fun name="农户查询" action="ybhFarmerAction_home.action" />
-			<fun name="人口查询" action="ybhPeopleAction_home.action" />
+			<fun name="人口查询" action="ybhMemberAction_home.action" />
 		</grp>
 	</role>
 	<role roleid="2" describle="省管理员">
@@ -19,7 +19,7 @@
 	      	<fun name="样本户管理" action="ybhManageAction_home.action" />
 	        <fun name="样本村管理" action="ybcManageAction_home.action" />
 	        <fun name="农户查询" action="ybhFarmerAction_home.action" />	
-	        <fun name="人口查询" action="ybhPeopleAction_home.action" />
+	        <fun name="人口查询" action="ybhMemberAction_home.action" />
 	        <fun name="汇总统计" action="ybhTotalAction_home.action" />
     	</grp>
 	</role>

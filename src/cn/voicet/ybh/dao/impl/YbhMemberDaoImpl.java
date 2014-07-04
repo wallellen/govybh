@@ -12,12 +12,12 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.ConnectionCallback;
 import org.springframework.stereotype.Repository;
 
-import cn.voicet.ybh.dao.YbhPeopleDao;
+import cn.voicet.ybh.dao.YbhMemberDao;
 import cn.voicet.ybh.util.DotSession;
 
-@Repository(YbhPeopleDao.SERVICE_NAME)
+@Repository(YbhMemberDao.SERVICE_NAME)
 @SuppressWarnings({"unchecked","static-access"})
-public class YbhPeopleDaoImpl extends BaseDaoImpl implements YbhPeopleDao {
+public class YbhMemberDaoImpl extends BaseDaoImpl implements YbhMemberDao {
 
 	public void getSelectedXianList(final DotSession ds) {
 		this.getJdbcTemplate().execute(new ConnectionCallback() {

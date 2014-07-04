@@ -5,19 +5,19 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import cn.voicet.ybh.dao.YbhPeopleDao;
-import cn.voicet.ybh.service.YbhPeopleService;
+import cn.voicet.ybh.dao.YbhMemberDao;
+import cn.voicet.ybh.service.YbhMemberService;
 import cn.voicet.ybh.util.DotSession;
 
 @Transactional(readOnly=true)
-@Service(YbhPeopleService.SERVICE_NAME)
-public class YbhPeopleServiceImpl implements YbhPeopleService{
+@Service(YbhMemberService.SERVICE_NAME)
+public class YbhMemberServiceImpl implements YbhMemberService{
 	
-	@Resource(name=YbhPeopleDao.SERVICE_NAME)
-	private YbhPeopleDao ybhPeopleDao;
+	@Resource(name=YbhMemberDao.SERVICE_NAME)
+	private YbhMemberDao ybhMemberDao;
 
 	public void getSelectedXianList(DotSession ds) {
-		ybhPeopleDao.getSelectedXianList(ds);
+		ybhMemberDao.getSelectedXianList(ds);
 	}
 
 }
