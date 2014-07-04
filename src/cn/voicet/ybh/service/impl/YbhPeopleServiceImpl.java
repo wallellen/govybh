@@ -16,8 +16,8 @@ public class YbhPeopleServiceImpl implements YbhPeopleService{
 	@Resource(name=YbhPeopleDao.SERVICE_NAME)
 	private YbhPeopleDao ybhPeopleDao;
 
-	public void getSelectedHuList(DotSession ds) {
-		ybhPeopleDao.getSelectedHuList(ds);
+	public void getSelectedXianList(DotSession ds) {
+		ybhPeopleDao.getSelectedXianList(ds);
 	}
 
 }

@@ -29,7 +29,7 @@ public class YbhPeopleAction extends BaseAction implements ModelDriven<YbhPeople
 	/** 样本户人口查询*/
 	public String home(){
 		DotSession ds = DotSession.getVTSession(request);
-		ybhPeopleService.getSelectedHuList(ds);
+		ybhPeopleService.getSelectedXianList(ds);
 		return "show_people";
 	}
 	

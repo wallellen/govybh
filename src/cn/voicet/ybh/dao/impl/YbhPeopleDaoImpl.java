@@ -19,7 +19,7 @@ import cn.voicet.ybh.util.DotSession;
 @SuppressWarnings({"unchecked","static-access"})
 public class YbhPeopleDaoImpl extends BaseDaoImpl implements YbhPeopleDao {
 
-	public void getSelectedHuList(final DotSession ds) {
+	public void getSelectedXianList(final DotSession ds) {
 		this.getJdbcTemplate().execute(new ConnectionCallback() {
 			public Object doInConnection(Connection conn) throws SQLException,
 					DataAccessException {
