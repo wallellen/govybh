@@ -137,10 +137,10 @@ public class YbcManageAction extends BaseAction implements
 			h_content = "<div class='Contentbox_shi'>";
 			h_content += "<table cellspacing='0' cellpadding='0' width='100%'>";
 			h_content += "<tr class='tabtr1'>" +
-			"<td width='20%'>县别</td>" +
-			"<td width='20%'>村名</td>" +
-			"<td width='20%'>户数</td>" +
-			"<td width='20%'>操作</td>" +
+			"<td width='25%'>县别</td>" +
+			"<td width='25%'>村名</td>" +
+			"<td width='25%'>户数</td>" +
+			"<td width='25%'>操作</td>" +
 			"</tr>";
 			for (int i=0; i<ds.list.size(); i++) {
 				map = (Map) ds.list.get(i);
@@ -175,9 +175,9 @@ public class YbcManageAction extends BaseAction implements
 			h_content = "<div class='Contentbox_shi'>";
 			h_content += "<table cellspacing='0' cellpadding='0' width='100%'>";
 			h_content += "<tr class='tabtr1'>" +
-			"<td width='20%'>村名</td>" +
-			"<td width='20%'>户数</td>" +
-			"<td width='20%'>操作</td>" +
+			"<td width='30%'>村名</td>" +
+			"<td width='30%'>户数</td>" +
+			"<td width='30%'>操作</td>" +
 			"</tr>";
 			for (int i=0; i<ds.list.size(); i++) {
 				map = (Map) ds.list.get(i);
