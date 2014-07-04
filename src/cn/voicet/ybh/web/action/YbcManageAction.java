@@ -88,8 +88,8 @@ public class YbcManageAction extends BaseAction implements
 
 			if (bf1) {
 				h_content += "<tr>";
-				h_content += "<th rowspan='" + map.get("t") + "'>"
-						+ map.get("oname") + "</th>";
+				h_content += "<td rowspan='" + map.get("t") + "'>"
+						+ map.get("oname") + "</td>";
 				bf1 = false;
 			} else if (bf2) {
 				h_content += "<td rowspan='" + map.get("t") + "'>"
