@@ -66,7 +66,7 @@ public class YbcManageAction extends BaseAction implements
 					else{
 						h_content += "<div id='con_menu_" + tid + "'>";
 					}
-					h_content += "<table cellpadding='0' width='100%'>";
+					h_content += "<table cellspacing='0' cellpadding='0' width='100%'>";
 					h_content += "<tr class='tabtr1'>" +
 							"<td width='20%'>市别</td>" +
 							"<td width='20%'>县别</td>" +
@@ -135,7 +135,7 @@ public class YbcManageAction extends BaseAction implements
 		else if(ds.rbm.length()==4)
 		{
 			h_content = "<div class='Contentbox_shi'>";
-			h_content += "<table cellpadding='0' width='100%'>";
+			h_content += "<table cellspacing='0' cellpadding='0' width='100%'>";
 			h_content += "<tr class='tabtr1'>" +
 			"<td width='20%'>县别</td>" +
 			"<td width='20%'>村名</td>" +
@@ -165,6 +165,31 @@ public class YbcManageAction extends BaseAction implements
 							"</td>";
 					h_content += "</tr>";
 				}
+			}
+			h_content += "</div>";
+			html = h_content;
+		}
+		//县
+		else if(ds.rbm.length()==6)
+		{
+			h_content = "<div class='Contentbox_shi'>";
+			h_content += "<table cellspacing='0' cellpadding='0' width='100%'>";
+			h_content += "<tr class='tabtr1'>" +
+			"<td width='20%'>村名</td>" +
+			"<td width='20%'>户数</td>" +
+			"<td width='20%'>操作</td>" +
+			"</tr>";
+			for (int i=0; i<ds.list.size(); i++) {
+				map = (Map) ds.list.get(i);
+				h_content += "<tr>";
+				h_content += "<td title='村数:"+map.get("cn")+"，户数:"+map.get("hn")+"'>" 
+				+ map.get("oname").toString() + "</td>";
+		
+				h_content += "<td>" + map.get("hn").toString() + "</td>";
+				h_content += "<td>" +
+						"<a href='ybhManageAction_viewYbcToYbh.action?viewBM="+map.get("bm")+"&oname="+map.get("oname")+"'>编辑</a>" +
+						"</td>";
+				h_content += "</tr>";
 			}
 			h_content += "</div>";
 			html = h_content;
