@@ -15,6 +15,7 @@ import org.springframework.stereotype.Repository;
 
 import cn.voicet.ybh.dao.YbhMemberDao;
 import cn.voicet.ybh.util.DotSession;
+import cn.voicet.ybh.util.VTJime;
 
 @Repository(YbhMemberDao.SERVICE_NAME)
 @SuppressWarnings({"unchecked","static-access"})
@@ -91,7 +92,7 @@ public class YbhMemberDaoImpl extends BaseDaoImpl implements YbhMemberDao {
 				if(rs!=null){
 					while (rs.next()) {
 						map = new HashMap();
-						ds.putMapDataByColName(map, rs);
+						VTJime.putMapDataByColName(map, rs);
 		        		ds.list2.add(map);
 					}
 				}
