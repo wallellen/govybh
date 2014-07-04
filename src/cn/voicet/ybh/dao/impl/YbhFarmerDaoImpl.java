@@ -15,6 +15,7 @@ import org.springframework.stereotype.Repository;
 
 import cn.voicet.ybh.dao.YbhFarmerDao;
 import cn.voicet.ybh.util.DotSession;
+import cn.voicet.ybh.util.VTJime;
 
 @Repository(YbhFarmerDao.SERVICE_NAME)
 @SuppressWarnings({"unchecked","static-access"})
@@ -91,13 +92,13 @@ public class YbhFarmerDaoImpl extends BaseDaoImpl implements YbhFarmerDao {
 				cs.execute();
 				ResultSet rs = cs.getResultSet();
 				ds.initData();
-				ds.list5 = new ArrayList();
+				ds.list2 = new ArrayList();
 				Map map;
 				if(rs!=null){
 					while (rs.next()) {
 						map = new HashMap();
-						ds.putMapData(map,rs);
-		        		ds.list5.add(map);
+						VTJime.putMapDataByColName(map, rs);
+		        		ds.list2.add(map);
 					}
 				}
 				//取出参(农户总数)

@@ -131,7 +131,7 @@
 	</div>
 	</fieldset>
 	</form>
-	<s:if test="#session.vts.list5!=null && #session.vts.list5.size()>0">
+	<s:if test="#session.vts.list2!=null && #session.vts.list2.size()>0">
 	<div style="height:16px; padding-top:2px; border:0px solid red;">
 	<span>符合查询条件农户数：<s:property value="#session.vts.map.farmernt"/>户</span>
 		<span style="float:right; width:60px;">
@@ -145,18 +145,18 @@
 		<table class="data_list" width="100%" bordercolor="gray" border="0" cellpadding="0" cellspacing="0">
 			<thead>
 			<tr class="tabtr1">
-				<td width="20%">农户编码</td>
-				<td width="49%">省、市、县、乡、村</td>
-				<td width="15%">户主姓名</td>
-				<td width="16%" class="tabtd1">操作</td>
+				<td width="15%">农户编码</td>
+				<td width="45%">省、市、县、乡、村</td>
+				<td width="25%">户主姓名</td>
+				<td width="15%" class="tabtd1">操作</td>
 			</tr>
 			</thead>
 			<tbody id="splitpage">
-				<s:iterator value="#session.vts.list5" var="ls5">
+				<s:iterator value="#session.vts.list2" var="ls2">
 				<tr align="center" style="height:20px; display:none;">
-					<td align="left">&nbsp;<s:property value="#ls5.c0"/></td>
-					<td align="left" title="<s:property value='#ls5.c1'/>">&nbsp;<s:property value="#ls5.c1.length()>26?#ls5.c1.substring(0,25)+'...':#ls5.c1"/></td>
-					<td align="left" title="<s:property value='#ls5.c2'/>">&nbsp;<s:property value="#ls5.c2.length()>7?#ls5.c2.substring(0,6)+'...':#ls5.c2"/></td>
+					<td align="left">&nbsp;<s:property value="#ls2.hm"/></td>
+					<td align="left">&nbsp;<s:property value="#ls2.govname"/></td>
+					<td align="left">&nbsp;<s:property value="#ls2.hname"/></td>
 					<td class="tabtd1">
 						<s:if test="#session.vts.isedit==1">
 						<a href="${pageContext.request.contextPath }/system/govBrowerAction_detail.do?viewBM=<s:property value="#ls5.c0"/>&rtf=farmer">编辑</a>
