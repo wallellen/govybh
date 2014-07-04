@@ -48,7 +48,7 @@ public class YbcManageAction extends BaseAction implements
 		h_tab += "<ul>";
 		h_content = "<div class='Contentbox'> ";
 		int tid = 0;
-		for (int i = 0; i < ds.list.size(); i++) {
+		for (int i=0; i<ds.list.size(); i++) {
 			map = (Map) ds.list.get(i);
 			if (!map.get("mid").equals(lmid)) {
 				tid++;
