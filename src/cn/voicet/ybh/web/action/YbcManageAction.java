@@ -110,7 +110,7 @@ public class YbcManageAction extends BaseAction implements
 					
 					h_content += "<td>" + map.get("hn").toString() + "</td>";
 					h_content += "<td>" +
-							"<a href='ybhManageAction_viewYbcToYbh.action?viewBM="+map.get("bm")+"&oname="+map.get("oname")+"'>编辑</a>" +
+							"<a href='ybcManageAction_viewCunzb.action?cunbm="+map.get("bm")+"&oname="+map.get("oname")+"'>村指标</a>" +
 							"</td>";
 					h_content += "</tr>";
 				}
@@ -160,7 +160,7 @@ public class YbcManageAction extends BaseAction implements
 			
 					h_content += "<td>" + map.get("hn").toString() + "</td>";
 					h_content += "<td>" +
-							"<a href='ybhManageAction_viewYbcToYbh.action?viewBM="+map.get("bm")+"&oname="+map.get("oname")+"'>编辑</a>" +
+							"<a href='ybcManageAction_viewCunzb.action?cunbm="+map.get("bm")+"&oname="+map.get("oname")+"'>村指标</a>" +
 							"</td>";
 					h_content += "</tr>";
 				}
@@ -186,7 +186,7 @@ public class YbcManageAction extends BaseAction implements
 		
 				h_content += "<td>" + map.get("hn").toString() + "</td>";
 				h_content += "<td>" +
-						"<a href='ybhManageAction_viewYbcToYbh.action?viewBM="+map.get("bm")+"&oname="+map.get("oname")+"'>编辑</a>" +
+						"<a href='ybhManageAction_viewYbcToYbh.action?viewBM="+map.get("bm")+"&oname="+map.get("oname")+"'>样本户</a>" +
 						"</td>";
 				h_content += "</tr>";
 			}
@@ -197,5 +197,21 @@ public class YbcManageAction extends BaseAction implements
 		request.setAttribute("h", html);
 		return "show_ybc_manage";
 	}
-
+	
+	public String viewCunzb(){
+		DotSession ds = DotSession.getVTSession(request);
+		cunMap = ybcManageService.queryCunYbhInfoWithYear(ds, ybcManageForm);
+		request.setAttribute("cunMap", cunMap);
+		log.info("cunMap data:"+cunMap);
+		return "show_ybc_zhibiao";
+	}
+	
+	private Map cunMap;
+	public Map getCunMap() {
+		return cunMap;
+	}
+	public void setCunMap(Map cunMap) {
+		this.cunMap = cunMap;
+	}
+	
 }

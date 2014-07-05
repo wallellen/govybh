@@ -65,6 +65,7 @@
 		<!-- 样本村管理 -->
 		<action name="ybcManageAction_*" class="ybcManageAction" method="{1}">
 			<result name="show_ybc_manage">/WEB-INF/page/work/ybc_manage.jsp</result>
+			<result name="show_ybc_zhibiao">/WEB-INF/page/work/ybc_cun_zhibiao.jsp</result>
 		</action>
 		
 		
