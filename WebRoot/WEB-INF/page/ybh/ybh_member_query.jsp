@@ -132,7 +132,7 @@
 	</div>
 	</s:if>
 	<s:if test="#session.vts.list2!=null && #session.vts.list2.size()>0">
-	<div class="table-c" style="width:868px; height:464px; border:0px solid red; margin-top:4px;">
+	<div class="table-c" style="width:868px; height:424px; border:0px solid red; margin-top:4px;">
 		<table class="data_list" width="100%" bordercolor="gray" border="0" cellpadding="0" cellspacing="0">
 			<thead>
 			<tr class="tabtr1">
@@ -173,7 +173,7 @@
 	<!-- js分页div -->
 	<div class="split-page">
 		<!-- 每页行数 -->
-		<input type="hidden" id="pageRows" value="21"/>
+		<input type="hidden" id="pageRows" value="17"/>
 		<div id="changePage"></div>
 	</div>
 	</s:if>
