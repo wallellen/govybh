@@ -30,7 +30,7 @@ public class YbhManageDaoImpl extends BaseDaoImpl implements YbhManageDao {
 					DataAccessException {
 				CallableStatement cs = conn.prepareCall("{call ybh_bm_describle(?,?,?,?)}");
 				cs.setString(1, ds.curBM);
-				cs.setInt(2, 1);
+				cs.setInt(2, 1);	//显示模式,1只显示已勾选项目
 				cs.setInt(3, 2014);
 				cs.setInt(4, 1);
 				cs.execute();

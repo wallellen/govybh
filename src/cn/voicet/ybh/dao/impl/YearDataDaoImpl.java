@@ -51,7 +51,7 @@ public class YearDataDaoImpl extends BaseDaoImpl implements YearDataDao {
 			public Object doInConnection(Connection conn) throws SQLException,
 					DataAccessException {
 				CallableStatement cs = conn.prepareCall("{call ybh_bm_describle(?,?,?,?)}");
-				cs.setString(1, ds.rbm);
+				cs.setString(1, ds.curBM);
 				cs.setInt(2, 1);
 				cs.setString(3, yearDataForm.getYear());
 				cs.setInt(4, 1);
