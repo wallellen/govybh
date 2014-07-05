@@ -42,7 +42,7 @@
 						<a href="${pageContext.request.contextPath }/yearDataAction_viewYbh.action?viewBM=<s:property value="#ls.bm"/>&oname=<s:property value="#ls.oname"/>&year=<s:property value="year"/>">进入</a>
 					</s:if>
 					<s:if test="#session.vts.curBM.length()==9">
-						<a href="${pageContext.request.contextPath }/yearDataAction_income.action?year=<s:property value="year"/>">年数据录入</a>
+						<a href="${pageContext.request.contextPath }/yearDataAction_income.action?year=<s:property value="year"/>&oname=<s:property value="#ls.oname"/>">年数据录入</a>
 						<a href="${pageContext.request.contextPath }/yearDataAction_updateCun.action?cunbm=<s:property value="#ls.bm"/>&oname=<s:property value="#ls.oname"/>&year=<s:property value="year"/>">村级指标录入</a>
 					</s:if>
 				</td>
