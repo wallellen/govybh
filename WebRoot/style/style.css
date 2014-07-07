@@ -244,3 +244,5 @@ ul{margin:0; padding:0; list-style:none;}
 .cun-bottom{height:26px; line-height:26px;}
 .cun-bottom span{display: block; width:220px; height:26px; float:left;text-align:center}
 .cun-bottom .button4{width:65px; height:22px; color:#FFF; background:url(../images/bt4.png) no-repeat; display:inline; border:medium none; cursor:pointer;}
+
+.ybc-title{margin-top:4px; height:22px; text-align:center; color:#8F2629; font-size:14px; font-weight:bold;}

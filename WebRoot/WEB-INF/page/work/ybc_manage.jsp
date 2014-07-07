@@ -36,7 +36,7 @@
 	</script>
 </head>
 <body style="background:#E0EEFB;">
-<h3 class="jiangbu-title">样本村管理</h3>
+<h3 class="ybc-title">样本村管理</h3>
 <s:property value="#request.h" escape="false"/>
 </body>
 </html>
