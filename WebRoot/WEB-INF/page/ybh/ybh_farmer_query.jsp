@@ -157,11 +157,7 @@
 					<td align="left">&nbsp;<s:property value="#ls2.govname"/></td>
 					<td align="left">&nbsp;<s:property value="#ls2.hname"/></td>
 					<td class="tabtd1">
-						<s:if test="#session.vts.isedit==1">
-						<a href="${pageContext.request.contextPath }/system/govBrowerAction_detail.do?viewBM=<s:property value="#ls5.c0"/>&rtf=farmer">编辑</a>
-						</s:if>
-						<a href="${pageContext.request.contextPath }/system/govBrowerAction_viewReportFamilyWithQuery.do?viewBM=<s:property value="#ls5.c0"/>">查看</a>
-						<a id="printBt" href="${pageContext.request.contextPath }/system/govBrowerAction_printFamily.do?viewBM=<s:property value="#ls5.c0"/>" target="printFrame">打印</a>
+						&nbsp;
 					</td>
 				</tr>
 				</s:iterator>

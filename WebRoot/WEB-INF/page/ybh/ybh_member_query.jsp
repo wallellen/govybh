@@ -163,7 +163,7 @@
 					<td><s:property value="#ls2.bla"/></td>
 					<td align="right"><s:property value="#ls2.tbfd"/>&nbsp;</td>
 					<td>
-						<a href="${pageContext.request.contextPath }/system/govBrowerAction_viewReportFamilyWithQuery.do?viewBM=<s:property value="#ls.c0"/>">查看</a>
+						&nbsp;
 					</td>
 				</tr>
 				</s:iterator>
