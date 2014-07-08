@@ -10,6 +10,22 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath }/datePicker/WdatePicker.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/splitpage.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/changeColor.js"></script>
+	<!-- fancybox插件开始 -->
+	<script type="text/javascript" src="${pageContext.request.contextPath }/fancybox/jquery.fancybox-1.3.1.pack.js"></script>
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/fancybox/fancybox.css" />
+	<!-- fancybox插件结束 -->
+	
+	<script type="text/javascript">
+		function setTab(name,cursel,n){
+			for(i=1;i<=n;i++){
+				var menu=document.getElementById(name+i);
+				var con=document.getElementById("con_"+name+"_"+i);
+				menu.className=i==cursel?"hover":"";
+				con.style.display=i==cursel?"block":"none";
+			}
+		}
+	</script>
+	
 	<script type="text/javascript">
 		//保存查询参数
 		function loadParam(){
@@ -21,18 +37,17 @@
 		}
 	</script>
 	<style type="text/css">
-		#Tab{margin:0 auto;width:866px;}
-		.Menubox{height:28px;border-bottom:1px solid #64B8E4;background:#E4F2FB;}
-		.Menubox ul{list-style:none;margin:0px 2px;padding:0;position:absolute;}
-		.Menubox ul li{float:left;background:#64B8E4;line-height:27px;display:block;cursor:pointer;text-align:center;color:#fff;font-weight:bold;border-top:1px solid #64B8E4;border-left:1px solid #64B8E4;border-right:1px solid #64B8E4; margin-right:2px;padding: 0 5px 0 5px;}
+		#data{width:620px; height:200px;}
+		.Menubox{height:28px; border-bottom:1px solid #64B8E4; background:#E4F2FB;}
+		.Menubox ul{list-style:none;margin:0px 2px;padding:0;}
+		.Menubox ul li{float:left;background:#64B8E4;line-height:28px;display:block;cursor:pointer;text-align:center;color:#fff;font-weight:bold;border-top:1px solid #64B8E4;border-left:1px solid #64B8E4;border-right:1px solid #64B8E4; margin-right:2px;padding: 0 5px 0 5px;}
 		.Menubox ul li.hover{background:#fff;border-bottom:1px solid #fff;color:#147AB8;}
-		.Contentbox{clear:both;margin-top:0px;border-top:none;height:181px;padding-top:8px;height:100%;}
+		.Contentbox{clear:both;margin-top:0px;border-top:none;height:150px;padding-top:4px;}
 		.Contentbox ul{list-style:none;margin:7px;padding:0;}
-		.Contentbox ul li{line-height:24px; width:158px; float:left; margin-right:5px;}	
+		.Contentbox ul li{line-height:24px; width:58px; float:left; margin-right:5px;}	
 		}
 	</style>
 		
-	
 </head>
 <body onload="loadParam()" style="background:#E0EEFB;">
 <div style="float:right; width:868px; height:668px;">
@@ -45,7 +60,7 @@
 		<table cellpadding="0" cellspacing="0">
 			<tr>
 				<td width="10%" align="right"><input type="checkbox"/>全省范围</td>
-				<td width="10%" align="right"><input type="button" value="选择县" onclick="popTips()"/></td>
+				<td width="10%" align="right"><a id="various1" href="#data" kesrc="#data" title="选择县">选择县</a>
 				<td width="10%"></td>
 				<td width="10%"></td>
 				<td width="10%" align="center"></td>
@@ -159,5 +174,28 @@
 	</div>
 	</s:if>
 </div>
+<!-- fancybox start -->
+<div style="display:none;">
+    <div id="data">
+    <s:property value="#request.h" escape="false"/>
+    </div>
+</div>
+<!-- fancybox end -->
+
+<script type="text/javascript">
+   	$(document).ready(function() {
+		$("#various1").fancybox({
+			//是否显示标题 
+			'titleShow':'true',
+			//设置标题显示的位置,可设置为outside,inside,over
+			'titlePosition':'outside',
+			//设置动画效果,可设置为elastic,fade,none
+			'transitionIn':'none',
+			'transitionOut':'none',
+			
+		});				   
+	});
+</script>
+
 </body>
 </html>
