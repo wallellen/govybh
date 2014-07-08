@@ -1,5 +1,8 @@
 package cn.voicet.ybh.web.action;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 import javax.annotation.Resource;
 
 import org.apache.log4j.Logger;
@@ -28,8 +31,25 @@ public class YbhFarmerAction extends BaseAction implements ModelDriven<YbhFarmer
 	
 	/** 样本户农户查询 */
 	public String home(){
+		Map map;
 		DotSession ds = DotSession.getVTSession(request);
 		ybhFarmerService.getSelectedXianList(ds);
+		
+		String h_tab;
+		h_tab = "<div class='Menubox'>";
+		h_tab += "<ul>";
+		for(int i=0; i<ds.list.size(); i++)
+		{
+			map = (Map)ds.list.get(i);
+			if(map.get("st").equals("0"))
+			{
+				h_tab += "<li>"+map.get("oname")+"</li>";
+			}
+		}
+		h_tab += "</ul>";
+		h_tab += "</div>";
+		
+		request.setAttribute("h", h_tab);
 		return "show_farmer";
 	}
 	
