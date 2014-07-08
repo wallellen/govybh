@@ -13,6 +13,7 @@ public class UserForm {
 	private String provider;
 	
 	private String mac;
+	private String vercode;
 	
 	public String getAccount() {
 		return account;
@@ -81,5 +82,11 @@ public class UserForm {
 			this.mac=null;
 		}
 		
+	}
+	public String getVercode() {
+		return vercode;
+	}
+	public void setVercode(String vercode) {
+		this.vercode = vercode;
 	}
 }

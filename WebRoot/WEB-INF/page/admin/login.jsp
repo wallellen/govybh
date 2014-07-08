@@ -70,21 +70,29 @@
 												<col/>
 											</colgroup>
 											<tbody>
-												<tr height="31px" style="padding-top:6px;">
+												<tr height="24px" style="padding-top:2px;">
 													<th>账号&nbsp;</th>
 													<td><input type="text" id="account" name="account"  autocomplete="off" value="" placeholder="输入账号" tabindex="1" class="inputbox" onblur="this.className='inputbox'" onfocus="this.className='inputbox2'"/></td>
 												</tr>
-												<tr height="31px">
+												<tr height="24px">
 													<th>密码&nbsp;</th>
 													<td><input type="password" id="password" name="password"  autocomplete="off" value="" placeholder="输入密码" tabindex="2" class="inputbox" onblur="this.className='inputbox'" onfocus="this.className='inputbox2'"/></td>
 												</tr>
-												<tr height="31px">
+												<tr height="24px">
+													<th>验证码&nbsp;</th>
+													<td align="left">
+														<input type="text" id="vercode" name="vercode" placeholder="输入验证码" class="inputboxver1" onfocus="this.className='inputboxver2'" maxlength="4"/>
+														<input type="hidden" id="bpath" value="${pageContext.request.contextPath }"/>
+														<img src="${pageContext.request.contextPath }/verCode" id="verImg" onclick="changeVerCode()" style="cursor:pointer; vertical-align:middle;" height="20" width="60"/>
+													</td>
+												</tr>
+												<tr height="24px">
 													<th></th>
 													<td>
 														<input type="checkbox" id="rememberPass" name="rememberPass" value="yes" class="cbox-midd"/><label for="auto" class="lab-midd">记住密码</label>
 													</td>
 												</tr>
-												<tr height="30px">
+												<tr height="24px">
 													<th></th>
 													<td>
 														<input type="button" onclick="login()" value="登&nbsp;&nbsp;录" class="button4"/>

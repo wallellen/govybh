@@ -57,6 +57,8 @@ a.toolbar_exit:hover{color:#fff; text-decoration:none}
 .table_l th{color: #111; font: 14px/33px 'Microsoft YaHei'; text-align: right}
 .inputbox{width:155px; height:16px; padding:2px 5px; border:1px solid #CCC; color:#666;}
 .inputbox2{width:155px; height:16px; padding:2px 5px; border:1px solid #0CF3FB; background-color:transparent;}
+.inputboxver1{width:70px; height:16px; padding:2px 5px; border:1px solid #CCC; color:#666; vertical-align:middle;}
+.inputboxver2{width:70px; height:16px; padding:2px 5px; border:1px solid #0CF3FB; background-color:transparent;}
 
 .table-c table{border-right:1px solid #3B9FFF;border-bottom:1px solid #3B9FFF; text-align: center;} 
 .table-c table td{border-left:1px solid #3B9FFF;border-top:1px solid #3B9FFF} 

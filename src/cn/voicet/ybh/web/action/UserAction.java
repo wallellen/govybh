@@ -31,7 +31,7 @@ public class UserAction extends BaseAction implements ModelDriven<UserForm>{
 	
 	@SuppressWarnings("unchecked")
 	public String ajaxlogin(){
-		log.info("account:"+userForm.getAccount()+", password:"+userForm.getPassword());
+		log.info("account:"+userForm.getAccount()+", password:"+userForm.getPassword()+", vercode:"+userForm.getVercode());
 		JSONObject json = new JSONObject();
 		if (request.getSession().getAttribute("vts")==null) {
 			DotSession ds = new DotSession();
@@ -54,11 +54,14 @@ public class UserAction extends BaseAction implements ModelDriven<UserForm>{
 		
 		ds.curBM = ds.rbm;
 		ds.subPathTitle.initPath();
-		
-		if(!ds.roleID.equals("0")){
+		log.info("rand:"+request.getSession().getAttribute("rand"));
+		if(!ds.roleID.equals("0"))
+		{
 			json.put("status", "ok");
-		}else{
-			json.put("status", "error");
+		}
+		if(null!=request.getSession().getAttribute("rand") && !userForm.getVercode().trim().equals((String) request.getSession().getAttribute("rand")))
+		{
+			json.put("status", "vercodeerror");
 		}
 		try {
 			response.setCharacterEncoding("UTF-8");

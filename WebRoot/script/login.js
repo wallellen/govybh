@@ -1,6 +1,7 @@
 function login(){
 	var account = $("#account").val();
 	var password = $("#password").val();
+	var vercode = $("#vercode").val();
 	if(account=="")
 	{
 		alert("账号不能为空");
@@ -11,7 +12,12 @@ function login(){
 		alert("密码不能为空");
 		return false;
 	}
-	var datajson = {"account":account, "password":password};
+	if(vercode=="")
+	{
+		alert("请输入验证码");
+		return false;
+	}
+	var datajson = {"account":account, "password":password,"vercode":vercode};
 	var url = 'ajaxlogin.action';
 	$.ajax({
         type: "POST",
@@ -41,10 +47,15 @@ var responseLogin = function(data, textStatus, jqXHR)
 		}
 		window.location.href="userAction_home.action";
 	}
+	else if(data.status=="vercodeerror")
+	{
+		alert("验证码错误,请重新输入!");
+	}
 	else
 	{
 		alert("账号或密码错误");
 	}
+	verImg.src = "verCode?"+Math.random();
 }
 
 //register
