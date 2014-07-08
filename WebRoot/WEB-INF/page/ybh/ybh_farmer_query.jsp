@@ -19,32 +19,19 @@
 		function changeCurPage(){
 			parent.document.getElementById("globalCurPage").value=1;
 		}
-
-		
 	</script>
-	
 	<style type="text/css">
-		*{margin:0;padding:0;list-style-type:none;}
-		a,img{border:0;}
-		body{font:12px/180% Arial, Helvetica, sans-serif;}
-		label{cursor:pointer;}
-		.democode{width:400px;margin:30px auto 0 auto;line-height:24px;}
-		.democode h2{font-size:14px;color:#3366cc;height:28px;}
-		.agree{margin:40px auto;width:400px;font-size:16px;font-weight:800;color:#3366cc;}
-		.mainlist{padding:10px;}
-		.mainlist li{height:28px;line-height:28px;font-size:12px;}
-		.mainlist li span{margin:0 5px 0 0;font-family:"宋体";font-size:12px;font-weight:400;color:#ddd;}
-		.btnbox{text-align:center;height:30px;padding-top:10px;background:#ECF9FF;}
+		#Tab{margin:0 auto;width:866px;}
+		.Menubox{height:28px;border-bottom:1px solid #64B8E4;background:#E4F2FB;}
+		.Menubox ul{list-style:none;margin:0px 2px;padding:0;position:absolute;}
+		.Menubox ul li{float:left;background:#64B8E4;line-height:27px;display:block;cursor:pointer;text-align:center;color:#fff;font-weight:bold;border-top:1px solid #64B8E4;border-left:1px solid #64B8E4;border-right:1px solid #64B8E4; margin-right:2px;padding: 0 5px 0 5px;}
+		.Menubox ul li.hover{background:#fff;border-bottom:1px solid #fff;color:#147AB8;}
+		.Contentbox{clear:both;margin-top:0px;border-top:none;height:181px;padding-top:8px;height:100%;}
+		.Contentbox ul{list-style:none;margin:7px;padding:0;}
+		.Contentbox ul li{line-height:24px; width:158px; float:left; margin-right:5px;}	
+		}
+	</style>
 		
-		#windownbg{display:none;position:absolute;width:100%;height:100%;background:#000;top:0;left:0;}
-		#windown-box{position:fixed;_position:absolute;border:5px solid #E9F3FD;background:#FFF;text-align:left;}
-		#windown-title{position:relative;height:30px;border:1px solid #A6C9E1;overflow:hidden;background:url(images/tipbg.png) 0 0 repeat-x;}
-		#windown-title h2{position:relative;left:10px;top:5px;font-size:14px;color:#666;}
-		#windown-close{position:absolute;right:10px;top:8px;width:10px;height:16px;text-indent:-10em;overflow:hidden;background:url(images/tipbg.png) 100% -49px no-repeat;cursor:pointer;}
-		#windown-content-border{position:relative;top:-1px;border:1px solid #A6C9E1;padding:5px 0 5px 5px;}
-		#windown-content img,#windown-content iframe{display:block;}
-		#windown-content .loading{position:absolute;left:50%;top:50%;margin-left:-8px;margin-top:-8px;}
-		</style>
 	
 </head>
 <body onload="loadParam()" style="background:#E0EEFB;">
@@ -171,38 +158,6 @@
 		<div id="changePage"></div>
 	</div>
 	</s:if>
-</div>
-<script type="text/javascript" src="${pageContext.request.contextPath }/script/tipswindown.js"></script>
-<script type="text/javascript">
-//弹出层调用
-function popTips(){
-	showTipsWindown("选择县", 'simTestContent', 150, 300);
-}
-function showTipsWindown(title,id,width,height){
-	tipsWindown(title,"id:"+id,width,height,"true","","true",id);
-}
-
-
-</script>
-<div style="display:none;">
-<div id="simTestContent" class="simScrollCont">
-	<div class="mainlist">
-		<table cellpadding="0" cellspacing="0" width="100%">
-           	<s:iterator id="ls" value="#session.vts.list">
-           		<tr>
-           			<s:if test="#ls.st==0">
-           			<td align="left" style="background:gray"><s:property value="#ls.oname"/></td>
-           			</s:if>
-           			<s:elseif test="#ls.st==1">
-           			<td align="center">
-           				<input type="checkbox" /><s:property value="#ls.oname"/>
-           			</td>
-           			</s:elseif>
-           		</tr>
-           	</s:iterator>
-		</table>
-	</div>
-</div>
 </div>
 </body>
 </html>
