@@ -158,7 +158,6 @@
 				<td width="15%">农户编码</td>
 				<td width="45%">省、市、县、乡、村</td>
 				<td width="25%">户主姓名</td>
-				<td width="15%" class="tabtd1">操作</td>
 			</tr>
 			</thead>
 			<tbody id="splitpage">
@@ -167,9 +166,6 @@
 					<td align="left">&nbsp;<s:property value="#ls2.hm"/></td>
 					<td align="left">&nbsp;<s:property value="#ls2.govname"/></td>
 					<td align="left">&nbsp;<s:property value="#ls2.hname"/></td>
-					<td class="tabtd1">
-						&nbsp;
-					</td>
 				</tr>
 				</s:iterator>
 			</tbody>
