@@ -154,7 +154,6 @@
 				<td width="8%">打工状况</td>
 				<td width="6%">低保人口</td>
 				<td width="6%">领取金额</td>
-				<td width="4%">操作</td>
 			</tr>
 			</thead>
 			<tbody id="splitpage">
@@ -170,9 +169,6 @@
 					<td align="left">&nbsp;<s:property value="#ls2.works"/></td>
 					<td><s:property value="#ls2.bla"/></td>
 					<td align="right"><s:property value="#ls2.tbfd"/>&nbsp;</td>
-					<td>
-						&nbsp;
-					</td>
 				</tr>
 				</s:iterator>
 			</tbody>
