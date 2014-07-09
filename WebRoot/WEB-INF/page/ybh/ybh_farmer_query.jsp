@@ -57,7 +57,6 @@
 	<form name="farmerForm" action="${pageContext.request.contextPath }/ybhFarmerAction_queryFarmer.action" method="post" onsubmit="return changeCurPage()">
 	<input type="hidden" id="xmlist" name="xmlist" value=""/>
 	<input type="hidden" id="xmname" name="xmname" value=""/>
-	<input type="hidden" id="qparam" name="qparam" value="<s:property value="qstr"/>"/>
 	<fieldset style="border:1px solid #3B9FFF; margin:0; padding:0; width:99%;">
 	<legend>查询条件</legend>
 	<div style="height:60px;">
