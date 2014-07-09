@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import cn.voicet.ybh.dao.YbhMemberDao;
 import cn.voicet.ybh.service.YbhMemberService;
 import cn.voicet.ybh.util.DotSession;
+import cn.voicet.ybh.web.form.YbhMemberForm;
 
 @Transactional(readOnly=true)
 @Service(YbhMemberService.SERVICE_NAME)
@@ -20,8 +21,8 @@ public class YbhMemberServiceImpl implements YbhMemberService{
 		ybhMemberDao.getSelectedXianList(ds);
 	}
 
-	public void getMemberInfoList(DotSession ds) {
-		ybhMemberDao.getMemberInfoList(ds);		
+	public void getMemberInfoList(DotSession ds, YbhMemberForm ybhMemberForm) {
+		ybhMemberDao.getMemberInfoList(ds, ybhMemberForm);		
 	}
 
 }

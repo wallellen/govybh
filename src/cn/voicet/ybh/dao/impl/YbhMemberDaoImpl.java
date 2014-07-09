@@ -16,6 +16,7 @@ import org.springframework.stereotype.Repository;
 import cn.voicet.ybh.dao.YbhMemberDao;
 import cn.voicet.ybh.util.DotSession;
 import cn.voicet.ybh.util.VTJime;
+import cn.voicet.ybh.web.form.YbhMemberForm;
 
 @Repository(YbhMemberDao.SERVICE_NAME)
 @SuppressWarnings({"unchecked","static-access"})
@@ -45,13 +46,13 @@ public class YbhMemberDaoImpl extends BaseDaoImpl implements YbhMemberDao {
 		});
 	}
 
-	public void getMemberInfoList(final DotSession ds) {
+	public void getMemberInfoList(final DotSession ds, final YbhMemberForm ybhMemberForm) {
 		final int apr[]={0,1,2,4,5,6,7,8,9};
 		this.getJdbcTemplate().execute(new ConnectionCallback() {
 			public Object doInConnection(Connection conn) throws SQLException,
 					DataAccessException {
 				String str = "";
-				CallableStatement cs = conn.prepareCall("{call ybh_query_member(?,?,?,?)}");
+				CallableStatement cs = conn.prepareCall("{call ybh_query_member(?,?,?,?,?,?)}");
 				cs.setString(1, ds.account);
 				cs.setString(2, ds.curBM);
 				String a[]=(String[]) ds.map.get("marr");
@@ -83,7 +84,9 @@ public class YbhMemberDaoImpl extends BaseDaoImpl implements YbhMemberDao {
 				}
 				System.out.println(str);
 				cs.setString(3, str);
-				cs.registerOutParameter(4, Types.INTEGER);
+				cs.setString(4, ybhMemberForm.getXmlist());
+				cs.setInt(5, 500);
+				cs.registerOutParameter(6, Types.INTEGER);
 				cs.execute();
 				ResultSet rs = cs.getResultSet();
 				ds.initData();
@@ -97,7 +100,7 @@ public class YbhMemberDaoImpl extends BaseDaoImpl implements YbhMemberDao {
 					}
 				}
 				//取出参(人口总数)
-				ds.map.put("membernt", cs.getObject(4));
+				ds.map.put("membernt", cs.getObject(6));
 				return null;
 			}
 		});		

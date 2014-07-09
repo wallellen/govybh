@@ -9,35 +9,42 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/splitpage.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/changeColor.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/voicet-common-1.0.js"></script>
+	<!-- fancybox插件开始 -->
+	<script type="text/javascript" src="${pageContext.request.contextPath }/fancybox/jquery.fancybox-1.3.1.pack.js"></script>
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/fancybox/fancybox.css" />
+	<!-- fancybox插件结束 -->
+	<script type="text/javascript">
+		function setTab(name,cursel,n){
+			for(i=1;i<=n;i++){
+				var menu=document.getElementById(name+i);
+				var con=document.getElementById("con_"+name+"_"+i);
+				menu.className=i==cursel?"hover":"";
+				con.style.display=i==cursel?"block":"none";
+			}
+		}
+	</script>
 	
 	<style type="text/css">
-		*{margin:0;padding:0;list-style-type:none;}
-		a,img{border:0;}
-		body{font:12px/180% Arial, Helvetica, sans-serif;}
-		label{cursor:pointer;}
-		.democode{width:400px;margin:30px auto 0 auto;line-height:24px;}
-		.democode h2{font-size:14px;color:#3366cc;height:28px;}
-		.agree{margin:40px auto;width:400px;font-size:16px;font-weight:800;color:#3366cc;}
-		.mainlist{padding:10px;}
-		.mainlist li{height:28px;line-height:28px;font-size:12px;}
-		.mainlist li span{margin:0 5px 0 0;font-family:"宋体";font-size:12px;font-weight:400;color:#ddd;}
-		.btnbox{text-align:center;height:30px;padding-top:10px;background:#ECF9FF;}
+		#data{width:620px; height:200px;}
+		.Menubox{height:28px; border-bottom:1px solid #64B8E4; background:#E4F2FB;}
+		.Menubox ul{list-style:none;margin:0px 2px;padding:0;}
+		.Menubox ul li{float:left;background:#64B8E4;line-height:28px;display:block;cursor:pointer;text-align:center;color:#fff;font-weight:bold;border-top:1px solid #64B8E4;border-left:1px solid #64B8E4;border-right:1px solid #64B8E4; margin-right:2px;padding: 0 5px 0 5px;}
+		.Menubox ul li.hover{background:#fff;border-bottom:1px solid #fff;color:#147AB8;}
+		.Contentbox{clear:both;margin-top:0px;border-top:none;height:150px;padding-top:4px;}
+		.Contentbox ul{list-style:none;margin:7px;padding:0;}
+		.Contentbox ul li{line-height:24px; width:58px; float:left; margin-right:5px;}	
 		
-		#windownbg{display:none;position:absolute;width:100%;height:100%;background:#000;top:0;left:0;}
-		#windown-box{position:fixed;_position:absolute;border:5px solid #E9F3FD;background:#FFF;text-align:left;}
-		#windown-title{position:relative;height:30px;border:1px solid #A6C9E1;overflow:hidden;background:url(images/tipbg.png) 0 0 repeat-x;}
-		#windown-title h2{position:relative;left:10px;top:5px;font-size:14px;color:#666;}
-		#windown-close{position:absolute;right:10px;top:8px;width:10px;height:16px;text-indent:-10em;overflow:hidden;background:url(images/tipbg.png) 100% -49px no-repeat;cursor:pointer;}
-		#windown-content-border{position:relative;top:-1px;border:1px solid #A6C9E1;padding:5px 0 5px 5px;}
-		#windown-content img,#windown-content iframe{display:block;}
-		#windown-content .loading{position:absolute;left:50%;top:50%;margin-left:-8px;margin-top:-8px;}
-		</style>
+		#selxian{overflow:hidden;}		
+	</style>
+	
 	
 </head>
 <body style="background:#E0EEFB;">
 <div style="float:left; width:868px; height:668px;">
 	<div style="width:640px; height:22px; margin-top:10px;" class="title-stats">人口查询&nbsp;[<s:property value="#session.vts.map.name"/>]</div>
 	<form name="memberForm" action="${pageContext.request.contextPath }/ybhMemberAction_queryMember.action" method="post" onsubmit="return changeCurPage()">
+	<input type="hidden" id="xmlist" name="xmlist" value=""/>
+	<input type="hidden" id="xmname" name="xmname" value=""/>
 	<fieldset style="border:1px solid #3B9FFF; margin:0; padding:0; width:99%;">
 	<legend>查询条件</legend>
 	<div style="height:60px;">
@@ -49,14 +56,9 @@
 				</td>
 				<td width="10%" align="right"></td>
 				<td width="10%">
-				<input type="button" value="选择县" onclick="popTips()"/>
+				<a id="various1" href="#data" kesrc="#data" title="选择县">选择县</a>
 				</td>
-				<td width="10%" align="right"></td>
-				<td width="8%" align="left">
-				</td>
-				<td width="10%" align="left">
-				</td>
-				<td width="20%" align="center"></td>
+				<td colspan="4">&nbsp;<label id="selxian"><s:property value="xmname"/></label></td>
 			</tr>
 			<tr>
 				<td width="10%" align="right">姓名：&nbsp;</td>
@@ -185,54 +187,57 @@
 		parent.document.getElementById("globalCurPage").value=1;
 	}
 </script>
-<script type="text/javascript" src="${pageContext.request.contextPath }/script/tipswindown.js"></script>
-<script type="text/javascript">
-//弹出层调用
-function popTips(){
-	showTipsWindown("选择村", 'simTestContent', 300, 255);
-}
-function showTipsWindown(title,id,width,height){
-	tipsWindown(title,"id:"+id,width,height,"true","","true",id);
-}
-
-
-</script>
+<!-- fancybox start -->
 <div style="display:none;">
-<div id="simTestContent" class="simScrollCont">
-	<div class="mainlist">
-		<table cellpadding="0" cellspacing="0" width="100%">
-           	<tr style="background:#C0C0C0">
-              	<td colspan="2" align="left">淮安市-清浦区-盐河镇</td>
-			</tr>
-            <tr>
-              	<td align="right">&nbsp;&nbsp;<input type="checkbox"/></td>
-              	<td align="left">&nbsp;盐河居委会</td>
-             </tr>
-             <tr>
-              	<td align="right">&nbsp;&nbsp;<input type="checkbox"/></td>
-              	<td align="left">&nbsp;杨庙村委会</td>
-              </tr>
-              <tr>
-              	<td align="right">&nbsp;&nbsp;<input type="checkbox"/></td>
-              	<td align="left">&nbsp;甘露村委会</td>
-              </tr>
-              <tr style="background:#C0C0C0">
-              	<td colspan="2" align="left">淮安市-清浦区-黄码乡</td>
-			</tr>
-            <tr>
-              	<td align="right">&nbsp;&nbsp;<input type="checkbox"/></td>
-              	<td align="left">&nbsp;运西村委会</td>
-             </tr>
-             <tr>
-              	<td align="right">&nbsp;&nbsp;<input type="checkbox"/></td>
-              	<td align="left">&nbsp;运南村委会</td>
-              </tr>
-              <tr>
-              	<td align="right">&nbsp;&nbsp;<input type="checkbox"/></td>
-              	<td align="left">&nbsp;吴圩村委会</td>
-              </tr>
-           </table>
-	</div>
+    <div id="data">
+    <s:property value="#session.vts.html" escape="false"/>
+    </div>
 </div>
-</div>
+<!-- fancybox end -->
+<script type="text/javascript">
+   	$(document).ready(function() {
+		$("#various1").fancybox({
+			//是否显示标题 
+			'titleShow':'true',
+			//设置标题显示的位置,可设置为outside,inside,over
+			'titlePosition':'outside',
+			//设置动画效果,可设置为elastic,fade,none
+			'transitionIn':'none',
+			'transitionOut':'none',
+			
+		});				   
+	});
+
+	function selectXian(){
+		var c = document.getElementsByName("chkbox");
+		var v_flag = false;
+		for(var i=0; i<c.length; i++){   
+			if(c[i].checked){
+				v_flag = true;
+		        break; 
+			}            
+		}   
+		//获得选中的checkbox拼装成的batchItemCode字符串
+		var batchItemCode = ''; 
+		var batchProductName = '';
+		if(v_flag==true){      
+			//拼成批量要删除的编号itemCode
+		    for(var i=0; i<c.length; i++){   
+		    	if(c[i].checked){
+		            batchItemCode += c[i].id+',';          
+		            batchProductName += c[i].value+',';          
+				}            
+			}  
+		}else{
+			selxian.innerHTML='';
+			return;
+		}
+		$("#xmlist").val(batchItemCode);
+		$("#xmname").val(batchProductName);
+		selxian.innerHTML=batchProductName;
+	}
+</script>
+
+
+
 </html>
