@@ -48,7 +48,7 @@ public class YbhMemberAction extends BaseAction implements ModelDriven<YbhMember
 			if(map.get("st").equals("0"))
 			{
 				tid++;
-				h_tab += "<li id='menu"+tid+"' onmouseover=\"setTab('menu',"+tid+",#tabnum#)\">"+map.get("oname")+"</li>";
+				h_tab += "<li id='menu"+tid+"' onclick=\"setTab('menu',"+tid+",#tabnum#)\">"+map.get("oname")+"</li>";
 				if(bhavecontent){
 					h_content+="</ul>";
 					h_content += "</div>";
