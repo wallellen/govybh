@@ -55,6 +55,7 @@
 	<div style="width:640px; height:22px; margin-top:10px;" class="title-stats">农户查询&nbsp;[<s:property value="#session.vts.map.name"/>]</div>
 	<form name="farmerForm" action="${pageContext.request.contextPath }/ybhFarmerAction_queryFarmer.action" method="post" onsubmit="return changeCurPage()">
 	<input type="hidden" id="xmlist" name="xmlist" value=""/>
+	<input type="hidden" id="xmname" name="xmname" value=""/>
 	<input type="hidden" id="qparam" name="qparam" value="<s:property value="qstr"/>"/>
 	<fieldset style="border:1px solid #3B9FFF; margin:0; padding:0; width:99%;">
 	<legend>查询条件</legend>
@@ -63,7 +64,7 @@
 			<tr>
 				<td width="10%" align="right"><input type="checkbox"/>全省范围</td>
 				<td width="10%" align="right"><a id="various1" href="#data" kesrc="#data" title="选择县">选择县</a>
-				<td colspan="3">&nbsp;<label id="selxian"></label></td>
+				<td colspan="3">&nbsp;<label id="selxian"><s:property value="xmname"/></label></td>
 			</tr>
 			<tr>
 				<td width="10%" align="right">农户编码:&nbsp;</td>
@@ -221,6 +222,7 @@
 			return;
 		}
 		$("#xmlist").val(batchItemCode);
+		$("#xmname").val(batchProductName);
 		selxian.innerHTML=batchProductName;
 	}
 </script>
