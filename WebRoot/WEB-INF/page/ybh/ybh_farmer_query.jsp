@@ -89,20 +89,20 @@
 	<fieldset style="border:1px solid #3B9FFF; margin:0; padding:0; width:99%;">
 	<legend>高级选项</legend>
 	<div style="height:80px;">
-		<table cellpadding="0" cellspacing="0">
+		<table cellpadding="0" cellspacing="0" width="100%">
 			<tr height="24px;">
-				<td width="12%" align="right">家庭人口：</td>
-				<td width="10%" align="left">
+				<td width="16%" align="right">家庭人口：</td>
+				<td width="8%" align="left">
 					<s:select name="qstr" list="#application.vta.GetList('opt')" listKey="id" listValue="str" value="%{#session.vts.map.qarr[2]}"></s:select>
 				</td>
-				<td width="16%" align="left"><input type="text" name="qstr" maxlength="5" value="<s:property value="#session.vts.map.qarr[3]"/>" onkeyup="value=value.replace(/[^\d]/g,'')" class="inptxt2" onfocus="this.className='input_on2'" onblur="this.className='input_off2'"/></td>
+				<td width="14%" align="left"><input type="text" name="qstr" maxlength="5" value="<s:property value="#session.vts.map.qarr[3]"/>" onkeyup="value=value.replace(/[^\d]/g,'')" class="inptxt2" onfocus="this.className='input_on2'" onblur="this.className='input_off2'"/></td>
 				<td width="12%" align="right">劳动力：</td>
-				<td width="10%" align="left">
+				<td width="8%" align="left">
 					<s:select name="qstr" list="#application.vta.GetList('opt')" listKey="id" listValue="str" value="%{#session.vts.map.qarr[4]}"></s:select>
 				</td>
-				<td width="16%" align="left"><input type="text" name="qstr" class="inptxt2" onfocus="this.className='input_on2'" onblur="this.className='input_off2'" maxlength="5" value="<s:property value="#session.vts.map.qarr[5]"/>" onkeyup="value=value.replace(/[^\d]/g,'')"/></td>
-				<td width="10%" align="right">家庭属性：</td>
-				<td width="10%" align="left">
+				<td width="14%" align="left"><input type="text" name="qstr" class="inptxt2" onfocus="this.className='input_on2'" onblur="this.className='input_off2'" maxlength="5" value="<s:property value="#session.vts.map.qarr[5]"/>" onkeyup="value=value.replace(/[^\d]/g,'')"/></td>
+				<td width="12%" align="right">家庭属性：</td>
+				<td width="14%" align="left">
 					<s:select name="qstr" cssClass="borwer-sel" list="#application.vta.GetList('familyex')" listKey="id" listValue="str" value="%{#session.vts.map.qarr[6]}"></s:select>
 				</td>
 			</tr>
