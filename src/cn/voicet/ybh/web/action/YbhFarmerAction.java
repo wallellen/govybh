@@ -1,6 +1,5 @@
 package cn.voicet.ybh.web.action;
 
-import java.util.LinkedHashMap;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -31,11 +30,10 @@ public class YbhFarmerAction extends BaseAction implements ModelDriven<YbhFarmer
 	
 	/** 样本户农户查询 */
 	public String home(){
-		Map map;
-		int tid = 0;
 		DotSession ds = DotSession.getVTSession(request);
 		ybhFarmerService.getSelectedXianList(ds);
-		
+		Map map;
+		int tid = 0;
 		String html;
 		String h_tab;
 		String h_content;
@@ -43,7 +41,7 @@ public class YbhFarmerAction extends BaseAction implements ModelDriven<YbhFarmer
 		h_tab = "<div class='Menubox'>";
 		h_tab += "<ul>";
 		h_content = "<div class='Contentbox'>";
-		
+		//
 		for(int i=0; i<ds.list.size(); i++)
 		{
 			map = (Map)ds.list.get(i);
@@ -68,22 +66,28 @@ public class YbhFarmerAction extends BaseAction implements ModelDriven<YbhFarmer
 					h_content += "<ul>";
 					bhavecontent=true;
 				}
-				h_content += "<li>"+"<input type='checkbox'/>"+map.get("oname")+"</li>";
+				
+				//<input type="checkbox" onclick="selectXian('123','中国')"/>
+				h_content += "<li>"
+					+"<input type='checkbox' id='"+map.get("bm")+"' name='chkbox' value='"+map.get("oname")+"' " +
+							"onclick='selectXian()'/>"
+					+map.get("oname")
+					+"</li>";
 			}
 		}
 		h_tab += "</ul>";
-		
+		//
 		h_tab += "<script type='text/javascript'>";
 		h_tab += "document.getElementById('menu1').className='hover'";
 		h_tab += "</script>";
-		
+		//	
 		h_tab += "</div>";
 		h_tab = h_tab.replace("#tabnum#", String.valueOf(tid));
 		
 		h_content += "</div>";
-	
-		html = h_tab+h_content;
+		html = h_tab + h_content;
 		request.setAttribute("h", html);
+		
 		return "show_farmer";
 	}
 	
@@ -91,7 +95,8 @@ public class YbhFarmerAction extends BaseAction implements ModelDriven<YbhFarmer
 	{
 		DotSession ds = DotSession.getVTSession(request);
 		ds.map.put("qarr", ybhFarmerForm.getQstr());
-		ybhFarmerService.getFarmerInfoList(ds);
+		log.info("xmlist:"+ybhFarmerForm.getXmlist());
+		ybhFarmerService.getFarmerInfoList(ds, ybhFarmerForm);
 		return "show_farmer";
 	}
 	

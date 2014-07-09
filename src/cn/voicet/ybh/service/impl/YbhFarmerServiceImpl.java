@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import cn.voicet.ybh.dao.YbhFarmerDao;
 import cn.voicet.ybh.service.YbhFarmerService;
 import cn.voicet.ybh.util.DotSession;
+import cn.voicet.ybh.web.form.YbhFarmerForm;
 
 @Transactional(readOnly=true)
 @Service(YbhFarmerService.SERVICE_NAME)
@@ -20,8 +21,8 @@ public class YbhFarmerServiceImpl implements YbhFarmerService{
 		ybhFarmerDao.getSelectedXianList(ds);
 	}
 
-	public void getFarmerInfoList(DotSession ds) {
-		ybhFarmerDao.getFarmerInfoList(ds);
+	public void getFarmerInfoList(DotSession ds, YbhFarmerForm ybhFarmerForm) {
+		ybhFarmerDao.getFarmerInfoList(ds, ybhFarmerForm);
 	}
 
 }

@@ -16,6 +16,7 @@ import org.springframework.stereotype.Repository;
 import cn.voicet.ybh.dao.YbhFarmerDao;
 import cn.voicet.ybh.util.DotSession;
 import cn.voicet.ybh.util.VTJime;
+import cn.voicet.ybh.web.form.YbhFarmerForm;
 
 @Repository(YbhFarmerDao.SERVICE_NAME)
 @SuppressWarnings({"unchecked","static-access"})
@@ -45,16 +46,15 @@ public class YbhFarmerDaoImpl extends BaseDaoImpl implements YbhFarmerDao {
 		});
 	}
 
-	public void getFarmerInfoList(final DotSession ds) {
+	public void getFarmerInfoList(final DotSession ds, final YbhFarmerForm ybhFarmerForm) {
 		final int apr[]={0,1,2,4,6,7,9,11,12,14,16};
 		this.getJdbcTemplate().execute(new ConnectionCallback() {
 			public Object doInConnection(Connection conn) throws SQLException,
 					DataAccessException {
 				String str = "";
-				CallableStatement cs = conn.prepareCall("{call ybh_query_family(?,?,?,?,?)}");
+				CallableStatement cs = conn.prepareCall("{call ybh_query_family(?,?,?,?,?,?)}");
 				cs.setString(1, ds.account);
 				cs.setString(2, ds.curBM);
-				
 				String a[]=(String[]) ds.map.get("qarr");
 				for(int i=0; i<11; i++)
 				{
@@ -87,8 +87,9 @@ public class YbhFarmerDaoImpl extends BaseDaoImpl implements YbhFarmerDao {
 				}
 				System.out.println(str);
 				cs.setString(3, str);
-				cs.setString(4, null);
-				cs.registerOutParameter(5, Types.INTEGER);
+				cs.setString(4, ybhFarmerForm.getXmlist());
+				cs.setInt(5, 200);
+				cs.registerOutParameter(6, Types.INTEGER);
 				cs.execute();
 				ResultSet rs = cs.getResultSet();
 				ds.initData();
@@ -102,7 +103,7 @@ public class YbhFarmerDaoImpl extends BaseDaoImpl implements YbhFarmerDao {
 					}
 				}
 				//取出参(农户总数)
-				ds.map.put("farmernt", cs.getObject(5));
+				ds.map.put("farmernt", cs.getObject(6));
 				return null;
 			}
 		});

@@ -311,7 +311,7 @@
 	        </tr>
 	        <tr>
 	            <td class="aleft">&nbsp;其中：建档户使用总量（万元）</td>
-	            <td class="aright"><s:property value="#session.vts.map.vdt1"/>&nbsp;</td>
+	            <td class="aright"><s:property value="#session.vts.map.vdtl"/>&nbsp;</td>
 				<td></td>
 	        </tr>
 	        <tr>

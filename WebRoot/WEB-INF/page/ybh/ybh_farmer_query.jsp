@@ -45,7 +45,8 @@
 		.Contentbox{clear:both;margin-top:0px;border-top:none;height:150px;padding-top:4px;}
 		.Contentbox ul{list-style:none;margin:7px;padding:0;}
 		.Contentbox ul li{line-height:24px; width:58px; float:left; margin-right:5px;}	
-		}
+		
+		#selxian{overflow:hidden;}		
 	</style>
 		
 </head>
@@ -53,6 +54,7 @@
 <div style="float:right; width:868px; height:668px;">
 	<div style="width:640px; height:22px; margin-top:10px;" class="title-stats">农户查询&nbsp;[<s:property value="#session.vts.map.name"/>]</div>
 	<form name="farmerForm" action="${pageContext.request.contextPath }/ybhFarmerAction_queryFarmer.action" method="post" onsubmit="return changeCurPage()">
+	<input type="hidden" id="xmlist" name="xmlist" value=""/>
 	<input type="hidden" id="qparam" name="qparam" value="<s:property value="qstr"/>"/>
 	<fieldset style="border:1px solid #3B9FFF; margin:0; padding:0; width:99%;">
 	<legend>查询条件</legend>
@@ -61,9 +63,7 @@
 			<tr>
 				<td width="10%" align="right"><input type="checkbox"/>全省范围</td>
 				<td width="10%" align="right"><a id="various1" href="#data" kesrc="#data" title="选择县">选择县</a>
-				<td width="10%"></td>
-				<td width="10%"></td>
-				<td width="10%" align="center"></td>
+				<td colspan="3">&nbsp;<label id="selxian"></label></td>
 			</tr>
 			<tr>
 				<td width="10%" align="right">农户编码:&nbsp;</td>
@@ -195,6 +195,34 @@
 			
 		});				   
 	});
+
+	function selectXian(){
+		var c = document.getElementsByName("chkbox");
+		var v_flag = false;
+		for(var i=0; i<c.length; i++){   
+			if(c[i].checked){
+				v_flag = true;
+		        break; 
+			}            
+		}   
+		//获得选中的checkbox拼装成的batchItemCode字符串
+		var batchItemCode = ''; 
+		var batchProductName = '';
+		if(v_flag==true){      
+			//拼成批量要删除的编号itemCode
+		    for(var i=0; i<c.length; i++){   
+		    	if(c[i].checked){
+		            batchItemCode += c[i].id+',';          
+		            batchProductName += c[i].value+',';          
+				}            
+			}  
+		}else{
+			selxian.innerHTML='';
+			return;
+		}
+		$("#xmlist").val(batchItemCode);
+		selxian.innerHTML=batchProductName;
+	}
 </script>
 
 </body>
