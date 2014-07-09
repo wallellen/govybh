@@ -47,7 +47,7 @@
 	<input type="hidden" id="xmname" name="xmname" value=""/>
 	<fieldset style="border:1px solid #3B9FFF; margin:0; padding:0; width:99%;">
 	<legend>查询条件</legend>
-	<div style="height:42px;">
+	<div style="height:45px; line-height:20px;">
 		<table cellpadding="0" cellspacing="0">
 			<tr>
 				<td width="10%" align="right"></td>
@@ -78,7 +78,7 @@
 					
 				</td>
 				<td width="10%" align="right">年龄：&nbsp;</td>
-				<td width="8%" align="left">
+				<td width="6%" align="left">
 					<s:select name="memberstr" list="#application.vta.GetList('opt')" listKey="id" listValue="str" value="%{#session.vts.map.marr[2]}"></s:select>
 				</td>
 				<td width="10%" align="left">
@@ -140,7 +140,7 @@
 	</div>
 	</s:if>
 	<s:if test="#session.vts.list2!=null && #session.vts.list2.size()>0">
-	<div class="table-c" style="width:868px; height:454px; border:0px solid red; margin-top:4px;">
+	<div class="table-c" style="width:868px; height:450px; border:0px solid red; margin-top:4px;">
 		<table class="data_list" width="100%" bordercolor="gray" border="0" cellpadding="0" cellspacing="0">
 			<thead>
 			<tr class="tabtr1">
