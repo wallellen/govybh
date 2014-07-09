@@ -47,7 +47,7 @@
 		.Contentbox ul{list-style:none;margin:7px;padding:0;}
 		.Contentbox ul li{line-height:24px; width:58px; float:left; margin-right:5px;}	
 		
-		#selxian{overflow:hidden;}		
+		#selxian{width:600px; height:20px; display:block; float:left; overflow:hidden;}		
 	</style>
 		
 </head>
@@ -71,8 +71,12 @@
 					</s:else>
 					<input type="hidden" id="axflag" name="axflag"/>
 				</td>
-				<td width="10%" align="right"><a id="various1" href="#data" kesrc="#data" title="选择县">选择县</a></td>
-				<td colspan="3">&nbsp;<label id="selxian"><s:property value="xmname"/></label></td>
+				<td width="8%" align="right">
+					<a id="various1" href="#data" kesrc="#data" title="选择县">选择县&nbsp;</a>
+				</td>
+				<td colspan="3" width="80%">
+				&nbsp;<label id="selxian"><s:property value="xmname"/></label>
+				</td>
 			</tr>
 			<tr>
 				<td width="10%" align="right">农户编码:&nbsp;</td>
