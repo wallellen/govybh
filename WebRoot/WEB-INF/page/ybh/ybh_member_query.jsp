@@ -8,7 +8,7 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/jquery-1.5.1.min.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/splitpage.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/changeColor.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath }/script/voicet-common-1.0.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath }/script/farmem.js"></script>
 	<!-- fancybox插件开始 -->
 	<script type="text/javascript" src="${pageContext.request.contextPath }/fancybox/jquery.fancybox-1.3.1.pack.js"></script>
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/fancybox/fancybox.css" />
@@ -52,7 +52,13 @@
 			<tr>
 				<td width="10%" align="right"></td>
 				<td width="10%">
-					<input type="checkbox"/>全省范围
+					<s:if test="axflag==1">
+						<input type="checkbox" onclick="selectAllXian(this)" checked="checked"/>全省范围
+					</s:if>
+					<s:else>
+						<input type="checkbox" onclick="selectAllXian(this)"/>全省范围
+					</s:else>
+					<input type="hidden" id="axflag" name="axflag"/>
 				</td>
 				<td width="10%" align="right"></td>
 				<td width="10%">
@@ -207,37 +213,5 @@
 			
 		});				   
 	});
-
-	function selectXian(){
-		var c = document.getElementsByName("chkbox");
-		var v_flag = false;
-		for(var i=0; i<c.length; i++){   
-			if(c[i].checked){
-				v_flag = true;
-		        break; 
-			}            
-		}   
-		//获得选中的checkbox拼装成的batchItemCode字符串
-		var batchItemCode = ''; 
-		var batchProductName = '';
-		if(v_flag==true){      
-			//拼成批量要删除的编号itemCode
-		    for(var i=0; i<c.length; i++){   
-		    	if(c[i].checked){
-		            batchItemCode += c[i].id+',';          
-		            batchProductName += c[i].value+',';          
-				}            
-			}  
-		}else{
-			selxian.innerHTML='';
-			return;
-		}
-		$("#xmlist").val(batchItemCode);
-		$("#xmname").val(batchProductName);
-		selxian.innerHTML=batchProductName;
-	}
 </script>
-
-
-
 </html>

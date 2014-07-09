@@ -4,6 +4,7 @@ public class YbhMemberForm {
 	private String[] memberstr;	//查询人口条件数组
 	private String xmlist;	//县码列表
 	private String xmname;	//县名称列表
+	private String axflag;
 	public String[] getMemberstr() {
 		return memberstr;
 	}
@@ -21,5 +22,11 @@ public class YbhMemberForm {
 	}
 	public void setXmname(String xmname) {
 		this.xmname = xmname;
+	}
+	public String getAxflag() {
+		return axflag;
+	}
+	public void setAxflag(String axflag) {
+		this.axflag = axflag;
 	}
 }
