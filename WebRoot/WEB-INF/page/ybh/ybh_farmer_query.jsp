@@ -178,7 +178,7 @@
 <!-- fancybox start -->
 <div style="display:none;">
     <div id="data">
-    <s:property value="#request.h" escape="false"/>
+    <s:property value="#session.vts.html" escape="false"/>
     </div>
 </div>
 <!-- fancybox end -->

@@ -48,6 +48,8 @@ public class DotSession {
 	
 	public int sflag;
 	
+	public String html;
+	
 	private class StackInfo{
 		
 		public StackInfo(){}

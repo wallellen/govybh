@@ -86,7 +86,9 @@ public class YbhFarmerAction extends BaseAction implements ModelDriven<YbhFarmer
 		
 		h_content += "</div>";
 		html = h_tab + h_content;
-		request.setAttribute("h", html);
+		//request.setAttribute("h", html);
+		ds.html = html;
+		
 		
 		return "show_farmer";
 	}
