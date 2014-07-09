@@ -47,7 +47,7 @@
 	<input type="hidden" id="xmname" name="xmname" value=""/>
 	<fieldset style="border:1px solid #3B9FFF; margin:0; padding:0; width:99%;">
 	<legend>查询条件</legend>
-	<div style="height:60px;">
+	<div style="height:42px;">
 		<table cellpadding="0" cellspacing="0">
 			<tr>
 				<td width="10%" align="right"></td>
@@ -140,7 +140,7 @@
 	</div>
 	</s:if>
 	<s:if test="#session.vts.list2!=null && #session.vts.list2.size()>0">
-	<div class="table-c" style="width:868px; height:424px; border:0px solid red; margin-top:4px;">
+	<div class="table-c" style="width:868px; height:454px; border:0px solid red; margin-top:4px;">
 		<table class="data_list" width="100%" bordercolor="gray" border="0" cellpadding="0" cellspacing="0">
 			<thead>
 			<tr class="tabtr1">
@@ -181,7 +181,7 @@
 	<!-- js分页div -->
 	<div class="split-page">
 		<!-- 每页行数 -->
-		<input type="hidden" id="pageRows" value="17"/>
+		<input type="hidden" id="pageRows" value="21"/>
 		<div id="changePage"></div>
 	</div>
 	</s:if>
