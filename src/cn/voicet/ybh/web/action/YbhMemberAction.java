@@ -71,7 +71,9 @@ public class YbhMemberAction extends BaseAction implements ModelDriven<YbhMember
 				h_content += "<li>"
 					+"<input type='checkbox' id='"+map.get("bm")+"' name='chkbox' value='"+map.get("oname")+"' " +
 							"onclick='selectXian()'/>"
+					+"<label for='"+map.get("bm")+"'>"
 					+map.get("oname")
+					+"</label>"
 					+"</li>";
 			}
 		}
