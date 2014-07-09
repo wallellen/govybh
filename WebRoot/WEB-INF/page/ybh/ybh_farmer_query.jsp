@@ -151,7 +151,7 @@
 			-->
 		</span>
 	</div>
-	<div class="table-c" style="width:868px; height:405px; border:0px solid red; margin-top:4px;">
+	<div class="table-c" style="width:868px; height:418px; border:0px solid red; margin-top:4px;">
 		<table class="data_list" width="100%" bordercolor="gray" border="0" cellpadding="0" cellspacing="0">
 			<thead>
 			<tr class="tabtr1">
@@ -178,7 +178,7 @@
 	<!-- js分页div -->
 	<div class="split-page">
 		<!-- 每页行数 -->
-		<input type="hidden" id="pageRows" value="16"/>
+		<input type="hidden" id="pageRows" value="19"/>
 		<div id="changePage"></div>
 	</div>
 	</s:if>
