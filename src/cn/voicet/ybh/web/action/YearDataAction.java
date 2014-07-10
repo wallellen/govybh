@@ -51,6 +51,7 @@ public class YearDataAction extends BaseAction implements ModelDriven<YearDataFo
 		}
 		ds.subPathTitle.setYbhflag("yeardata");
 		ds.navPath=ds.subPathTitle.getHtmlString();
+		ds.map.put("ybhyear", yearDataForm.getYear());
 		return "show_data";
 	}
 	
@@ -59,6 +60,7 @@ public class YearDataAction extends BaseAction implements ModelDriven<YearDataFo
 		DotSession ds = DotSession.getVTSession(request);
 		ds.curBM = yearDataForm.getViewBM();
 		ds.map.put("name",yearDataForm.getOname());
+		yearDataForm.setYear((String)ds.map.get("ybhyear"));
 		log.info("²é¿´Äê£º"+yearDataForm.getYear());
 		return viewData();
 	}

@@ -39,11 +39,11 @@
 				<td align="right"><s:property value="#ls.hm"/>&nbsp;</td>
 				<td class="tabtd1">
 					<s:if test="#session.vts.curBM.length()<9">
-						<a href="${pageContext.request.contextPath }/yearDataAction_viewYbh.action?viewBM=<s:property value="#ls.bm"/>&oname=<s:property value="#ls.oname"/>&year=<s:property value="year"/>">进入</a>
+						<a href="${pageContext.request.contextPath }/yearDataAction_viewYbh.action?viewBM=<s:property value="#ls.bm"/>&oname=<s:property value="#ls.oname"/>&year=<s:property value="#session.vts.map.ybhyear"/>">进入</a>
 					</s:if>
 					<s:if test="#session.vts.curBM.length()==9">
-						<a href="${pageContext.request.contextPath }/yearDataAction_income.action?year=<s:property value="year"/>&oname=<s:property value="#ls.oname"/>">年数据录入</a>
-						<a href="${pageContext.request.contextPath }/yearDataAction_updateCun.action?cunbm=<s:property value="#ls.bm"/>&oname=<s:property value="#ls.oname"/>&year=<s:property value="year"/>">村级指标录入</a>
+						<a href="${pageContext.request.contextPath }/yearDataAction_income.action?year=<s:property value="#session.vts.map.ybhyear"/>&oname=<s:property value="#ls.oname"/>">进入</a>
+						<a href="${pageContext.request.contextPath }/yearDataAction_updateCun.action?cunbm=<s:property value="#ls.bm"/>&oname=<s:property value="#ls.oname"/>&year=<s:property value="#session.vts.map.ybhyear"/>">村级指标录入</a>
 					</s:if>
 				</td>
 			</tr>

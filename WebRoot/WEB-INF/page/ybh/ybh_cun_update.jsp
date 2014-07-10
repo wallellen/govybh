@@ -12,7 +12,7 @@
 <div class="cunwrap">
 	<form name="form1" action="" method="post">
 	<input type="hidden" name="cunbm" value="<s:property value='cunbm'/>"/>
-	<input type="hidden" name="year" value="<s:property value='year'/>"/>
+	<input type="hidden" name="year" value="<s:property value='#session.vts.map.ybhyear'/>"/>
 	<input type="hidden" name="oname" value="<s:property value='oname'/>"/>
 	<input type="hidden" name="viewBM" value="<s:property value='#session.vts.curBM'/>"/>
 	<input type="hidden" name="rflag" value="<s:property value='rflag'/>"/>

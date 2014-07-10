@@ -194,7 +194,7 @@
    	$(document).ready(function() {
 		$("#various1").fancybox({
 			//是否显示标题 
-			'titleShow':'true',
+			'titleShow':'false',
 			//设置标题显示的位置,可设置为outside,inside,over
 			'titlePosition':'outside',
 			//设置动画效果,可设置为elastic,fade,none

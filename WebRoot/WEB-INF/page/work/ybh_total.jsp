@@ -28,11 +28,12 @@
 		.aleft{text-align:left}
 		.acenter{text-align:center}
 		.aright{text-align:right}
+		
 	</style>
 </head>
 <body onload="loadParam()" style="background:#E0EEFB;">
 <div style="float:right; width:868px; height:668px;">
-	<div style="width:868px; height:22px; margin-top:1px;" class="title-stats"><s:property value="year"/>年度扶贫观察点<s:if test="zhibiao=='cun'">村级</s:if><s:elseif test="zhibiao=='hu'">户级</s:elseif><s:else></s:else>监测数据汇总
+	<div style="width:868px; height:20px; margin-top:2px;" class="title-stats"><s:property value="year"/>年度扶贫观察点<s:if test="zhibiao=='cun'">村级</s:if><s:elseif test="zhibiao=='hu'">户级</s:elseif><s:else></s:else>监测数据汇总
 	</div>
 	<form name="form1" action="${pageContext.request.contextPath }/ybhTotalAction_stats.action" method="post" onsubmit="return checkZhibiao()">
 	<fieldset style="border:1px solid #3B9FFF; margin:0; padding:0; width:99%;">
@@ -42,7 +43,7 @@
         	<tr>
         		<td></td>
             	<td colspan="2">
-                    <s:radio name="zhibiao" list="#{ 'cun':'村级指标', 'hu':'户级指标'}" value="%{zhibiao}"/>
+                    <s:radio name="zhibiao" list="#{ 'cun':'村级指标', 'hu':'户级指标'}" value="%{zhibiao}" cssClass="chzb"/>
                 </td>
                 <td></td>
                 <td></td>

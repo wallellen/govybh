@@ -46,7 +46,7 @@ var responseLogin = function(data, textStatus, jqXHR)
 		else
 		{
 			Cookie.clearCookie("accountybh");	
-			Cookie.clearCookie("passwordybh");	
+			Cookie.clearCookie("passwordybh");
 		}
 		window.location.href="userAction_home.action";
 	}

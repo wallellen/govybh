@@ -39,6 +39,8 @@
  	</style>
  	<title>扶贫观察点管理系统</title>
  	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ 	<meta http-equiv="cache-control" content="no-cache"/>
+ 	<meta http-equiv="expires" content="0"/>
 </head>
 <body>
 	<table width="1024px" height="768px" border="0" cellpadding="0" cellspacing="0" align="center" background="${pageContext.request.contextPath }/images/vt_rec_loginback3.jpg ">

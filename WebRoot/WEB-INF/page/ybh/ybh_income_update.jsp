@@ -13,7 +13,7 @@
 	<form name="form1" action="" method="post">
 	<input type="hidden" name="rflag" value="<s:property value='rflag'/>"/>
 	<input type="hidden" name="incometxt" value="<s:property value='curhm'/>"/>
-	<input type="hidden" name="incometxt" value="<s:property value='year'/>"/>
+	<input type="hidden" name="incometxt" value="<s:property value='#session.vts.map.ybhyear'/>"/>
 	<input type="hidden" name="curhm" value=""/>
 	<input type="hidden" name="hname" value="<s:property value='hname'/>"/>
 	<input type="hidden" name="year" value="<s:property value='year'/>"/>
