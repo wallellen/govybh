@@ -8,7 +8,8 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/cun_ybh.js"></script>
 </head>
 <body style="background:#E0EEFB;">
-<h2 class="jiangbu-title"><s:property value="oname"/></h2>
+<h2 class="ybc-title"><s:property value="oname"/></h2>
+<div class="ybc-return"><input type="button" value="返回" class="button43" onclick="history.go(-1)"/></div>
 <div class="cunwrap">
 	<table cellpadding="0" cellspacing="0" width="100%">
     	<tr>
@@ -156,7 +157,7 @@
     <div class="cun-bottom">
     	<span></span>
     	<span></span>
-    	<span><input type="button" value="返回" class="button4" onclick="history.go(-1)"/></span>
+    	<span></span>
     	<span></span>
     </div>
 </div>	
