@@ -47,7 +47,9 @@
 		.Contentbox ul{list-style:none;margin:7px;padding:0;}
 		.Contentbox ul li{line-height:24px; width:58px; float:left; margin-right:5px;}	
 		
-		#selxian{width:600px; height:20px; display:block; float:left; overflow:hidden;}		
+		#selxian{width:600px; height:20px; display:block; float:left; overflow:hidden;}
+		.dis_sel_xian{width:20px; height:20px; display:block; float:left; background:url("fancybox/images/fancy_close20.png"); cursor:pointer;}
+				
 	</style>
 		
 </head>
@@ -62,19 +64,10 @@
 	<div style="height:45px; line-height:20px;">
 		<table cellpadding="0" cellspacing="0">
 			<tr>
-				<td width="10%" align="right">
-					<s:if test="axflag==1">
-						<input type="checkbox" onclick="selectAllXian(this)" checked="checked"/>全省范围
-					</s:if>
-					<s:else>
-						<input type="checkbox" onclick="selectAllXian(this)"/>全省范围
-					</s:else>
-					<input type="hidden" id="axflag" name="axflag"/>
-				</td>
 				<td width="8%" align="right">
 					<a id="various1" href="#data" kesrc="#data" title="选择县">选择县&nbsp;</a>
 				</td>
-				<td colspan="3" width="80%">
+				<td colspan="4" width="80%">
 				&nbsp;<label id="selxian"><s:property value="xmname"/></label>
 				</td>
 			</tr>

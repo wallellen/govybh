@@ -1,44 +1,42 @@
 //选择县
+
 function selectXian(){
+	//
+	var xmlist = document.getElementById("xmlist");
+	
 	var c = document.getElementsByName("chkbox");
 	var v_flag = false;
-	for(var i=0; i<c.length; i++){   
-		if(c[i].checked){
-			v_flag = true;
-	        break; 
-		}            
-	}   
-	//获得选中的checkbox拼装成的batchItemCode字符串
+	selxian.innerHTML='';
 	var batchItemCode = ''; 
 	var batchProductName = '';
-	if(v_flag==true){      
-		//拼成批量要删除的编号itemCode
-	    for(var i=0; i<c.length; i++){   
-	    	if(c[i].checked){
-	            batchItemCode += c[i].id+',';          
-	            batchProductName += c[i].value+',';          
-			}            
-		}  
-	}else{
-		selxian.innerHTML='';
-		return;
+	for(var i=0; i<c.length; i++){ 
+		if(c[i].checked){
+			batchItemCode += c[i].id+',';          
+            batchProductName += c[i].value+',';  
+		}
 	}
 	$("#xmlist").val(batchItemCode);
 	$("#xmname").val(batchProductName);
-	selxian.innerHTML=batchProductName;
-}
-//全省范围
-function selectAllXian(obj)
-{
-	var xmlist = document.getElementById("xmlist");
-	var axflag = document.getElementById("axflag");
-	if(obj.checked)
+	if(batchProductName.length>0)
 	{
-		xmlist.value=null;
-		axflag.value=1;
+		selxian.innerHTML="["+batchProductName+"]"+"&nbsp;<label onclick='disSelectXian()' class='dis_sel_xian'></label>";
 	}
 	else
 	{
-		axflag.value=0;	
+		selxian.innerHTML="[全省]";
+		$("#xmname").val("全省");
+		xmlist.value=null;
 	}
 }
+//反选
+function disSelectXian()
+{
+	var c = document.getElementsByName("chkbox");
+	for(var i=0; i<c.length; i++){   
+		c[i].checked=false;
+	}   
+	selxian.innerHTML="[全省]";
+	$("#xmname").val("全省");
+	xmlist.value=null;
+}
+

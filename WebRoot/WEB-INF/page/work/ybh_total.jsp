@@ -38,26 +38,25 @@
 	<form name="form1" action="${pageContext.request.contextPath }/ybhTotalAction_stats.action" method="post" onsubmit="return checkZhibiao()">
 	<fieldset style="border:1px solid #3B9FFF; margin:0; padding:0; width:99%;">
 	<legend>查询条件</legend>
-	<div style="height:60px;">
+	<div style="height:24px;">
 	<table cellpadding="0" cellspacing="0" height="100%" width="100%">
         	<tr>
-        		<td></td>
-            	<td colspan="2">
+            	<td colspan="2" width="15%" align="center">
                     <s:radio name="zhibiao" list="#{ 'cun':'村级指标', 'hu':'户级指标'}" value="%{zhibiao}" cssClass="chzb"/>
                 </td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
             	<td width="10%" align="right">年份：</td>
                 <td width="10%" align="left">
-                    <s:select name="year" list="{'2014','2015'}" value="%{year}"></s:select> 
+                    <s:select name="year" list="#session.vts.list" value="%{year}"></s:select> 
                 </td>
-                <td width="10%" align="right">范围：</td>
                 <td width="20%" align="left">
-                    <s:select name="mode" list="#application.vta.GetList('subeimode')" listKey="id" listValue="str" value="%{mode}" cssClass="sele"></s:select></li>
-                </td>
-                <td width="50%"><input id="searchImg" type="submit" value="立即查询" class="button4"/></td>
+	                <s:if test="#session.vts.rbm.length()==2">
+	                   	 范围：<s:select name="mode" list="#application.vta.GetList('subeimode')" listKey="id" listValue="str" value="%{mode}" cssClass="sele"></s:select>
+	                </s:if>
+					<s:else>
+					<input type="hidden" name="mode" value="1"/>
+					</s:else>
+				</td>
+                <td width="30%"><input id="searchImg" type="submit" value="立即统计" class="button4"/></td>
             </tr>
         </table>
 	</div>
@@ -82,8 +81,7 @@
 			</tr>
 	        </table>
 	    </div>
-		<div class="table-c" style="height:546px; width:868px; line-height:22px; overflow-y:auto;">
-	
+		<div class="table-c" style="height:580px; width:868px; line-height:22px; overflow-y:auto;">
 		<table class="data_list" cellpadding="0" cellspacing="0"  width="100%">
 			<tr>
 				<td rowspan="9" width="25%" class="aleft">&nbsp;一、观察点村基本情况</td>			
@@ -384,7 +382,7 @@
 			</tr>
 	        </table>
 	    </div>
-		<div class="table-c" style="height:546px; width:868px; line-height:22px; overflow-y:auto;">
+		<div class="table-c" style="height:580px; width:868px; line-height:22px; overflow-y:auto;">
 			<table class="data_list" cellpadding="0" cellspacing="0"  width="100%">
 				<tr>
 					<td width="10%">1</td>			

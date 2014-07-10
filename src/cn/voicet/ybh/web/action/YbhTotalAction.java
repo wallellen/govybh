@@ -19,7 +19,7 @@ public class YbhTotalAction extends BaseAction implements ModelDriven<YbhTotalFo
 	private static Logger log = Logger.getLogger(YbhTotalAction.class);
 	
 	@Resource(name=YbhTotalService.SERVICE_NAME)
-	private YbhTotalService ybhFarmerService;
+	private YbhTotalService ybhTotalService;
 	private YbhTotalForm ybhTotalForm = new YbhTotalForm();
 	
 	public YbhTotalForm getModel() {
@@ -27,12 +27,15 @@ public class YbhTotalAction extends BaseAction implements ModelDriven<YbhTotalFo
 	}
 	
 	public String home(){
+		DotSession ds = DotSession.getVTSession(request);
+		ybhTotalService.getYbhYearInfo(ds);
+		log.info("year:"+ds.list);
 		return "show_total";
 	}
 	
 	public String stats(){
 		DotSession ds = DotSession.getVTSession(request);
-		ybhFarmerService.getYbhTotalInfo(ds, ybhTotalForm);
+		ybhTotalService.getYbhTotalInfo(ds, ybhTotalForm);
 		return "show_total";
 	}
 	

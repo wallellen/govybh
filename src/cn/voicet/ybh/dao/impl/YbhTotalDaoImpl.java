@@ -5,6 +5,9 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.ConnectionCallback;
@@ -18,6 +21,28 @@ import cn.voicet.ybh.web.form.YbhTotalForm;
 @SuppressWarnings("unchecked")
 public class YbhTotalDaoImpl extends BaseDaoImpl implements YbhTotalDao {
 
+	public void getYbhYearInfo(final DotSession ds) {
+		this.getJdbcTemplate().execute(new ConnectionCallback() {
+			public Object doInConnection(Connection conn) throws SQLException,
+					DataAccessException {
+				CallableStatement cs = conn.prepareCall("{call sp_report_list(?,?)}");
+				cs.setString(1, "ybh_year_items");
+				cs.setInt(2, 0);
+				cs.execute();
+				ResultSet rs = cs.getResultSet();
+				ds.initData();
+				ds.list = new ArrayList();	
+				if(rs!=null){
+					while (rs.next()) {
+		        		ds.list.add(rs.getString("rid"));
+					}
+				}
+				return null;
+			}
+		});
+	}
+
+	
 	public void getYbhTotalInfo(final DotSession ds, final YbhTotalForm ybhTotalForm) {
 		this.getJdbcTemplate().execute(new ConnectionCallback() {
 			public Object doInConnection(Connection conn) throws SQLException,
@@ -62,5 +87,4 @@ public class YbhTotalDaoImpl extends BaseDaoImpl implements YbhTotalDao {
 			}
 		});
 	}
-
 }

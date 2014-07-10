@@ -20,4 +20,8 @@ public class YbhTotalServiceImpl implements YbhTotalService{
 	public void getYbhTotalInfo(DotSession ds, YbhTotalForm ybhTotalForm) {
 		ybhTotalDao.getYbhTotalInfo(ds, ybhTotalForm);
 	}
+
+	public void getYbhYearInfo(DotSession ds) {
+		ybhTotalDao.getYbhYearInfo(ds);
+	}
 }
