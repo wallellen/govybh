@@ -4,7 +4,7 @@ public class YbhFarmerForm {
 	private String[] qstr;	//查询农户条件数组
 	private String xmlist;	//县码列表
 	private String xmname;	//县名称列表
-	private String axflag;
+	private String axflag="1";
 	public String[] getQstr() {
 		return qstr;
 	}

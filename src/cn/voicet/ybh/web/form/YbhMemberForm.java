@@ -4,7 +4,7 @@ public class YbhMemberForm {
 	private String[] memberstr;	//查询人口条件数组
 	private String xmlist;	//县码列表
 	private String xmname;	//县名称列表
-	private String axflag;
+	private String axflag="1";
 	public String[] getMemberstr() {
 		return memberstr;
 	}

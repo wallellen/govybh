@@ -67,6 +67,9 @@ public class YbhManageForm {
 	private String bb3;
 	private String bb4;
 	
+	//返回样本村管理页面
+	private String rtybc;
+	
 	private String[] incometxt;
 	
 	public String getViewBM() {
@@ -368,5 +371,11 @@ public class YbhManageForm {
 	}
 	public void setIncomearr(String[] incomearr) {
 		this.incomearr = incomearr;
+	}
+	public String getRtybc() {
+		return rtybc;
+	}
+	public void setRtybc(String rtybc) {
+		this.rtybc = rtybc;
 	}
 }

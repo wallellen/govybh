@@ -41,7 +41,12 @@
 				<td width="10%">农户属性</td>
 				<td width="10%">贫困原因</td>
 				<td width="12%">
+					<s:if test="rtybc!=null && rtybc=='ybc'">
 					<input type="button" value="返回" onclick="javascript:history.go(-1)" class="button43"/>
+					</s:if>
+					<s:else>
+					操作
+					</s:else>
 				</td>
 			</s:else>
              </tr>
