@@ -46,10 +46,6 @@
 		.Contentbox{clear:both;margin-top:0px;border-top:none;height:150px;padding-top:4px;}
 		.Contentbox ul{list-style:none;margin:7px;padding:0;}
 		.Contentbox ul li{line-height:24px; width:58px; float:left; margin-right:5px;}	
-		
-		#selxian{width:600px; height:20px; display:block; float:left; overflow:hidden;}
-		.dis_sel_xian{width:20px; height:20px; display:block; float:left; background:url("fancybox/images/fancy_close20.png"); cursor:pointer;}
-				
 	</style>
 		
 </head>
@@ -58,14 +54,14 @@
 	<div style="width:640px; height:22px; margin-top:10px;" class="title-stats">农户查询&nbsp;[<s:property value="#session.vts.map.name"/>]</div>
 	<form name="farmerForm" action="${pageContext.request.contextPath }/ybhFarmerAction_queryFarmer.action" method="post" onsubmit="return changeCurPage()">
 	<input type="hidden" id="xmlist" name="xmlist" value=""/>
-	<input type="hidden" id="xmname" name="xmname" value=""/>
+	<input type="hidden" id="xmname" name="xmname" value="[全省]"/>
 	<fieldset style="border:1px solid #3B9FFF; margin:0; padding:0; width:99%;">
 	<legend>查询条件</legend>
 	<div style="height:45px; line-height:20px;">
 		<table cellpadding="0" cellspacing="0">
 			<tr>
 				<td width="8%" align="right">
-					<a id="various1" href="#data" kesrc="#data" title="选择县">选择县&nbsp;</a>
+					<a id="various1" href="#data" kesrc="#data" title="选择县" class="sel_title">选择县&nbsp;</a>
 				</td>
 				<td colspan="4" width="80%">
 				&nbsp;<label id="selxian"><s:property value="xmname"/></label>

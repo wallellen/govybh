@@ -248,3 +248,10 @@ ul{margin:0; padding:0; list-style:none;}
 .ybc-title{margin-top:4px; height:22px; text-align:center; color:#8F2629; font-size:14px; font-weight:bold;}
 .ybc-return{float:right; margin-top:-20px; width:80px;}
 
+/** farmer memeber query */
+.sel_title{width:55px; height:22px; display:block; text-align:center; background:url("../images/bt3.png"); padding-left:5px}
+.sel_title:link{color:#FFF;}
+#selxian{width:600px; height:20px; display:block; float:left; overflow:hidden;}
+.sel_xian_list{display:block; float:left;}
+.dis_sel_xian{width:20px; height:20px; display:block; float:left; background:url("../fancybox/images/fancy_close20.png"); cursor:pointer;}
+		

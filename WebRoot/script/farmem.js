@@ -16,15 +16,15 @@ function selectXian(){
 		}
 	}
 	$("#xmlist").val(batchItemCode);
-	$("#xmname").val(batchProductName);
+	$("#xmname").val("["+batchProductName+"]");
 	if(batchProductName.length>0)
 	{
-		selxian.innerHTML="["+batchProductName+"]"+"&nbsp;<label onclick='disSelectXian()' class='dis_sel_xian'></label>";
+		selxian.innerHTML="<label class='sel_xian_list'>["+batchProductName+"]</label>"+"&nbsp;<label onclick='disSelectXian()' class='dis_sel_xian'></label>";
 	}
 	else
 	{
 		selxian.innerHTML="[全省]";
-		$("#xmname").val("全省");
+		$("#xmname").val("[全省]");
 		xmlist.value=null;
 	}
 }
@@ -36,7 +36,7 @@ function disSelectXian()
 		c[i].checked=false;
 	}   
 	selxian.innerHTML="[全省]";
-	$("#xmname").val("全省");
+	$("#xmname").val("[全省]");
 	xmlist.value=null;
 }
 
