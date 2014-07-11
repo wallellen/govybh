@@ -70,7 +70,7 @@ public class YbcManageAction extends BaseAction implements
 					h_content += "<tr class='tabtr1'>" +
 							"<td width='20%'>市名</td>" +
 							"<td width='20%'>县名</td>" +
-							"<td width='20%'>村名</td>" +
+							"<td width='20%'>样本村名称</td>" +
 							"<td width='20%'>样本户数</td>" +
 							"<td width='20%'>操作</td>" +
 							"</tr>";
@@ -108,7 +108,7 @@ public class YbcManageAction extends BaseAction implements
 					sXXCName[1]=(String)map.get("oname");
 					bf2 = false;
 				} else {
-					h_content += "<td title='编码:&nbsp;"+map.get("bm")+"&#13;村名:&nbsp;"+map.get("oname")+"&#13;样本户(户):&nbsp;"+map.get("hn")+"'>" 
+					h_content += "<td title='编码:&nbsp;"+map.get("bm")+"&#13;样本村名称:&nbsp;"+map.get("oname")+"&#13;样本户(户):&nbsp;"+map.get("hn")+"'>" 
 							+ map.get("oname").toString() + "</td>";
 					sXXCName[2]=sXXCName[0]+"/"+sXXCName[1]+"/"+(String)map.get("oname");
 					h_content += "<td>" + map.get("hn").toString() + "</td>";
@@ -141,7 +141,7 @@ public class YbcManageAction extends BaseAction implements
 			h_content += "<table cellspacing='0' cellpadding='0' width='100%'>";
 			h_content += "<tr class='tabtr1'>" +
 			"<td width='25%'>县名</td>" +
-			"<td width='25%'>村名</td>" +
+			"<td width='25%'>样本村名称</td>" +
 			"<td width='25%'>样本户数</td>" +
 			"<td width='25%'>操作</td>" +
 			"</tr>";
@@ -160,7 +160,7 @@ public class YbcManageAction extends BaseAction implements
 					sXXCName[0]=(String)map.get("oname");
 					bf2 = false;
 				}else {
-					h_content += "<td title='编码:&nbsp;"+map.get("bm")+"&#13;村名:&nbsp;"+map.get("oname")+"&#13;样本户(户):&nbsp;"+map.get("hn")+"'>" 
+					h_content += "<td title='编码:&nbsp;"+map.get("bm")+"&#13;样本村名称:&nbsp;"+map.get("oname")+"&#13;样本户(户):&nbsp;"+map.get("hn")+"'>" 
 					+ map.get("oname").toString() + "</td>";
 					sXXCName[2]=sXXCName[0]+"/"+(String)map.get("oname");
 					h_content += "<td>" + map.get("hn").toString() + "</td>";
@@ -180,14 +180,14 @@ public class YbcManageAction extends BaseAction implements
 			h_content = "<div class='Contentbox_shi'>";
 			h_content += "<table cellspacing='0' cellpadding='0' width='100%'>";
 			h_content += "<tr class='tabtr1'>" +
-			"<td width='30%'>村名</td>" +
+			"<td width='30%'>样本村名称</td>" +
 			"<td width='30%'>样本户数</td>" +
 			"<td width='30%'>操作</td>" +
 			"</tr>";
 			for (int i=0; i<ds.list.size(); i++) {
 				map = (Map) ds.list.get(i);
 				h_content += "<tr>";
-				h_content += "<td title='编码:&nbsp;"+map.get("bm")+"&#13;村名:&nbsp;"+map.get("oname")+"&#13;样本户(户):&nbsp;"+map.get("hn")+"'>" 
+				h_content += "<td title='编码:&nbsp;"+map.get("bm")+"&#13;样本村名称:&nbsp;"+map.get("oname")+"&#13;样本户(户):&nbsp;"+map.get("hn")+"'>" 
 				+ map.get("oname").toString() + "</td>";
 		
 				h_content += "<td>" + map.get("hn").toString() + "</td>";
