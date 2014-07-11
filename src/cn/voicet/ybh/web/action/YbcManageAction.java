@@ -67,10 +67,10 @@ public class YbcManageAction extends BaseAction implements
 					}
 					h_content += "<table cellspacing='0' cellpadding='0' width='100%'>";
 					h_content += "<tr class='tabtr1'>" +
-							"<td width='20%'>市别</td>" +
-							"<td width='20%'>县别</td>" +
+							"<td width='20%'>市名</td>" +
+							"<td width='20%'>县名</td>" +
 							"<td width='20%'>村名</td>" +
-							"<td width='20%'>户数</td>" +
+							"<td width='20%'>样本户数</td>" +
 							"<td width='20%'>操作</td>" +
 							"</tr>";
 					h_tab += "<li id=\"menu"
@@ -97,15 +97,15 @@ public class YbcManageAction extends BaseAction implements
 
 				if (bf1) {
 					h_content += "<tr>";
-					h_content += "<td rowspan='" + map.get("t") + "' title='村数:"+map.get("cn")+"，户数:"+map.get("hn")+"'>"
+					h_content += "<td rowspan='" + map.get("t") + "' title='编码:&nbsp;"+map.get("bm")+"&#13;市名:&nbsp;"+map.get("oname")+"&#13;样本村(村):&nbsp;"+map.get("cn")+"&#13;样本户(户):&nbsp;"+map.get("hn")+"'>"
 							+ map.get("oname") + "</td>";
 					bf1 = false;
 				} else if (bf2) {
-					h_content += "<td rowspan='" + map.get("t") + "' title='村数:"+map.get("cn")+"，户数:"+map.get("hn")+"'>"
+					h_content += "<td rowspan='" + map.get("t") + "' title='编码:&nbsp;"+map.get("bm")+"&#13;县名:&nbsp;"+map.get("oname")+"&#13;样本村(村):&nbsp;"+map.get("cn")+"&#13;样本户(户):&nbsp;"+map.get("hn")+"'>"
 							+ map.get("oname") + "</td>";
 					bf2 = false;
 				} else {
-					h_content += "<td title='户数:"+map.get("hn")+"'>" 
+					h_content += "<td title='编码:&nbsp;"+map.get("bm")+"&#13;村名:&nbsp;"+map.get("oname")+"&#13;样本户(户):&nbsp;"+map.get("hn")+"'>" 
 							+ map.get("oname").toString() + "</td>";
 					
 					h_content += "<td>" + map.get("hn").toString() + "</td>";
@@ -137,9 +137,9 @@ public class YbcManageAction extends BaseAction implements
 			h_content = "<div class='Contentbox_shi'>";
 			h_content += "<table cellspacing='0' cellpadding='0' width='100%'>";
 			h_content += "<tr class='tabtr1'>" +
-			"<td width='25%'>县别</td>" +
+			"<td width='25%'>县名</td>" +
 			"<td width='25%'>村名</td>" +
-			"<td width='25%'>户数</td>" +
+			"<td width='25%'>样本户数</td>" +
 			"<td width='25%'>操作</td>" +
 			"</tr>";
 			for (int i=0; i<ds.list.size(); i++) {
@@ -152,11 +152,11 @@ public class YbcManageAction extends BaseAction implements
 				
 				if (bf2) {
 					h_content += "<tr>";
-					h_content += "<td rowspan='" + map.get("t") + "' title='村数:"+map.get("cn")+"，户数:"+map.get("hn")+"'>"
+					h_content += "<td rowspan='" + map.get("t") + "' title='编码:&nbsp;"+map.get("bm")+"&#13;县名:&nbsp;"+map.get("oname")+"&#13;样本村(村):&nbsp;"+map.get("cn")+"&#13;样本户(户):&nbsp;"+map.get("hn")+"'>"
 							+ map.get("oname") + "</td>";
 					bf2 = false;
 				}else {
-					h_content += "<td title='户数:"+map.get("hn")+"'>" 
+					h_content += "<td title='编码:&nbsp;"+map.get("bm")+"&#13;村名:&nbsp;"+map.get("oname")+"&#13;样本户(户):&nbsp;"+map.get("hn")+"'>" 
 					+ map.get("oname").toString() + "</td>";
 			
 					h_content += "<td>" + map.get("hn").toString() + "</td>";
@@ -177,13 +177,13 @@ public class YbcManageAction extends BaseAction implements
 			h_content += "<table cellspacing='0' cellpadding='0' width='100%'>";
 			h_content += "<tr class='tabtr1'>" +
 			"<td width='30%'>村名</td>" +
-			"<td width='30%'>户数</td>" +
+			"<td width='30%'>样本户数</td>" +
 			"<td width='30%'>操作</td>" +
 			"</tr>";
 			for (int i=0; i<ds.list.size(); i++) {
 				map = (Map) ds.list.get(i);
 				h_content += "<tr>";
-				h_content += "<td title='户数:"+map.get("hn")+"'>" 
+				h_content += "<td title='编码:&nbsp;"+map.get("bm")+"&#13;村名:&nbsp;"+map.get("oname")+"&#13;样本户(户):&nbsp;"+map.get("hn")+"'>" 
 				+ map.get("oname").toString() + "</td>";
 		
 				h_content += "<td>" + map.get("hn").toString() + "</td>";
