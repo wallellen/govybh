@@ -19,7 +19,7 @@
 <div style="display:none;" id="nav-hide">
 	<s:property value="#session.vts.navPath" escape="false"/>
 </div>
-<h3 class="jiangbu-title"><s:property value="year"/>&nbsp;<s:property value="oname"/>&nbsp;样本户基础监测统计</h3>
+<h3 class="ybh_h3_title"><s:property value="year"/>&nbsp;<s:property value="oname"/>&nbsp;样本户基础监测统计</h3>
 <div id="jiangbu-data1">
 <table class="data_list" cellpadding="0" cellspacing="0" width="100%">
    	<thead>
