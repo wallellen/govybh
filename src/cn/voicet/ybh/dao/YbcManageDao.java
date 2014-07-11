@@ -9,4 +9,5 @@ public interface YbcManageDao extends BaseDao{
 	public final static String SERVICE_NAME = "cn.voicet.ybh.dao.impl.YbcManageDaoImpl";
 	void getSelectedCunList(DotSession ds);
 	Map queryCunYbhInfoWithYear(DotSession ds, YbcManageForm ybcManageForm);
+	void getYbhYearInfo(DotSession ds);
 }

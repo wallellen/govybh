@@ -202,18 +202,33 @@ public class YbcManageAction extends BaseAction implements
 	
 	public String viewCunzb(){
 		DotSession ds = DotSession.getVTSession(request);
-		cunMap = ybcManageService.queryCunYbhInfoWithYear(ds, ybcManageForm);
-		request.setAttribute("cunMap", cunMap);
-		log.info("cunMap data:"+cunMap);
+		ybcManageService.getYbhYearInfo(ds);
 		return "show_ybc_zhibiao";
 	}
 	
+	public String queryCunzb(){
+		DotSession ds = DotSession.getVTSession(request);
+		log.info("queryCunzb year:"+ybcManageForm.getYear());
+		cunMap = ybcManageService.queryCunYbhInfoWithYear(ds, ybcManageForm);
+		request.setAttribute("cunMap", cunMap);
+		rflag=rflag+1;
+		log.info("cunMap data:"+cunMap);
+		return viewCunzb();
+	}
+	
 	private Map cunMap;
+	private int rflag=1;
 	public Map getCunMap() {
 		return cunMap;
 	}
 	public void setCunMap(Map cunMap) {
 		this.cunMap = cunMap;
+	}
+	public int getRflag() {
+		return rflag;
+	}
+	public void setRflag(int rflag) {
+		this.rflag = rflag;
 	}
 	
 }

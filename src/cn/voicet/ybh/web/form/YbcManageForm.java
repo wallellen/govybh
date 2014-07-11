@@ -3,6 +3,7 @@ package cn.voicet.ybh.web.form;
 public class YbcManageForm {
 	private String cunbm;
 	private String oname;
+	private String year;
 	public String getCunbm() {
 		return cunbm;
 	}
@@ -14,5 +15,11 @@ public class YbcManageForm {
 	}
 	public void setOname(String oname) {
 		this.oname = oname;
+	}
+	public String getYear() {
+		return year;
+	}
+	public void setYear(String year) {
+		this.year = year;
 	}
 }

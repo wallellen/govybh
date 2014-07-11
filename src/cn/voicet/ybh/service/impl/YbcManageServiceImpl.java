@@ -25,5 +25,8 @@ public class YbcManageServiceImpl implements YbcManageService{
 			YbcManageForm ybcManageForm) {
 		return ybcManageDao.queryCunYbhInfoWithYear(ds, ybcManageForm);
 	}
+	public void getYbhYearInfo(DotSession ds) {
+		ybcManageDao.getYbhYearInfo(ds);
+	}
 
 }

@@ -45,13 +45,35 @@ public class YbcManageDaoImpl extends BaseDaoImpl implements YbcManageDao {
 		});
 	}
 
+
+	public void getYbhYearInfo(final DotSession ds) {
+		this.getJdbcTemplate().execute(new ConnectionCallback() {
+			public Object doInConnection(Connection conn) throws SQLException,
+					DataAccessException {
+				CallableStatement cs = conn.prepareCall("{call sp_report_list(?,?)}");
+				cs.setString(1, "ybh_year_items");
+				cs.setInt(2, 0);
+				cs.execute();
+				ResultSet rs = cs.getResultSet();
+				ds.initData();
+				ds.list = new ArrayList();	
+				if(rs!=null){
+					while (rs.next()) {
+		        		ds.list.add(rs.getString("rid"));
+					}
+				}
+				return null;
+			}
+		});
+	}
+	
 	public Map queryCunYbhInfoWithYear(final DotSession ds, final YbcManageForm ybcManageForm) {
 		Map map = (Map)this.getJdbcTemplate().execute(new ConnectionCallback() {
 			public Object doInConnection(Connection conn) throws SQLException,
 					DataAccessException {
 				CallableStatement cs = conn.prepareCall("{call ybh_chunyear_query(?,?,?)}");
 				cs.setString(1, ybcManageForm.getCunbm());
-				cs.setString(2, "2013");
+				cs.setString(2, ybcManageForm.getYear());
 				cs.setInt(3, 1);
 				cs.execute();
 				ResultSet rs = cs.getResultSet();
