@@ -13,7 +13,7 @@
 		}
 		var rflag = 1;
 		function printFamilyInfo(){
-			document.getElementById("printBtn").href='govBrowerAction_printFamily.do';
+			document.getElementById("printBtn").href='ybhManageAction_printFamily.action';
 			rflag=rflag+1;
 		}
 		function returnFamilyList(){
