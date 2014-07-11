@@ -28,7 +28,7 @@
 		.aleft{text-align:left}
 		.acenter{text-align:center}
 		.aright{text-align:right}
-		
+		.chzb{cursor:pointer;}
 	</style>
 </head>
 <body onload="loadParam()" style="background:#E0EEFB;">
@@ -42,7 +42,7 @@
 	<table cellpadding="0" cellspacing="0" height="100%" width="100%">
         	<tr>
             	<td colspan="2" width="15%" align="center">
-                    <s:radio name="zhibiao" list="#{ 'cun':'村级指标', 'hu':'户级指标'}" value="%{zhibiao}" cssClass="chzb"/>
+                    <s:radio name="zhibiao" list="#{ 'cun':'村级指标', 'hu':'户级指标'}" listValue="value" value="%{zhibiao==null?'cun':zhibiao}" cssClass="chzb"/>
                 </td>
             	<td width="10%" align="right">年份：</td>
                 <td width="10%" align="left">
