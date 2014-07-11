@@ -38,6 +38,7 @@ public class YearDataAction extends BaseAction implements ModelDriven<YearDataFo
 	/** 根据年查看样本户数据 */
 	public String viewData(){
 		DotSession ds = DotSession.getVTSession(request);
+		ds.map.put("ybhyear", yearDataForm.getYear());
 		System.out.println("curbm:"+ds.curBM);
 		if(ds.curBM.length()>9)
 		{
@@ -58,7 +59,6 @@ public class YearDataAction extends BaseAction implements ModelDriven<YearDataFo
 		}
 		ds.subPathTitle.setYbhflag("yeardata");
 		ds.navPath=ds.subPathTitle.getHtmlString();
-		ds.map.put("ybhyear", yearDataForm.getYear());
 		return "show_data";
 	}
 	
