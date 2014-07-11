@@ -173,6 +173,17 @@ public class YbhManageAction extends BaseAction implements ModelDriven<YbhManage
 		return "view_ybhFamily";
 	}
 	
+	/***/
+	public String printFamily(){
+		DotSession ds = DotSession.getVTSession(request);
+		if(null!=ybhManageForm.getViewBM()&&ybhManageForm.getViewBM().length()>0) {
+			ds.curHM = ybhManageForm.getViewBM();
+		}
+		ds.pushAllList();
+		ybhManageService.getReportFamilyInfo(ds);
+		return "print_ybhFamily";
+	}
+	
 	private String rtf;
 	private int rflag=1;
 	public String getRtf() {

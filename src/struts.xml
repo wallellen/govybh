@@ -37,6 +37,7 @@
 			<result name="show_family_income">/WEB-INF/page/ybh/ybh_family_income.jsp</result>
 			<result name="show_family_income_update">/WEB-INF/page/ybh/ybh_family_income_update.jsp</result>
 			<result name="view_ybhFamily">/WEB-INF/page/report/viewFamily.jsp</result>
+			<result name="print_ybhFamily">/WEB-INF/page/report/printFamily.jsp</result>
 		</action>
 		
 		<!-- 年数据录入 -->
