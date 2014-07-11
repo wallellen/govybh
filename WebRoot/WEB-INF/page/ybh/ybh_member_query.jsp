@@ -39,7 +39,7 @@
 </head>
 <body style="background:#E0EEFB;">
 <div style="float:left; width:868px; height:668px;">
-	<div style="width:640px; height:22px; margin-top:10px;" class="title-stats">人口查询&nbsp;[<s:property value="#session.vts.map.name"/>]</div>
+	<h3 class="ybh_h3_title">人口查询&nbsp;[<s:property value="#session.vts.map.name"/>]</h3>
 	<form name="memberForm" action="${pageContext.request.contextPath }/ybhMemberAction_queryMember.action" method="post" onsubmit="return changeCurPage()">
 	<input type="hidden" id="xmlist" name="xmlist" value=""/>
 	<input type="hidden" id="xmname" name="xmname" value="[全省]"/>

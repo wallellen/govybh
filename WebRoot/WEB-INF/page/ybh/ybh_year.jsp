@@ -9,7 +9,7 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/changeColor.js"></script>
 </head>
 <body style="background:#E0EEFB;">
-<h3 class="jiangbu-title">样本户年数据信息&nbsp;[<s:property value="#session.vts.rbn"/>]</h3>
+<h3 class="ybh_h3_title">样本户年数据信息&nbsp;[<s:property value="#session.vts.rbn"/>]</h3>
 <div id="jiangbu-data1">
 <table class="data_list" cellpadding="0" cellspacing="0" width="100%">
    	<thead>
