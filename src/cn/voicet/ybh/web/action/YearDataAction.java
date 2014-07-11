@@ -38,7 +38,13 @@ public class YearDataAction extends BaseAction implements ModelDriven<YearDataFo
 	/** 根据年查看样本户数据 */
 	public String viewData(){
 		DotSession ds = DotSession.getVTSession(request);
-		System.out.println("cubm:"+ds.curBM);
+		System.out.println("curbm:"+ds.curBM);
+		if(ds.curBM.length()>9)
+		{
+			//跳转年收入页面
+			income();
+			return "show_ybh_income";
+		}
 		yearDataService.getYbhListByCurBM(ds, yearDataForm);
 		if(null!=yearDataForm.getViewBM()&&yearDataForm.getViewBM().length()>0){
 			if(yearDataForm.getViewBM().length()<=ds.rbm.length()){
