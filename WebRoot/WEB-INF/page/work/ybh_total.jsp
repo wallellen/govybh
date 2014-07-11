@@ -20,7 +20,7 @@
 	<form name="form1" action="${pageContext.request.contextPath }/ybhTotalAction_stats.action" method="post">
 	<fieldset style="border:1px solid #3B9FFF; margin:0; padding:0; width:99%;">
 	<legend>查询条件</legend>
-	<div style="height:24px;">
+	<div style="height:28px;">
 	<table cellpadding="0" cellspacing="0" height="100%" width="100%">
         	<tr>
             	<td colspan="2" width="15%" align="center">
