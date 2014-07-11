@@ -74,7 +74,11 @@
 					<td align="left">&nbsp;<s:property value="#ls.property"/></td>
 					<td align="left">&nbsp;<s:property value="#ls.dcause"/></td>
 					<td class="tabtd1">
-						<a href="${pageContext.request.contextPath }/ybhManageAction_detail.action?viewBM=<s:property value="#ls.hm"/>&rtf=home">编辑</a>
+						<s:if test="#session.vts.rbm.length()==6">
+						<a href="${pageContext.request.contextPath }/ybhManageAction_detail.action?viewBM=<s:property value="#ls.hm"/>&rtf=home">编辑</a>&nbsp;
+						</s:if>
+						<a href="${pageContext.request.contextPath }/ybhManageAction_viewReportFamily.action?viewBM=<s:property value="#ls.hm"/>">查看</a>&nbsp;
+			 			<a id="printBt" href="${pageContext.request.contextPath }/ybhManageAction_printFamily.action?viewBM=<s:property value="#ls.hm"/>" target="printFrame">打印</a>
 					</td>
 				</s:else>
 			</tr>

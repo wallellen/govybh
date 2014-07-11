@@ -14,4 +14,5 @@ public interface YbhManageService {
 	void saveYearInfo(DotSession ds, YbhManageForm ybhManageForm);
 	void saveYbhIncome(YbhManageForm ybhManageForm);
 	String findNavListStr(DotSession ds);
+	void getReportFamilyInfo(DotSession ds);
 }

@@ -23,32 +23,29 @@ public class YbhManageServiceImpl implements YbhManageService{
 	public void getYbhFamilyDetailInfo(DotSession ds) {
 		ybhManageDao.getYbhFamilyDetailInfo(ds);
 	}
-
 	public void getFamilyIncome(DotSession ds) {
 		ybhManageDao.getFamilyIncome(ds);
 	}
-
 	public void saveFamilyInfo(DotSession ds, YbhManageForm ybhManageForm) {
 		ybhManageDao.saveFamilyInfo(ds, ybhManageForm);
 	}
-
 	public void saveMemberInfo(DotSession ds, YbhManageForm ybhManageForm) {
 		ybhManageDao.saveMemberInfo(ds, ybhManageForm);
 	}
-
 	public void deleteMemberInfo(DotSession ds, YbhManageForm ybhManageForm) {
 		ybhManageDao.deleteMemberInfo(ds, ybhManageForm);
 	}
-
 	public void saveYearInfo(DotSession ds, YbhManageForm ybhManageForm) {
 		ybhManageDao.saveYearInfo(ds, ybhManageForm);
 	}
-	
 	public void saveYbhIncome(YbhManageForm ybhManageForm) {
 		ybhManageDao.saveYbhIncome(ybhManageForm);
 	}
 	public String findNavListStr(DotSession ds) {
 		return ybhManageDao.findNavListStr(ds);
+	}
+	public void getReportFamilyInfo(DotSession ds) {
+		ybhManageDao.getReportFamilyInfo(ds);
 	}
 
 }

@@ -291,5 +291,59 @@ public class YbhManageDaoImpl extends BaseDaoImpl implements YbhManageDao {
 		return str;
 	}
 
+	public void getReportFamilyInfo(final DotSession ds) {
+		this.getJdbcTemplate().execute(new ConnectionCallback() {
+			public Object doInConnection(Connection conn) throws SQLException,
+					DataAccessException {
+				CallableStatement cs = conn.prepareCall("{call ybh_rpt_family(?)}");
+				cs.setString(1, ds.curHM);
+				cs.execute();
+				ds.initData();
+				ResultSet rs = null;
+				Map map;
+				ds.list = new ArrayList();
+				ds.list2 = new ArrayList();
+				int rid=0;
+				int updateCount = -1;
+				do{
+					updateCount = cs.getUpdateCount();
+					if(updateCount != -1){	
+						cs.getMoreResults();
+						continue;
+					}
+					rs = cs.getResultSet();
+					if(null != rs){
+						while(rs.next()){
+							if(rid ==0){
+								ResultSetMetaData rsm =rs.getMetaData();
+								int colCount = rsm.getColumnCount();
+								String colName;
+								for(int i=1; i<=colCount; i++)
+								{
+									colName=rsm.getColumnName(i);
+									ds.map.put(colName, rs.getString(i));
+								}
+							}else if (rid == 1 ){
+								map = new HashMap();
+								ds.putMapDataByColName(map, rs);
+								ds.list.add(map);
+							}else if(rid == 2){
+								map = new HashMap();
+								ds.putMapDataByColName(map, rs);
+								ds.list2.add(map);
+							}
+						}
+					}
+					if(rs != null){
+						cs.getMoreResults();
+						rid++;
+						continue;
+					}
+				}while(!(updateCount == -1 && rs == null));
+				return null;
+			}
+		});
+	}
+
 	
 }
