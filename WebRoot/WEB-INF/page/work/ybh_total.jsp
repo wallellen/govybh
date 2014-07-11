@@ -6,24 +6,6 @@
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/style/style.css" />
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/style/style-b.css" />
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/jquery-1.5.1.min.js"></script>
-	<script type="text/javascript">
-		function checkZhibiao()
-		{
-			var s = document.getElementsByName("zhibiao");
-			var count = 0;
-			if(s.length>0) {  
-				for(var index=0;index<s.length;index++){   
-				  	if(s[index].checked){
-				  		count++;break;
-				  	}  
-				} 
-			} 
-			if(count == 0){
-			 	alert("请选择村级或户级指标查询 ");
-			 	return false;
-			}
-		}
-	</script>
 	<style type="text/css">
 		.aleft{text-align:left}
 		.acenter{text-align:center}
@@ -35,7 +17,7 @@
 <div style="float:right; width:868px; height:668px;">
 	<div style="width:868px; height:20px; margin-top:2px;" class="title-stats"><s:property value="year"/>年度扶贫观察点<s:if test="zhibiao=='cun'">村级</s:if><s:elseif test="zhibiao=='hu'">户级</s:elseif><s:else></s:else>监测数据汇总
 	</div>
-	<form name="form1" action="${pageContext.request.contextPath }/ybhTotalAction_stats.action" method="post" onsubmit="return checkZhibiao()">
+	<form name="form1" action="${pageContext.request.contextPath }/ybhTotalAction_stats.action" method="post">
 	<fieldset style="border:1px solid #3B9FFF; margin:0; padding:0; width:99%;">
 	<legend>查询条件</legend>
 	<div style="height:24px;">
