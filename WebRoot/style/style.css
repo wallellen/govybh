@@ -258,7 +258,7 @@ ul{margin:0; padding:0; list-style:none;}
 .dis_sel_xian{width:20px; height:20px; display:block; float:left; background:url("../fancybox/images/fancy_close20.png"); cursor:pointer;}
 		
 		
-.td_bottom_line{border-bottom:1px solid #3B9FFF;}
+.td_bottom_line{border-bottom:1px solid #3B9FFF; padding-bottom:2px;}
 
 
 .ybh_h3_title{width:100%; height:26px; line-height:26px; text-align:center; color:#8F2629; font-size:14px; font-weight:bold;}

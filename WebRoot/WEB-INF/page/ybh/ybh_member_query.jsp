@@ -45,7 +45,7 @@
 	<input type="hidden" id="xmname" name="xmname" value="[全省]"/>
 	<fieldset style="border:1px solid #3B9FFF; margin:0; padding:0; width:99%;">
 	<legend>查询条件</legend>
-	<div style="height:58px; line-height:26px;">
+	<div style="height:60px; line-height:26px;">
 		<table cellpadding="0" cellspacing="0" width="100%">
 			<tr>
 				<td width="10%" align="right" class="td_bottom_line">
@@ -53,6 +53,9 @@
 				</td>
 				<td colspan="7" class="td_bottom_line">&nbsp;<label id="selxian"><s:property value="xmname"/></label></td>
 			</tr>
+		</table>
+		<div style="height:2px;"></div>
+		<table>
 			<tr>
 				<td width="10%" align="right">姓名：&nbsp;</td>
 				<td width="10%">
@@ -80,7 +83,7 @@
 	<!-- advance -->
 	<fieldset style="border:1px solid #3B9FFF; margin:0; padding:0; width:99%;">
 	<legend>高级选项</legend>
-	<div style="height:55px; line-height:24px;">
+	<div style="height:52px; line-height:24px;">
 		<table cellpadding="0" cellspacing="0" width="100%">
 			<tr>
 				<td width="20%" align="right">在校生：</td>

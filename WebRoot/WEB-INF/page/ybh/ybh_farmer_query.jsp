@@ -57,16 +57,19 @@
 	<input type="hidden" id="xmname" name="xmname" value="[全省]"/>
 	<fieldset style="border:1px solid #3B9FFF; margin:0; padding:0; width:99%;">
 	<legend>查询条件</legend>
-	<div style="height:58px; line-height:26px;">
+	<div style="height:60px; line-height:26px;">
 		<table cellpadding="0" cellspacing="0" width="100%">
 			<tr>
-				<td align="right" class="td_bottom_line">
+				<td align="right" width="15%" class="td_bottom_line">
 					<a id="various1" href="#data" kesrc="#data" title="选择县" class="sel_title">选择县&nbsp;</a>
 				</td>
 				<td colspan="4" class="td_bottom_line">
 				&nbsp;<label id="selxian"><s:property value="xmname"/></label>
 				</td>
 			</tr>
+		</table>
+		<div style="height:2px;"></div>
+		<table>
 			<tr>
 				<td width="10%" align="right">农户编码:&nbsp;</td>
 				<td width="10%"><input type="text" name="qstr" value="<s:property value="#session.vts.map.qarr[0]"/>" maxlength="15" onkeyup="value=value.replace(/[^\d]/g,'')" class="inptxt1" onfocus="this.className='input_on1'" onblur="this.className='input_off1'"/></td>
@@ -81,7 +84,7 @@
 	<!-- advance -->
 	<fieldset style="border:1px solid #3B9FFF; margin:0; padding:0; width:99%;">
 	<legend>高级选项</legend>
-	<div style="height:80px;">
+	<div style="height:78px;">
 		<table cellpadding="0" cellspacing="0" width="100%">
 			<tr height="24px;">
 				<td width="16%" align="right">家庭人口：</td>
