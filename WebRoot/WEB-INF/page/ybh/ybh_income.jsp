@@ -25,7 +25,7 @@
    	<thead>
     <tr>
     	<td width="4%">组名</td>
-    	<td width="4%">姓名</td>
+    	<td width="4%">户名</td>
     	<td width="6%">4、家庭年总纯收入(元)</td>
         <td width="6%">其中:(1)家庭经营性收入(元)</td>
         <td width="6%">(2)工资性收入(元)</td>
