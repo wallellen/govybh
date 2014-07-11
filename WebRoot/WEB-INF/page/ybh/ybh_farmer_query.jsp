@@ -144,7 +144,7 @@
 			-->
 		</span>
 	</div>
-	<div class="table-c" style="width:868px; height:432px; border:0px solid red; margin-top:4px;">
+	<div class="table-c" style="width:868px; height:422px; border:0px solid red; margin-top:4px;">
 		<table class="data_list" width="100%" bordercolor="gray" border="0" cellpadding="0" cellspacing="0">
 			<thead>
 			<tr class="tabtr1">
