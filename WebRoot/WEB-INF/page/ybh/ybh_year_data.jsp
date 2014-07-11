@@ -23,16 +23,38 @@
 <table class="data_list" cellpadding="0" cellspacing="0" width="100%">
    	<thead>
        	<tr class="tabtr1">
-			<td height="20px" width="20%">地区编码</td>
-			<td width="20%">地区名称</td>
-			<td width="15%">村数</td>
-			<td width="15%">户数</td>
-			<td width="30%" class="tabtd1">操作</td>
+       		<s:if test="#session.vts.curBM.length()<=9">
+				<td height="20px" width="20%">地区编码</td>
+				<td width="20%">地区名称</td>
+				<td width="15%">村数</td>
+				<td width="15%">户数</td>
+				<td width="30%" class="tabtd1">操作</td>
+			</s:if>
+			<s:else>
+				<td height="20px" width="12%">农户编码</td>
+				<td width="12%">组名</td>
+				<td width="12%">户主姓名</td>
+				<td width="8%">人口</td>
+				<td width="8%">劳力</td>
+				<td width="8%">耕地</td>
+				<td width="8%">住房(m<sup>2</sup>)</td>
+				<td width="10%">农户属性</td>
+				<td width="10%">贫困原因</td>
+				<td width="12%">
+					<s:if test="rtybc!=null && rtybc=='ybc'">
+					<input type="button" value="返回" onclick="javascript:history.go(-1)" class="button43"/>
+					</s:if>
+					<s:else>
+					操作
+					</s:else>
+				</td>
+			</s:else>
          </tr>
          </thead>
          <tbody id="splitpage">
          	<s:iterator value="#session.vts.list" var="ls" status="li">
 			<tr style="display:none;">
+				<s:if test="#session.vts.curBM.length()<=9">
 				<td height="20px" align="left">&nbsp;<s:property value="#ls.bm"/></td>
 				<td align="left">&nbsp;<s:property value="#ls.oname"/></td>
 				<td align="right"><s:property value="#ls.cn"/>&nbsp;</td>
@@ -46,6 +68,25 @@
 						<a href="${pageContext.request.contextPath }/yearDataAction_updateCun.action?cunbm=<s:property value="#ls.bm"/>&oname=<s:property value="#ls.oname"/>&year=<s:property value="#session.vts.map.ybhyear"/>">村级指标录入</a>
 					</s:if>
 				</td>
+				</s:if>
+				<s:else>
+					<td align="left" height="20px">&nbsp;<s:property value="#ls.hm"/></td>
+					<td align="left" title="<s:property value="#ls.zhu"/>">&nbsp;<s:property value="#ls.zhu.length()>6?#ls.zhu.substring(0,5)+'..':#ls.zhu"/></td>
+					<td align="left" title="<s:property value="#ls.hname"/>">&nbsp;<s:property value="#ls.hname.length()>7?#ls.hname.substring(0,6)+'..':#ls.hname"/></td>
+					<td align="right"><s:property value="#ls.population"/>&nbsp;</td>
+					<td align="right"><s:property value="#ls.labornum"/>&nbsp;</td>
+					<td align="right"><s:property value="#ls.fields"/>&nbsp;</td>
+					<td align="right"><s:property value="#ls.house"/>&nbsp;</td>
+					<td align="left">&nbsp;<s:property value="#ls.property"/></td>
+					<td align="left">&nbsp;<s:property value="#ls.dcause"/></td>
+					<td class="tabtd1">
+						<s:if test="#session.vts.rbm.length()==6">
+						<a href="${pageContext.request.contextPath }/ybhManageAction_detail.action?viewBM=<s:property value="#ls.hm"/>&rtf=home">编辑</a>&nbsp;
+						</s:if>
+						<a href="${pageContext.request.contextPath }/ybhManageAction_viewReportFamily.action?viewBM=<s:property value="#ls.hm"/>">查看</a>&nbsp;
+			 			<a id="printBt" href="${pageContext.request.contextPath }/ybhManageAction_printFamily.action?viewBM=<s:property value="#ls.hm"/>" target="printFrame">打印</a>
+					</td>
+				</s:else>
 			</tr>
 			</s:iterator>
          </tbody>

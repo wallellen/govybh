@@ -37,6 +37,7 @@ public class YbcManageAction extends BaseAction implements
 		String h_content;
 		String h_tab = "";
 		String lmid = "";
+		String sXXCName[]=new String[3];
 		boolean bf1 = false;
 		boolean bf2 = false;
 		int r1 = 0;
@@ -99,19 +100,21 @@ public class YbcManageAction extends BaseAction implements
 					h_content += "<tr>";
 					h_content += "<td rowspan='" + map.get("t") + "' title='编码:&nbsp;"+map.get("bm")+"&#13;市名:&nbsp;"+map.get("oname")+"&#13;样本村(村):&nbsp;"+map.get("cn")+"&#13;样本户(户):&nbsp;"+map.get("hn")+"'>"
 							+ map.get("oname") + "</td>";
+					sXXCName[0]=(String)map.get("oname");
 					bf1 = false;
 				} else if (bf2) {
 					h_content += "<td rowspan='" + map.get("t") + "' title='编码:&nbsp;"+map.get("bm")+"&#13;县名:&nbsp;"+map.get("oname")+"&#13;样本村(村):&nbsp;"+map.get("cn")+"&#13;样本户(户):&nbsp;"+map.get("hn")+"'>"
 							+ map.get("oname") + "</td>";
+					sXXCName[1]=(String)map.get("oname");
 					bf2 = false;
 				} else {
 					h_content += "<td title='编码:&nbsp;"+map.get("bm")+"&#13;村名:&nbsp;"+map.get("oname")+"&#13;样本户(户):&nbsp;"+map.get("hn")+"'>" 
 							+ map.get("oname").toString() + "</td>";
-					
+					sXXCName[2]=sXXCName[0]+"/"+sXXCName[1]+"/"+(String)map.get("oname");
 					h_content += "<td>" + map.get("hn").toString() + "</td>";
 					h_content += "<td>" +
 							"<a href='ybhManageAction_viewYbh.action?viewBM="+map.get("bm")+"&oname="+map.get("oname")+"&rtybc=ybc'>进入</a>" +
-							"&nbsp;&nbsp;<a href='ybcManageAction_viewCunzb.action?cunbm="+map.get("bm")+"&oname="+map.get("oname")+"'>查看村指标</a>" +
+							"&nbsp;&nbsp;<a href='ybcManageAction_viewCunzb.action?cunbm="+map.get("bm")+"&oname="+sXXCName[2]+"'>查看村指标</a>" +
 							"</td>";
 					h_content += "</tr>";
 				}
@@ -154,15 +157,16 @@ public class YbcManageAction extends BaseAction implements
 					h_content += "<tr>";
 					h_content += "<td rowspan='" + map.get("t") + "' title='编码:&nbsp;"+map.get("bm")+"&#13;县名:&nbsp;"+map.get("oname")+"&#13;样本村(村):&nbsp;"+map.get("cn")+"&#13;样本户(户):&nbsp;"+map.get("hn")+"'>"
 							+ map.get("oname") + "</td>";
+					sXXCName[0]=(String)map.get("oname");
 					bf2 = false;
 				}else {
 					h_content += "<td title='编码:&nbsp;"+map.get("bm")+"&#13;村名:&nbsp;"+map.get("oname")+"&#13;样本户(户):&nbsp;"+map.get("hn")+"'>" 
 					+ map.get("oname").toString() + "</td>";
-			
+					sXXCName[2]=sXXCName[0]+"/"+(String)map.get("oname");
 					h_content += "<td>" + map.get("hn").toString() + "</td>";
 					h_content += "<td>" +
 							"<a href='ybhManageAction_viewYbh.action?viewBM="+map.get("bm")+"&oname="+map.get("oname")+"&rtybc=ybc'>进入</a>" +
-							"&nbsp;&nbsp;<a href='ybcManageAction_viewCunzb.action?cunbm="+map.get("bm")+"&oname="+map.get("oname")+"'>查看村指标</a>" +
+							"&nbsp;&nbsp;<a href='ybcManageAction_viewCunzb.action?cunbm="+map.get("bm")+"&oname="+sXXCName[2]+"'>查看村指标</a>" +
 							"</td>";
 					h_content += "</tr>";
 				}
