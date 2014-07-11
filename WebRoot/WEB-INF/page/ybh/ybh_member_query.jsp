@@ -45,13 +45,13 @@
 	<input type="hidden" id="xmname" name="xmname" value="[全省]"/>
 	<fieldset style="border:1px solid #3B9FFF; margin:0; padding:0; width:99%;">
 	<legend>查询条件</legend>
-	<div style="height:45px; line-height:20px;">
-		<table cellpadding="0" cellspacing="0">
+	<div style="height:58px; line-height:26px;">
+		<table cellpadding="0" cellspacing="0" width="100%">
 			<tr>
-				<td width="10%" align="right">
+				<td width="10%" align="right" class="td_bottom_line">
 					<a id="various1" href="#data" kesrc="#data" title="选择县" class="sel_title">选择县&nbsp;</a>
 				</td>
-				<td colspan="7">&nbsp;<label id="selxian"><s:property value="xmname"/></label></td>
+				<td colspan="7" class="td_bottom_line">&nbsp;<label id="selxian"><s:property value="xmname"/></label></td>
 			</tr>
 			<tr>
 				<td width="10%" align="right">姓名：&nbsp;</td>
@@ -80,9 +80,9 @@
 	<!-- advance -->
 	<fieldset style="border:1px solid #3B9FFF; margin:0; padding:0; width:99%;">
 	<legend>高级选项</legend>
-	<div style="height:60px;">
-		<table cellpadding="0" cellspacing="0">
-			<tr height="24px;">
+	<div style="height:55px; line-height:24px;">
+		<table cellpadding="0" cellspacing="0" width="100%">
+			<tr>
 				<td width="20%" align="right">在校生：</td>
 				<td width="10%" align="left">
 					<s:select name="memberstr" cssClass="borwer-sel" list="#application.vta.GetList('yesnoex')" listKey="id" listValue="str" value="%{#session.vts.map.marr[4]}"></s:select>
@@ -97,7 +97,7 @@
 				</td>
 				<td width="10%"></td>
 			</tr>
-			<tr height="24px;">
+			<tr>
 				<td align="right">劳动力状况：</td>
 				<td align="left">
 					<s:select name="memberstr" cssClass="borwer-sel" list="#application.vta.GetList('laborex')" listKey="id" listValue="str" value="%{#session.vts.map.marr[7]}"></s:select>

@@ -102,7 +102,7 @@ a.toolbar_exit:hover{color:#fff; text-decoration:none}
 .table-b-2{line-height:18px; height:24px; padding-left:10px; padding-top:2px}
 .table-b-3{line-height:18px; height:24px; padding-left:10px; padding-top:1px; text-align:center;}
 .borwer-input1{height:16px; margin-top:5px;}
-.borwer-sel{width:100px; height:20px; margin-top:5px;}
+.borwer-sel{width:100px; height:20px; margin-top:0px;}
 .bt_button1{width:65px; height:22px; display:inline; color:#FFF; border:medium none; background:url("/images/vt_rec_bt4.png");}
 
 .footer_info{width:500px; margin:0 auto; color:#00529E;}

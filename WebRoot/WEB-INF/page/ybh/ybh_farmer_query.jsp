@@ -57,13 +57,13 @@
 	<input type="hidden" id="xmname" name="xmname" value="[全省]"/>
 	<fieldset style="border:1px solid #3B9FFF; margin:0; padding:0; width:99%;">
 	<legend>查询条件</legend>
-	<div style="height:45px; line-height:20px;">
-		<table cellpadding="0" cellspacing="0">
+	<div style="height:58px; line-height:26px;">
+		<table cellpadding="0" cellspacing="0" width="100%">
 			<tr>
-				<td width="8%" align="right">
+				<td align="right" class="td_bottom_line">
 					<a id="various1" href="#data" kesrc="#data" title="选择县" class="sel_title">选择县&nbsp;</a>
 				</td>
-				<td colspan="4" width="80%">
+				<td colspan="4" class="td_bottom_line">
 				&nbsp;<label id="selxian"><s:property value="xmname"/></label>
 				</td>
 			</tr>
