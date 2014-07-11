@@ -1,6 +1,8 @@
 @charset "utf-8";
 /* CSS Document */
 body {margin:0; padding:0; font-size:12px; font-family:"微软雅黑,宋体";}
+/**禁止为所有被激活的输入框添加边框（推荐此方法）**/
+*:focus {outline: none} 
 /** common **/
 a:link{color:#00f; text-decoration:none}	/* 未访问的链接 */
 a:active{color:#00f; text-decoration:none}	/* 激活链接 */
