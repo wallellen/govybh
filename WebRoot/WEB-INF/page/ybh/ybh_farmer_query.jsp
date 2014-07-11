@@ -151,6 +151,7 @@
 				<td width="15%">农户编码</td>
 				<td width="45%">省、市、县、乡、村</td>
 				<td width="25%">户主姓名</td>
+				<td width="15%">操作</td>
 			</tr>
 			</thead>
 			<tbody id="splitpage">
@@ -159,6 +160,13 @@
 					<td align="left">&nbsp;<s:property value="#ls2.hm"/></td>
 					<td align="left">&nbsp;<s:property value="#ls2.govname"/></td>
 					<td align="left">&nbsp;<s:property value="#ls2.hname"/></td>
+					<td align="center">
+						<s:if test="#session.vts.rbm.length()==6">
+						<a href="${pageContext.request.contextPath }/ybhManageAction_detail.action?viewBM=<s:property value="#ls.hm"/>&rtf=home">编辑</a>&nbsp;
+						</s:if>
+						<a href="${pageContext.request.contextPath }/ybhManageAction_viewReportFamily.action?viewBM=<s:property value="#ls.hm"/>">查看</a>&nbsp;
+			 			<a id="printBt" href="${pageContext.request.contextPath }/ybhManageAction_printFamily.action?viewBM=<s:property value="#ls.hm"/>" target="printFrame">打印</a>
+					</td>
 				</tr>
 				</s:iterator>
 			</tbody>
