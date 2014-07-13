@@ -335,26 +335,41 @@ public class YbhManageDaoImpl extends BaseDaoImpl implements YbhManageDao {
 									for(int i=1;i<=5;i++)
 									{
 										String sk = "v"+i;
-										int ival=rs.getInt(sk);
+										int ival;
+										if(null==rs.getString(sk))
+										{
+											ival = -1;
+										}
+										else
+										{
+											ival=rs.getInt(sk);
+										}
 										map.put("ids",rs.getString("ids"));
 										map.put("code",rs.getString("code"));
 										map.put("st",rs.getString("st"));
 										if(ival==1)
 										{
-											if(icode>=16){
+											if(icode>=16)
+											{
 												map.put(sk, "√");
 											}
-											else{
-											map.put(sk, "A:有");
+											else
+											{
+												map.put(sk, "A:有");
 											}
 										}
-										else
+										else if(ival==0)
 										{
 											if(icode>=16){
 												map.put(sk, " ");
 											}
 											else{
-											map.put(sk, "B:无");}
+												map.put(sk, "B:无");
+											}
+										}
+										else
+										{
+											map.put(sk, "");
 										}
 									}
 								}
@@ -377,6 +392,4 @@ public class YbhManageDaoImpl extends BaseDaoImpl implements YbhManageDao {
 			}
 		});
 	}
-
-	
 }
