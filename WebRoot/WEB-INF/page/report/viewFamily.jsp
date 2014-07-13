@@ -93,14 +93,16 @@
     </table>
     <table width="100%" cellpadding="0" cellspacing="0">
     	<tr>
-        	<td width="15%">家庭人口(人)</td>
-			<td width="10%">&nbsp;<s:property value="#session.vts.map.population"/></td>
-			<td width="15%">劳动力(人)</td>
-			<td width="10%">&nbsp;<s:property value="#session.vts.map.labornum"/></td>
-			<td width="15%">承包耕地面积(亩)</td>
-			<td width="10%">&nbsp;<s:property value="#session.vts.map.fields"/></td>
-			<td width="15%">住房面积(m2)</td>
-			<td width="10%">&nbsp;<s:property value="#session.vts.map.house"/></td>
+        	<td width="12%">家庭人口(人)</td>
+			<td width="6%">&nbsp;<s:property value="#session.vts.map.population"/></td>
+			<td width="12%">劳动力(人)</td>
+			<td width="6%">&nbsp;<s:property value="#session.vts.map.labornum"/></td>
+			<td width="16%">务工劳动力(个)</td>
+			<td width="6%">&nbsp;<s:property value="#session.vts.map.wlabornum"/></td>
+			<td width="16%">承包耕地面积(亩)</td>
+			<td width="6%">&nbsp;<s:property value="#session.vts.map.fields"/></td>
+			<td width="14%">住房面积(m2)</td>
+			<td width="6%">&nbsp;<s:property value="#session.vts.map.house"/></td>
         </tr>
     </table>
     <table width="100%" cellpadding="0" cellspacing="0">
