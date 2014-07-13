@@ -20,7 +20,7 @@
 <body onload="findPrint3()" style="background:#E0EEFB;">
 <div id="leftCon1">
 <div class="view-family-report1">
-    <h1>脱贫奔小康低收入农户登记表</h1>
+    <h1>样本户基础监测信息表</h1>
     <p class="view-print">&nbsp; </p>
     <div id="view-family-tit">
     	<div class="viewleft">
@@ -126,10 +126,8 @@
     	<s:iterator value="#session.vts.list2" var="ls2" status="sc">
     	<s:if test="#sc.count==1">
     		<tr>
-                <td rowspan="9">二、脱贫进程</td>
-                <td width="20%">指标名称</td>
-		      	<td width="8%">单位</td>
-		       	<td width="8%">代码</td>
+		       	<td width="6%">编号</td>
+                <td width="22%">监测指标名称</td>
 		       	<td width="10%"><s:property value="#session.vts.map.y1"/>年</td>
 		       	<td width="10%"><s:property value="#session.vts.map.y2"/>年</td>
 		       	<td width="10%"><s:property value="#session.vts.map.y3"/>年</td>
@@ -138,12 +136,13 @@
             </tr>
     	</s:if>
     	<tr>
-    		<s:elseif test="#sc.count==9">
-    		<td rowspan="5">三、帮扶情况</td>
-    		</s:elseif>
-    		<td align="left">&nbsp;&nbsp;<s:property value="#ls2.ids"/></td>
-	      	<td>&nbsp;<s:property value="#ls2.unit"/></td>
 	       	<td>&nbsp;<s:property value="#ls2.code"/></td>
+	       	<s:if test="#ls2.st==1">
+	       		<td align="left" style="font-weight:bold">&nbsp;<s:property value="#ls2.ids"/></td>
+	       	</s:if>
+	       	<s:else>
+	       		<td align="right"><s:property value="#ls2.ids"/>&nbsp;</td>
+	       	</s:else>
 	       	<td>&nbsp;<s:property value="#ls2.v1"/></td>
 	       	<td>&nbsp;<s:property value="#ls2.v2"/></td>
 	       	<td>&nbsp;<s:property value="#ls2.v3"/></td>
@@ -152,22 +151,6 @@
     	</tr>
     	</s:iterator>
     	<!-- end -->
-		<tr>
-			<td colspan="4">农&nbsp;&nbsp;户&nbsp;&nbsp;签&nbsp;&nbsp;名&nbsp;&nbsp;(盖章)</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-            <td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td colspan="4">填&nbsp;&nbsp;表&nbsp;&nbsp;人&nbsp;&nbsp;签&nbsp;&nbsp;名</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-	       	<td>&nbsp;</td>
-	       	<td>&nbsp;</td>
-	       	<td>&nbsp;</td>
-		</tr>
     </table>
     <p class="view-report-tip">注：<font style="font-size:16px;">①</font>文化程度：1文盲、半文盲，2小学，3初中，4高中，5大专，6大专以上，7学龄年儿童；</p>
     <p class="view-report-tip1"><font style="font-size:16px;">②</font>身体健状况：1健康，2体弱多病，3长期慢性病，4患有大病，5残疾人；</p>

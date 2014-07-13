@@ -170,6 +170,10 @@ public class YbhManageAction extends BaseAction implements ModelDriven<YbhManage
 		String sListStr = ybhManageService.findNavListStr(ds);
 		ds.subPathTitle.setFullPath(sListStr);
 		ds.navPath=ds.subPathTitle.getHtmlString();
+		
+		
+		
+		
 		return "view_ybhFamily";
 	}
 	

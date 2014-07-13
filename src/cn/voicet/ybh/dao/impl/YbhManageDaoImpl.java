@@ -329,7 +329,40 @@ public class YbhManageDaoImpl extends BaseDaoImpl implements YbhManageDao {
 								ds.list.add(map);
 							}else if(rid == 2){
 								map = new HashMap();
+								int icode=rs.getInt("code");
+								if((icode>=6 && icode<=11 )||(icode >=16))
+								{
+									for(int i=1;i<=5;i++)
+									{
+										String sk = "v"+i;
+										int ival=rs.getInt(sk);
+										map.put("ids",rs.getString("ids"));
+										map.put("code",rs.getString("code"));
+										map.put("st",rs.getString("st"));
+										if(ival==1)
+										{
+											if(icode>=16){
+												map.put(sk, "║л");
+											}
+											else{
+											map.put(sk, "A:сп");
+											}
+										}
+										else
+										{
+											if(icode>=16){
+												map.put(sk, " ");
+											}
+											else{
+											map.put(sk, "B:нч");}
+										}
+									}
+								}
+								
+								else
+								{
 								ds.putMapDataByColName(map, rs);
+								}
 								ds.list2.add(map);
 							}
 						}
