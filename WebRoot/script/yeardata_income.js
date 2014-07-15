@@ -148,6 +148,7 @@ function selectFs1(obj)
 	{
 		fsbox1.value=0;
 	}
+	changechk_fs();
 }
 //(2)帮助就业项目
 function selectFs2(obj)
@@ -161,6 +162,7 @@ function selectFs2(obj)
 	{
 		fsbox2.value=0;
 	}
+	changechk_fs();
 }
 //(3)小额扶贫贷款项目
 function selectFs3(obj)
@@ -174,6 +176,7 @@ function selectFs3(obj)
 	{
 		fsbox3.value=0;
 	}
+	changechk_fs();
 }
 //(4)入股收益分红类项目
 function selectFs4(obj)
@@ -187,6 +190,7 @@ function selectFs4(obj)
 	{
 		fsbox4.value=0;
 	}
+	changechk_fs();
 }
 //(5)其它项目
 function selectFs5(obj)
@@ -200,6 +204,7 @@ function selectFs5(obj)
 	{
 		fsbox5.value=0;
 	}
+	changechk_fs();
 }
 /******* 7、享受扶贫项目支持情况 end ********/
 
@@ -216,6 +221,7 @@ function selectBb1(obj)
 	{
 		bbox1.value=0;
 	}
+	changechk_bb();
 }
 //(1)新农保
 function selectBb2(obj)
@@ -229,6 +235,7 @@ function selectBb2(obj)
 	{
 		bbox2.value=0;
 	}
+	changechk_bb();
 }
 //(1)大病医疗救助
 function selectBb3(obj)
@@ -242,6 +249,7 @@ function selectBb3(obj)
 	{
 		bbox3.value=0;
 	}
+	changechk_bb();
 }
 //(1)未参加或享受任何保障
 function selectBb4(obj)
@@ -255,7 +263,36 @@ function selectBb4(obj)
 	{
 		bbox4.value=0;
 	}
+	changechk_bb();
 }
+
+//
+function changechk_fs()
+{
+	var fs_name = document.getElementsByName("chk_fs_name");
+	chk_fs.checked=false;
+	for(var i=0; i<fs_name.length; i++)
+	{
+		if(fs_name[i].checked)
+		{
+			chk_fs.checked=true;
+		}
+	}
+}
+
+function changechk_bb()
+{
+	var bb_name = document.getElementsByName("chk_bb_name");
+	chk_bb.checked=false;
+	for(var i=0; i<bb_name.length; i++)
+	{
+		if(bb_name[i].checked)
+		{
+			chk_bb.checked=true;
+		}
+	}
+}
+
 
 /******* 10、参加社会保障情况 start ********/
 

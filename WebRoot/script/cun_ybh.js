@@ -18,6 +18,7 @@ function checkHnt(obj){
 	if(reg.test(item))
 	{
 		hideBanfErrTip();
+		updata_avg();
 		return true;
 	}
 	else
@@ -26,6 +27,7 @@ function checkHnt(obj){
 		obj.focus();
 		return false;
 	}
+	
 }
 //总人口数
 function checkRnt(obj)
@@ -314,6 +316,7 @@ function checkVdt(obj)
 	if(reg.test(item))
 	{
 		hideBanfErrTip3();
+		updata_avg();
 		return true;
 	}
 	else
@@ -322,6 +325,16 @@ function checkVdt(obj)
 		obj.focus();
 		return false;
 	}
+}
+function updata_avg()
+{
+	//
+	if(cunId1.value>0 &&cunId18.value>0)
+	{
+		var v=cunId18.value/cunId1.value;
+		cunId22.value=v.toFixed(1);
+	}
+	
 }
 //其中：建档立卡低收入农户
 function checkVdtl(obj)
@@ -448,11 +461,13 @@ function selectFps1(obj)
 	if(obj.checked)
 	{
 		chbox1.value=1;
+		
 	}
 	else
 	{
 		chbox1.value=0;
 	}
+	changechk_fps();
 }
 function selectFps2(obj)
 {
@@ -465,10 +480,12 @@ function selectFps2(obj)
 	{
 		chbox2.value=0;
 	}
+	changechk_fps();
 }
+//
 function selectFps3(obj)
 {
-	var chbox3 = document.getElementById("chbox3");
+	//var chbox3 = document.getElementById("chbox3");
 	if(obj.checked)
 	{
 		chbox3.value=1;
@@ -477,8 +494,20 @@ function selectFps3(obj)
 	{
 		chbox3.value=0;
 	}
+	changechk_fps();
 }
-
+function changechk_fps()
+{
+	var fps_name = document.getElementsByName("chk_fps_name");
+	chk_fps.checked=false;
+	for(var i=0; i<fps_name.length; i++)
+	{
+		if(fps_name[i].checked)
+		{
+			chk_fps.checked=true;
+		}
+	}
+}
 /******* 选中 扶贫项目落实情况 end ********/
 
 function saveCunBt()
