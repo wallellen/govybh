@@ -502,6 +502,7 @@ function changechk_fps()
 	chk_fps.checked=false;
 	for(var i=0; i<fps_name.length; i++)
 	{
+		
 		if(fps_name[i].checked)
 		{
 			chk_fps.checked=true;

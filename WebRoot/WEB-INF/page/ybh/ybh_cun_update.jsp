@@ -77,7 +77,7 @@
 				<input type="checkbox" id="chk_fps" class="cuncbox" checked="checked" disabled="disabled"/>
 				</s:if>
 				<s:else>
-				<input type="checkbox" class="cuncbox" disabled="disabled"/>
+				<input type="checkbox" id="chk_fps" class="cuncbox" disabled="disabled"/>
 				</s:else>
 			</td>
             <td width="28%" align="right">针对经济薄弱村扶贫资金落实数(万元):&nbsp;</td>
