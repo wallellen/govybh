@@ -24,8 +24,8 @@
 <table class="data_list" cellpadding="0" cellspacing="0" width="100%">
    	<thead>
     <tr>
-    	<td width="4%">组名</td>
-    	<td width="4%">户名</td>
+    	<td width="6%">组名</td>
+    	<td width="6%">户名</td>
     	<td width="6%">4、家庭年总纯收入(元)</td>
         <td width="6%">其中:(1)家庭经营性收入(元)</td>
         <td width="6%">(2)工资性收入(元)</td>
@@ -42,8 +42,8 @@
 	<tbody id="splitpage">
 	<s:iterator id="ls" value="#session.vts.list">
     <tr>
-    	<td><s:property value="#ls.zhu"/></td>
-    	<td><s:property value="#ls.hname"/></td>
+    	<td align="left" title="<s:property value='#ls.zhu'/>">&nbsp;<s:property value="#ls.zhu.length()>4?#ls.zhu.substring(0,3)+'..':#ls.zhu"/></td>
+    	<td align="left" title="<s:property value='#ls.hname'/>">&nbsp;<s:property value="#ls.hname.length()>4?#ls.hname.substring(0,3)+'..':#ls.hname"/></td>
     	<td align="right"><s:property value="#ls.intotal"/>&nbsp;</td>
     	<td align="right"><s:property value="#ls.injy"/>&nbsp;</td>
     	<td align="right"><s:property value="#ls.inwork"/>&nbsp;</td>
