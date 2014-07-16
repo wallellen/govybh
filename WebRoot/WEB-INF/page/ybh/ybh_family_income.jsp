@@ -27,7 +27,7 @@
 <div id="member-info-ul">
 	<ul>
 		<li><a href="${pageContext.request.contextPath }/ybhManageAction_itemFamily.action">家庭成员信息</a></li>
-		<li style="background:url(${pageContext.request.contextPath }/images/tab-bg2.png); color:#FFF;">样本户基础信息</li>
+		<li style="background:url(${pageContext.request.contextPath }/images/tab-bg2.png); color:#FFF;">样本户年指标</li>
 	</ul>
 </div>
 <div id="member-info-data">

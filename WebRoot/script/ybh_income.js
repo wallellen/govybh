@@ -19,6 +19,7 @@ function checkInjy(obj)
 	if(reg.test(item))
 	{
 		hideBanfErrTip1();
+		income_sum();
 		return true;
 	}
 	else
@@ -36,6 +37,7 @@ function checkInwork(obj)
 	if(reg.test(item))
 	{
 		hideBanfErrTip1();
+		income_sum();
 		return true;
 	}
 	else
@@ -53,6 +55,7 @@ function checkIncz(obj)
 	if(reg.test(item))
 	{
 		hideBanfErrTip1();
+		income_sum();
 		return true;
 	}
 	else
@@ -62,6 +65,18 @@ function checkIncz(obj)
 		return false;
 	}
 }
+function income_sum()
+{
+	if(incId1.value>0 && incId2.value>0 && incId3.value>0)
+	{
+		var v = parseFloat(incId1.value) + parseFloat(incId2.value) + parseFloat(incId3.value);
+		in_total.innerHTML=v.toFixed(1);
+		var rj = v/renkou.value;
+		rj_income.innerHTML=rj.toFixed(1);
+	}
+}
+
+
 /******* 4、家庭年总纯收入 end ********/
 
 /******* 8、得到帮扶资金 start ********/
@@ -73,6 +88,7 @@ function checkVv1(obj)
 	if(reg.test(item))
 	{
 		hideBanfErrTip1();
+		bangfu_sum();
 		return true;
 	}
 	else
@@ -82,7 +98,7 @@ function checkVv1(obj)
 		return false;
 	}
 }
-//(1)市、县级扶贫资金
+//(2)市、县级扶贫资金
 function checkVv2(obj)
 {
 	var reg = /^[0-9]+([.]{1}[0-9]{1})?$/;
@@ -90,6 +106,7 @@ function checkVv2(obj)
 	if(reg.test(item))
 	{
 		hideBanfErrTip1();
+		bangfu_sum();
 		return true;
 	}
 	else
@@ -99,7 +116,14 @@ function checkVv2(obj)
 		return false;
 	}
 }
-
+function bangfu_sum()
+{
+	if(incId4.value>0 && incId5.value>0)
+	{
+		var v = parseFloat(incId4.value) + parseFloat(incId5.value);
+		bf_total.innerHTML=v.toFixed(1);
+	}
+}
 /******* 8、得到帮扶资金 end ********/
 
 //////////////////////////////tip2分隔  ////////////////////////////////////

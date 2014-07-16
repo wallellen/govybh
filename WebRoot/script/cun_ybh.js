@@ -334,7 +334,6 @@ function updata_avg()
 		var v=cunId18.value/cunId1.value;
 		cunId22.value=v.toFixed(1);
 	}
-	
 }
 //其中：建档立卡低收入农户
 function checkVdtl(obj)

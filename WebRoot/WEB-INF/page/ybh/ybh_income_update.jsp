@@ -20,9 +20,9 @@
 	<table cellpadding="0" cellspacing="0" width="100%">
     	<tr>
         	<td width="25%" align="right">4、家庭年总纯收入(元):&nbsp;</td>
-            <td width="25%" align="left">&nbsp;<s:property value="intotal"/></td>
+            <td width="25%" align="left">&nbsp;<label id="in_total"><s:property value="intotal"/></label></td>
             <td width="25%" align="right">8、得到帮扶资金(元):&nbsp;</td>
-            <td width="25%" align="left">&nbsp;<s:property value="vv"/></td>
+            <td width="25%" align="left">&nbsp;<label id="bf_total"><s:property value="vv"/></label></td>
         </tr>
         <tr>
         	<td align="right">其中:(1)家庭经营性收入(元):&nbsp;</td>
@@ -47,7 +47,7 @@
     <table cellpadding="0" cellspacing="0" width="100%">
     	<tr>
         	<td width="25%" align="right">5、家庭年人均纯收入(元):&nbsp;</td>
-			<td width="25%" align="left">&nbsp;<s:property value="inpersonal"/></td>
+			<td width="25%" align="left">&nbsp;<label id="rj_income"><s:property value="inpersonal"/></label></td>
             <td width="25%" align="right">9、使用小额扶贫贷款数量(元):&nbsp;</td>
 			<td width="25%" align="left"><input type="text" id="incId6" name="incometxt" value="<s:property value='xxe'/>" maxlength="10" onblur="checkXe(this)" tabindex="41"/></td>
         </tr>

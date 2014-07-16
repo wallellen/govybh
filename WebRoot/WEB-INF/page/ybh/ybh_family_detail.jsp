@@ -30,7 +30,7 @@
 <div id="member-info-ul">
 	<ul>
 		<li style="background:url(${pageContext.request.contextPath }/images/tab-bg2.png); color:#FFF;">家庭成员信息</li>
-		<li><a href="${pageContext.request.contextPath }/ybhManageAction_familyIncome.action">样本户基础信息</a> </li>
+		<li><a href="${pageContext.request.contextPath }/ybhManageAction_familyIncome.action">样本户年指标</a> </li>
 	</ul>
 </div>
 
@@ -40,11 +40,9 @@
 		<li>家庭人口：<s:property value="#session.vts.map.population"/></li>
 	    <li>劳动力：<s:property value="#session.vts.map.labornum"/></li>
 	    <li class="add-member-bt">
-	    <!-- 
 	    <s:if test="#session.vts.isedit==1">
 	    <input type="button" onclick="popSaveMember('0','add','0')" value="添加人口" class="button4"/>
 	    </s:if>
-	    -->
 	   	</li>
 	</ul>
 	<table class="tab-member" cellpadding="0" cellspacing="0">

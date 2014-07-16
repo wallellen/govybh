@@ -14,12 +14,13 @@
 	<input type="hidden" name="rflag" value="<s:property value='rflag'/>"/>
 	<input type="hidden" name="incometxt" value="<s:property value='#session.vts.curHM'/>"/>
 	<input type="hidden" name="incometxt" value="<s:property value='year'/>"/>
+	<input type="hidden" id="renkou" value="<s:property value="#session.vts.map.population"/>"/>
 	<table cellpadding="0" cellspacing="0" width="100%">
     	<tr>
         	<td width="25%" align="right">4、家庭年总纯收入(元):&nbsp;</td>
-            <td width="25%" align="left">&nbsp;<s:property value="intotal"/></td>
+            <td width="25%" align="left">&nbsp;<label id="in_total"><s:property value="intotal"/></label></td>
             <td width="25%" align="right">8、得到帮扶资金(元):&nbsp;</td>
-            <td width="25%" align="left">&nbsp;<s:property value="vv"/></td>
+            <td width="25%" align="left">&nbsp;<label id="bf_total"><s:property value="vv"/></label></td>
         </tr>
         <tr>
         	<td align="right">其中:(1)家庭经营性收入(元):&nbsp;</td>
@@ -44,7 +45,7 @@
     <table cellpadding="0" cellspacing="0" width="100%">
     	<tr>
         	<td width="25%" align="right">5、家庭年人均纯收入(元):&nbsp;</td>
-			<td width="25%" align="left">&nbsp;<s:property value="inpersonal"/></td>
+			<td width="25%" align="left">&nbsp;<label id="rj_income"><s:property value="inpersonal"/></label></td>
             <td width="25%" align="right">9、使用小额扶贫贷款数量(元):&nbsp;</td>
 			<td width="25%" align="left"><input type="text" id="incId6" name="incometxt" value="<s:property value='xxe'/>" maxlength="10" onblur="checkXe(this)" tabindex="41"/></td>
         </tr>
@@ -155,7 +156,7 @@
 				<input type="hidden" id="fsbox4" name="incometxt" value="0"/>
 				</s:else>
 			</td>
-            <td align="right">参加或享受任何保障:&nbsp;</td>
+            <td align="right">参加或享受其它社会保障:&nbsp;</td>
 			<td align="left">
 				<s:if test="bb4==1">
 				<input type="checkbox" name="chk_bb_name" class="cuncbox" checked="checked" onclick="selectBb4(this)" tabindex="64"/>
