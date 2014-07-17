@@ -20,7 +20,7 @@
 	<s:property value="#session.vts.navPath" escape="false"/>
 </div>
 <div id="jiangbu-data">
-<table class="data_list" cellpadding="0" cellspacing="0" width="100%">
+<table  class="" cellpadding="0" cellspacing="0" width="100%">
    	<thead>
        	<tr class="tabtr1">
 			<s:if test="#session.vts.curBM.length()<=9">
@@ -46,17 +46,29 @@
          </thead>
          <tbody id="splitpage">
          	<s:iterator value="#session.vts.list" var="ls" status="li">
-			<tr style="display:none;">
 				<s:if test="#session.vts.curBM.length()<=9">
-				<td height="20px" align="left">&nbsp;<s:property value="#ls.bm"/></td>
-				<td align="left">&nbsp;<s:property value="#ls.oname"/></td>
-				<td align="right"><s:property value="#ls.cn"/>&nbsp;</td>
-				<td align="right"><s:property value="#ls.hm"/>&nbsp;</td>
-				<td class="tabtd1">
-					<a href="${pageContext.request.contextPath }/ybhCheckAction_viewYbh.action?viewBM=<s:property value="#ls.bm"/>&oname=<s:property value="#ls.oname"/>">进入</a>
-				</td>
+				<s:if test="#ls.t==0">
+				<tr style="display:none; font-weight:bold; background-color:#c0c0c0;">
+					<td height="20px" align="left">&nbsp;<s:property value="#ls.bm"/></td>
+					<td align="left">&nbsp;<s:property value="#ls.oname"/></td>
+					<td align="right"><s:property value="#ls.cn"/>&nbsp;</td>
+					<td align="right"><s:property value="#ls.hm"/>&nbsp;</td>
+					<td class="tabtd1"></td>
 				</s:if>
 				<s:else>
+				<tr style="display:none;">
+					<td height="20px" align="left">&nbsp;<s:property value="#ls.bm"/></td>
+					<td align="left">&nbsp;<s:property value="#ls.oname"/></td>
+					<td align="right"><s:property value="#ls.cn"/>&nbsp;</td>
+					<td align="right"><s:property value="#ls.hm"/>&nbsp;</td>
+					<td class="tabtd1">
+						<a href="${pageContext.request.contextPath }/ybhCheckAction_viewYbh.action?viewBM=<s:property value="#ls.bm"/>&oname=<s:property value="#ls.oname"/>">进入</a>
+					</td>
+				</s:else>
+					
+				</s:if>
+				<s:else>
+				<tr style="display:none;">
 					<td align="left" height="20px">&nbsp;<s:property value="#ls.hm"/></td>
 					<td align="left" title="<s:property value="#ls.zhu"/>">&nbsp;<s:property value="#ls.zhu.length()>6?#ls.zhu.substring(0,5)+'..':#ls.zhu"/></td>
 					<td align="left" title="<s:property value="#ls.hname"/>">&nbsp;<s:property value="#ls.hname.length()>7?#ls.hname.substring(0,6)+'..':#ls.hname"/></td>

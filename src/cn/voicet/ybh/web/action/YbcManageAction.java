@@ -113,8 +113,8 @@ public class YbcManageAction extends BaseAction implements
 					sXXCName[2]=sXXCName[0]+"/"+sXXCName[1]+"/"+(String)map.get("oname");
 					h_content += "<td>" + map.get("hn").toString() + "</td>";
 					h_content += "<td>" +
-							"<a href='ybhManageAction_viewYbh.action?viewBM="+map.get("bm")+"&oname="+map.get("oname")+"&rtybc=ybc'>进入</a>" +
-							"&nbsp;&nbsp;<a href='ybcManageAction_viewCunzb.action?cunbm="+map.get("bm")+"&oname="+sXXCName[2]+"'>查看村指标</a>" +
+							"<a href='ybhManageAction_viewYbh.action?viewBM="+map.get("bm")+"&oname="+map.get("oname")+"&rtybc=ybc'>查看样本户</a>" +
+							"&nbsp;&nbsp;<a href='ybcManageAction_viewCunzb.action?cunbm="+map.get("bm")+"&oname="+sXXCName[2]+"'>进入村指标</a>" +
 							"</td>";
 					h_content += "</tr>";
 				}
@@ -165,8 +165,8 @@ public class YbcManageAction extends BaseAction implements
 					sXXCName[2]=sXXCName[0]+"/"+(String)map.get("oname");
 					h_content += "<td>" + map.get("hn").toString() + "</td>";
 					h_content += "<td>" +
-							"<a href='ybhManageAction_viewYbh.action?viewBM="+map.get("bm")+"&oname="+map.get("oname")+"&rtybc=ybc'>进入</a>" +
-							"&nbsp;&nbsp;<a href='ybcManageAction_viewCunzb.action?cunbm="+map.get("bm")+"&oname="+sXXCName[2]+"'>查看村指标</a>" +
+							"<a href='ybhManageAction_viewYbh.action?viewBM="+map.get("bm")+"&oname="+map.get("oname")+"&rtybc=ybc'>查看样本户</a>" +
+							"&nbsp;&nbsp;<a href='ybcManageAction_viewCunzb.action?cunbm="+map.get("bm")+"&oname="+sXXCName[2]+"'>进入村指标</a>" +
 							"</td>";
 					h_content += "</tr>";
 				}
@@ -192,7 +192,7 @@ public class YbcManageAction extends BaseAction implements
 		
 				h_content += "<td>" + map.get("hn").toString() + "</td>";
 				h_content += "<td>" +
-						"<a href='ybhManageAction_viewYbcToYbh.action?viewBM="+map.get("bm")+"&oname="+map.get("oname")+"&rtybc=ybc'>进入</a>" +
+						"<a href='ybhManageAction_viewYbcToYbh.action?viewBM="+map.get("bm")+"&oname="+map.get("oname")+"&rtybc=ybc'>查看样本户</a>" +
 						"</td>";
 				h_content += "</tr>";
 			}
