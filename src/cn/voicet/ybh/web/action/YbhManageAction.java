@@ -120,7 +120,7 @@ public class YbhManageAction extends BaseAction implements ModelDriven<YbhManage
 	/** 删除家庭成员信息 */
 	public String deleteMember(){
 		DotSession ds = DotSession.getVTSession(request);
-		//ybhManageService.deleteMemberInfo(ds, ybhManageForm);
+		ybhManageService.deleteMemberInfo(ds, ybhManageForm);
 		ds.opCode = "deleteMember";
 		return detail();
 	}
