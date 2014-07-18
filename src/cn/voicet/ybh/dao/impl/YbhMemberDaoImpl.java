@@ -54,7 +54,7 @@ public class YbhMemberDaoImpl extends BaseDaoImpl implements YbhMemberDao {
 				String str = "";
 				CallableStatement cs = conn.prepareCall("{call ybh_query_member(?,?,?,?,?,?)}");
 				cs.setString(1, ds.account);
-				cs.setString(2, ds.curBM);
+				cs.setString(2, ds.rbm);
 				String a[]=(String[]) ds.map.get("marr");
 				for(int i=0; i<9; i++)
 				{

@@ -54,7 +54,7 @@ public class YbhFarmerDaoImpl extends BaseDaoImpl implements YbhFarmerDao {
 				String str = "";
 				CallableStatement cs = conn.prepareCall("{call ybh_query_family(?,?,?,?,?,?,?)}");
 				cs.setString(1, ds.account);
-				cs.setString(2, ds.curBM);
+				cs.setString(2, ds.rbm);
 				String a[]=(String[]) ds.map.get("qarr");
 				for(int i=0; i<11; i++)
 				{
