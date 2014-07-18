@@ -140,7 +140,8 @@
 	</form>
 	<s:if test="#session.vts.list2!=null && #session.vts.list2.size()>0">
 	<div style="height:16px; padding-top:2px; border:0px solid red;">
-	<span>符合查询条件农户数：<s:property value="#session.vts.map.farmernt"/>户</span>
+	<span>符合查询条件农户数：<s:property value="#session.vts.map.farmernt"/>户,</span>
+	<span>人口数：<s:property value="#session.vts.map.peoplent"/>人</span>
 		<span style="float:right; width:60px;">
 			<!-- 
 			<input type="button" value="导出" onclick="location.href='${pageContext.request.contextPath }/ybhFarmerAction_exportFarmerInfo.action'" class="button43"/>

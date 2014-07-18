@@ -52,7 +52,7 @@ public class YbhFarmerDaoImpl extends BaseDaoImpl implements YbhFarmerDao {
 			public Object doInConnection(Connection conn) throws SQLException,
 					DataAccessException {
 				String str = "";
-				CallableStatement cs = conn.prepareCall("{call ybh_query_family(?,?,?,?,?,?)}");
+				CallableStatement cs = conn.prepareCall("{call ybh_query_family(?,?,?,?,?,?,?)}");
 				cs.setString(1, ds.account);
 				cs.setString(2, ds.curBM);
 				String a[]=(String[]) ds.map.get("qarr");
@@ -90,6 +90,7 @@ public class YbhFarmerDaoImpl extends BaseDaoImpl implements YbhFarmerDao {
 				cs.setString(4, ybhFarmerForm.getXmlist());
 				cs.setInt(5, 200);
 				cs.registerOutParameter(6, Types.INTEGER);
+				cs.registerOutParameter(7, Types.INTEGER);
 				cs.execute();
 				ResultSet rs = cs.getResultSet();
 				ds.initData();
@@ -104,6 +105,7 @@ public class YbhFarmerDaoImpl extends BaseDaoImpl implements YbhFarmerDao {
 				}
 				//取出参(农户总数)
 				ds.map.put("farmernt", cs.getObject(6));
+				ds.map.put("peoplent", cs.getObject(7));
 				return null;
 			}
 		});
