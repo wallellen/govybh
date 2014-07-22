@@ -5,12 +5,10 @@
 <head>
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/style/style.css" />
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/style/style-b.css" />
-	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/datePicker/skin/WdatePicker.css" />
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/jquery-1.5.1.min.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath }/datePicker/WdatePicker.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/splitpage.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/changeColor.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath }/script/farmem.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath }/script/farmem.js?v=2"></script>
 	<!-- fancybox插件开始 -->
 	<script type="text/javascript" src="${pageContext.request.contextPath }/fancybox/jquery.fancybox-1.3.1.pack.js"></script>
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/fancybox/fancybox.css" />

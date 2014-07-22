@@ -1,6 +1,5 @@
 //选择县
 function selectXian(){
-	//
 	var v_flag = false;
 	var c = document.getElementsByName("chkbox");
 	var xmlist = document.getElementById("xmlist");
