@@ -30,9 +30,9 @@
 		.Menubox ul{list-style:none;margin:0px 2px;padding:0;}
 		.Menubox ul li{float:left;background:#64B8E4;line-height:28px;display:block;cursor:pointer;text-align:center;color:#fff;font-weight:bold;border-top:1px solid #64B8E4;border-left:1px solid #64B8E4;border-right:1px solid #64B8E4; margin-right:2px;padding: 0 5px 0 5px;}
 		.Menubox ul li.hover{background:#fff;border-bottom:1px solid #fff;color:#147AB8;}
-		.Contentbox{clear:both;margin-top:0px;border-top:none;height:150px;padding-top:4px;}
+		.Contentbox{clear:both;margin-top:0px;border-top:none;height:142px;padding-top:4px;}
 		.Contentbox ul{list-style:none;margin:7px;padding:0;}
-		.Contentbox ul li{line-height:24px; width:58px; float:left; margin-right:5px;}	
+		.Contentbox ul li{line-height:24px; width:58px; float:left; margin-right:5px;}
 	</style>
 	
 	
@@ -41,8 +41,8 @@
 <div style="float:left; width:868px; height:668px;">
 	<h3 class="ybh_h3_title">人口查询</h3>
 	<form name="memberForm" action="${pageContext.request.contextPath }/ybhMemberAction_queryMember.action" method="post" onsubmit="return changeCurPage()">
-	<input type="hidden" id="xmlist" name="xmlist" value=""/>
-	<input type="hidden" id="xmname" name="xmname" value="[全省]"/>
+	<input type="hidden" id="xmlist" name="xmlist" value="<s:property value="xmlist"/>"/>
+	<input type="hidden" id="xmname" name="xmname" value="<s:property value="xmname"/>"/>
 	<fieldset style="border:1px solid #3B9FFF; margin:0; padding:0; width:99%;">
 	<legend>查询条件</legend>
 	<div style="height:60px; line-height:26px;">
@@ -161,7 +161,7 @@
 					<td><s:property value="#ls2.bla"/></td>
 					<td align="right"><s:property value="#ls2.tbfd"/>&nbsp;</td>
 					<td>
-						<a href="${pageContext.request.contextPath }/ybhManageAction_viewReportFamily.action?viewBM=<s:property value="#ls.hm"/>">查看</a>&nbsp;
+						<a href="${pageContext.request.contextPath }/ybhManageAction_viewReportFamily.action?viewBM=<s:property value="#ls2.hm"/>">查看</a>&nbsp;
 					</td>
 				</tr>
 				</s:iterator>
@@ -188,6 +188,7 @@
     <div id="data">
     <s:property value="#session.vts.html" escape="false"/>
     </div>
+    <div><input type="button"/></div>
 </div>
 <!-- fancybox end -->
 <script type="text/javascript">
@@ -200,7 +201,7 @@
 			//设置动画效果,可设置为elastic,fade,none
 			'transitionIn':'none',
 			'transitionOut':'none',
-			
+			'onStart':checkCHK
 		});				   
 	});
 </script>

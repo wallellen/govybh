@@ -28,5 +28,8 @@ public class YbcManageServiceImpl implements YbcManageService{
 	public void getYbhYearInfo(DotSession ds) {
 		ybcManageDao.getYbhYearInfo(ds);
 	}
+	public void getYbcYearInfo(DotSession ds) {
+		ybcManageDao.getYbcYearInfo(ds);
+	}
 
 }

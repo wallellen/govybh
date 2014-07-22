@@ -10,4 +10,5 @@ public interface YbcManageDao extends BaseDao{
 	void getSelectedCunList(DotSession ds);
 	Map queryCunYbhInfoWithYear(DotSession ds, YbcManageForm ybcManageForm);
 	void getYbhYearInfo(DotSession ds);
+	void getYbcYearInfo(DotSession ds);
 }

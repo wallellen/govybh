@@ -53,8 +53,8 @@
 <div style="float:right; width:868px; height:668px;">
 	<h3 class="ybh_h3_title">农户查询</h3>
 	<form name="farmerForm" action="${pageContext.request.contextPath }/ybhFarmerAction_queryFarmer.action" method="post" onsubmit="return changeCurPage()">
-	<input type="hidden" id="xmlist" name="xmlist" value=""/>
-	<input type="hidden" id="xmname" name="xmname" value="[全省]"/>
+	<input type="hidden" id="xmlist" name="xmlist" value="<s:property value="xmlist"/>"/>
+	<input type="hidden" id="xmname" name="xmname" value="<s:property value="xmname"/>"/>
 	<fieldset style="border:1px solid #3B9FFF; margin:0; padding:0; width:99%;">
 	<legend>查询条件</legend>
 	<div style="height:60px; line-height:26px;">
@@ -166,10 +166,10 @@
 					<td align="left">&nbsp;<s:property value="#ls2.hname"/></td>
 					<td align="center">
 						<s:if test="#session.vts.rbm.length()==6">
-						<a href="${pageContext.request.contextPath }/ybhManageAction_detail.action?viewBM=<s:property value="#ls.hm"/>&rtf=home">编辑</a>&nbsp;
+						<a href="${pageContext.request.contextPath }/ybhManageAction_detail.action?viewBM=<s:property value="#ls2.hm"/>&rtf=home">编辑</a>&nbsp;
 						</s:if>
-						<a href="${pageContext.request.contextPath }/ybhManageAction_viewReportFamily.action?viewBM=<s:property value="#ls.hm"/>">查看</a>&nbsp;
-			 			<a id="printBt" href="${pageContext.request.contextPath }/ybhManageAction_printFamily.action?viewBM=<s:property value="#ls.hm"/>" target="printFrame">打印</a>
+						<a href="${pageContext.request.contextPath }/ybhManageAction_viewReportFamily.action?viewBM=<s:property value="#ls2.hm"/>">查看</a>&nbsp;
+			 			<a id="printBt" href="${pageContext.request.contextPath }/ybhManageAction_printFamily.action?viewBM=<s:property value="#ls2.hm"/>" target="printFrame">打印</a>
 					</td>
 				</tr>
 				</s:iterator>
@@ -195,13 +195,13 @@
    	$(document).ready(function() {
 		$("#various1").fancybox({
 			//是否显示标题 
-			'titleShow':'false',
+			'titleShow':'true',
 			//设置标题显示的位置,可设置为outside,inside,over
 			'titlePosition':'outside',
 			//设置动画效果,可设置为elastic,fade,none
 			'transitionIn':'none',
 			'transitionOut':'none',
-			
+			'onStart':checkCHK
 		});				   
 	});
 </script>

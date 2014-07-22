@@ -57,6 +57,9 @@ public class YbhManageAction extends BaseAction implements ModelDriven<YbhManage
 	public String viewYbh(){
 		DotSession ds = DotSession.getVTSession(request);
 		ds.curBM = ybhManageForm.getViewBM();
+		ds.bmhm = ybhManageForm.getViewBM();
+		String sListStr = ybhManageService.findNavListStr(ds);
+		ds.subPathTitle.setFullPath(sListStr);
 		ds.map.put("name",ybhManageForm.getOname());
 		return home();
 	}
@@ -169,6 +172,7 @@ public class YbhManageAction extends BaseAction implements ModelDriven<YbhManage
 		log.info("homeDirect-> bmhm:"+ds.bmhm);
 		String sListStr = ybhManageService.findNavListStr(ds);
 		ds.subPathTitle.setFullPath(sListStr);
+		ds.subPathTitle.setYbhflag("manage");
 		ds.navPath=ds.subPathTitle.getHtmlString();
 		return "view_ybhFamily";
 	}

@@ -23,15 +23,25 @@ public class YbcManageAction extends BaseAction implements
 
 	@Resource(name = YbcManageService.SERVICE_NAME)
 	private YbcManageService ybcManageService;
+	
 	private YbcManageForm ybcManageForm = new YbcManageForm();
 
 	public YbcManageForm getModel() {
 		return ybcManageForm;
 	}
 
+	/** 年数据录入首页 */
+	public String home(){
+		DotSession ds = DotSession.getVTSession(request);
+		ybcManageService.getYbcYearInfo(ds);
+		log.info("加载年数据录入年列表页面... ");
+		return "show_ybc_year";
+	}
+	
+	
 	String splitName[] = { "", "", "苏北5市", "苏北22个县", "矛山革命老区", "黄桥老区", "苏中" };
 
-	public String home() {
+	public String viewYang() {
 		Map map;
 		String html = null;
 		String h_content;
@@ -44,6 +54,7 @@ public class YbcManageAction extends BaseAction implements
 		int r2 = 0;
 		int rtpn = 0;// Tab count
 		DotSession ds = DotSession.getVTSession(request);
+		ds.map.put("ybhyear", ybcManageForm.getYear());
 		ybcManageService.getSelectedCunList(ds);
 		//省
 		if(ds.rbm.length()==2)
@@ -193,6 +204,7 @@ public class YbcManageAction extends BaseAction implements
 				h_content += "<td>" + map.get("hn").toString() + "</td>";
 				h_content += "<td>" +
 						"<a href='ybhManageAction_viewYbcToYbh.action?viewBM="+map.get("bm")+"&oname="+map.get("oname")+"&rtybc=ybc'>查看样本户</a>" +
+						"&nbsp;&nbsp;<a href='yearDataAction_updateCun.action?cunbm="+map.get("bm")+"&oname="+map.get("oname")+"&year="+ds.map.get("ybhyear")+"'>村指标录入</a>" +
 						"</td>";
 				h_content += "</tr>";
 			}

@@ -1,11 +1,9 @@
 //选择县
-
 function selectXian(){
 	//
-	var xmlist = document.getElementById("xmlist");
-	
-	var c = document.getElementsByName("chkbox");
 	var v_flag = false;
+	var c = document.getElementsByName("chkbox");
+	var xmlist = document.getElementById("xmlist");
 	selxian.innerHTML='';
 	var batchItemCode = ''; 
 	var batchProductName = '';
@@ -38,5 +36,25 @@ function disSelectXian()
 	selxian.innerHTML="[全省]";
 	$("#xmname").val("[全省]");
 	xmlist.value=null;
+}
+
+//查询之后回显已选中查询参数
+function checkCHK()
+{
+	var c = document.getElementsByName("chkbox");
+	var xmlist = document.getElementById("xmlist");
+	var xmValue = xmlist.value;
+	xmValue=xmValue.split(",");
+	if(xmValue.length>0)
+	{
+		for(var i=0; i<xmValue.length; i++)
+		{
+			for(var j=0; j<c.length; j++){ 
+				if(c[j].id == xmValue[i]){
+					c[j].checked=true;  
+				}
+			}
+		}
+	}
 }
 

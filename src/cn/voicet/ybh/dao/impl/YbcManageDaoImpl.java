@@ -21,6 +21,30 @@ import cn.voicet.ybh.web.form.YbcManageForm;
 @SuppressWarnings({"unchecked","static-access"})
 public class YbcManageDaoImpl extends BaseDaoImpl implements YbcManageDao {
 
+	public void getYbcYearInfo(final DotSession ds) {
+		this.getJdbcTemplate().execute(new ConnectionCallback() {
+			public Object doInConnection(Connection conn) throws SQLException,
+					DataAccessException {
+				CallableStatement cs = conn.prepareCall("{call sp_report_list(?,?)}");
+				cs.setString(1, "ybh_year_items");
+				cs.setInt(2, 0);
+				cs.execute();
+				ResultSet rs = cs.getResultSet();
+				ds.initData();
+				ds.list = new ArrayList();	
+				Map map;
+				if(rs!=null){
+					while (rs.next()) {
+						map = new HashMap();
+						ds.putMapDataByColName(map, rs);
+		        		ds.list.add(map);
+					}
+				}
+				return null;
+			}
+		});
+	}
+	
 	public void getSelectedCunList(final DotSession ds) {
 		this.getJdbcTemplate().execute(new ConnectionCallback() {
 			public Object doInConnection(Connection conn) throws SQLException,
@@ -105,4 +129,5 @@ public class YbcManageDaoImpl extends BaseDaoImpl implements YbcManageDao {
 		});
 		return map;
 	}
+
 }
