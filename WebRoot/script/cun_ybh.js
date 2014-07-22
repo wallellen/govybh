@@ -24,7 +24,7 @@ function checkHnt(obj){
 	else
 	{
 		showBanfErrTip(142,"总农户数大于等于零");
-		obj.focus();
+		//obj.focus();
 		return false;
 	}
 	
@@ -42,7 +42,7 @@ function checkRnt(obj)
 	else
 	{
 		showBanfErrTip(142,"总人口数大于等于零");
-		obj.focus();
+		//obj.focus();
 		return false;
 	}
 }
@@ -59,7 +59,7 @@ function checkLnt(obj)
 	else
 	{
 		showBanfErrTip(142,"总劳动力数大于等于零");
-		obj.focus();
+		//obj.focus();
 		return false;
 	}
 }
@@ -77,7 +77,7 @@ function checkFt(obj)
 	else
 	{
 		showBanfErrTip(142,"承包耕地总面积大于等于零，最多可以输入一位小数！");
-		obj.focus();
+		//obj.focus();
 		return false;
 	}
 }
@@ -95,7 +95,7 @@ function checkInpersonal(obj)
 	else
 	{
 		showBanfErrTip(142,"村农民人均纯收入大于等于零，最多可以输入一位小数！");
-		obj.focus();
+		//obj.focus();
 		return false;
 	}
 }
@@ -113,7 +113,7 @@ function checkInjy(obj)
 	else
 	{
 		showBanfErrTip(142,"村集体经营性收入大于等于零，最多可以输入一位小数！");
-		obj.focus();
+		//obj.focus();
 		return false;
 	}
 }
@@ -130,7 +130,7 @@ function checkFze(obj)
 	else
 	{
 		showBanfErrTip(142,"村集体负债总额大于等于零，最多可以输入一位小数！");
-		obj.focus();
+		//obj.focus();
 		return false;
 	}
 }
@@ -150,7 +150,7 @@ function checkHnl(obj)
 	else
 	{
 		showBanfErrTip(520,"总户数大于等于零");
-		obj.focus();
+		//obj.focus();
 		return false;
 	}
 }
@@ -167,7 +167,7 @@ function checkRnl(obj)
 	else
 	{
 		showBanfErrTip(520,"总人口大于等于零");
-		obj.focus();
+		//obj.focus();
 		return false;
 	}
 }
@@ -184,7 +184,7 @@ function checkLnl(obj)
 	else
 	{
 		showBanfErrTip(520,"总劳动力大于等于零");
-		obj.focus();
+		//obj.focus();
 		return false;
 	}
 }
@@ -201,7 +201,7 @@ function checkFl(obj)
 	else
 	{
 		showBanfErrTip(520,"承包耕地总面积大于等于零，最多可以输入一位小数！");
-		obj.focus();
+		//obj.focus();
 		return false;
 	}
 }
@@ -238,7 +238,7 @@ function checkFpv1(obj)
 	else
 	{
 		showBanfErrTip2(450,"省级扶贫资金大于等于零，最多可以输入一位小数！");
-		obj.focus();
+		//obj.focus();
 		return false;
 	}
 }
@@ -255,7 +255,7 @@ function checkFpv2(obj)
 	else
 	{
 		showBanfErrTip2(450,"市、县级扶贫资金大于等于零，最多可以输入一位小数！");
-		obj.focus();
+		//obj.focus();
 		return false;
 	}
 }
@@ -288,7 +288,7 @@ function checkHndt(obj){
 	else
 	{
 		showBanfErrTip3(142,"全村使用贷款农户总数大于等于零");
-		obj.focus();
+		//obj.focus();
 		return false;
 	}
 }
@@ -304,7 +304,7 @@ function checkNhdl(obj){
 	else
 	{
 		showBanfErrTip3(142,"建档立卡农户数大于等于零");
-		obj.focus();
+		//obj.focus();
 		return false;
 	}
 }
@@ -322,7 +322,7 @@ function checkVdt(obj)
 	else
 	{
 		showBanfErrTip3(142,"全村农户使用贷款总量为大于等于零，最多可以输入一位小数！");
-		obj.focus();
+		//obj.focus();
 		return false;
 	}
 }
@@ -348,7 +348,7 @@ function checkVdtl(obj)
 	else
 	{
 		showBanfErrTip3(142,"建档立卡低收入农户大于等于零，最多可以输入一位小数！");
-		obj.focus();
+		//obj.focus();
 		return false;
 	}
 }
@@ -365,7 +365,7 @@ function checkVdpt(obj)
 	else
 	{
 		showBanfErrTip3(142,"全村户均贷款额度大于等于零，最多可以输入一位小数！");
-		obj.focus();
+		//obj.focus();
 		return false;
 	}
 }
@@ -383,7 +383,7 @@ function checkB1(obj){
 	else
 	{
 		showBanfErrTip3(450,"参加新农合大于等于零");
-		obj.focus();
+		//obj.focus();
 		return false;
 	}
 }
@@ -399,7 +399,7 @@ function checkB2(obj){
 	else
 	{
 		showBanfErrTip3(450,"参加新农保大于等于零");
-		obj.focus();
+		//obj.focus();
 		return false;
 	}
 }
@@ -415,7 +415,7 @@ function checkB3(obj){
 	else
 	{
 		showBanfErrTip3(450,"参加大病医疗救助大于等于零");
-		obj.focus();
+		//obj.focus();
 		return false;
 	}
 }
@@ -431,7 +431,7 @@ function checkB4(obj){
 	else
 	{
 		showBanfErrTip3(450,"参加或享受其它保障大于等于零");
-		obj.focus();
+		//obj.focus();
 		return false;
 	}
 }
@@ -447,7 +447,7 @@ function checkNb(obj){
 	else
 	{
 		showBanfErrTip3(450,"未参加或享受任何保障大于等于零");
-		obj.focus();
+		//obj.focus();
 		return false;
 	}
 }

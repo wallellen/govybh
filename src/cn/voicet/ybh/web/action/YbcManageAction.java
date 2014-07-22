@@ -31,7 +31,7 @@ public class YbcManageAction extends BaseAction implements
 	}
 
 	/** 年数据录入首页 */
-	public String home(){
+	public String viewYear(){
 		DotSession ds = DotSession.getVTSession(request);
 		ybcManageService.getYbcYearInfo(ds);
 		log.info("加载年数据录入年列表页面... ");
@@ -41,7 +41,7 @@ public class YbcManageAction extends BaseAction implements
 	
 	String splitName[] = { "", "", "苏北5市", "苏北22个县", "矛山革命老区", "黄桥老区", "苏中" };
 
-	public String viewYang() {
+	public String home() {
 		Map map;
 		String html = null;
 		String h_content;
@@ -125,7 +125,7 @@ public class YbcManageAction extends BaseAction implements
 					h_content += "<td>" + map.get("hn").toString() + "</td>";
 					h_content += "<td>" +
 							"<a href='ybhManageAction_viewYbh.action?viewBM="+map.get("bm")+"&oname="+map.get("oname")+"&rtybc=ybc'>查看样本户</a>" +
-							"&nbsp;&nbsp;<a href='ybcManageAction_viewCunzb.action?cunbm="+map.get("bm")+"&oname="+sXXCName[2]+"'>进入村指标</a>" +
+							"&nbsp;&nbsp;<a href='ybcManageAction_viewYear.action?cunbm="+map.get("bm")+"&oname="+sXXCName[2]+"'>查看</a>" +
 							"</td>";
 					h_content += "</tr>";
 				}
@@ -177,7 +177,7 @@ public class YbcManageAction extends BaseAction implements
 					h_content += "<td>" + map.get("hn").toString() + "</td>";
 					h_content += "<td>" +
 							"<a href='ybhManageAction_viewYbh.action?viewBM="+map.get("bm")+"&oname="+map.get("oname")+"&rtybc=ybc'>查看样本户</a>" +
-							"&nbsp;&nbsp;<a href='ybcManageAction_viewCunzb.action?cunbm="+map.get("bm")+"&oname="+sXXCName[2]+"'>进入村指标</a>" +
+							"&nbsp;&nbsp;<a href='ybcManageAction_viewYear.action?cunbm="+map.get("bm")+"&oname="+sXXCName[2]+"'>查看</a>" +
 							"</td>";
 					h_content += "</tr>";
 				}
@@ -204,7 +204,7 @@ public class YbcManageAction extends BaseAction implements
 				h_content += "<td>" + map.get("hn").toString() + "</td>";
 				h_content += "<td>" +
 						"<a href='ybhManageAction_viewYbcToYbh.action?viewBM="+map.get("bm")+"&oname="+map.get("oname")+"&rtybc=ybc'>查看样本户</a>" +
-						"&nbsp;&nbsp;<a href='yearDataAction_updateCun.action?cunbm="+map.get("bm")+"&oname="+map.get("oname")+"&year="+ds.map.get("ybhyear")+"'>村指标录入</a>" +
+						"&nbsp;&nbsp;<a href='ybcManageAction_viewYear.action?cunbm="+map.get("bm")+"&oname="+map.get("oname")+"&year="+ds.map.get("ybhyear")+"'>查看</a>" +
 						"</td>";
 				h_content += "</tr>";
 			}
@@ -219,17 +219,12 @@ public class YbcManageAction extends BaseAction implements
 	public String viewCunzb(){
 		DotSession ds = DotSession.getVTSession(request);
 		ybcManageService.getYbhYearInfo(ds);
-		return "show_ybc_zhibiao";
-	}
-	
-	public String queryCunzb(){
-		DotSession ds = DotSession.getVTSession(request);
 		log.info("queryCunzb year:"+ybcManageForm.getYear());
 		cunMap = ybcManageService.queryCunYbhInfoWithYear(ds, ybcManageForm);
 		request.setAttribute("cunMap", cunMap);
 		rflag=rflag+1;
 		log.info("cunMap data:"+cunMap);
-		return viewCunzb();
+		return "show_ybc_zhibiao";
 	}
 	
 	private Map cunMap;

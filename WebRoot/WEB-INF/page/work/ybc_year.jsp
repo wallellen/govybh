@@ -9,7 +9,8 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/changeColor.js"></script>
 </head>
 <body style="background:#E0EEFB;">
-<h3 class="ybh_h3_title">样本村管理&nbsp;[<s:property value="#session.vts.rbn"/>]</h3>
+<h3 class="ybh_h3_title"><s:property value="oname"/>&nbsp;村指标</h3>
+<div class="ybc-return"><input type="button" value="返回" class="button43" onclick="history.go(-1)"/></div>
 <div id="jiangbu-data1">
 <table class="data_list" cellpadding="0" cellspacing="0" width="100%">
    	<thead>
@@ -29,7 +30,12 @@
         <td><s:property value="#ls.fdt"/></td>
         <td><s:property value="#ls.tdt"/></td>
         <td>
-        	<a href="${pageContext.request.contextPath }/ybcManageAction_viewYang.action?year=<s:property value='#ls.rid'/>">查看</a>
+        	<s:if test="#session.vts.rbm.length()==6">
+        	<a href="${pageContext.request.contextPath }/yearDataAction_updateCun.action?year=<s:property value='#ls.rid'/>&cunbm=<s:property value='cunbm'/>&oname=<s:property value='oname'/>">编辑</a>
+        	</s:if>
+        	<s:else>
+        	<a href="${pageContext.request.contextPath }/ybcManageAction_viewCunzb.action?year=<s:property value='#ls.rid'/>&cunbm=<s:property value='cunbm'/>&oname=<s:property value='oname'/>">查看</a>
+        	</s:else>
         </td>
     </tr>
     </s:iterator>

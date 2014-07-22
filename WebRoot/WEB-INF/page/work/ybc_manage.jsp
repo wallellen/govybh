@@ -36,7 +36,7 @@
 	</script>
 </head>
 <body style="background:#E0EEFB;">
-<h3 class="ybh_h3_title"><s:property value="#session.vts.map.ybhyear"/>年样本村管理</h3>
+<h3 class="ybh_h3_title">样本村管理</h3>
 <s:property value="#request.h" escape="false"/>
 </body>
 </html>

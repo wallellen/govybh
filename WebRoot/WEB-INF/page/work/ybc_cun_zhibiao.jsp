@@ -8,26 +8,8 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/cun_ybh.js"></script>
 </head>
 <body style="background:#E0EEFB;">
-<h2 class="ybh_h3_title"><s:property value="oname"/></h2>
-<div class="ybc-return"><input type="button" value="返回" class="button43" onclick="history.go(-<s:property value='rflag'/>)"/></div>
-<div style="height:28px; line-height:28px; border:1px solid #3B9FFF;">
-<form name="form1" action="${pageContext.request.contextPath }/ybcManageAction_queryCunzb.action" method="post">
-<input type="hidden" name="oname" value="<s:property value="oname"/>"/>
-<table cellpadding="0" cellspacing="0" width="100%">
-	<tr>
-		<td align="right" width="10%">选择年：</td>
-		<td align="left" width="10%">
-			<s:select name="year" list="#session.vts.list" value="%{year}"></s:select>
-		</td>
-		<td width="20%">
-			<input id="searchImg" type="submit" value="立即查询" class="button4"/>
-		</td>
-		<td></td>
-	</tr>
-</table>
-</form>
-</div>
-
+<h3 class="ybh_h3_title"><s:property value="oname"/>&nbsp;村指标</h3>
+<div class="ybc-return"><input type="button" value="返回" class="button43" onclick="history.go(-1)"/></div>
 <div class="cunwrap">
 	<table cellpadding="0" cellspacing="0" width="100%">
     	<tr>

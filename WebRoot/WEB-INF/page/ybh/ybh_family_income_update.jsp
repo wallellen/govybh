@@ -5,7 +5,7 @@
 <head>
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/style/style.css" />
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/jquery-1.5.1.min.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath }/script/ybh_income.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath }/script/ybh_income.js?v=1"></script>
 </head>
 <body style="background:#E0EEFB;">
 <h3 class="ybh_h3_title"><s:property value="#session.vts.map.ybhyear"/>年&nbsp;[<s:property value="#session.vts.curHM"/>&nbsp;<s:property value="hname"/>]样本户基础监测更新</h3>

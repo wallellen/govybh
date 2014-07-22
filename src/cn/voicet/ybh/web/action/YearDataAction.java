@@ -76,6 +76,7 @@ public class YearDataAction extends BaseAction implements ModelDriven<YearDataFo
 	public String updateCun(){
 		DotSession ds = DotSession.getVTSession(request);
 		cunMap = yearDataService.queryCunYbhInfoWithYear(ds, yearDataForm);
+		ds.map.put("ybhyear", yearDataForm.getYear());
 		request.setAttribute("cunMap", cunMap);
 		log.info("cunMap data:"+cunMap);
 		return "show_ybh_cunupdate";

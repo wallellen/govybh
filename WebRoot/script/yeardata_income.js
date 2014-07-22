@@ -25,7 +25,7 @@ function checkInjy(obj)
 	else
 	{
 		showBanfErrTip1(142,"家庭经营性收入大于等于零，最多可以输入一位小数！");
-		obj.focus();
+		//obj.focus();
 		return false;
 	}
 }
@@ -43,7 +43,7 @@ function checkInwork(obj)
 	else
 	{
 		showBanfErrTip1(142,"工资性收入大于等于零，最多可以输入一位小数！");
-		obj.focus();
+		//obj.focus();
 		return false;
 	}
 }
@@ -61,7 +61,7 @@ function checkIncz(obj)
 	else
 	{
 		showBanfErrTip1(142,"财产性及转移性收入大于等于零，最多可以输入一位小数！");
-		obj.focus();
+		//obj.focus();
 		return false;
 	}
 }
@@ -95,7 +95,7 @@ function checkVv1(obj)
 	else
 	{
 		showBanfErrTip1(520,"省级扶贫资金大于等于零，最多可以输入一位小数！");
-		obj.focus();
+		//obj.focus();
 		return false;
 	}
 }
@@ -113,7 +113,7 @@ function checkVv2(obj)
 	else
 	{
 		showBanfErrTip1(520,"市、县级扶贫资金大于等于零，最多可以输入一位小数！");
-		obj.focus();
+		//obj.focus();
 		return false;
 	}
 }
@@ -154,7 +154,7 @@ function checkXe(obj)
 	else
 	{
 		showBanfErrTip2(520,"使用小额扶贫贷款数量大于等于零，最多可以输入一位小数！");
-		obj.focus();
+		//obj.focus();
 		return false;
 	}
 }

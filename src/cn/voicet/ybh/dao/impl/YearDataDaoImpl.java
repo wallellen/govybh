@@ -163,42 +163,6 @@ public class YearDataDaoImpl extends BaseDaoImpl implements YearDataDao {
 						{"","o"}
 					};
 				VTJime.prepareParamFromInputArray(cs, yearDataForm.getCuntxt(), ix);
-				//村基本情况
-				/*
-				cs.setString(3, yearDataForm.getCuntxt()[0]);
-				cs.setString(4,  yearDataForm.getCuntxt()[2]);
-				cs.setString(5,  yearDataForm.getCuntxt()[4]);
-				cs.setString(6, yearDataForm.getCuntxt()[6]);
-				cs.setFloat(7, Float.parseFloat(yearDataForm.getCuntxt()[8]));
-				cs.setFloat(8, Float.parseFloat(yearDataForm.getCuntxt()[9]));
-				cs.setFloat(9, Float.parseFloat(yearDataForm.getCuntxt()[10]));
-				//建档立卡低收入农户基本情况
-				cs.setString(10, yearDataForm.getCuntxt()[1]);
-				cs.setString(11, yearDataForm.getCuntxt()[3]);
-				cs.setString(12, yearDataForm.getCuntxt()[5]);
-				cs.setString(13, yearDataForm.getCuntxt()[7]);
-				//扶贫项目落实情况
-				//cs.setInt(14, yearDataForm.getFps());
-				cs.setString(14, yearDataForm.getCuntxt()[11]);
-				cs.setString(15, yearDataForm.getCuntxt()[13]);
-				cs.setString(16, yearDataForm.getCuntxt()[15]);
-				//扶贫资金落实情况
-				//cs.setString(18, yearDataForm.getFpv());
-				cs.setFloat(17, Float.parseFloat(yearDataForm.getCuntxt()[12]));
-				cs.setFloat(18, Float.parseFloat(yearDataForm.getCuntxt()[14]));
-				//扶贫小额贷款使用情况
-				cs.setString(19, yearDataForm.getCuntxt()[16]);
-				cs.setString(20, yearDataForm.getCuntxt()[18]);
-				cs.setFloat(21, Float.parseFloat(yearDataForm.getCuntxt()[20]));
-				cs.setFloat(22, Float.parseFloat(yearDataForm.getCuntxt()[22]));
-				cs.setFloat(23, Float.parseFloat(yearDataForm.getCuntxt()[24]));
-				//建档立卡低收入农户参加主要社会保障情况
-				cs.setString(24, yearDataForm.getCuntxt()[17]);
-				cs.setString(25, yearDataForm.getCuntxt()[19]);
-				cs.setString(26, yearDataForm.getCuntxt()[21]);
-				cs.setString(27, yearDataForm.getCuntxt()[23]);
-				cs.setString(28, yearDataForm.getCuntxt()[25]);
-				*/
 				cs.execute();
 				return null;
 			}

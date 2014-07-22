@@ -190,13 +190,13 @@ function checkName(obj){
 	if(duname=="")
 	{
 		showErrTip(-10,"姓名必须输入");
-		obj.focus(); 
+		//obj.focus(); 
 		return false;
 	}
 	else if(!m.test(duname) || duname.length<2)
 	{
 		showErrTip(-10,"姓名不可以少于2个字");
-		obj.focus(); 
+		//obj.focus(); 
 		return false;
 	}
 	else{
@@ -209,18 +209,18 @@ function checkAge(obj){
 	var dage = obj.value;
 	if(dage==""){
 		showErrTip(52,"出生年份不能为空");
-		obj.focus(); 
+		//obj.focus(); 
 		return false;
 	}
 	else if(isNaN(dage))
 	{
 		showErrTip(52,"出生年份只能是数字格式");
-		obj.focus(); 
+		//obj.focus(); 
 		return false;
 	}
 	else if(dage<1900 || dage>2020){
 		showErrTip(52,"出生年份范围1900-2020");
-		obj.focus(); 
+		//obj.focus(); 
 		return false;
 	}else{
 		hideErrTip();
@@ -240,7 +240,7 @@ function checkDcno(obj)
 	else
 	{
 		showErrTip(172,"残疾证号可以为空或20位字母与数字的组合");
-		obj.focus(); 
+		//obj.focus(); 
 		return false;
 	}
 }
@@ -256,14 +256,14 @@ function checkDibao(obj){
 	else
 	{
 		showErrTip(295,"低保金只能是大于0的数字");
-		obj.focus(); 
+		//obj.focus(); 
 		return false;
 	}
 	var blaRadio = document.getElementsByName("bla");
 	if(blaRadio[0].checked){
 		if(tb.length==0 || tb==0 || !tb.match(/^[0-9]+$/)){
 			showErrTip(295,"低保金只能是大于0的数字");
-			obj.focus(); 
+			//obj.focus(); 
 			return false;
 		}
 		else
@@ -297,19 +297,19 @@ function checkHuName(obj){
 	if(duname=="")
 	{
 		showFamilyErrTip(50,"姓名必须输入");
-		obj.focus(); 
+		//obj.focus(); 
 		return false;
 	}
 	else if(!m.test(duname))
 	{
 		showFamilyErrTip(50,"姓名只能是汉字,且不能有空格");
-		obj.focus(); 
+		//obj.focus(); 
 		return false;
 	}
 	else if(duname.length<2)
 	{
 		showFamilyErrTip(50,"姓名不能少于2个汉字");
-		obj.focus(); 
+		//obj.focus(); 
 		return false;
 	}
 	else{
@@ -327,7 +327,7 @@ function checkIDCard(obj)
 	if(num.length>0 && !reg.test(num))   
     {
 		showFamilyErrTip(50,"输入的身份证号长度不对，或者号码不符合规定！\n15位号码应全为数字，18位号码末位可以为数字或X。");
-        obj.focus(); 
+        //obj.focus(); 
         return false;
     } 
 	else
@@ -349,7 +349,7 @@ function checkTelphone(obj)
 	else
 	{
 		showFamilyErrTip(50,"请输入合法的电话号码");
-		obj.focus(); 
+		//obj.focus(); 
         return false;
 	}
 }
@@ -363,7 +363,7 @@ function checkHouse(obj){
 	if(isNaN(house))
 	{        
 		showFamilyErrTip(50,"非法数字");
-		obj.focus();
+		//obj.focus();
 		return false;
     }
 	else if(house<10 || house>300)
@@ -385,7 +385,7 @@ function checkBanfPerson(obj){
 	if(banf.length>0 && (!m.test(banf) || banf.length<2))
 	{
 		showFamilyErrTip(50,"挂钩帮扶人只能是汉字，且不能少于2个字符");
-		obj.focus(); 
+		//obj.focus(); 
 		return false;
 	}
 	else
@@ -401,7 +401,7 @@ function checkBanfWork(obj){
 	if(banfw.length>0 && (!m.test(banfw) || banfw.length<2))
 	{
 		showFamilyErrTip(50,"单位职务只能是汉字，且不能少于2个字符");
-		objfocus(); 
+		//objfocus(); 
 		return false;
 	}
 	else
@@ -423,7 +423,7 @@ function checkBanfTelphone(obj)
 	else
 	{
 		showFamilyErrTip(50,"请输入合法的电话号码");
-		obj.focus(); 
+		//obj.focus(); 
         return false;
 	}
 }

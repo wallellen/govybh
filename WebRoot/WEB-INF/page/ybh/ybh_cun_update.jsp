@@ -161,7 +161,7 @@
         </tr>
         <tr>
         	<td align="right">全村户均贷款额度(万元):&nbsp;</td>
-			<td align="left"><input type="text" id="cunId22" name="cuntxt" value="<s:property value='#request.cunMap.vdpt'/>" maxlength="10" onblur="checkVdpt(this)" tabindex="55" disabled="disabled"/></td>
+			<td align="left"><input type="text" id="cunId22" name="cuntxt" value="<s:property value='#request.cunMap.vdpt'/>" maxlength="10" onblur="checkVdpt(this)" tabindex="55" readonly="readonly"/></td>
             <td align="right">未参加或享受任何保障(户):&nbsp;</td>
 			<td align="left"><input type="text" id="cunId23" name="cuntxt" value="<s:property value='#request.cunMap.nb'/>" maxlength="10" onblur="checkNb(this)" tabindex="65"/></td>
         </tr>

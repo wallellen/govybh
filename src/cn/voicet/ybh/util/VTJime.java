@@ -55,6 +55,7 @@ public class VTJime {
 	 */
 	public static void prepareParamFromInputArray(CallableStatement cs, String sr[],String ix[][]) throws NumberFormatException, SQLException
 	{
+		log.info("ix length:"+ix.length);
 		for(int i=0;i<ix.length;i++)
 		{
 			if(ix[i][1].equalsIgnoreCase("s"))
