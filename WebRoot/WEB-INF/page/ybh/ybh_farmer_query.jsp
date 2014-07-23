@@ -8,7 +8,7 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/jquery-1.5.1.min.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/splitpage.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/changeColor.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath }/script/farmem.js?v=2"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath }/script/farmem.js?v=3"></script>
 	<!-- fancybox插件开始 -->
 	<script type="text/javascript" src="${pageContext.request.contextPath }/fancybox/jquery.fancybox-1.3.1.pack.js"></script>
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/fancybox/fancybox.css" />
@@ -51,8 +51,8 @@
 <div style="float:right; width:868px; height:668px;">
 	<h3 class="ybh_h3_title">农户查询</h3>
 	<form name="farmerForm" action="${pageContext.request.contextPath }/ybhFarmerAction_queryFarmer.action" method="post" onsubmit="return changeCurPage()">
-	<input type="hidden" id="xmlist" name="xmlist" value="<s:property value="xmlist"/>"/>
-	<input type="hidden" id="xmname" name="xmname" value="<s:property value="xmname"/>"/>
+	<input type="hidden" id="xmlist" name="xmlist" value="<s:property value="#session.vts.map.xmCodeList"/>"/>
+	<input type="hidden" id="xmname" name="xmname" value="<s:property value="#session.vts.map.xmNameList"/>"/>
 	<fieldset style="border:1px solid #3B9FFF; margin:0; padding:0; width:99%;">
 	<legend>查询条件</legend>
 	<div style="height:60px; line-height:26px;">
@@ -62,7 +62,7 @@
 					<a id="various1" href="#data" kesrc="#data" title="选择县" class="sel_title">选择县&nbsp;</a>
 				</td>
 				<td colspan="4" class="td_bottom_line">
-				&nbsp;<label id="selxian"><s:property value="xmname"/></label>
+				&nbsp;<label id="selxian"><s:property value="#session.vts.map.xmNameList" escape="false"/></label>
 				</td>
 			</tr>
 		</table>

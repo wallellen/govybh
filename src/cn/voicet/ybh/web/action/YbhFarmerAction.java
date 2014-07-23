@@ -101,7 +101,9 @@ public class YbhFarmerAction extends BaseAction implements ModelDriven<YbhFarmer
 	public String queryFarmer()	{
 		DotSession ds = DotSession.getVTSession(request);
 		ds.map.put("qarr", ybhFarmerForm.getQstr());
-		log.info("xmlist:"+ybhFarmerForm.getXmlist());
+		log.info("xmCodeList:"+ybhFarmerForm.getXmlist()+", xmNameList:"+ybhFarmerForm.getXmname());
+		ds.map.put("xmCodeList", ybhFarmerForm.getXmlist());
+		ds.map.put("xmNameList", ybhFarmerForm.getXmname());
 		ybhFarmerService.getFarmerInfoList(ds, ybhFarmerForm);
 		return "show_farmer";
 	}

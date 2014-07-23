@@ -41,8 +41,8 @@
 <div style="float:left; width:868px; height:668px;">
 	<h3 class="ybh_h3_title">人口查询</h3>
 	<form name="memberForm" action="${pageContext.request.contextPath }/ybhMemberAction_queryMember.action" method="post" onsubmit="return changeCurPage()">
-	<input type="hidden" id="xmlist" name="xmlist" value="<s:property value="xmlist"/>"/>
-	<input type="hidden" id="xmname" name="xmname" value="<s:property value="xmname"/>"/>
+	<input type="hidden" id="xmlist" name="xmlist" value="<s:property value="#session.vts.map.xmCodeList"/>"/>
+	<input type="hidden" id="xmname" name="xmname" value="<s:property value="#session.vts.map.xmNameList"/>"/>
 	<fieldset style="border:1px solid #3B9FFF; margin:0; padding:0; width:99%;">
 	<legend>查询条件</legend>
 	<div style="height:60px; line-height:26px;">
@@ -51,7 +51,7 @@
 				<td width="10%" align="right" class="td_bottom_line">
 					<a id="various1" href="#data" kesrc="#data" title="选择县" class="sel_title">选择县&nbsp;</a>
 				</td>
-				<td colspan="7" class="td_bottom_line">&nbsp;<label id="selxian"><s:property value="xmname"/></label></td>
+				<td colspan="7" class="td_bottom_line">&nbsp;<label id="selxian"><s:property value="#session.vts.map.xmNameList" escape="false"/></label></td>
 			</tr>
 		</table>
 		<div style="height:2px;"></div>

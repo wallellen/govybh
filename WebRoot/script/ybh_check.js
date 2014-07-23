@@ -10,7 +10,7 @@ function gouXuan(obj,h)
 		o=0;
 	}
 	var datajson = {"hm":h, "opcode":o};
-	var url = 'ybhCheckAction_selectYbh.action';
+	var url = 'selectYbh.action';
 	$.ajax({
         type: "POST",
         url: url,

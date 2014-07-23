@@ -1,8 +1,8 @@
 //选择县
 function selectXian(){
-	var v_flag = false;
 	var c = document.getElementsByName("chkbox");
 	var xmlist = document.getElementById("xmlist");
+	var closeBt = "&nbsp;<label onclick='disSelectXian()' class='dis_sel_xian'></label>";
 	selxian.innerHTML='';
 	var batchItemCode = ''; 
 	var batchProductName = '';
@@ -13,10 +13,11 @@ function selectXian(){
 		}
 	}
 	$("#xmlist").val(batchItemCode);
-	$("#xmname").val("["+batchProductName+"]");
+	var xnameCloseBt = "<label class='sel_xian_list'>["+batchProductName+"]</label>"+closeBt;
+	$("#xmname").val(xnameCloseBt);
 	if(batchProductName.length>0)
 	{
-		selxian.innerHTML="<label class='sel_xian_list'>["+batchProductName+"]</label>"+"&nbsp;<label onclick='disSelectXian()' class='dis_sel_xian'></label>";
+		selxian.innerHTML="<label class='sel_xian_list'>["+batchProductName+"]</label>"+closeBt;
 	}
 	else
 	{

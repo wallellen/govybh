@@ -25,8 +25,8 @@
        	<tr class="tabtr1">
 			<td height="20px" width="20%">地区编码</td>
 			<td width="20%">地区名称</td>
-			<td width="15%">村数</td>
-			<td width="15%">户数</td>
+			<td width="15%">样本村数</td>
+			<td width="15%">样本户数</td>
 			<td width="30%" class="tabtd1">操作</td>
          </tr>
          </thead>
