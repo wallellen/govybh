@@ -431,7 +431,6 @@ function checkBanfTelphone(obj)
 //
 function checkPersonForm()
 {
-	document.personForm.action="ybhManageAction_saveFamily.action";
 	if(!checkHuName(document.all.hname)) return;
 	if(!checkIDCard(document.all.idcno)) return;
 	if(!checkTelphone(document.all.htel)) return;
@@ -439,9 +438,24 @@ function checkPersonForm()
 	if(!checkBanfPerson(document.all.frname)) return;
 	if(!checkBanfWork(document.all.frwork)) return;
 	if(!checkBanfTelphone(document.all.frtel)) return;
+	//
+	document.personForm.action="ybhManageAction_saveFamily.action";
 	document.personForm.submit();
 }
 
+//保存返回
+function saveReturnFamily(){
+	if(!checkHuName(document.all.hname)) return;
+	if(!checkIDCard(document.all.idcno)) return;
+	if(!checkTelphone(document.all.htel)) return;
+	if(!checkHouse(document.all.house)) return;
+	if(!checkBanfPerson(document.all.frname)) return;
+	if(!checkBanfWork(document.all.frwork)) return;
+	if(!checkBanfTelphone(document.all.frtel)) return;
+	//
+	document.personForm.action="ybhManageAction_saveFamilyEx.action";
+	document.personForm.submit();
+}
 
 
 
