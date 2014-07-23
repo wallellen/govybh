@@ -233,6 +233,7 @@ function checkFpv1(obj)
 	if(reg.test(item))
 	{
 		hideBanfErrTip2();
+		getFupinzj();
 		return true;
 	}
 	else
@@ -250,6 +251,7 @@ function checkFpv2(obj)
 	if(reg.test(item))
 	{
 		hideBanfErrTip2();
+		getFupinzj();
 		return true;
 	}
 	else
@@ -259,6 +261,13 @@ function checkFpv2(obj)
 		return false;
 	}
 }
+
+//计算针对经济薄弱村扶贫资金落实数
+function getFupinzj()
+{
+	fupinzj.innerHTML = parseFloat(cunId12.value)+parseFloat(cunId13.value);
+}
+
 /******* 扶贫资金落实情况 end ********/
 
 ////////////////////////////tip2分隔  ////////////////////////////////////

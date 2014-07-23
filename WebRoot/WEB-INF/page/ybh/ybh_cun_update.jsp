@@ -5,7 +5,7 @@
 <head>
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/style/style.css" />
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/jquery-1.5.1.min.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath }/script/cun_ybh.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath }/script/cun_ybh.js?v=3"></script>
 </head>
 <body style="background:#E0EEFB;">
 <h3 class="ybh_h3_title"><s:property value="#session.vts.map.ybhyear"/>年[<s:property value="oname"/>]指标录入</h3>
@@ -81,7 +81,7 @@
 				</s:else>
 			</td>
             <td width="28%" align="right">针对经济薄弱村扶贫资金落实数(万元):&nbsp;</td>
-			<td width="22%" align="left">&nbsp;<s:property value='#request.cunMap.fpv'/></td>
+			<td width="22%" align="left">&nbsp;<span id="fupinzj"><s:property value='#request.cunMap.fpv'/></span></td>
         </tr>
     	<tr>
         	<td align="right">(1)产业发展项目:&nbsp;</td>
