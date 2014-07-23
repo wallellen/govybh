@@ -16,10 +16,10 @@
 	.family-errtip{color:#F00; width:570px;}
 </style>
 <s:if test="%{#session.vts.map.hname!=''}">
-<h3 id="base-title" style="height:28px;">[<s:property value="#session.vts.curHM"/>&nbsp;<s:property value="#session.vts.map.hname"/>]家庭基本信息</h3>
+<h3 class="ybh_h3_title">[<s:property value="#session.vts.curHM"/>&nbsp;<s:property value="#session.vts.map.hname"/>]家庭基本信息</h3>
 </s:if>
 <s:else>
-<h3 id="base-title">家庭基本信息</h3>
+<h3 class="ybh_h3_title">家庭基本信息</h3>
 </s:else>
 <div id="familyErrTip" class="family-errtip"></div>
 <form name="personForm" action="" method="post">

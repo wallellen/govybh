@@ -37,7 +37,7 @@
 				<td width="8%">人口</td>
 				<td width="8%">劳力</td>
 				<td width="8%">耕地</td>
-				<td width="8%">住房(m<sup>2</sup>)</td>
+				<td width="8%">住房</td>
 				<td width="10%">农户属性</td>
 				<td width="10%">贫困原因</td>
 				<td width="12%" class="tabtd1">操作</td>

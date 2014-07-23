@@ -8,7 +8,7 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/cun_ybh.js"></script>
 </head>
 <body style="background:#E0EEFB;">
-<h3 class="ybh_h3_title"><s:property value="oname"/>&nbsp;村指标</h3>
+<h3 class="ybh_h3_title"><s:property value="year"/>年&nbsp;<s:property value="oname"/>&nbsp;村指标</h3>
 <div class="ybc-return"><input type="button" value="返回" class="button43" onclick="history.go(-1)"/></div>
 <div class="cunwrap">
 	<table cellpadding="0" cellspacing="0" width="100%">

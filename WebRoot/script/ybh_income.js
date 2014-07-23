@@ -71,7 +71,11 @@ function income_sum()
 	{
 		var v = parseFloat(incId1.value) + parseFloat(incId2.value) + parseFloat(incId3.value);
 		in_total.innerHTML=v.toFixed(1);
-		var rj = v/renkou.value;
+		var rks = renkou.value;
+		if(null==rks || rks==0){
+			rks=1;
+		}
+		var rj = v/rks;
 		rj_income.innerHTML=rj.toFixed(1);
 	}
 }
