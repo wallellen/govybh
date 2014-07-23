@@ -62,7 +62,9 @@ public class YbhCheckAction extends BaseAction implements ModelDriven<YbhCheckFo
 	
 	/** 样本户勾选 */
 	public String selectYbh(){
+		log.info("hm:"+ybhCheckForm.getHm()+", opcode:"+ybhCheckForm.getOpcode());
 		ybhCheckService.selectYbhWithOpcode(ybhCheckForm);
-		return home();
+		log.info("ybh select complete");
+		return null;
 	}
 }

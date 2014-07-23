@@ -7,7 +7,7 @@
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/style/style-b.css" />
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/jquery-1.5.1.min.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/splitpage.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath }/script/changeColor.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath }/script/ybh_check.js?v=2"></script>
 	<script type="text/javascript">
 		window.onload=function(){
 			var v1 = parent.document.getElementById("navigate");
@@ -80,10 +80,10 @@
 					<td align="left">&nbsp;<s:property value="#ls.dcause"/></td>
 					<td class="tabtd1">
 						<s:if test="#ls.t==1">
-						<input type="checkbox" checked="checked" onclick="location.href='${pageContext.request.contextPath }/ybhCheckAction_selectYbh.action?hm=<s:property value="#ls.hm"/>&opcode=0'"/>勾选
+						<input type="checkbox" checked="checked" onclick="gouXuan(this,'<s:property value="#ls.hm"/>')"/>勾选
 						</s:if>
 						<s:else>
-						<input type="checkbox" onclick="location.href='${pageContext.request.contextPath }/ybhCheckAction_selectYbh.action?hm=<s:property value="#ls.hm"/>&opcode=1'"/>勾选
+						<input type="checkbox" onclick="gouXuan(this,'<s:property value="#ls.hm"/>')"/>勾选
 						</s:else>
 					</td>
 				</s:else>

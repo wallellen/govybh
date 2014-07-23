@@ -5,7 +5,7 @@
 <head>
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/style/style.css" />
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/jquery-1.5.1.min.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath }/script/cun_ybh.js?v=3"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath }/script/cun_ybh.js?v=4"></script>
 </head>
 <body style="background:#E0EEFB;">
 <h3 class="ybh_h3_title"><s:property value="#session.vts.map.ybhyear"/>年[<s:property value="oname"/>]指标录入</h3>

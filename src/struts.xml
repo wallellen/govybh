@@ -82,6 +82,8 @@
 		<action name="updatepwd" class="userAction" method="updatePassword">
 			<result type="json"></result>
 		</action>
-		
+		<action name="selectYbh" class="ybhCheckAction" method="selectYbh">
+			<result type="json"></result>
+		</action>
 	</package>
 </struts>

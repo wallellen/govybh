@@ -265,7 +265,11 @@ function checkFpv2(obj)
 //计算针对经济薄弱村扶贫资金落实数
 function getFupinzj()
 {
-	fupinzj.innerHTML = parseFloat(cunId12.value)+parseFloat(cunId13.value);
+	if(cunId12.value>0 && cunId13.value>0)
+	{
+		var v = parseFloat(cunId12.value)+parseFloat(cunId13.value);
+		fupinzj.innerHTML = v.toFixed(1);
+	}
 }
 
 /******* 扶贫资金落实情况 end ********/
