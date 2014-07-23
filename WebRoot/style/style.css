@@ -253,6 +253,7 @@ ul{margin:0; padding:0; list-style:none;}
 /** farmer memeber query */
 .sel_title{width:55px; height:22px; display:block; text-align:center; background:url("../images/bt3.png"); padding-left:5px}
 .sel_title:link{color:#FFF;}
+.sel_title:visited{color:#FFF;}
 #selxian{width:600px; height:20px; display:block; float:left; overflow:hidden;}
 .sel_xian_list{display:block; float:left;}
 .dis_sel_xian{width:20px; height:20px; display:block; float:left; background:url("../fancybox/images/fancy_close20.png"); cursor:pointer;}
