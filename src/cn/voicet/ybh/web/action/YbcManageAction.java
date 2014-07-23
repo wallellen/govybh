@@ -219,7 +219,7 @@ public class YbcManageAction extends BaseAction implements
 	public String viewCunzb(){
 		DotSession ds = DotSession.getVTSession(request);
 		ybcManageService.getYbhYearInfo(ds);
-		log.info("queryCunzb year:"+ybcManageForm.getYear());
+		log.info("viewCunzb year:"+ybcManageForm.getYear());
 		cunMap = ybcManageService.queryCunYbhInfoWithYear(ds, ybcManageForm);
 		request.setAttribute("cunMap", cunMap);
 		rflag=rflag+1;

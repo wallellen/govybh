@@ -1,5 +1,7 @@
 package cn.voicet.ybh.web.action;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -10,6 +12,7 @@ import org.springframework.stereotype.Controller;
 
 import cn.voicet.ybh.service.YbhFarmerService;
 import cn.voicet.ybh.util.DotSession;
+import cn.voicet.ybh.util.ExcelTemplateGenerator;
 import cn.voicet.ybh.web.form.YbhFarmerForm;
 
 import com.opensymphony.xwork2.ModelDriven;
@@ -95,13 +98,30 @@ public class YbhFarmerAction extends BaseAction implements ModelDriven<YbhFarmer
 		return "show_farmer";
 	}
 	
-	public String queryFarmer()	
-	{
+	public String queryFarmer()	{
 		DotSession ds = DotSession.getVTSession(request);
 		ds.map.put("qarr", ybhFarmerForm.getQstr());
 		log.info("xmlist:"+ybhFarmerForm.getXmlist());
 		ybhFarmerService.getFarmerInfoList(ds, ybhFarmerForm);
 		return "show_farmer";
+	}
+	
+	/** 导出样本户农户信息 */
+	public String exportFarmerInfo() throws Exception{
+		DotSession ds = DotSession.getVTSession(request);
+		log.info("xmlist:"+ybhFarmerForm.getXmlist());
+		ybhFarmerService.getAllFarmerInfoList(ds, ybhFarmerForm);
+		//从上次查询的list中取数据ds.list
+		log.info("list2 size:"+ds.list2.size());
+		SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
+		String fileName = "nhcx"+format.format(new Date())+".xls";
+	    String filePath = request.getSession().getServletContext().getRealPath("excelTemplate")+"/"+"farmer.xls";
+	    ExcelTemplateGenerator generator = new ExcelTemplateGenerator(filePath, fileName, 1, ds.list2);
+	    generator.setColList("hm,govname,hname");
+	    generator.setDrawBoard();
+	    generator.setEffectColNum(3);
+	    generator.exportExcelWithTemplate(response);
+		return null;
 	}
 	
 }

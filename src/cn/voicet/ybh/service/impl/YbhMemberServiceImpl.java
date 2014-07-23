@@ -25,4 +25,8 @@ public class YbhMemberServiceImpl implements YbhMemberService{
 		ybhMemberDao.getMemberInfoList(ds, ybhMemberForm);		
 	}
 
+	public void getAllMemberInfoList(DotSession ds, YbhMemberForm ybhMemberForm) {
+		ybhMemberDao.getAllMemberInfoList(ds, ybhMemberForm);	
+	}
+
 }

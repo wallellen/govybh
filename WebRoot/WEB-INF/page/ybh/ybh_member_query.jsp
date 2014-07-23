@@ -123,9 +123,7 @@
 	<div style="height:18px; line-height:18px; padding-top:2px;">
 		<span>符合查询条件人口数：<s:property value="#session.vts.map.membernt"/>人</span>
 		<span style="float:right; width:60px;">
-			<!--  
-			<input type="button" value="导出" onclick="location.href='${pageContext.request.contextPath }/system/govFarmerQueryAction_exportMemberInfo.do?memberstr=<s:property value="memberstr"/>'" class="button43"/>
-			-->
+			<input type="button" value="导出" onclick="location.href='${pageContext.request.contextPath }/ybhMemberAction_exportMemberInfo.action?xmlist=<s:property value="xmlist"/>'" class="button43"/>
 		</span>
 	</div>
 	</s:if>

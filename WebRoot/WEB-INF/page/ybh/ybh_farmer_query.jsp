@@ -141,9 +141,7 @@
 	<span>符合查询条件农户数：<s:property value="#session.vts.map.farmernt"/>户,</span>
 	<span>人口数：<s:property value="#session.vts.map.peoplent"/>人</span>
 		<span style="float:right; width:60px;">
-			<!-- 
-			<input type="button" value="导出" onclick="location.href='${pageContext.request.contextPath }/ybhFarmerAction_exportFarmerInfo.action'" class="button43"/>
-			-->
+			<input type="button" value="导出" onclick="location.href='${pageContext.request.contextPath }/ybhFarmerAction_exportFarmerInfo.action?xmlist=<s:property value="xmlist"/>'" class="button43"/>
 		</span>
 	</div>
 	<div class="table-c" style="width:868px; height:426px; border:0px solid red; margin-top:4px;">

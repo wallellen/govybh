@@ -1,5 +1,7 @@
 package cn.voicet.ybh.web.action;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -10,6 +12,7 @@ import org.springframework.stereotype.Controller;
 
 import cn.voicet.ybh.service.YbhMemberService;
 import cn.voicet.ybh.util.DotSession;
+import cn.voicet.ybh.util.ExcelTemplateGenerator;
 import cn.voicet.ybh.web.form.YbhMemberForm;
 
 import com.opensymphony.xwork2.ModelDriven;
@@ -99,6 +102,23 @@ public class YbhMemberAction extends BaseAction implements ModelDriven<YbhMember
 		log.info("xmlist:"+ybhMemberForm.getXmlist());
 		ybhMemberService.getMemberInfoList(ds, ybhMemberForm);
 		return "show_member";
+	}
+	
+	public String exportMemberInfo() throws Exception{
+		DotSession ds = DotSession.getVTSession(request);
+		log.info("xmlist:"+ybhMemberForm.getXmlist());
+		ybhMemberService.getAllMemberInfoList(ds, ybhMemberForm);
+		log.info("list2 size:"+ds.list2.size());
+		//从上次查询的list中取数据ds.list
+		SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
+		String fileName = "rkcx"+format.format(new Date())+".xls";
+	    String filePath = request.getSession().getServletContext().getRealPath("excelTemplate")+"/"+"member.xls";
+	    ExcelTemplateGenerator generator = new ExcelTemplateGenerator(filePath, fileName, 1, ds.list2);
+	    generator.setColList("hm,govname,uname,sex,age,school,education,hearth,dcno,labors,works,bla,tbfd");
+	    generator.setDrawBoard();
+	    generator.setEffectColNum(13);
+	    generator.exportExcelWithTemplate(response);
+		return null;
 	}
 	
 }
