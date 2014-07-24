@@ -8,7 +8,7 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/jquery-1.5.1.min.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/splitpage.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/changeColor.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath }/script/farmem.js?v=2"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath }/script/farmem.js?v=7"></script>
 	<!-- fancybox插件开始 -->
 	<script type="text/javascript" src="${pageContext.request.contextPath }/fancybox/jquery.fancybox-1.3.1.pack.js"></script>
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/fancybox/fancybox.css" />
@@ -198,8 +198,9 @@
 			//设置动画效果,可设置为elastic,fade,none
 			'transitionIn':'none',
 			'transitionOut':'none',
-			'onStart':checkCHK
-		});				   
+			'onStart':initFancyCheckbox
+		});			
+		$("#closeBtn").bind('click',disSelectXian);		   
 	});
 </script>
 </html>

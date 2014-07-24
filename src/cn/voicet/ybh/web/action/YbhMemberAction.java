@@ -91,8 +91,12 @@ public class YbhMemberAction extends BaseAction implements ModelDriven<YbhMember
 		
 		h_content += "</div>";
 		html = h_tab + h_content;
-		//request.setAttribute("h", html);
 		ds.html = html;
+		
+		if(null==ds.map.get("xmNameList"))
+		{
+			ds.map.put("xmNameList", "[ȫʡ]");
+		}
 		return "show_member";
 	}
 	

@@ -256,7 +256,7 @@ ul{margin:0; padding:0; list-style:none;}
 .sel_title:visited{color:#FFF;}
 #selxian{width:600px; height:20px; display:block; float:left; overflow:hidden;}
 .sel_xian_list{display:block; float:left;}
-.dis_sel_xian{width:20px; height:20px; display:block; float:left; background:url("../fancybox/images/fancy_close20.png"); cursor:pointer;}
+.dis_sel_xian{width:20px; height:20px; margin-top:2px; display:block; float:left; background:url("../fancybox/images/fancy_close20.png"); cursor:pointer;}
 		
 		
 .td_bottom_line{border-bottom:1px solid #3B9FFF; padding-bottom:2px;}

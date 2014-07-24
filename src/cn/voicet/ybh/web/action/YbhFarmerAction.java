@@ -94,7 +94,10 @@ public class YbhFarmerAction extends BaseAction implements ModelDriven<YbhFarmer
 		//request.setAttribute("h", html);
 		ds.html = html;
 		
-		
+		if(null==ds.map.get("xmNameList"))
+		{
+			ds.map.put("xmNameList", "[ȫʡ]");
+		}
 		return "show_farmer";
 	}
 	
