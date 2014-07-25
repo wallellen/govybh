@@ -70,7 +70,10 @@
 			<result name="show_ybc_manage">/WEB-INF/page/work/ybc_manage.jsp</result>
 			<result name="show_ybc_zhibiao">/WEB-INF/page/work/ybc_cun_zhibiao.jsp</result>
 		</action>
-		
+		<!-- 下级密码初始化 -->
+		<action name="initPassAction_*" class="initPassAction" method="{1}">
+			<result name="show_init_pass">/WEB-INF/page/new/init_password.jsp</result>
+		</action>
 		
 	</package>  
 	<package name="dot" namespace="/" extends="json-default">
@@ -84,6 +87,9 @@
 		</action>
 		<action name="selectYbh" class="ybhCheckAction" method="selectYbh">
 			<result type="json"></result>
+		</action>
+		<action name="initPassAction_initPassword" class="initPassAction" method="initPassword">
+			<result type="json"></result>	
 		</action>
 	</package>
 </struts>
