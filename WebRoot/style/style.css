@@ -242,7 +242,7 @@ ul{margin:0; padding:0; list-style:none;}
 .cunwrap table{text-align:center; border-right:1px solid #3B9FFF; border-bottom:1px solid #3B9FFF; margin-top:2px;}
 .cunwrap table td{border-top:1px solid #3B9FFF; border-left:1px solid #3B9FFF; empty-cells:show;}
 .cunwrap input{height:22px; width:140px; border:1px solid gray; padding-left:2px;}
-.cunwrap .cuncbox{height:22px; width:24px;}
+.cunwrap .cuncbox{height:22px; width:24px; vertical-align:middle}
 
 .cun-bottom{height:26px; line-height:26px;}
 .cun-bottom span{display: block; width:220px; height:26px; float:left;text-align:center}

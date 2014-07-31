@@ -56,19 +56,19 @@
         	<td width="25%" align="right">7、享受扶贫项目支持情况:&nbsp;</td>
 			<td width="25%" align="left">
 				<s:if test="fs==1">
-				<input type="checkbox" id="chk_fs" class="cuncbox" checked="checked" disabled="disabled"/>
+				<input type="checkbox" id="chk_fs" class="cuncbox" checked="checked" disabled="disabled"/><label>(可多选)</label>
 				</s:if>
 				<s:else>
-				<input type="checkbox" id="chk_fs" class="cuncbox" disabled="disabled"/>
+				<input type="checkbox" id="chk_fs" class="cuncbox" disabled="disabled"/><label>(可多选)</label>
 				</s:else>
 			</td>
             <td align="right">10、参加社会保障情况&nbsp;&nbsp;</td>
             <td width="25%" align="left">
                 <s:if test="bb==1">
-                <input type="checkbox" id="chk_bb" class="cuncbox" checked="checked" disabled="disabled"/>
+                <input type="checkbox" id="chk_bb" class="cuncbox" checked="checked" disabled="disabled"/><label>(可多选)</label>
                 </s:if>
                 <s:else>
-                <input type="checkbox" id="chk_bb" class="cuncbox" disabled="disabled"/>
+                <input type="checkbox" id="chk_bb" class="cuncbox" disabled="disabled"/><label>(可多选)</label>
                 </s:else>
             </td>
         </tr>

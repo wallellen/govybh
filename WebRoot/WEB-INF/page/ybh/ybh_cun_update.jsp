@@ -74,10 +74,10 @@
         	<td width="28%" align="right">针对经济薄弱村扶贫项目情况:&nbsp;</td>
 			<td width="22%" align="left">
 				<s:if test="#request.cunMap.fps!=null && #request.cunMap.fps==1">
-				<input type="checkbox" id="chk_fps" class="cuncbox" checked="checked" disabled="disabled"/>
+				<input type="checkbox" id="chk_fps" class="cuncbox" checked="checked" disabled="disabled"/><label>(可多选)</label>
 				</s:if>
 				<s:else>
-				<input type="checkbox" id="chk_fps" class="cuncbox" disabled="disabled"/>
+				<input type="checkbox" id="chk_fps" class="cuncbox" disabled="disabled"/><label>(可多选)</label>
 				</s:else>
 			</td>
             <td width="28%" align="right">针对经济薄弱村扶贫资金落实数(万元):&nbsp;</td>
