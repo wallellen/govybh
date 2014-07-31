@@ -57,7 +57,7 @@
 	<input type="hidden" id="xmname" name="xmname" value="<s:property value="#session.vts.map.xmNameList"/>"/>
 	<fieldset style="border:1px solid #3B9FFF; margin:0; padding:0; width:99%;">
 	<legend>查询条件</legend>
-	<div style="height:60px; line-height:26px;">
+	<div style="height:115px; line-height:26px;">
 		<table cellpadding="0" cellspacing="0" width="100%">
 			<tr>
 				<td align="right" width="15%" class="td_bottom_line">
@@ -69,23 +69,15 @@
 			</tr>
 		</table>
 		<div style="height:2px;"></div>
-		<table>
-			<tr>
-				<td width="10%" align="right">农户编码:&nbsp;</td>
-				<td width="10%"><input type="text" name="qstr" value="<s:property value="#session.vts.map.qarr[0]"/>" maxlength="15" onkeyup="value=value.replace(/[^\d]/g,'')" class="inptxt1" onfocus="this.className='input_on1'" onblur="this.className='input_off1'"/></td>
-				<td width="10%" align="right">户主姓名:&nbsp;</td>
-				<td width="10%"><input type="text" name="qstr" value="<s:property value="#session.vts.map.qarr[1]"/>" maxlength="10" class="inptxt1" onfocus="this.className='input_on1'" onblur="this.className='input_off1'"/></td>
-				<td width="10%" align="center"><input id="searchImg" type="submit" value="立即查询" class="button4"/></td>
-			</tr>
-		</table>	
-	</div>
-	</fieldset>
-	<div style="height:5px;"></div>
-	<!-- advance -->
-	<fieldset style="border:1px solid #3B9FFF; margin:0; padding:0; width:99%;">
-	<legend>高级选项</legend>
-	<div style="height:78px;">
 		<table cellpadding="0" cellspacing="0" width="100%">
+			<tr height="24px;">
+				<td width="16%" align="right">农户编码：</td>
+				<td width="22%" colspan="2" align="left"><input type="text" name="qstr" value="<s:property value="#session.vts.map.qarr[0]"/>" maxlength="15" onkeyup="value=value.replace(/[^\d]/g,'')" class="inptxt1" onfocus="this.className='input_on1'" onblur="this.className='input_off1'"/></td>
+				<td width="12%" align="right">户主姓名：</td>
+				<td width="22%" colspan="2" align="left"><input type="text" name="qstr" value="<s:property value="#session.vts.map.qarr[1]"/>" maxlength="10" class="inptxt1" onfocus="this.className='input_on1'" onblur="this.className='input_off1'"/></td>
+				<td width="12%" align="right"></td>
+				<td width="14%" align="left"><input id="searchImg" type="submit" value="立即查询" class="button4"/></td>
+			</tr>
 			<tr height="24px;">
 				<td width="16%" align="right">家庭人口：</td>
 				<td width="8%" align="left">
@@ -118,23 +110,193 @@
 					<s:select name="qstr" cssClass="borwer-sel" list="#application.vta.GetList('dcauseex')" listKey="id" listValue="str" value="%{#session.vts.map.qarr[11]}"></s:select>
 				</td>
 			</tr>
+		</table>	
+	</div>
+	</fieldset>
+	<div style="height:5px;"></div>
+	<!-- advance -->
+	<fieldset style="border:1px solid #3B9FFF; margin:0; padding:0; width:99%;">
+	<legend>高级选项</legend>
+	<div style="height:158px;">
+		<table cellpadding="0" cellspacing="0" width="100%">
 			<tr height="24px;">
-				<td align="right">家庭总收入：</td>
-				<td align="left">
+				<td width="12%" align="right">年份：</td>
+				<td width="14%" align="left">
+					<input type="text" onchange="setHiddenYear(this)" value="<s:property value="#session.vts.map.qarr[16]"/>" onfocus="WdatePicker({skin:'whyGreen',dateFmt:'yyyy'})" class="Wdate" style="width:80px; height:18px;" maxlength="4"/>
+					<script type="text/javascript">
+					//改变查询参数的顺序 
+					function setHiddenYear(o)
+						{
+							var hyearVal = o.value;
+							$("#hidyear").val(hyearVal);
+						}
+					</script>
+				</td>
+				<td width="16%" align="right">家庭总收入：</td>
+				<td width="8%" align="left">
 					<s:select name="qstr" list="#application.vta.GetList('opt')" listKey="id" listValue="str" value="%{#session.vts.map.qarr[12]}"></s:select>
 				</td>
-				<td align="left"><input type="text" name="qstr" class="inptxt2" onfocus="this.className='input_on2'" onblur="this.className='input_off2'" maxlength="5" value="<s:property value="#session.vts.map.qarr[13]"/>" onkeyup="value=value.replace(/[^\d]/g,'')"/></td>
-				<td align="right">年人均收入：</td>
-				<td align="left">
+				<td width="14%" align="left"><input type="text" name="qstr" class="inptxt2" onfocus="this.className='input_on2'" onblur="this.className='input_off2'" maxlength="5" value="<s:property value="#session.vts.map.qarr[13]"/>" onkeyup="value=value.replace(/[^\d]/g,'')"/></td>
+				<td width="12%" align="right">年人均收入：</td>
+				<td width="8%" align="left">
 					<s:select name="qstr" list="#application.vta.GetList('opt')" listKey="id" listValue="str" value="%{#session.vts.map.qarr[14]}"></s:select>
 				</td>
-				<td align="left"><input type="text" name="qstr" class="inptxt2" onfocus="this.className='input_on2'" onblur="this.className='input_off2'" maxlength="5" value="<s:property value="#session.vts.map.qarr[15]"/>" onkeyup="value=value.replace(/[^\d]/g,'')"/></td>
-				<td align="right">年份：</td>
-				<td align="left">
-					<input type="text" name="qstr" value="<s:property value="#session.vts.map.qarr[16]"/>" onfocus="WdatePicker({skin:'whyGreen',dateFmt:'yyyy'})" class="Wdate" style="width:80px; height:18px;" maxlength="4"/>
+				<td width="14%" align="left">
+					<input type="text" name="qstr" class="inptxt2" onfocus="this.className='input_on2'" onblur="this.className='input_off2'" maxlength="5" value="<s:property value="#session.vts.map.qarr[15]"/>" onkeyup="value=value.replace(/[^\d]/g,'')"/>
+					<!-- change year order -->
+					<input type="hidden" id="hidyear" name="qstr" value=""/>
 				</td>
 			</tr>
-		</table>	
+			<tr height="24px;">
+				<td width="12%" align="right"></td>
+				<td width="14%" align="left"></td>
+				<td width="16%" align="right">得到扶贫资金(元)：</td>
+				<td width="8%" align="left">
+					<s:select name="qstr" list="#application.vta.GetList('opt')" listKey="id" listValue="str" value="%{#session.vts.map.qarr[17]}"></s:select>
+				</td>
+				<td width="14%" align="left"><input type="text" name="qstr" class="inptxt2" onfocus="this.className='input_on2'" onblur="this.className='input_off2'" maxlength="5" value="<s:property value="#session.vts.map.qarr[18]"/>" onkeyup="value=value.replace(/[^\d]/g,'')"/></td>
+				<td width="16%" align="right">小额贷款(元)：</td>
+				<td width="8%" align="left">
+					<s:select name="qstr" list="#application.vta.GetList('opt')" listKey="id" listValue="str" value="%{#session.vts.map.qarr[19]}"></s:select>
+				</td>
+				<td width="14%" align="left"><input type="text" name="qstr" class="inptxt2" onfocus="this.className='input_on2'" onblur="this.className='input_off2'" maxlength="5" value="<s:property value="#session.vts.map.qarr[20]"/>" onkeyup="value=value.replace(/[^\d]/g,'')"/></td>
+			</tr>
+		</table>
+		<hr/>
+		<div style="height:20px; padding-left:10px;">
+			<s:if test="#session.vts.map.qarr[21]==1">
+				<input type="checkbox" id="fupin" onclick="setFupinVal(this)" checked="checked"/>
+			</s:if>
+			<s:else>
+				<input type="checkbox" id="fupin" onclick="setFupinVal(this)"/>
+			</s:else>
+			<input type="hidden" name="qstr" id="fupin_val"/>
+			<label for="fupin">享受扶贫项目支持情况(可多选)</label>
+		</div>
+		<table cellpadding="0" cellspacing="0" width="100%">
+			<tr>
+				<td width="5%"></td>
+				<td width="20%" align="left">
+					<s:if test="#session.vts.map.qarr[22]==1">
+						<input type="checkbox" id="fupin1" onclick="setFupinValA(this)" checked="checked"/>
+						<input type="hidden" name="qstr" id="fupin_val_a" value="1"/>
+					</s:if>
+					<s:else>
+						<input type="checkbox" id="fupin1" onclick="setFupinValA(this)"/>
+						<input type="hidden" name="qstr" id="fupin_val_a" value=""/>
+					</s:else>
+					<label for="fupin1">(1)产业发展项目</label>
+				</td>
+				<td width="20%" align="left">
+					<s:if test="#session.vts.map.qarr[23]==1">
+						<input type="checkbox" id="fupin2" onclick="setFupinValB(this)" checked="checked"/>
+						<input type="hidden" name="qstr" id="fupin_val_b" value="1"/>
+					</s:if>
+					<s:else>
+						<input type="checkbox" id="fupin2" onclick="setFupinValB(this)"/>
+						<input type="hidden" name="qstr" id="fupin_val_b" value=""/>
+					</s:else>
+					<label for="fupin2">(2)帮助就业项目</label>
+				</td>
+				<td width="20%" align="left">
+					<s:if test="#session.vts.map.qarr[24]==1">
+						<input type="checkbox" id="fupin3" onclick="setFupinValC(this)" checked="checked"/>
+						<input type="hidden" name="qstr" id="fupin_val_c" value="1"/>
+					</s:if>
+					<s:else>
+						<input type="checkbox" id="fupin3" onclick="setFupinValC(this)"/>
+						<input type="hidden" name="qstr" id="fupin_val_c" value=""/>
+					</s:else>
+					<label for="fupin3">(3)小额扶贫贷款项目</label>
+				</td>
+				<td width="20%" align="left">
+					<s:if test="#session.vts.map.qarr[25]==1">
+						<input type="checkbox" id="fupin4" onclick="setFupinValD(this)" checked="checked"/>
+						<input type="hidden" name="qstr" id="fupin_val_d" value="1"/>
+					</s:if>
+					<s:else>
+						<input type="checkbox" id="fupin4" onclick="setFupinValD(this)"/>
+						<input type="hidden" name="qstr" id="fupin_val_d" value=""/>
+					</s:else>
+					<label for="fupin4">(4)入股收益分红类项目</label>
+				</td>
+				<td width="15%" align="left">
+					<s:if test="#session.vts.map.qarr[26]==1">
+						<input type="checkbox" id="fupin5" onclick="setFupinValE(this)" checked="checked"/>
+						<input type="hidden" name="qstr" id="fupin_val_e" value="1"/>
+					</s:if>
+					<s:else>
+						<input type="checkbox" id="fupin5" onclick="setFupinValE(this)"/>
+						<input type="hidden" name="qstr" id="fupin_val_e" value=""/>
+					</s:else>
+					<label for="fupin5">(5)其它项目</label>
+				</td>
+			</tr>
+		</table>
+		<div style="height:5px;"></div>
+		<hr/>
+		<div style="height:20px; padding-left:10px;">
+			<s:if test="#session.vts.map.qarr[27]==1">
+				<input type="checkbox" id="shebao" onclick="setShebaoVal(this)" checked="checked"/>
+				<input type="hidden" name="qstr" id="shebao_val" value="1"/>
+			</s:if>
+			<s:else>
+				<input type="checkbox" id="shebao" onclick="setShebaoVal(this)"/>
+				<input type="hidden" name="qstr" id="shebao_val" value=""/>
+			</s:else>
+			<label for="shebao">参加社会保障情况(可多选)</label>
+		</div>
+		<table cellpadding="0" cellspacing="0" width="100%">
+			<tr>
+				<td width="5%"></td>
+				<td width="20%" align="left">
+					<s:if test="#session.vts.map.qarr[28]==1">
+						<input type="checkbox" id="shebao1" onclick="setShebaoValA(this)" checked="checked"/>
+						<input type="hidden" name="qstr" id="shebao_val_a" value="1"/>
+					</s:if>
+					<s:else>
+						<input type="checkbox" id="shebao1" onclick="setShebaoValA(this)"/>
+						<input type="hidden" name="qstr" id="shebao_val_a" value=""/>
+					</s:else>
+					<label for="shebao1">新农合</label>
+				</td>
+				<td width="20%" align="left">
+					<s:if test="#session.vts.map.qarr[29]==1">
+						<input type="checkbox" id="shebao2" onclick="setShebaoValB(this)" checked="checked"/>
+						<input type="hidden" name="qstr" id="shebao_val_b" value="1"/>
+					</s:if>
+					<s:else>
+						<input type="checkbox" id="shebao2" onclick="setShebaoValB(this)"/>
+						<input type="hidden" name="qstr" id="shebao_val_b" value=""/>
+					</s:else>
+					<label for="shebao2">新农保</label>
+				</td>
+				<td width="20%" align="left">
+					<s:if test="#session.vts.map.qarr[30]==1">
+						<input type="checkbox" id="shebao3" onclick="setShebaoValC(this)" checked="checked"/>
+						<input type="hidden" name="qstr" id="shebao_val_c" value="1"/>
+					</s:if>
+					<s:else>
+						<input type="checkbox" id="shebao3" onclick="setShebaoValC(this)"/>
+						<input type="hidden" name="qstr" id="shebao_val_c" value=""/>
+					</s:else>
+					<label for="shebao3">大病医疗救助</label>
+				</td>
+				<td width="20%" align="left">
+					<s:if test="#session.vts.map.qarr[31]==1">
+						<input type="checkbox" id="shebao4" onclick="setShebaoValD(this)" checked="checked"/>
+						<input type="hidden" name="qstr" id="shebao_val_d" value="1"/>
+					</s:if>
+					<s:else>
+						<input type="checkbox" id="shebao4" onclick="setShebaoValD(this)"/>
+						<input type="hidden" name="qstr" id="shebao_val_d" value=""/>
+					</s:else>
+					<label for="shebao4">参加或享受其它社会保障</label>
+				</td>
+				<td width="15%"></td>
+			</tr>
+		</table>
+			
 	</div>
 	</fieldset>
 	</form>
@@ -146,7 +308,7 @@
 			<input type="button" value="导出" onclick="location.href='${pageContext.request.contextPath }/ybhFarmerAction_exportFarmerInfo.action?xmlist=<s:property value="xmlist"/>'" class="button43"/>
 		</span>
 	</div>
-	<div class="table-c" style="width:868px; height:426px; border:0px solid red; margin-top:4px;">
+	<div class="table-c" style="width:868px; height:290px; border:0px solid red; margin-top:4px;">
 		<table class="data_list" width="100%" bordercolor="gray" border="0" cellpadding="0" cellspacing="0">
 			<thead>
 			<tr class="tabtr1">
@@ -177,7 +339,7 @@
 	<!-- js分页div -->
 	<div class="split-page">
 		<!-- 每页行数 -->
-		<input type="hidden" id="pageRows" value="20"/>
+		<input type="hidden" id="pageRows" value="13"/>
 		<div id="changePage"></div>
 	</div>
 	</s:if>
@@ -203,6 +365,108 @@
 		});	
 		$("#closeBtn").bind('click',disSelectXian);			   
 	});
+</script>
+<script type="text/javascript">
+	//享受扶贫项目支持情况
+	function setFupinVal(o)
+	{
+		if(o.checked==true){
+			fupin_val.value="1";
+		}else{
+			fupin_val.value="";
+		}
+	}
+	//产业发展项目
+	function setFupinValA(o)
+	{
+		if(o.checked==true){
+			fupin_val_a.value="1";
+		}else{
+			fupin_val_a.value="";
+		}
+	}
+	//帮助就业项目
+	function setFupinValB(o)
+	{
+		if(o.checked==true){
+			fupin_val_b.value="1";
+		}else{
+			fupin_val_b.value="";
+		}
+	}
+	//小额扶贫贷款项目
+	function setFupinValC(o)
+	{
+		if(o.checked==true){
+			fupin_val_c.value="1";
+		}else{
+			fupin_val_c.value="";
+		}
+	}
+	//入股收益分红类项目
+	function setFupinValD(o)
+	{
+		if(o.checked==true){
+			fupin_val_d.value="1";
+		}else{
+			fupin_val_d.value="";
+		}
+	}
+	//其它项目
+	function setFupinValE(o)
+	{
+		if(o.checked==true){
+			fupin_val_e.value="1";
+		}else{
+			fupin_val_e.value="";
+		}
+	}
+	/////////////////////////////////
+	//参加社会保障情况
+	function setShebaoVal(o)
+	{
+		if(o.checked==true){
+			shebao_val.value="1";
+		}else{
+			shebao_val.value="";
+		}
+	}
+	//新农合
+	function setShebaoValA(o)
+	{
+		if(o.checked==true){
+			shebao_val_a.value="1";
+		}else{
+			shebao_val_a.value="";
+		}
+	}
+	//新农保
+	function setShebaoValB(o)
+	{
+		if(o.checked==true){
+			shebao_val_b.value="1";
+		}else{
+			shebao_val_b.value="";
+		}
+	}
+	//大病医疗救助
+	function setShebaoValC(o)
+	{
+		if(o.checked==true){
+			shebao_val_c.value="1";
+		}else{
+			shebao_val_c.value="";
+		}
+	}
+	//参加或享受其它社会保障
+	function setShebaoValD(o)
+	{
+		if(o.checked==true){
+			shebao_val_d.value="1";
+		}else{
+			shebao_val_d.value="";
+		}
+	}
 </script>
 </body>
 </html>

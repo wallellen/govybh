@@ -49,7 +49,7 @@ public class YbhFarmerDaoImpl extends BaseDaoImpl implements YbhFarmerDao {
 	}
 
 	public void getFarmerInfoList(final DotSession ds, final YbhFarmerForm ybhFarmerForm) {
-		final int apr[]={0,1,2,4,6,7,9,11,12,14,16};
+		final int apr[]={0,1,2,4,6,7,9,11,12,14,16,17,19,21,22,23,24,25,26,27,28,29,30,31};
 		this.getJdbcTemplate().execute(new ConnectionCallback() {
 			public Object doInConnection(Connection conn) throws SQLException,
 					DataAccessException {
@@ -58,11 +58,11 @@ public class YbhFarmerDaoImpl extends BaseDaoImpl implements YbhFarmerDao {
 				cs.setString(1, ds.account);
 				cs.setString(2, ds.rbm);
 				String a[]=(String[]) ds.map.get("qarr");
-				for(int i=0; i<11; i++)
+				for(int i=0; i<24; i++)
 				{
 					if(a[apr[i]].length()>0)
 					{
-						if(i<2)
+						if(i<2 || i>12)
 							str+=a[apr[i]];
 						else if((i-2)%3==2)
 						{
@@ -87,7 +87,10 @@ public class YbhFarmerDaoImpl extends BaseDaoImpl implements YbhFarmerDao {
 					}
 					str+=";";
 				}
-				System.out.println(str);
+				System.out.println("account:"+ds.account);
+				System.out.println("rbm:"+ds.rbm);
+				System.out.println("str:"+str);
+				System.out.println("xmlist;"+ybhFarmerForm.getXmlist());
 				cs.setString(3, str);
 				cs.setString(4, ybhFarmerForm.getXmlist());
 				cs.setInt(5, 200);
