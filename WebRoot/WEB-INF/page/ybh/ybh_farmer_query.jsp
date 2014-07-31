@@ -10,7 +10,7 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath }/datePicker/WdatePicker.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/splitpage.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/changeColor.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath }/script/farmem.js?v=7"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath }/script/farmem.js?v=8"></script>
 	<!-- fancybox插件开始 -->
 	<script type="text/javascript" src="${pageContext.request.contextPath }/fancybox/jquery.fancybox-1.3.1.pack.js"></script>
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/fancybox/fancybox.css" />
@@ -57,17 +57,18 @@
 	<input type="hidden" id="xmname" name="xmname" value="<s:property value="#session.vts.map.xmNameList"/>"/>
 	<fieldset style="border:1px solid #3B9FFF; margin:0; padding:0; width:99%;">
 	<legend>查询条件</legend>
-	<div style="height:115px; line-height:26px;">
+	<div style="height:120px; line-height:24px;">
 		<table cellpadding="0" cellspacing="0" width="100%">
 			<tr>
-				<td align="right" width="15%" class="td_bottom_line">
+				<td align="right" width="15%">
 					<a id="various1" href="#data" kesrc="#data" title="选择县" class="sel_title">选择县&nbsp;</a>
 				</td>
-				<td colspan="4" class="td_bottom_line">
+				<td colspan="4">
 				&nbsp;<label id="selxian"><s:property value="#session.vts.map.xmNameList" escape="false"/></label>
 				</td>
 			</tr>
 		</table>
+		<hr style="color:#3B9FFF; width:95%"/>
 		<div style="height:2px;"></div>
 		<table cellpadding="0" cellspacing="0" width="100%">
 			<tr height="24px;">
@@ -122,7 +123,7 @@
 			<tr height="24px;">
 				<td width="12%" align="right">年份：</td>
 				<td width="14%" align="left">
-					<input type="text" onchange="setHiddenYear(this)" value="<s:property value="#session.vts.map.qarr[16]"/>" onfocus="WdatePicker({skin:'whyGreen',dateFmt:'yyyy'})" class="Wdate" style="width:80px; height:18px;" maxlength="4"/>
+					<input type="text" onchange="setHiddenYear(this)" value="<s:property value="qstr==null ? #session.vts.workyear : #session.vts.map.qarr[16]"/>" onfocus="WdatePicker({skin:'whyGreen',dateFmt:'yyyy'})" class="Wdate" style="width:80px; height:18px;" maxlength="4"/>
 					<script type="text/javascript">
 					//改变查询参数的顺序 
 					function setHiddenYear(o)
@@ -144,7 +145,7 @@
 				<td width="14%" align="left">
 					<input type="text" name="qstr" class="inptxt2" onfocus="this.className='input_on2'" onblur="this.className='input_off2'" maxlength="5" value="<s:property value="#session.vts.map.qarr[15]"/>" onkeyup="value=value.replace(/[^\d]/g,'')"/>
 					<!-- change year order -->
-					<input type="hidden" id="hidyear" name="qstr" value=""/>
+					<input type="hidden" id="hidyear" name="qstr" value="<s:property value="qstr==null ? #session.vts.workyear : #session.vts.map.qarr[16]"/>"/>
 				</td>
 			</tr>
 			<tr height="24px;">
@@ -162,7 +163,7 @@
 				<td width="14%" align="left"><input type="text" name="qstr" class="inptxt2" onfocus="this.className='input_on2'" onblur="this.className='input_off2'" maxlength="5" value="<s:property value="#session.vts.map.qarr[20]"/>" onkeyup="value=value.replace(/[^\d]/g,'')"/></td>
 			</tr>
 		</table>
-		<hr/>
+		<hr style="color:#3B9FFF; width:95%"/>
 		<div style="height:20px; padding-left:10px;">
 			<s:if test="#session.vts.map.qarr[21]==1">
 				<input type="checkbox" id="fupin" onclick="setFupinVal(this)" checked="checked"/>
@@ -234,7 +235,7 @@
 			</tr>
 		</table>
 		<div style="height:5px;"></div>
-		<hr/>
+		<hr style="color:#3B9FFF; width:95%"/>
 		<div style="height:20px; padding-left:10px;">
 			<s:if test="#session.vts.map.qarr[27]==1">
 				<input type="checkbox" id="shebao" onclick="setShebaoVal(this)" checked="checked"/>
@@ -308,7 +309,7 @@
 			<input type="button" value="导出" onclick="location.href='${pageContext.request.contextPath }/ybhFarmerAction_exportFarmerInfo.action?xmlist=<s:property value="xmlist"/>'" class="button43"/>
 		</span>
 	</div>
-	<div class="table-c" style="width:868px; height:290px; border:0px solid red; margin-top:4px;">
+	<div class="table-c" style="width:868px; height:285px; border:0px solid red; margin-top:4px;">
 		<table class="data_list" width="100%" bordercolor="gray" border="0" cellpadding="0" cellspacing="0">
 			<thead>
 			<tr class="tabtr1">
@@ -365,108 +366,6 @@
 		});	
 		$("#closeBtn").bind('click',disSelectXian);			   
 	});
-</script>
-<script type="text/javascript">
-	//享受扶贫项目支持情况
-	function setFupinVal(o)
-	{
-		if(o.checked==true){
-			fupin_val.value="1";
-		}else{
-			fupin_val.value="";
-		}
-	}
-	//产业发展项目
-	function setFupinValA(o)
-	{
-		if(o.checked==true){
-			fupin_val_a.value="1";
-		}else{
-			fupin_val_a.value="";
-		}
-	}
-	//帮助就业项目
-	function setFupinValB(o)
-	{
-		if(o.checked==true){
-			fupin_val_b.value="1";
-		}else{
-			fupin_val_b.value="";
-		}
-	}
-	//小额扶贫贷款项目
-	function setFupinValC(o)
-	{
-		if(o.checked==true){
-			fupin_val_c.value="1";
-		}else{
-			fupin_val_c.value="";
-		}
-	}
-	//入股收益分红类项目
-	function setFupinValD(o)
-	{
-		if(o.checked==true){
-			fupin_val_d.value="1";
-		}else{
-			fupin_val_d.value="";
-		}
-	}
-	//其它项目
-	function setFupinValE(o)
-	{
-		if(o.checked==true){
-			fupin_val_e.value="1";
-		}else{
-			fupin_val_e.value="";
-		}
-	}
-	/////////////////////////////////
-	//参加社会保障情况
-	function setShebaoVal(o)
-	{
-		if(o.checked==true){
-			shebao_val.value="1";
-		}else{
-			shebao_val.value="";
-		}
-	}
-	//新农合
-	function setShebaoValA(o)
-	{
-		if(o.checked==true){
-			shebao_val_a.value="1";
-		}else{
-			shebao_val_a.value="";
-		}
-	}
-	//新农保
-	function setShebaoValB(o)
-	{
-		if(o.checked==true){
-			shebao_val_b.value="1";
-		}else{
-			shebao_val_b.value="";
-		}
-	}
-	//大病医疗救助
-	function setShebaoValC(o)
-	{
-		if(o.checked==true){
-			shebao_val_c.value="1";
-		}else{
-			shebao_val_c.value="";
-		}
-	}
-	//参加或享受其它社会保障
-	function setShebaoValD(o)
-	{
-		if(o.checked==true){
-			shebao_val_d.value="1";
-		}else{
-			shebao_val_d.value="";
-		}
-	}
 </script>
 </body>
 </html>

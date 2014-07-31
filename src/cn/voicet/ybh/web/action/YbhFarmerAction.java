@@ -98,6 +98,9 @@ public class YbhFarmerAction extends BaseAction implements ModelDriven<YbhFarmer
 		{
 			ds.map.put("xmNameList", "[ȫʡ]");
 		}
+		if(null==ybhFarmerForm.getQstr() && null!=ds.map.get("qarr")){
+			ybhFarmerForm.setQstr((String[]) ds.map.get("qarr"));
+		}
 		return "show_farmer";
 	}
 	

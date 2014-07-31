@@ -46,6 +46,7 @@ function selectXian(){
 		$("#xmname").val("[全省]");
 		xmlist.value=null;
 	}
+	$("#closeBtn").bind('click',disSelectXian);	
 }
 //反选
 function disSelectXian()
@@ -59,4 +60,105 @@ function disSelectXian()
 	xmlist.value=null;
 }
 
+
+//享受扶贫项目支持情况
+function setFupinVal(o)
+{
+	if(o.checked==true){
+		fupin_val.value="1";
+	}else{
+		fupin_val.value="";
+	}
+}
+//产业发展项目
+function setFupinValA(o)
+{
+	if(o.checked==true){
+		fupin_val_a.value="1";
+	}else{
+		fupin_val_a.value="";
+	}
+}
+//帮助就业项目
+function setFupinValB(o)
+{
+	if(o.checked==true){
+		fupin_val_b.value="1";
+	}else{
+		fupin_val_b.value="";
+	}
+}
+//小额扶贫贷款项目
+function setFupinValC(o)
+{
+	if(o.checked==true){
+		fupin_val_c.value="1";
+	}else{
+		fupin_val_c.value="";
+	}
+}
+//入股收益分红类项目
+function setFupinValD(o)
+{
+	if(o.checked==true){
+		fupin_val_d.value="1";
+	}else{
+		fupin_val_d.value="";
+	}
+}
+//其它项目
+function setFupinValE(o)
+{
+	if(o.checked==true){
+		fupin_val_e.value="1";
+	}else{
+		fupin_val_e.value="";
+	}
+}
+/////////////////////////////////
+//参加社会保障情况
+function setShebaoVal(o)
+{
+	if(o.checked==true){
+		shebao_val.value="1";
+	}else{
+		shebao_val.value="";
+	}
+}
+//新农合
+function setShebaoValA(o)
+{
+	if(o.checked==true){
+		shebao_val_a.value="1";
+	}else{
+		shebao_val_a.value="";
+	}
+}
+//新农保
+function setShebaoValB(o)
+{
+	if(o.checked==true){
+		shebao_val_b.value="1";
+	}else{
+		shebao_val_b.value="";
+	}
+}
+//大病医疗救助
+function setShebaoValC(o)
+{
+	if(o.checked==true){
+		shebao_val_c.value="1";
+	}else{
+		shebao_val_c.value="";
+	}
+}
+//参加或享受其它社会保障
+function setShebaoValD(o)
+{
+	if(o.checked==true){
+		shebao_val_d.value="1";
+	}else{
+		shebao_val_d.value="";
+	}
+}
 
