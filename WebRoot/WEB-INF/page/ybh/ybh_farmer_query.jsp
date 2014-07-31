@@ -155,7 +155,7 @@
 					<s:select name="qstr" list="#application.vta.GetList('opt')" listKey="id" listValue="str" value="%{#session.vts.map.qarr[17]}"></s:select>
 				</td>
 				<td width="14%" align="left"><input type="text" name="qstr" class="inptxt2" onfocus="this.className='input_on2'" onblur="this.className='input_off2'" maxlength="5" value="<s:property value="#session.vts.map.qarr[18]"/>" onkeyup="value=value.replace(/[^\d]/g,'')"/></td>
-				<td width="16%" align="right">小额贷款(元)：</td>
+				<td width="16%" align="right">使用小额扶贫贷款(元)：</td>
 				<td width="8%" align="left">
 					<s:select name="qstr" list="#application.vta.GetList('opt')" listKey="id" listValue="str" value="%{#session.vts.map.qarr[19]}"></s:select>
 				</td>
