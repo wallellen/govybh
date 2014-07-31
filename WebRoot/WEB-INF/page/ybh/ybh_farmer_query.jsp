@@ -167,11 +167,12 @@
 		<div style="height:20px; padding-left:10px;">
 			<s:if test="#session.vts.map.qarr[21]==1">
 				<input type="checkbox" id="fupin" onclick="setFupinVal(this)" checked="checked"/>
+				<input type="hidden" name="qstr" id="fupin_val" value="1"/>
 			</s:if>
 			<s:else>
 				<input type="checkbox" id="fupin" onclick="setFupinVal(this)"/>
+				<input type="hidden" name="qstr" id="fupin_val" value=""/>
 			</s:else>
-			<input type="hidden" name="qstr" id="fupin_val"/>
 			<label for="fupin">享受扶贫项目支持情况(可多选)</label>
 		</div>
 		<table cellpadding="0" cellspacing="0" width="100%">
