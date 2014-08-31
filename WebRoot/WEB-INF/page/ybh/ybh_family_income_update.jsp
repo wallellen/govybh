@@ -5,7 +5,7 @@
 <head>
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/style/style.css" />
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/jquery-1.5.1.min.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath }/script/ybh_income.js?v=2"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath }/script/ybh_income.js?v=3"></script>
 </head>
 <body style="background:#E0EEFB;">
 <h3 class="ybh_h3_title"><s:property value="year"/>年&nbsp;[<s:property value="#session.vts.curHM"/>&nbsp;<s:property value="hname"/>]样本户基础监测更新</h3>
@@ -185,6 +185,35 @@
         </tr>
     </table>
     <div style="height:26px; line-height:26px; color:#F00" id="errTip3"></div>
+    
+    <table cellpadding="0" cellspacing="0" width="100%">
+		<tr>
+	    	<td width="25%" align="right">种粮补助(元):&nbsp;</td>
+	        <td width="25%" align="left"><input type="text" id="zlbz" name="incometxt" value="<s:property value='zlbz'/>" maxlength="10" onblur="checkZlbz(this)" tabindex="71"/></td>
+	        <td width="25%" align="right">流转租金(元):&nbsp;</td>
+	        <td width="25%" align="left"><input type="text" id="lzzj" name="incometxt" value="<s:property value='lzzj'/>" maxlength="10" onblur="checkLzzj(this)" tabindex="72"/></td>
+	    </tr>
+	    <tr>
+	    	<td align="right">领取残疾补助金(元):&nbsp;</td>
+	        <td align="left"><input type="text" id="isv1" name="incometxt" value="<s:property value='isv1'/>" maxlength="10" onblur="checkIsv1(this)" tabindex="73"/></td>
+	        <td align="right">领取新农合报销医疗费(元):&nbsp;</td>
+	        <td align="left"><input type="text" id="isv2" name="incometxt" value="<s:property value='isv2'/>" maxlength="10" onblur="checkIsv2(this)" tabindex="74"/></td>
+	    </tr>
+	    <tr>
+	    	<td align="right">领取养老金(元):&nbsp;</td>
+	        <td align="left"><input type="text" id="isv3" name="incometxt" value="<s:property value='isv3'/>" maxlength="10" onblur="checkIsv3(this)" tabindex="75"/></td>
+	        <td align="right">领取医疗救助金(元):&nbsp;</td>
+			<td align="left"><input type="text" id="isv4" name="incometxt" value="<s:property value='isv4'/>" maxlength="10" onblur="checkIsv4(this)" tabindex="76"/></td>
+	    </tr>
+	    <tr>
+	    	<td align="right">领取其他补助金(元):&nbsp;</td>
+			<td align="left"><input type="text" id="isv5" name="incometxt" value="<s:property value='isv5'/>" maxlength="10" onblur="checkIsv5(this)" tabindex="77"/></td>
+	        <td align="right"></td>
+			<td align="left"></td>
+	    </tr>
+	</table>
+	<div style="height:26px; line-height:26px; color:#F00" id="errTip4"></div>
+    
     <div class="cun-bottom">
     	<span></span>
     	<span><input type="button" value="保存" class="button4" onclick="saveIncomeBt()"/></span>

@@ -1,6 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 body {margin:0; padding:0; font-size:12px; font-family:"微软雅黑,宋体";}
+label,input{vertical-align:middle;}
 /**禁止为所有被激活的输入框添加边框（推荐此方法）**/
 *:focus {outline: none} 
 /** common **/
@@ -62,7 +63,7 @@ ul{margin:0; padding:0; list-style:none;}
 
 /* browerDetail */
 #base-title{width:868px; height:25px; line-height:25px; text-align:center; color:#2284E1; font-size:14px;}
-#base-info{width:836px; height:54px; border:1px solid #3B9FFF; padding:8px 0 8px 30px; overflow:hidden;}
+#base-info{width:836px; height:80px; border:1px solid #3B9FFF; padding:8px 0 8px 30px; overflow:hidden;}
 #base-info ul li{float:left;}
 #base-info li{margin-right:38px;}
 #base-info .info1{width:868px; height:30px; line-height:30px;}
@@ -76,6 +77,9 @@ ul{margin:0; padding:0; list-style:none;}
 #base-info .info2 .input_on{border-color:#0CF3FB;}
 #base-info .info2 .input_off{border-color:#D8D8D8;}
 #base-info .info2 .sele{width:90px; height:20px; line-height:20px;}
+
+#base-info .info3{width:868px; height:30px; line-height:30px;}
+
 
 #base-info2{width:836px; height:28px; border:1px solid #3B9FFF; padding:8px 0 8px 30px; overflow:hidden; margin-top:4px;}
 #base-info2 ul li{float:left;}

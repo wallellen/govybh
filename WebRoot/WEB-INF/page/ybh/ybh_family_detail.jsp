@@ -9,7 +9,7 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/jquery-1.5.1.min.js"></script>
 	<style type="text/css">
 		#overlay-member{position:absolute;top:0;left:0;width:100%;height:670px;background:#000;opacity:0.5;filter:alpha(opacity=50);display:none;} 
-		#win-member{position:absolute;top:30%;left:45%;width:500px;height:460px;background:#EAECEA;border:4px solid #F7F7F7;margin:-102px 0 0 -202px;display:none;} 
+		#win-member{position:absolute;top:20%;left:45%;width:500px;height:600px;background:#EAECEA;border:4px solid #F7F7F7;margin:-102px 0 0 -202px;display:none;} 
 		h2{font-size:12px;height:18px;text-align:right;background:#3F89EC;border-bottom:3px solid #F7F7F7;padding:5px;cursor:move;} 
 		h2 span{border:0px solid #f90;padding:0 2px;} 
 		
@@ -40,7 +40,7 @@
 	    <li>劳动力：<s:property value="#session.vts.map.labornum"/></li>
 	    <li class="add-member-bt">
 	    <s:if test="#session.vts.isedit==1">
-	    <input type="button" onclick="popSaveMember('0','add','0')" value="添加人口" class="button4"/>
+	    <input type="button" onclick="popSaveMember('0','add','0','0','0','0','0','0','0','0','0','0','0')" value="添加人口" class="button4"/>
 	    </s:if>
 	   	</li>
 	</ul>
@@ -96,7 +96,7 @@
 			</td>
 			<td>
 			<s:if test="#session.vts.isedit==1">
-				<a href="javascript:popSaveMember('<s:property value="#ls.mid"/>','edit','<s:property value="#sc.count"/>')">修改</a>
+				<a href="javascript:popSaveMember('<s:property value="#ls.mid"/>','edit','<s:property value="#sc.count"/>','<s:property value="#ls.ist1"/>','<s:property value="#ls.ist2"/>','<s:property value="#ls.ist3"/>','<s:property value="#ls.ist4"/>','<s:property value="#ls.ist5"/>','<s:property value="#ls.ish1"/>','<s:property value="#ls.ish2"/>','<s:property value="#ls.ish3"/>','<s:property value="#ls.ish4"/>','<s:property value="#ls.ish5"/>')">修改</a>
 				<a href="${pageContext.request.contextPath }/ybhManageAction_deleteMember.action?mid=<s:property value="#ls.mid"/>" onclick="return confirm('您确定要删除吗?')">删除</a>
 			</s:if>
 			</td>
@@ -114,13 +114,13 @@
 <form name="memberForm" action="" method="post">
 <input type="hidden" id="mid" name="mid" value=""/>
 <div class="member-list">
-	<table width="450px" cellpadding="0" cellspacing="0">
+	<table width="480px" cellpadding="0" cellspacing="0">
 		<tr>
-			<td width="35%" align="right">姓名:&nbsp;&nbsp;</td>
+			<td width="40%" align="right">姓名:&nbsp;&nbsp;</td>
 			<td width="35%" align="left">
 				<input type="text" id="duname" name="uname" class="back-input" maxlength="10" onblur="checkName(this)" placeholder="请输入姓名"/>
 			</td>
-			<td width="30%">
+			<td width="25%">
 				<div id="errTip" class="error-tips"></div>
 			</td>
 		</tr>
@@ -183,7 +183,7 @@
 		<tr>
 			<td align="right">低保人口:&nbsp;&nbsp;</td>
 			<td align="left">
-				<s:radio id="d-bla" name="bla" list="#application.vta.GetList('yesno')" listKey="id" listValue="str"/>
+				<s:radio name="bla" list="#application.vta.GetList('yesno')" listKey="id" listValue="str"/>
 			</td>
 			<td></td>
 		</tr>
@@ -194,6 +194,80 @@
 			</td>
 			<td></td>
 		</tr>
+		<!-- 20140831 add begin -->
+		<tr>
+			<td align="right">是否享受残疾补助:&nbsp;&nbsp;</td>
+			<td align="left">
+				<s:radio name="ist1" list="#application.vta.GetList('yesno')" listKey="id" listValue="str"/>
+			</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td align="right">是否参加新型农村合作医疗:&nbsp;&nbsp;</td>
+			<td align="left">
+				<s:radio name="ist2" list="#application.vta.GetList('yesno')" listKey="id" listValue="str"/>
+			</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td align="right">是否参加城乡居民基本养老保险:&nbsp;&nbsp;</td>
+			<td align="left">
+				<s:radio name="ist3" list="#application.vta.GetList('yesno')" listKey="id" listValue="str"/>
+			</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td align="right">是否参加大病医疗救助:&nbsp;&nbsp;</td>
+			<td align="left">
+				<s:radio name="ist4" list="#application.vta.GetList('yesno')" listKey="id" listValue="str"/>
+			</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td align="right">是否有其他补助:&nbsp;&nbsp;</td>
+			<td align="left">
+				<s:radio name="ist5" list="#application.vta.GetList('yesno')" listKey="id" listValue="str"/>
+			</td>
+			<td></td>
+		</tr>
+		
+		<tr>
+			<td align="right">是否帮助就业:&nbsp;&nbsp;</td>
+			<td align="left">
+				<s:radio name="ish1" list="#application.vta.GetList('yesno')" listKey="id" listValue="str"/>
+			</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td align="right">是否帮助上学:&nbsp;&nbsp;</td>
+			<td align="left">
+				<s:radio name="ish2" list="#application.vta.GetList('yesno')" listKey="id" listValue="str"/>
+			</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td align="right">是否帮助就医:&nbsp;&nbsp;</td>
+			<td align="left">
+				<s:radio name="ish3" list="#application.vta.GetList('yesno')" listKey="id" listValue="str"/>
+			</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td align="right">是否帮助参保:&nbsp;&nbsp;</td>
+			<td align="left">
+				<s:radio name="ish4" list="#application.vta.GetList('yesno')" listKey="id" listValue="str"/>
+			</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td align="right">是否有其他帮助:&nbsp;&nbsp;</td>
+			<td align="left">
+				<s:radio name="ish5" list="#application.vta.GetList('yesno')" listKey="id" listValue="str"/>
+			</td>
+			<td></td>
+		</tr>
+		
+		<!-- 20140831 add end -->
 	</table>
 </div>
 <div></div>

@@ -154,7 +154,7 @@ public class YbhManageAction extends BaseAction implements ModelDriven<YbhManage
 		return "show_family_income_update";
 	}
 	
-	/** 家庭基本信息年收入更新页面 */
+	/** 家庭基本信息样本户年指标 */
 	public String saveIncome(){
 		log.info("save income data incometxt array size:"+ybhManageForm.getIncometxt().length);
 		ybhManageService.saveYbhIncome(ybhManageForm);

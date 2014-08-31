@@ -82,7 +82,7 @@
 			<td>&nbsp;<s:property value="#ls.age"/></td>
 			<td>&nbsp;<s:property value="#ls.school"/></td>
 			<td>&nbsp;<s:property value="#ls.education"/></td>
-			<td>&nbsp;<s:property value="#ls.health"/></td>
+			<td>&nbsp;<s:property value="#ls.hearth"/></td>
 			<td>&nbsp;<s:property value="#ls.dcno"/></td>
 			<td>&nbsp;<s:property value="#ls.labors"/></td>
 			<td>&nbsp;<s:property value="#ls.works"/></td>
@@ -135,6 +135,18 @@
 			<td width="30%" align="center">&nbsp;<s:property value="#session.vts.map.frwork"/></td>
         </tr>
     </table>
+    <!-- 2014-831 add begin -->
+    <table width="100%" cellpadding="0" cellspacing="0">
+    	<tr>
+        	<td width="15%" align="left">&nbsp;&nbsp;是否流转</td>
+			<td width="15%" align="center">&nbsp;<s:property value="#session.vts.map.islz==1?'1:是':'2:否'"/></td>
+			<td width="10%" align="center">流转面积</td>
+			<td width="20%" align="center">&nbsp;<s:property value="#session.vts.map.lzmj"/></td>
+			<td width="20%" align="center">去年是否脱贫</td>
+			<td width="20%" align="center">&nbsp;<s:property value="#session.vts.map.tpl==1?'1:是':'2:否'"/></td>
+        </tr>
+    </table>
+    <!-- 2014-831 add end -->
     <table class="last-tab" width="100%" cellpadding="0" cellspacing="0">
     	<!-- start -->
     	<s:iterator value="#session.vts.list2" var="ls2" status="sc">

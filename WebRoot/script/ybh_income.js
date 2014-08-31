@@ -327,9 +327,143 @@ function saveIncomeBt()
 	if(!checkVv1(document.all.incId4)) return;
 	if(!checkVv2(document.all.incId5)) return;
 	if(!checkXe(document.all.incId6)) return;
+	if(!checkZlbz(document.all.zlbz)) return;
+	if(!checkLzzj(document.all.lzzj)) return;
+	if(!checkIsv1(document.all.isv1)) return;
+	if(!checkIsv2(document.all.isv2)) return;
+	if(!checkIsv3(document.all.isv3)) return;
+	if(!checkIsv4(document.all.isv4)) return;
+	if(!checkIsv5(document.all.isv5)) return;
+	
+	
 	document.form1.action="ybhManageAction_saveIncome.action";
 	document.form1.submit();
 }
 
+//////////////////////////////////////////////////////////////////
 
+function showBanfErrTip3(top,c)
+{
+	var errTip=document.getElementById("errTip3");
+	errTip.style.paddingLeft=top+"px";
+	errTip.style.display="";
+	errTip.innerHTML = c;
+}
+function hideBanfErrTip3()
+{
+	var errTip=document.getElementById("errTip3");
+	errTip.innerHTML = '';
+}
 
+//种粮补助
+function checkZlbz(obj)
+{
+	var reg = /^[0-9]+([.]{1}[0-9]{1})?$/;
+	var item = obj.value;
+	if(reg.test(item))
+	{
+		hideBanfErrTip3();
+		return true;
+	}
+	else
+	{
+		showBanfErrTip3(142,"种粮补助大于等于零，最多可以输入一位小数！");
+		return false;
+	}
+}
+//流转租金
+function checkLzzj(obj)
+{
+	var reg = /^[0-9]+([.]{1}[0-9]{1})?$/;
+	var item = obj.value;
+	if(reg.test(item))
+	{
+		hideBanfErrTip3();
+		return true;
+	}
+	else
+	{
+		showBanfErrTip3(520,"流转租金大于等于零，最多可以输入一位小数！");
+		return false;
+	}
+}
+//领取残疾补助金
+function checkIsv1(obj)
+{
+	var reg = /^[0-9]+([.]{1}[0-9]{1})?$/;
+	var item = obj.value;
+	if(reg.test(item))
+	{
+		hideBanfErrTip3();
+		return true;
+	}
+	else
+	{
+		showBanfErrTip3(142,"领取残疾补助金大于等于零，最多可以输入一位小数！");
+		return false;
+	}
+}
+//领取新农合报销医疗费
+function checkIsv2(obj)
+{
+	var reg = /^[0-9]+([.]{1}[0-9]{1})?$/;
+	var item = obj.value;
+	if(reg.test(item))
+	{
+		hideBanfErrTip3();
+		return true;
+	}
+	else
+	{
+		showBanfErrTip3(520,"领取新农合报销医疗费大于等于零，最多可以输入一位小数！");
+		return false;
+	}
+}
+//领取养老金
+function checkIsv3(obj)
+{
+	var reg = /^[0-9]+([.]{1}[0-9]{1})?$/;
+	var item = obj.value;
+	if(reg.test(item))
+	{
+		hideBanfErrTip3();
+		return true;
+	}
+	else
+	{
+		showBanfErrTip3(142,"领取养老金大于等于零，最多可以输入一位小数！");
+		return false;
+	}
+}
+//领取医疗救助金
+function checkIsv4(obj)
+{
+	var reg = /^[0-9]+([.]{1}[0-9]{1})?$/;
+	var item = obj.value;
+	if(reg.test(item))
+	{
+		hideBanfErrTip3();
+		return true;
+	}
+	else
+	{
+		showBanfErrTip3(520,"领取医疗救助金大于等于零，最多可以输入一位小数！");
+		return false;
+	}
+}
+//领取其他补助金
+function checkIsv5(obj)
+{
+	var reg = /^[0-9]+([.]{1}[0-9]{1})?$/;
+	var item = obj.value;
+	if(reg.test(item))
+	{
+		hideBanfErrTip3();
+		return true;
+	}
+	else
+	{
+		showBanfErrTip3(142,"领取其他补助金大于等于零，最多可以输入一位小数！");
+		return false;
+	}
+}

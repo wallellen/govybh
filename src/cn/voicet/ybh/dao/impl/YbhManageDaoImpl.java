@@ -110,7 +110,7 @@ public class YbhManageDaoImpl extends BaseDaoImpl implements YbhManageDao {
 		this.getJdbcTemplate().execute(new ConnectionCallback() {
 			public Object doInConnection(Connection conn) throws SQLException,
 					DataAccessException {
-				CallableStatement cs = conn.prepareCall("{call ybh_family_update(?,?,?,?,?,?,?,?,?,?,?,?,?)}");
+				CallableStatement cs = conn.prepareCall("{call ybh_family_update(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
 				cs.setString(1, ds.curHM);
 				cs.setString(2, ybhManageForm.getHname());
 				cs.setString(3, ybhManageForm.getZhu());
@@ -123,7 +123,11 @@ public class YbhManageDaoImpl extends BaseDaoImpl implements YbhManageDao {
 				cs.setString(10, ybhManageForm.getFrname());
 				cs.setString(11, ybhManageForm.getFrtel());
 				cs.setString(12, ybhManageForm.getFrwork());
-				cs.setInt(13, 1);
+				cs.setInt(13, ybhManageForm.getHezuo());
+				cs.setInt(14, ybhManageForm.getLiuzhuan());
+				cs.setString(15, ybhManageForm.getLzmj());
+				cs.setInt(16, ybhManageForm.getTuopin());
+				cs.setInt(17, 1);
 				cs.execute();
 				return null;
 			}
@@ -136,7 +140,7 @@ public class YbhManageDaoImpl extends BaseDaoImpl implements YbhManageDao {
 			public Object doInConnection(Connection conn) throws SQLException,
 					DataAccessException {
 				CallableStatement cs = null;
-				cs = conn.prepareCall("{call ybh_member_update(?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
+				cs = conn.prepareCall("{call ybh_member_update(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
 				cs.setString(1, ds.curHM);
 				cs.setInt(2, ybhManageForm.getMid());
 				cs.setString(3, ybhManageForm.getUname());
@@ -150,7 +154,17 @@ public class YbhManageDaoImpl extends BaseDaoImpl implements YbhManageDao {
 				cs.setInt(11, ybhManageForm.getWorks());
 				cs.setInt(12, ybhManageForm.getBla());
 				cs.setInt(13, ybhManageForm.getTbfd());
-				cs.setInt(14, 1);
+				cs.setString(14, ybhManageForm.getIst1());
+				cs.setString(15, ybhManageForm.getIst2());
+				cs.setString(16, ybhManageForm.getIst3());
+				cs.setString(17, ybhManageForm.getIst4());
+				cs.setString(18, ybhManageForm.getIst5());
+				cs.setString(19, ybhManageForm.getIsh1());
+				cs.setString(20, ybhManageForm.getIsh2());
+				cs.setString(21, ybhManageForm.getIsh3());
+				cs.setString(22, ybhManageForm.getIsh4());
+				cs.setString(23, ybhManageForm.getIsh5());
+				cs.setInt(24, 1);
 				cs.execute();
 				return null;
 			}
@@ -246,8 +260,8 @@ public class YbhManageDaoImpl extends BaseDaoImpl implements YbhManageDao {
 		this.getJdbcTemplate().execute(new ConnectionCallback() {
 			public Object doInConnection(Connection conn) throws SQLException,
 					DataAccessException {
-				CallableStatement cs = conn.prepareCall("{call ybh_year_update(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
-				cs.setInt(18, 1);
+				CallableStatement cs = conn.prepareCall("{call ybh_year_update(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
+				cs.setInt(25, 1);
 				String ix[][] = 
 					{
 						{"0","s"},
@@ -266,7 +280,15 @@ public class YbhManageDaoImpl extends BaseDaoImpl implements YbhManageDao {
 						{"9","i"},
 						{"11","i"},
 						{"13","i"},
-						{"15","i"}
+						{"15","i"},
+						
+						{"17","f"},
+						{"18","f"},
+						{"19","f"},
+						{"20","f"},
+						{"21","f"},
+						{"22","f"},
+						{"23","f"}
 					};
 				VTJime.prepareParamFromInputArray(cs, ybhManageForm.getIncometxt(), ix);
 				cs.execute();

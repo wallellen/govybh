@@ -61,7 +61,7 @@
 		
 		<!-- 汇总统计 -->
 		<action name="ybhTotalAction_*" class="ybhTotalAction" method="{1}">
-			<result name="show_total">/WEB-INF/page/work/ybh_total.jsp</result>
+			<result name="show_total">/WEB-INF/page/work/ybh_total_new.jsp</result>
 		</action>
 		
 		<!-- 样本村管理 -->

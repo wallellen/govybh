@@ -1,6 +1,6 @@
 
 
-function popSaveMember(m,s,c){
+function popSaveMember(m,s,c,t1,t2,t3,t4,t5,h1,h2,h3,h4,h5){
 	var mtitle = document.getElementById("mtitle");
 	mtitle.innerHTML="";
 	
@@ -12,6 +12,79 @@ function popSaveMember(m,s,c){
 	document.getElementById("mid").value='';
 	
 	hideErrTip();
+	
+	var ist1 = document.getElementsByName("ist1");
+	var ist2 = document.getElementsByName("ist2");
+	var ist3 = document.getElementsByName("ist3");
+	var ist4 = document.getElementsByName("ist4");
+	var ist5 = document.getElementsByName("ist5");
+	
+	if(t1==1){
+		ist1[0].checked = "checked";
+	}else{
+		ist1[1].checked = "checked";
+	}
+	
+	if(t2==1){
+		ist2[0].checked = "checked";
+	}else{
+		ist2[1].checked = "checked";
+	}
+	
+	if(t3==1){
+		ist3[0].checked = "checked";
+	}else{
+		ist3[1].checked = "checked";
+	}
+	
+	if(t4==1){
+		ist4[0].checked = "checked";
+	}else{
+		ist4[1].checked = "checked";
+	}
+	
+	if(t5==1){
+		ist5[0].checked = "checked";
+	}else{
+		ist5[1].checked = "checked";
+	}
+	
+	/************/
+	var ish1 = document.getElementsByName("ish1");
+	var ish2 = document.getElementsByName("ish2");
+	var ish3 = document.getElementsByName("ish3");
+	var ish4 = document.getElementsByName("ish4");
+	var ish5 = document.getElementsByName("ish5");
+	
+	if(h1==1){
+		ish1[0].checked = "checked";
+	}else{
+		ish1[1].checked = "checked";
+	}
+	
+	if(h2==1){
+		ish2[0].checked = "checked";
+	}else{
+		ish2[1].checked = "checked";
+	}
+	
+	if(h3==1){
+		ish3[0].checked = "checked";
+	}else{
+		ish3[1].checked = "checked";
+	}
+	
+	if(h4==1){
+		ish4[0].checked = "checked";
+	}else{
+		ish4[1].checked = "checked";
+	}
+	
+	if(h5==1){
+		ish5[0].checked = "checked";
+	}else{
+		ish5[1].checked = "checked";
+	}
 	
 	if(s=="edit"){
 		mtitle.innerHTML="<font color='#fff'>修改家庭成员信息</font>";
@@ -83,6 +156,9 @@ function popSaveMember(m,s,c){
 		document.getElementById("dtbfd").value = utbf.innerHTML;
 		//mid
 		document.getElementById("mid").value=m;
+		
+		
+		/*****/
 	}else{
 		mtitle.innerHTML="<font color='#fff'>添加家庭成员</font>";
 		document.getElementById("mid").value=m;
@@ -208,18 +284,18 @@ function checkName(obj){
 function checkAge(obj){
 	var dage = obj.value;
 	if(dage==""){
-		showErrTip(52,"出生年份不能为空");
+		showErrTip(42,"出生年份不能为空");
 		//obj.focus(); 
 		return false;
 	}
 	else if(isNaN(dage))
 	{
-		showErrTip(52,"出生年份只能是数字格式");
+		showErrTip(42,"出生年份只能是数字格式");
 		//obj.focus(); 
 		return false;
 	}
 	else if(dage<1900 || dage>2020){
-		showErrTip(52,"出生年份范围1900-2020");
+		showErrTip(42,"出生年份范围1900-2020");
 		//obj.focus(); 
 		return false;
 	}else{
@@ -239,7 +315,7 @@ function checkDcno(obj)
 	}
 	else
 	{
-		showErrTip(172,"残疾证号可以为空或20位字母与数字的组合");
+		showErrTip(138,"残疾证号可以为空或20位字母与数字的组合");
 		//obj.focus(); 
 		return false;
 	}
@@ -255,14 +331,14 @@ function checkDibao(obj){
 	}
 	else
 	{
-		showErrTip(295,"低保金只能是大于0的数字");
+		showErrTip(234,"低保金只能是大于0的数字");
 		//obj.focus(); 
 		return false;
 	}
 	var blaRadio = document.getElementsByName("bla");
 	if(blaRadio[0].checked){
 		if(tb.length==0 || tb==0 || !tb.match(/^[0-9]+$/)){
-			showErrTip(295,"低保金只能是大于0的数字");
+			showErrTip(234,"低保金只能是大于0的数字");
 			//obj.focus(); 
 			return false;
 		}
@@ -438,6 +514,7 @@ function checkPersonForm()
 	if(!checkBanfPerson(document.all.frname)) return;
 	if(!checkBanfWork(document.all.frwork)) return;
 	if(!checkBanfTelphone(document.all.frtel)) return;
+	if(!checkLiuzhuanmj(document.all.lzmj)) return;
 	//
 	document.personForm.action="ybhManageAction_saveFamily.action";
 	document.personForm.submit();
@@ -452,12 +529,55 @@ function saveReturnFamily(){
 	if(!checkBanfPerson(document.all.frname)) return;
 	if(!checkBanfWork(document.all.frwork)) return;
 	if(!checkBanfTelphone(document.all.frtel)) return;
+	if(!checkLiuzhuanmj(document.all.lzmj)) return;
 	//
 	document.personForm.action="ybhManageAction_saveFamilyEx.action";
 	document.personForm.submit();
 }
 
+//是否参加农民专业合作社
+function checkHezuo(obj){
+	if(obj.checked){
+		$("#hezuo").val(1);
+	}else{
+		$("#hezuo").val(0);
+	}
+}
 
-
-
-
+//是否流转 
+function checkLiuzhuan(obj){
+	if(obj.checked){
+		$("#liuzhuan").val(1);
+	}else{
+		$("#liuzhuan").val(0);
+	}
+}
+//去年是否已经脱贫
+function checkTuopin(obj){
+	if(obj.checked){
+		$("#tuopin").val(1);
+	}else{
+		$("#tuopin").val(0);
+	}
+}
+//流转面积
+function checkLiuzhuanmj(obj){
+	var liuzhuanmj = obj.value;
+	if(isNaN(liuzhuanmj))
+	{        
+		showFamilyErrTip(50,"非法数字");
+		//obj.focus();
+		return false;
+    }
+	else if(liuzhuanmj<10 || liuzhuanmj>300)
+	{
+		showFamilyErrTip(50,"请输入合理的面积[大于10，小于300]");
+		obj.focus();
+		return false;
+	}
+	else
+	{
+		hideFamilyErrTip();
+		return true;
+	}
+}

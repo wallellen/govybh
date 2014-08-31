@@ -457,17 +457,17 @@
 		        </tr>
 		        <tr>
 		            <td class="aleft">&nbsp;②工资性收入（元）</td>
-		            <td class="aright"><s:property value="#session.vts.map.inWork_a"/>&nbsp;</td>
+		            <td class="aright"><s:property value="#session.vts.map.inWork_t"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
 		            <td class="aleft">&nbsp;③财产性及转移性收入（元）</td>
-		            <td class="aright"><s:property value="#session.vts.map.incz_a"/>&nbsp;</td>
+		            <td class="aright"><s:property value="#session.vts.map.inCC_t"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
 		            <td class="aleft">&nbsp;④各类补贴收入（元）</td>
-		            <td class="aright"><s:property value="#session.vts.map."/>&nbsp;</td>
+		            <td class="aright"><s:property value="#session.vts.map.inBZ_t"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
@@ -509,17 +509,17 @@
 		        </tr>
 		        <tr>
 		            <td class="aleft">&nbsp;⑦缺技术致贫（户）</td>
-		            <td class="aright"><s:property value="#session.vts.map."/>&nbsp;</td>
+		            <td class="aright"><s:property value="#session.vts.map.dc7"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
 		            <td class="aleft">&nbsp;⑧缺资金致贫（户）</td>
-		            <td class="aright"><s:property value="#session.vts.map."/>&nbsp;</td>
+		            <td class="aright"><s:property value="#session.vts.map.dc8"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        
 		        <tr>
-		            <td rowspan="16">7</td>
+		            <td rowspan="15">7</td>
 		            <td class="aleft">&nbsp;得到扶贫项目支持的户数（户）</td>
 		            <td class="aright"><s:property value="#session.vts.map.fs"/>&nbsp;</td>
 		            <td></td>
@@ -530,7 +530,7 @@
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td class="aleft">&nbsp;②得到就业项目支持（户）</td>
+		            <td class="aleft">&nbsp;②得到帮助就业项目支持（户）</td>
 		            <td class="aright"><s:property value="#session.vts.map.fs2"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
@@ -545,31 +545,25 @@
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td class="aleft">&nbsp;⑤得到其它项目支持（户）</td>
+		            <td class="aleft">&nbsp;⑤得到帮助上学项目（户）</td>
 		            <td class="aright"><s:property value="#session.vts.map.fs5"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td class="aleft">&nbsp;⑥未得到任何项目支持（户）</td>
+		            <td class="aleft">&nbsp;⑥得到帮助就医项目（户）</td>
 		            <td class="aright"><s:property value="#session.vts.map.fs6"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td class="aleft">&nbsp;⑦得到帮助上学项目（户）</td>
+		            <td class="aleft">&nbsp;⑦得到帮助参保项目（户）</td>
 		            <td class="aright"><s:property value="#session.vts.map.fs7"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td class="aleft">&nbsp;⑧得到帮助就医项目（户）</td>
+		            <td class="aleft">&nbsp;⑧得到其它项目支持（户）</td>
 		            <td class="aright"><s:property value="#session.vts.map.fs8"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
-		        <tr>
-		            <td class="aleft">&nbsp;⑧得到帮助参保项目（户）</td>
-		            <td class="aright"><s:property value="#session.vts.map."/>&nbsp;</td>
-		            <td></td>
-		        </tr>
-		        
 		        <tr>
 		            <td class="aleft">&nbsp;其中：得到帮扶项目到人人数（人）</td>
 		            <td class="aright"><s:property value="#session.vts.map.rk_fst"/>&nbsp;</td>
@@ -600,8 +594,6 @@
 		            <td class="aright"><s:property value="#session.vts.map.rk_fs5"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
-		        
-		        
 		        <tr>
 		            <td rowspan="6">8</td>
 		            <td class="aleft">&nbsp;得到扶贫资金支持的户数（户）</td>
@@ -686,7 +678,7 @@
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td rowspan="9">11</td>
+		            <td rowspan="8">11</td>
 		            <td class="aleft">&nbsp;累计脱贫户数（户）</td>
 		            <td class="aright"><s:property value="#session.vts.map.tph"/>&nbsp;</td>
 		            <td></td>
@@ -704,11 +696,6 @@
 		        <tr>
 		            <td class="aleft">&nbsp;当年脱贫人口（人）</td>
 		            <td class="aright"><s:property value="#session.vts.map.tprk_c"/>&nbsp;</td>
-		            <td></td>
-		        </tr>
-		        <tr>
-		            <td class="aleft">&nbsp;当年人口脱贫率（%）</td>
-		            <td class="aright"><s:property value="#session.vts.map."/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>

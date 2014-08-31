@@ -21,6 +21,11 @@ public class YbhManageForm {
 	private String frwork;	//帮扶人职务
 	private String frtel;	//帮扶人电话
 	
+	private int hezuo;
+	private int liuzhuan;
+	private String lzmj;
+	private int tuopin;
+	
 	/* 成员信息 */
 	private int mid;
 	private String uname;
@@ -34,6 +39,19 @@ public class YbhManageForm {
 	private int works;
 	private int bla;
 	private int tbfd;
+	
+	
+	/** 20140831 add */
+	private String ist1;
+	private String ist2;
+	private String ist3;
+	private String ist4;
+	private String ist5;
+	private String ish1;
+	private String ish2;
+	private String ish3;
+	private String ish4;
+	private String ish5;
 	
 	/* 家庭收入级帮扶情况数组 */
 	private String[] incomearr; 
@@ -66,6 +84,14 @@ public class YbhManageForm {
 	private String bb2;
 	private String bb3;
 	private String bb4;
+	
+	private String zlbz;
+	private String lzzj;
+	private String isv1;
+	private String isv2;
+	private String isv3;
+	private String isv4;
+	private String isv5;
 	
 	//返回样本村管理页面
 	private String rtybc;
@@ -377,5 +403,131 @@ public class YbhManageForm {
 	}
 	public void setRtybc(String rtybc) {
 		this.rtybc = rtybc;
+	}
+	public int getHezuo() {
+		return hezuo;
+	}
+	public void setHezuo(int hezuo) {
+		this.hezuo = hezuo;
+	}
+	public int getLiuzhuan() {
+		return liuzhuan;
+	}
+	public void setLiuzhuan(int liuzhuan) {
+		this.liuzhuan = liuzhuan;
+	}
+	public String getLzmj() {
+		return lzmj;
+	}
+	public void setLzmj(String lzmj) {
+		this.lzmj = lzmj;
+	}
+	public int getTuopin() {
+		return tuopin;
+	}
+	public void setTuopin(int tuopin) {
+		this.tuopin = tuopin;
+	}
+	public String getIst1() {
+		return ist1;
+	}
+	public void setIst1(String ist1) {
+		this.ist1 = ist1;
+	}
+	public String getIst2() {
+		return ist2;
+	}
+	public void setIst2(String ist2) {
+		this.ist2 = ist2;
+	}
+	public String getIst3() {
+		return ist3;
+	}
+	public void setIst3(String ist3) {
+		this.ist3 = ist3;
+	}
+	public String getIst4() {
+		return ist4;
+	}
+	public void setIst4(String ist4) {
+		this.ist4 = ist4;
+	}
+	public String getIst5() {
+		return ist5;
+	}
+	public void setIst5(String ist5) {
+		this.ist5 = ist5;
+	}
+	public String getIsh1() {
+		return ish1;
+	}
+	public void setIsh1(String ish1) {
+		this.ish1 = ish1;
+	}
+	public String getIsh2() {
+		return ish2;
+	}
+	public void setIsh2(String ish2) {
+		this.ish2 = ish2;
+	}
+	public String getIsh3() {
+		return ish3;
+	}
+	public void setIsh3(String ish3) {
+		this.ish3 = ish3;
+	}
+	public String getIsh4() {
+		return ish4;
+	}
+	public void setIsh4(String ish4) {
+		this.ish4 = ish4;
+	}
+	public String getIsh5() {
+		return ish5;
+	}
+	public void setIsh5(String ish5) {
+		this.ish5 = ish5;
+	}
+	public String getZlbz() {
+		return zlbz;
+	}
+	public void setZlbz(String zlbz) {
+		this.zlbz = zlbz;
+	}
+	public String getLzzj() {
+		return lzzj;
+	}
+	public void setLzzj(String lzzj) {
+		this.lzzj = lzzj;
+	}
+	public String getIsv1() {
+		return isv1;
+	}
+	public void setIsv1(String isv1) {
+		this.isv1 = isv1;
+	}
+	public String getIsv2() {
+		return isv2;
+	}
+	public void setIsv2(String isv2) {
+		this.isv2 = isv2;
+	}
+	public String getIsv3() {
+		return isv3;
+	}
+	public void setIsv3(String isv3) {
+		this.isv3 = isv3;
+	}
+	public String getIsv4() {
+		return isv4;
+	}
+	public void setIsv4(String isv4) {
+		this.isv4 = isv4;
+	}
+	public String getIsv5() {
+		return isv5;
+	}
+	public void setIsv5(String isv5) {
+		this.isv5 = isv5;
 	}
 }
