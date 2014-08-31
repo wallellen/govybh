@@ -569,10 +569,9 @@ function checkLiuzhuanmj(obj){
 		//obj.focus();
 		return false;
     }
-	else if(liuzhuanmj<10 || liuzhuanmj>300)
+	else if(liuzhuanmj<0 || liuzhuanmj>300)
 	{
-		showFamilyErrTip(50,"请输入合理的面积[大于10，小于300]");
-		obj.focus();
+		showFamilyErrTip(50,"请输入合理的面积[大于0，小于300]");
 		return false;
 	}
 	else

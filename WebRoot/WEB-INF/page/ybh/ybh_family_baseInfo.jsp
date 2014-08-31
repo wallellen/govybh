@@ -6,7 +6,7 @@
 		document.all.zhu.focus();
 	}
 </script>
-<script type="text/javascript" src="${pageContext.request.contextPath }/script/familymember.js?v=4"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath }/script/familymember.js?v=5"></script>
 <style type="text/css">
 	.family-errtip{color:#F00; width:570px;}
 </style>

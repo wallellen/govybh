@@ -63,7 +63,7 @@ ul{margin:0; padding:0; list-style:none;}
 
 /* browerDetail */
 #base-title{width:868px; height:25px; line-height:25px; text-align:center; color:#2284E1; font-size:14px;}
-#base-info{width:836px; height:80px; border:1px solid #3B9FFF; padding:8px 0 8px 30px; overflow:hidden;}
+#base-info{width:836px; height:84px; border:1px solid #3B9FFF; padding:8px 0 8px 30px; overflow:hidden;}
 #base-info ul li{float:left;}
 #base-info li{margin-right:38px;}
 #base-info .info1{width:868px; height:30px; line-height:30px;}
