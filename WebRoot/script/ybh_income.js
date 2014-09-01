@@ -323,7 +323,7 @@ function saveIncomeBt()
 {
 	if(!checkInjy(document.all.incId1)) return;
 	if(!checkInwork(document.all.incId2)) return;
-	if(!checkIncz(document.all.incId3)) return;
+	//if(!checkIncz(document.all.incId3)) return;
 	if(!checkVv1(document.all.incId4)) return;
 	if(!checkVv2(document.all.incId5)) return;
 	if(!checkXe(document.all.incId6)) return;
@@ -379,6 +379,8 @@ function checkLzzj(obj)
 	if(reg.test(item))
 	{
 		hideBanfErrTip3();
+		$("#incId3").val(item);
+		income_sum();
 		return true;
 	}
 	else

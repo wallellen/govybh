@@ -5,7 +5,7 @@
 <head>
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/style/style.css" />
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/jquery-1.5.1.min.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath }/script/ybh_income.js?v=3"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath }/script/ybh_income.js?v=7"></script>
 </head>
 <body style="background:#E0EEFB;">
 <h3 class="ybh_h3_title"><s:property value="year"/>年&nbsp;[<s:property value="#session.vts.curHM"/>&nbsp;<s:property value="hname"/>]样本户基础监测更新</h3>
@@ -34,12 +34,15 @@
             <td align="right">(2)市、县级扶贫资金(元):&nbsp;</td>
 			<td align="left"><input type="text" id="incId5" name="incometxt" value="<s:property value='vv2'/>" maxlength="10" onblur="checkVv2(this)" tabindex="22"/></td>
         </tr>
+        <!--  
         <tr>
         	<td align="right">(3)财产性及转移性收入(元):&nbsp;</td>
 			<td align="left"><input type="text" id="incId3" name="incometxt" value="<s:property value='incz'/>" maxlength="10" onblur="checkIncz(this)" tabindex="13"/></td>
             <td align="right"></td>
 			<td align="left"></td>
         </tr>
+        -->
+        <input type="hidden" id="incId3" name="incometxt" value="<s:property value='incz'/>"/>
     </table>
     <div style="height:26px; line-height:26px; color:#F00" id="errTip1"></div>
     <table cellpadding="0" cellspacing="0" width="100%">
