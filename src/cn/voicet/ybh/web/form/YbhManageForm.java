@@ -21,10 +21,6 @@ public class YbhManageForm {
 	private String frwork;	//帮扶人职务
 	private String frtel;	//帮扶人电话
 	
-	private int hezuo;
-	private int liuzhuan;
-	private String lzmj;
-	private int tuopin;
 	
 	/* 成员信息 */
 	private int mid;
@@ -58,13 +54,42 @@ public class YbhManageForm {
 	
 	/* 样本户年收入 */
 	private int year;
+	
+	//家庭人口
+	
+	//家庭劳动力
+	
+	//其中：务工劳动力
+	
+	//家庭承包耕地面积
+	
+	//其中：流转面积
+	
+	private String population;
+	private String labornum;
+	private String wlabornum;
+	private String lzmj;
+	
+	
 	//家庭年总纯收入
 	private String intotal;
 	private String injy;
 	private String inwork;
 	private String incz;
+	
+	private String lzzj;
+	private String inbz;
+	private String zlbz;
+	private String isv1;
+	private String isv2;
+	private String isv3;
+	private String isv4;
+	private String isv5;
+	private String isv6;
+	
 	//家庭年人均纯收入
 	private String inpersonal;
+	
 	//享受扶贫项目支持情况
 	private String fs;
 	private String fs1;
@@ -72,6 +97,9 @@ public class YbhManageForm {
 	private String fs3;
 	private String fs4;
 	private String fs5;
+	private String fs6;
+	private String fs7;
+	private String fs8;
 	//得到帮扶资金
 	private String vv;
 	private String vv1;
@@ -85,18 +113,16 @@ public class YbhManageForm {
 	private String bb3;
 	private String bb4;
 	
-	private String zlbz;
-	private String lzzj;
-	private String isv1;
-	private String isv2;
-	private String isv3;
-	private String isv4;
-	private String isv5;
-	
+	private String ltp;
 	//返回样本村管理页面
 	private String rtybc;
 	
 	private String[] incometxt;
+	
+	
+	private int hezuo;
+	private int liuzhuan;
+	private int tuopin;
 	
 	public String getViewBM() {
 		return viewBM;
@@ -404,29 +430,11 @@ public class YbhManageForm {
 	public void setRtybc(String rtybc) {
 		this.rtybc = rtybc;
 	}
-	public int getHezuo() {
-		return hezuo;
-	}
-	public void setHezuo(int hezuo) {
-		this.hezuo = hezuo;
-	}
-	public int getLiuzhuan() {
-		return liuzhuan;
-	}
-	public void setLiuzhuan(int liuzhuan) {
-		this.liuzhuan = liuzhuan;
-	}
 	public String getLzmj() {
 		return lzmj;
 	}
 	public void setLzmj(String lzmj) {
 		this.lzmj = lzmj;
-	}
-	public int getTuopin() {
-		return tuopin;
-	}
-	public void setTuopin(int tuopin) {
-		this.tuopin = tuopin;
 	}
 	public String getIst1() {
 		return ist1;
@@ -488,17 +496,36 @@ public class YbhManageForm {
 	public void setIsh5(String ish5) {
 		this.ish5 = ish5;
 	}
-	public String getZlbz() {
-		return zlbz;
-	}
-	public void setZlbz(String zlbz) {
-		this.zlbz = zlbz;
-	}
+	
 	public String getLzzj() {
 		return lzzj;
 	}
 	public void setLzzj(String lzzj) {
 		this.lzzj = lzzj;
+	}
+	public String getPopulation() {
+		return population;
+	}
+	public void setPopulation(String population) {
+		this.population = population;
+	}
+	public String getWlabornum() {
+		return wlabornum;
+	}
+	public void setWlabornum(String wlabornum) {
+		this.wlabornum = wlabornum;
+	}
+	public String getInbz() {
+		return inbz;
+	}
+	public void setInbz(String inbz) {
+		this.inbz = inbz;
+	}
+	public String getZlbz() {
+		return zlbz;
+	}
+	public void setZlbz(String zlbz) {
+		this.zlbz = zlbz;
 	}
 	public String getIsv1() {
 		return isv1;
@@ -529,5 +556,59 @@ public class YbhManageForm {
 	}
 	public void setIsv5(String isv5) {
 		this.isv5 = isv5;
+	}
+	public String getIsv6() {
+		return isv6;
+	}
+	public void setIsv6(String isv6) {
+		this.isv6 = isv6;
+	}
+	public String getFs6() {
+		return fs6;
+	}
+	public void setFs6(String fs6) {
+		this.fs6 = fs6;
+	}
+	public String getFs7() {
+		return fs7;
+	}
+	public void setFs7(String fs7) {
+		this.fs7 = fs7;
+	}
+	public String getFs8() {
+		return fs8;
+	}
+	public void setFs8(String fs8) {
+		this.fs8 = fs8;
+	}
+	public String getLtp() {
+		return ltp;
+	}
+	public void setLtp(String ltp) {
+		this.ltp = ltp;
+	}
+	public int getHezuo() {
+		return hezuo;
+	}
+	public void setHezuo(int hezuo) {
+		this.hezuo = hezuo;
+	}
+	public int getLiuzhuan() {
+		return liuzhuan;
+	}
+	public void setLiuzhuan(int liuzhuan) {
+		this.liuzhuan = liuzhuan;
+	}
+	public int getTuopin() {
+		return tuopin;
+	}
+	public void setTuopin(int tuopin) {
+		this.tuopin = tuopin;
+	}
+	public String getLabornum() {
+		return labornum;
+	}
+	public void setLabornum(String labornum) {
+		this.labornum = labornum;
 	}
 }

@@ -10,6 +10,20 @@ function hideBanfErrTip1()
 	var errTip=document.getElementById("errTip1");
 	errTip.innerHTML = '';
 }
+
+function showBanfErrTip3(top,c)
+{
+	var errTip=document.getElementById("errTip3");
+	errTip.style.paddingLeft=top+"px";
+	errTip.style.display="";
+	errTip.innerHTML = c;
+}
+function hideBanfErrTip3()
+{
+	var errTip=document.getElementById("errTip3");
+	errTip.innerHTML = '';
+}
+
 /******* 4、家庭年总纯收入 start ********/
 //其中:(1)家庭经营性收入
 function checkInjy(obj)
@@ -24,8 +38,7 @@ function checkInjy(obj)
 	}
 	else
 	{
-		showBanfErrTip1(142,"家庭经营性收入大于等于零，最多可以输入一位小数！");
-		//obj.focus();
+		showBanfErrTip1(100,"生产经营性收入大于等于零，最多可以输入一位小数！");
 		return false;
 	}
 }
@@ -42,94 +55,212 @@ function checkInwork(obj)
 	}
 	else
 	{
-		showBanfErrTip1(142,"工资性收入大于等于零，最多可以输入一位小数！");
-		//obj.focus();
+		showBanfErrTip1(100,"工资性收入大于等于零，最多可以输入一位小数！");
 		return false;
 	}
 }
-//(3)财产性及转移性收入
-function checkIncz(obj)
-{
-	var reg = /^[0-9]+([.]{1}[0-9]{1})?$/;
-	var item = obj.value;
-	if(reg.test(item))
-	{
-		hideBanfErrTip1();
-		income_sum();
-		return true;
-	}
-	else
-	{
-		showBanfErrTip1(142,"财产性及转移性收入大于等于零，最多可以输入一位小数！");
-		//obj.focus();
-		return false;
-	}
-}
+/** 计算家庭年总纯收入 */
 function income_sum()
 {
-	if(incId1.value>0 && incId2.value>0 && incId3.value>0)
+	var v1=$("#incId1").val();		//生产经营性收入
+	var v2=$("#incId2").val();		//工资性收入
+	var v12=$("#incId12").val();	//流转耕地租金
+	var v4=$("#incId4")[0].innerHTML;	//各类补贴性收入
+	
+	if(v1>=0 && v2>=0 && v4>=0 && v12>=0)
 	{
-		var v = parseFloat(incId1.value) + parseFloat(incId2.value) + parseFloat(incId3.value);
+		var v = parseFloat(v1)+parseFloat(v2)+parseFloat(v4)+parseFloat(v12);
 		in_total.innerHTML=v.toFixed(1);
 		var rks = renkou.value;
 		if(null==rks || rks==0){
 			rks=1;
 		}
 		var rj = v/rks;
-		rj_income.innerHTML=rj.toFixed(1);
+		$("#rj_income")[0].innerHTML=rj.toFixed(1);
 	}
 }
+
+
+/** 计算各类补贴性收入其中的总数 */
+function income_inbz(){
+	var vt;
+	var v5=$("#incId5").val();
+	var v6=$("#incId6").val();
+	var v7=$("#incId7").val();
+	var v8=$("#incId8").val();
+	var v9=$("#incId9").val();
+	var v10=$("#incId10").val();
+	var v11=$("#incId11").val();
+	
+	if(v5>=0 && v6>=0 && v7>=0 && v8>=0 && v9>=0 && v10>=0 && v11>=0){
+		vt = parseFloat(v5)+parseFloat(v6)+parseFloat(v7)+parseFloat(v8)+parseFloat(v9)+parseFloat(v10)+parseFloat(v11);
+	}else{
+		vt = 0;
+	}
+	return vt;
+}
+
+/** 计算各类补贴性收入 */
+function income_inbz_total(){
+	$("#incId4")[0].innerHTML=income_inbz();	//各类补贴性收入
+}
+
+//种粮补助
+function checkZlbz(obj)
+{
+	var reg = /^[0-9]+([.]{1}[0-9]{1})?$/;
+	var item = obj.value;
+	if(reg.test(item))
+	{
+		hideBanfErrTip3();
+		income_inbz_total();
+		income_sum();
+		return true;
+	}
+	else
+	{
+		showBanfErrTip3(0,"种粮补助大于等于零，最多可以输入一位小数！");
+		return false;
+	}
+}
+
+//领取低保、五保金
+function checkDibao(obj)
+{
+	var reg = /^[0-9]+([.]{1}[0-9]{1})?$/;
+	var item = obj.value;
+	if(reg.test(item))
+	{
+		hideBanfErrTip3();
+		income_inbz_total();
+		income_sum();
+		return true;
+	}
+	else
+	{
+		showBanfErrTip3(0,"领取低保、五保金大于等于零，最多可以输入一位小数！");
+		return false;
+	}
+}
+
+//领取残疾补助金
+function checkIsv1(obj)
+{
+	var reg = /^[0-9]+([.]{1}[0-9]{1})?$/;
+	var item = obj.value;
+	if(reg.test(item))
+	{
+		hideBanfErrTip3();
+		income_inbz_total();
+		income_sum();
+		return true;
+	}
+	else
+	{
+		showBanfErrTip3(0,"领取残疾补助金大于等于零，最多可以输入一位小数！");
+		return false;
+	}
+}
+//领取新农合报销医疗费
+function checkIsv2(obj)
+{
+	var reg = /^[0-9]+([.]{1}[0-9]{1})?$/;
+	var item = obj.value;
+	if(reg.test(item))
+	{
+		hideBanfErrTip3();
+		income_inbz_total();
+		income_sum();
+		return true;
+	}
+	else
+	{
+		showBanfErrTip3(0,"领取新农合报销医疗费大于等于零，最多可以输入一位小数！");
+		return false;
+	}
+}
+//领取养老金
+function checkIsv3(obj)
+{
+	var reg = /^[0-9]+([.]{1}[0-9]{1})?$/;
+	var item = obj.value;
+	if(reg.test(item))
+	{
+		hideBanfErrTip3();
+		income_inbz_total();
+		income_sum();
+		return true;
+	}
+	else
+	{
+		showBanfErrTip3(0,"领取养老金大于等于零，最多可以输入一位小数！");
+		return false;
+	}
+}
+//领取医疗救助金
+function checkIsv4(obj)
+{
+	var reg = /^[0-9]+([.]{1}[0-9]{1})?$/;
+	var item = obj.value;
+	if(reg.test(item))
+	{
+		hideBanfErrTip3();
+		income_inbz_total();
+		income_sum();
+		return true;
+	}
+	else
+	{
+		showBanfErrTip3(0,"领取医疗救助金大于等于零，最多可以输入一位小数！");
+		return false;
+	}
+}
+//领取其他补助金
+function checkIsv5(obj)
+{
+	var reg = /^[0-9]+([.]{1}[0-9]{1})?$/;
+	var item = obj.value;
+	if(reg.test(item))
+	{
+		hideBanfErrTip3();
+		income_inbz_total();
+		income_sum();
+		return true;
+	}
+	else
+	{
+		showBanfErrTip3(0,"领取其他补助金大于等于零，最多可以输入一位小数！");
+		return false;
+	}
+}
+//(3)流转耕地租金
+function checkLiuzhuan(obj)
+{
+	var reg = /^[0-9]+([.]{1}[0-9]{1})?$/;
+	var item = obj.value;
+	if(reg.test(item))
+	{
+		hideBanfErrTip3();
+		$("#in_canchan").val(item);
+		//获取财产性收入
+		$("#incId3")[0].innerHTML=item;
+		income_sum();
+		return true;
+	}
+	else
+	{
+		showBanfErrTip3(0,"流转耕地租金大于等于零，最多可以输入一位小数！");
+		return false;
+	}
+}
+
 
 
 /******* 4、家庭年总纯收入 end ********/
 
-/******* 8、得到帮扶资金 start ********/
-//(1)省级扶贫资金
-function checkVv1(obj)
-{
-	var reg = /^[0-9]+([.]{1}[0-9]{1})?$/;
-	var item = obj.value;
-	if(reg.test(item))
-	{
-		hideBanfErrTip1();
-		bangfu_sum();
-		return true;
-	}
-	else
-	{
-		showBanfErrTip1(520,"省级扶贫资金大于等于零，最多可以输入一位小数！");
-		//obj.focus();
-		return false;
-	}
-}
-//(2)市、县级扶贫资金
-function checkVv2(obj)
-{
-	var reg = /^[0-9]+([.]{1}[0-9]{1})?$/;
-	var item = obj.value;
-	if(reg.test(item))
-	{
-		hideBanfErrTip1();
-		bangfu_sum();
-		return true;
-	}
-	else
-	{
-		showBanfErrTip1(520,"市、县级扶贫资金大于等于零，最多可以输入一位小数！");
-		//obj.focus();
-		return false;
-	}
-}
-function bangfu_sum()
-{
-	if(incId4.value>0 && incId5.value>0)
-	{
-		var v = parseFloat(incId4.value) + parseFloat(incId5.value);
-		bf_total.innerHTML=v.toFixed(1);
-	}
-}
-/******* 8、得到帮扶资金 end ********/
 
+
+/******* 8、得到帮扶资金 start ********/
 //////////////////////////////tip2分隔  ////////////////////////////////////
 function showBanfErrTip2(top,c)
 {
@@ -143,6 +274,51 @@ function hideBanfErrTip2()
 	var errTip=document.getElementById("errTip2");
 	errTip.innerHTML = '';
 }
+//(1)省级扶贫资金
+function checkVv1(obj)
+{
+	var reg = /^[0-9]+([.]{1}[0-9]{1})?$/;
+	var item = obj.value;
+	if(reg.test(item))
+	{
+		hideBanfErrTip2();
+		bangfu_sum();
+		return true;
+	}
+	else
+	{
+		showBanfErrTip2(0,"省级扶贫资金大于等于零，最多可以输入一位小数！");
+		return false;
+	}
+}
+//(2)市、县级扶贫资金
+function checkVv2(obj)
+{
+	var reg = /^[0-9]+([.]{1}[0-9]{1})?$/;
+	var item = obj.value;
+	if(reg.test(item))
+	{
+		hideBanfErrTip2();
+		bangfu_sum();
+		return true;
+	}
+	else
+	{
+		showBanfErrTip2(0,"市、县级扶贫资金大于等于零，最多可以输入一位小数！");
+		return false;
+	}
+}
+function bangfu_sum()
+{
+	if(incId13.value>0 && incId14.value>0)
+	{
+		var v = parseFloat(incId13.value) + parseFloat(incId14.value);
+		bf_total.innerHTML=v.toFixed(1);
+	}
+}
+/******* 8、得到帮扶资金 end ********/
+
+
 /******* 9、使用小额扶贫贷款数量 start ********/
 //使用小额扶贫贷款数量
 function checkXe(obj)
@@ -156,12 +332,16 @@ function checkXe(obj)
 	}
 	else
 	{
-		showBanfErrTip2(520,"使用小额扶贫贷款数量大于等于零，最多可以输入一位小数！");
+		showBanfErrTip2(0,"使用小额扶贫贷款数量大于等于零，最多可以输入一位小数！");
 		//obj.focus();
 		return false;
 	}
 }
 /******* 9、使用小额扶贫贷款数量 end ********/
+
+
+
+
 
 /******* 7、享受扶贫项目支持情况 start ********/
 //(1)产业发展项目
@@ -175,20 +355,6 @@ function selectFs1(obj)
 	else
 	{
 		fsbox1.value=0;
-	}
-	changechk_fs();
-}
-//(2)帮助就业项目
-function selectFs2(obj)
-{
-	var fsbox2 = document.getElementById("fsbox2");
-	if(obj.checked)
-	{
-		fsbox2.value=1;
-	}
-	else
-	{
-		fsbox2.value=0;
 	}
 	changechk_fs();
 }
@@ -217,20 +383,6 @@ function selectFs4(obj)
 	else
 	{
 		fsbox4.value=0;
-	}
-	changechk_fs();
-}
-//(5)其它项目
-function selectFs5(obj)
-{
-	var fsbox5 = document.getElementById("fsbox5");
-	if(obj.checked)
-	{
-		fsbox5.value=1;
-	}
-	else
-	{
-		fsbox5.value=0;
 	}
 	changechk_fs();
 }
@@ -323,17 +475,17 @@ function saveIncomeBt()
 {
 	if(!checkInjy(document.all.incId1)) return;
 	if(!checkInwork(document.all.incId2)) return;
-	//if(!checkIncz(document.all.incId3)) return;
-	if(!checkVv1(document.all.incId4)) return;
-	if(!checkVv2(document.all.incId5)) return;
-	if(!checkXe(document.all.incId6)) return;
-	if(!checkZlbz(document.all.zlbz)) return;
-	if(!checkLzzj(document.all.lzzj)) return;
-	if(!checkIsv1(document.all.isv1)) return;
-	if(!checkIsv2(document.all.isv2)) return;
-	if(!checkIsv3(document.all.isv3)) return;
-	if(!checkIsv4(document.all.isv4)) return;
-	if(!checkIsv5(document.all.isv5)) return;
+	if(!checkZlbz(document.all.incId5)) return;
+	if(!checkDibao(document.all.incId6)) return;
+	if(!checkIsv1(document.all.incId7)) return;
+	if(!checkIsv2(document.all.incId8)) return;
+	if(!checkIsv3(document.all.incId9)) return;
+	if(!checkIsv4(document.all.incId10)) return;
+	if(!checkIsv5(document.all.incId11)) return;
+	if(!checkLiuzhuan(document.all.incId12)) return;
+	if(!checkVv1(document.all.incId13)) return;
+	if(!checkVv2(document.all.incId14)) return;
+	if(!checkXe(document.all.incId15)) return;
 	
 	
 	document.form1.action="ybhManageAction_saveIncome.action";
@@ -341,131 +493,3 @@ function saveIncomeBt()
 }
 
 //////////////////////////////////////////////////////////////////
-
-function showBanfErrTip3(top,c)
-{
-	var errTip=document.getElementById("errTip3");
-	errTip.style.paddingLeft=top+"px";
-	errTip.style.display="";
-	errTip.innerHTML = c;
-}
-function hideBanfErrTip3()
-{
-	var errTip=document.getElementById("errTip3");
-	errTip.innerHTML = '';
-}
-
-//种粮补助
-function checkZlbz(obj)
-{
-	var reg = /^[0-9]+([.]{1}[0-9]{1})?$/;
-	var item = obj.value;
-	if(reg.test(item))
-	{
-		hideBanfErrTip3();
-		return true;
-	}
-	else
-	{
-		showBanfErrTip3(142,"种粮补助大于等于零，最多可以输入一位小数！");
-		return false;
-	}
-}
-//流转租金
-function checkLzzj(obj)
-{
-	var reg = /^[0-9]+([.]{1}[0-9]{1})?$/;
-	var item = obj.value;
-	if(reg.test(item))
-	{
-		hideBanfErrTip3();
-		$("#incId3").val(item);
-		income_sum();
-		return true;
-	}
-	else
-	{
-		showBanfErrTip3(520,"流转租金大于等于零，最多可以输入一位小数！");
-		return false;
-	}
-}
-//领取残疾补助金
-function checkIsv1(obj)
-{
-	var reg = /^[0-9]+([.]{1}[0-9]{1})?$/;
-	var item = obj.value;
-	if(reg.test(item))
-	{
-		hideBanfErrTip3();
-		return true;
-	}
-	else
-	{
-		showBanfErrTip3(142,"领取残疾补助金大于等于零，最多可以输入一位小数！");
-		return false;
-	}
-}
-//领取新农合报销医疗费
-function checkIsv2(obj)
-{
-	var reg = /^[0-9]+([.]{1}[0-9]{1})?$/;
-	var item = obj.value;
-	if(reg.test(item))
-	{
-		hideBanfErrTip3();
-		return true;
-	}
-	else
-	{
-		showBanfErrTip3(520,"领取新农合报销医疗费大于等于零，最多可以输入一位小数！");
-		return false;
-	}
-}
-//领取养老金
-function checkIsv3(obj)
-{
-	var reg = /^[0-9]+([.]{1}[0-9]{1})?$/;
-	var item = obj.value;
-	if(reg.test(item))
-	{
-		hideBanfErrTip3();
-		return true;
-	}
-	else
-	{
-		showBanfErrTip3(142,"领取养老金大于等于零，最多可以输入一位小数！");
-		return false;
-	}
-}
-//领取医疗救助金
-function checkIsv4(obj)
-{
-	var reg = /^[0-9]+([.]{1}[0-9]{1})?$/;
-	var item = obj.value;
-	if(reg.test(item))
-	{
-		hideBanfErrTip3();
-		return true;
-	}
-	else
-	{
-		showBanfErrTip3(520,"领取医疗救助金大于等于零，最多可以输入一位小数！");
-		return false;
-	}
-}
-//领取其他补助金
-function checkIsv5(obj)
-{
-	var reg = /^[0-9]+([.]{1}[0-9]{1})?$/;
-	var item = obj.value;
-	if(reg.test(item))
-	{
-		hideBanfErrTip3();
-		return true;
-	}
-	else
-	{
-		showBanfErrTip3(142,"领取其他补助金大于等于零，最多可以输入一位小数！");
-		return false;
-	}
-}

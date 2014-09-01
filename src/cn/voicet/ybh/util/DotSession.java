@@ -204,6 +204,36 @@ public class DotSession {
 			System.out.println("");
 		}
 	}
+	
+	/** 灏嗙粨鏋滈泦鏁版嵁鏀捐繘Map */
+	public static void putMapDataByColNameLower(Map map,ResultSet rs) {
+		String sColName;
+		try {
+			//鑾峰彇鍒楁暟
+			ResultSetMetaData rsm =rs.getMetaData();
+			int col = rsm.getColumnCount();
+			for(int i=1; i<=col; i++) {
+				sColName=rsm.getColumnName(i).toLowerCase();
+				if(null!=rs.getString(i) && !rs.getString(i).equals("")){
+					//获取数据类型
+					int dataType = rsm.getColumnType(i);
+					if(dataType==3)
+					{
+						map.put(sColName, rs.getFloat(i));
+					}
+					else
+					{
+						map.put(sColName, rs.getString(i));
+					}
+					
+				}else{
+					map.put(sColName, "");
+				}
+			}
+		} catch (Exception e) {
+			System.out.println("");
+		}
+	}
 
 	
 	/**

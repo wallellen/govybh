@@ -133,6 +133,8 @@ public class YbhManageAction extends BaseAction implements ModelDriven<YbhManage
 		DotSession ds = DotSession.getVTSession(request);
 		ds.pushAllList();
 		ybhManageService.getFamilyIncome(ds);
+		log.info("map:"+ds.map);
+		log.info("list2:"+ds.list2);
 		return "show_family_income";
 	}
 	

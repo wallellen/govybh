@@ -54,7 +54,7 @@ public class YbhManageDaoImpl extends BaseDaoImpl implements YbhManageDao {
 		this.getJdbcTemplate().execute(new ConnectionCallback() {
 			public Object doInConnection(Connection conn) throws SQLException,
 					DataAccessException {
-				CallableStatement cs = conn.prepareCall("{call ybh_family_detail(?,?)}");
+				CallableStatement cs = conn.prepareCall("{call ybh_family_detailex(?,?)}");
 				cs.setString(1, ds.curHM);
 				cs.setInt(2, 1);
 				cs.execute();
@@ -85,11 +85,11 @@ public class YbhManageDaoImpl extends BaseDaoImpl implements YbhManageDao {
 								}
 							}else if (rid == 1 ){
 								map = new HashMap();
-								ds.putMapDataByColName(map, rs);
+								ds.putMapDataByColNameLower(map, rs);
 								ds.list.add(map);
 							}else if(rid == 2){
 								map = new HashMap();
-								ds.putMapDataByColName(map, rs);
+								ds.putMapDataByColNameLower(map, rs);
 								ds.list2.add(map);
 							}
 						}
@@ -192,7 +192,7 @@ public class YbhManageDaoImpl extends BaseDaoImpl implements YbhManageDao {
 		this.getJdbcTemplate().execute(new ConnectionCallback() {
 			public Object doInConnection(Connection conn) throws SQLException,
 					DataAccessException {
-				CallableStatement cs = conn.prepareCall("{call ybh_family_detail(?,?)}");
+				CallableStatement cs = conn.prepareCall("{call ybh_family_detailex(?,?)}");
 				cs.setString(1, ds.curHM);
 				cs.setInt(2, 1);
 				cs.execute();
@@ -223,11 +223,11 @@ public class YbhManageDaoImpl extends BaseDaoImpl implements YbhManageDao {
 								}
 							}else if (rid == 1 ){
 								map = new HashMap();
-								ds.putMapDataByColName(map, rs);
+								ds.putMapDataByColNameLower(map, rs);
 								ds.list.add(map);
 							}else if(rid == 2){
 								map = new HashMap();
-								ds.putMapDataByColName(map, rs);
+								ds.putMapDataByColNameLower(map, rs);
 								ds.list2.add(map);
 							}
 						}
@@ -260,35 +260,34 @@ public class YbhManageDaoImpl extends BaseDaoImpl implements YbhManageDao {
 		this.getJdbcTemplate().execute(new ConnectionCallback() {
 			public Object doInConnection(Connection conn) throws SQLException,
 					DataAccessException {
-				CallableStatement cs = conn.prepareCall("{call ybh_year_update(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
-				cs.setInt(25, 1);
+				CallableStatement cs = conn.prepareCall("{call ybh_year_updateex(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
+				cs.setInt(23, 1);
 				String ix[][] = 
 					{
 						{"0","s"},
 						{"1","i"},
-						{"2","f"},
-						{"4","f"},
-						{"6","f"},
-						{"8","i"},
-						{"10","i"},
-						{"12","i"},
-						{"14","i"},
-						{"16","i"},
-						{"3","f"},
-						{"5","f"},
-						{"7","f"},
-						{"9","i"},
-						{"11","i"},
-						{"13","i"},
-						{"15","i"},
+						{"5","s"},
+						{"6","s"},
+						{"7","s"},
+						{"8","s"},
+						{"10","s"},
+						{"12","s"},
+						{"14","s"},
+						{"15","s"},
+						{"16","s"},
+						{"18","s"},
 						
-						{"17","f"},
-						{"18","f"},
-						{"19","f"},
-						{"20","f"},
-						{"21","f"},
-						{"22","f"},
-						{"23","f"}
+						{"2","i"},
+						{"3","i"},
+						{"4","i"},
+						{"9","s"},
+						{"11","s"},
+						{"13","s"},
+						
+						{"17","i"},
+						{"19","i"},
+						{"20","i"},
+						{"21","i"}
 					};
 				VTJime.prepareParamFromInputArray(cs, ybhManageForm.getIncometxt(), ix);
 				cs.execute();
