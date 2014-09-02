@@ -241,7 +241,6 @@ function checkLiuzhuan(obj)
 	if(reg.test(item))
 	{
 		hideBanfErrTip3();
-		$("#in_canchan").val(item);
 		//获取财产性收入
 		$("#incId3")[0].innerHTML=item;
 		income_sum();

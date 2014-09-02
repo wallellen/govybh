@@ -5,7 +5,7 @@
 <head>
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/style/style.css?v=3" />
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/jquery-1.5.1.min.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath }/script/ybh_income.js?v=16"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath }/script/ybh_income.js?v=17"></script>
 </head>
 <body style="background:#E0EEFB;">
 <h3 class="ybh_h3_title"><s:property value="year"/>年&nbsp;[<s:property value="#session.vts.curHM"/>&nbsp;<s:property value="hname"/>]样本户基础监测更新</h3>
@@ -143,48 +143,45 @@
 			</td>
         </tr>
         <tr>
-        	<td width="25%" align="right">(3)财产性(元):&nbsp;</td>
-            <td width="25%" align="left">&nbsp;
-            	<label id="incId3"><s:property value="incz"/></label>
-            	<input type="hidden" id="in_canchan" name="incometxt" value="<s:property value="incz"/>"/>	
-            </td>
+        	<td width="25%" align="right">(3)财产性收入(元):&nbsp;</td>
+            <td width="25%" align="left">&nbsp;<label id="incId3"><s:property value="incz"/></label></td>
             <td width="25%" colspan="2" align="right">
             	<div style="height:26px; line-height:26px; color:#F00" id="errTip2"></div>
             </td>
         </tr>
         <tr>
-        	<td width="25%" align="right">(4)各类补贴性收入(元):&nbsp;</td>
-            <td width="25%" align="left">&nbsp;<label id="incId4"><s:property value="inbz"/></label></td>
+        	<td width="25%" align="right">其中：流转耕地租金(元):&nbsp;</td>
+            <td width="25%" align="left"><input type="text" id="incId12" name="incometxt" value="<s:property value='lzzj'/>" maxlength="10" onblur="checkLiuzhuan(this)" tabindex="43"/></td>
             <td width="25%" align="right">8、得到帮扶资金(元):&nbsp;</td>
             <td width="25%" align="left">&nbsp;<label id="bf_total"><s:property value="vv"/></label></td>
         </tr>
         <tr>
-        	<td width="25%" align="right">其中:①领取种粮补助(元):&nbsp;</td>
-            <td width="25%" align="left"><input type="text" id="incId5" name="incometxt" value="<s:property value='zlbz'/>" maxlength="10" onblur="checkZlbz(this)" tabindex="43"/></td>
+        	<td width="25%" align="right">(4)各类补贴性收入(元):&nbsp;</td>
+            <td width="25%" align="left">&nbsp;<label id="incId4"><s:property value="inbz"/></label></td>
             <td width="25%" align="right">其中:(1)省级扶贫资金(元):&nbsp;</td>
             <td width="25%" align="left"><input type="text" id="incId13" name="incometxt" value="<s:property value='vv1'/>" maxlength="10" onblur="checkVv1(this)" tabindex="81"/></td>
         </tr>
         <tr>
-        	<td width="25%" align="right">②领取低保、五保金(元):&nbsp;</td>
-            <td width="25%" align="left"><input type="text" id="incId6" name="incometxt" value="<s:property value='isv1'/>" maxlength="10" onblur="checkDibao(this)" tabindex="44"/></td>
-            <td width="25%" align="right">(2)市、县级扶贫资金(元):&nbsp;</td>
+        	<td width="25%" align="right">其中:①领取种粮补助(元):&nbsp;</td>
+            <td width="25%" align="left"><input type="text" id="incId5" name="incometxt" value="<s:property value='zlbz'/>" maxlength="10" onblur="checkZlbz(this)" tabindex="44"/></td>
+           <td width="25%" align="right">(2)市、县级扶贫资金(元):&nbsp;</td>
             <td width="25%" align="left"><input type="text" id="incId14" name="incometxt" value="<s:property value='vv2'/>" maxlength="10" onblur="checkVv2(this)" tabindex="82"/></td>
         </tr>
         <tr>
-        	<td width="25%" align="right">③领取残疾补助金(元):&nbsp;</td>
-            <td width="25%" align="left"><input type="text" id="incId7" name="incometxt" value="<s:property value='isv2'/>" maxlength="10" onblur="checkIsv1(this)" tabindex="45"/></td>
+        	<td width="25%" align="right">②领取低保、五保金(元):&nbsp;</td>
+            <td width="25%" align="left"><input type="text" id="incId6" name="incometxt" value="<s:property value='isv1'/>" maxlength="10" onblur="checkDibao(this)" tabindex="45"/></td>
             <td width="25%" align="right">9、使用小额扶贫贷款数量(元):&nbsp;</td>
             <td width="25%" align="left"><input type="text" id="incId15" name="incometxt" value="<s:property value='xxe'/>" maxlength="10" onblur="checkXe(this)" tabindex="91"/></td>
         </tr>
         <tr>
-        	<td width="25%" align="right">④领取新农合报销医疗费(元):&nbsp;</td>
-            <td width="25%" align="left"><input type="text" id="incId8" name="incometxt" value="<s:property value='isv3'/>" maxlength="10" onblur="checkIsv2(this)" tabindex="46"/></td>
+        	<td width="25%" align="right">③领取残疾补助金(元):&nbsp;</td>
+            <td width="25%" align="left"><input type="text" id="incId7" name="incometxt" value="<s:property value='isv2'/>" maxlength="10" onblur="checkIsv1(this)" tabindex="46"/></td>
             <td width="25%" colspan="2" align="right">&nbsp;</td>
         </tr>
         <tr>
-        	<td width="25%" align="right">⑤领取养老金(元):&nbsp;</td>
-            <td width="25%" align="left"><input type="text" id="incId9" name="incometxt" value="<s:property value='isv4'/>" maxlength="10" onblur="checkIsv3(this)" tabindex="47"/></td>
-            <td width="25%" align="right">10、参加社会保障情况:&nbsp;</td>
+        	<td width="25%" align="right">④领取新农合报销医疗费(元):&nbsp;</td>
+            <td width="25%" align="left"><input type="text" id="incId8" name="incometxt" value="<s:property value='isv3'/>" maxlength="10" onblur="checkIsv2(this)" tabindex="47"/></td>
+           	<td width="25%" align="right">10、参加社会保障情况:&nbsp;</td>
             <td width="25%" align="left">
 				<s:if test="bb==1">
                 <input type="checkbox" id="chk_bb" class="cuncbox" checked="checked" disabled="disabled"/><label>(可多选)</label>
@@ -192,11 +189,11 @@
                 <s:else>
                 <input type="checkbox" id="chk_bb" class="cuncbox" disabled="disabled"/><label>(可多选)</label>
                 </s:else>
-			</td>
+				</td>
         </tr>
         <tr>
-        	<td width="25%" align="right">⑥领取医疗救助金(元):&nbsp;</td>
-            <td width="25%" align="left"><input type="text" id="incId10" name="incometxt" value="<s:property value='isv5'/>" maxlength="10" onblur="checkIsv4(this)" tabindex="48"/></td>
+        	<td width="25%" align="right">⑤领取养老金(元):&nbsp;</td>
+            <td width="25%" align="left"><input type="text" id="incId9" name="incometxt" value="<s:property value='isv4'/>" maxlength="10" onblur="checkIsv3(this)" tabindex="48"/></td>
             <td width="25%" align="right">新农合:&nbsp;</td>
             <td width="25%" align="left">
             	<s:if test="bb1==1">
@@ -210,8 +207,8 @@
             </td>
         </tr>
         <tr>
-        	<td width="25%" align="right">⑦领取其他补助金(元)&nbsp;</td>
-        	<td width="25%" align="left"><input type="text" id="incId11" name="incometxt" value="<s:property value='isv6'/>" maxlength="10" onblur="checkIsv5(this)" tabindex="49"/></td>
+        	<td width="25%" align="right">⑥领取医疗救助金(元):&nbsp;</td>
+            <td width="25%" align="left"><input type="text" id="incId10" name="incometxt" value="<s:property value='isv5'/>" maxlength="10" onblur="checkIsv4(this)" tabindex="49"/></td>
             <td width="25%" align="right">新农保:&nbsp;</td>
             <td width="25%" align="left">
 				<s:if test="bb2==1">
@@ -225,9 +222,8 @@
 			</td>
         </tr>
         <tr>
-        	<td width="25%" colspan="2" align="right">
-        		<div style="height:26px; line-height:26px; color:#F00" id="errTip3"></div>
-        	</td>
+        	<td width="25%" align="right">⑦领取其他补助金(元)&nbsp;</td>
+        	<td width="25%" align="left"><input type="text" id="incId11" name="incometxt" value="<s:property value='isv6'/>" maxlength="10" onblur="checkIsv5(this)" tabindex="50"/></td>
             <td width="25%" align="right">大病医疗救助:&nbsp;</td>
             <td width="25%" align="left">
 				<s:if test="bb3==1">
@@ -241,8 +237,9 @@
 			</td>
         </tr>
         <tr>
-        	<td width="25%" align="right">5、家庭年人均纯收入(元):&nbsp;</td>
-            <td width="25%" align="left">&nbsp;<label id="rj_income"><s:property value="inpersonal"/></label></td>
+        	<td width="25%" colspan="2" align="right">
+        		<div style="height:26px; line-height:26px; color:#F00" id="errTip3"></div>
+        	</td>
             <td width="25%" align="right">参加或享受其它社会保障:&nbsp;</td>
             <td width="25%" align="left">
             	<s:if test="bb4==1">
@@ -256,6 +253,11 @@
             </td>
         </tr>
         <tr>
+        	<td width="25%" align="right">5、家庭年人均纯收入(元):&nbsp;</td>
+            <td width="25%" align="left">&nbsp;<label id="rj_income"><s:property value="inpersonal"/></label></td>
+            <td width="25%" colspan="2" align="right">&nbsp;</td>
+        </tr>
+        <tr>
         	<td width="25%" align="right">6、主要致贫原因:&nbsp;</td>
             <td width="25%" align="left">
             	<s:if test="dcause==1">&nbsp;1:因灾</s:if>
@@ -267,12 +269,7 @@
             	<s:elseif test="dcause==7">&nbsp;7:缺资金</s:elseif>
             	<s:elseif test="dcause==8">&nbsp;8:其它</s:elseif>
             </td>
-            <td width="25%" colspan="2" align="right">&nbsp;</td>
-        </tr>
-        <tr>
-            <td width="25%" align="right">流转耕地租金:&nbsp;</td>
-            <td width="25%" align="left"><input type="text" id="incId12" value="<s:property value='lzzj'/>" maxlength="10" onblur="checkLiuzhuan(this)" tabindex="61"/></td>
-        	<td width="25%" align="right">上年是否脱贫:&nbsp;</td>
+            <td width="25%" align="right">上年是否脱贫:&nbsp;</td>
             <td width="25%" align="left">&nbsp;<s:property value="ltp==1?'1:是':'2:否'"/></td>
         </tr>
     </table>

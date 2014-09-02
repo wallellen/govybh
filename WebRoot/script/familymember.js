@@ -7,8 +7,8 @@ function popSaveMember(m,s,c,t1,t2,t3,t4,t5,h1,h2,h3,h4,h5){
 	//clear
 	document.getElementById("duname").value='';
 	document.getElementById("dage").value='';
-	document.getElementById("ddcno").value='';
-	document.getElementById("dtbfd").value='';
+	//document.getElementById("ddcno").value='';
+	//document.getElementById("dtbfd").value='';
 	document.getElementById("mid").value='';
 	
 	hideErrTip();
@@ -124,8 +124,8 @@ function popSaveMember(m,s,c,t1,t2,t3,t4,t5,h1,h2,h3,h4,h5){
 	        }  
 	    }
 	    //dcno
-		var udcno = document.getElementById("dcn"+c);
-		document.getElementById("ddcno").value = udcno.innerHTML;
+		//var udcno = document.getElementById("dcn"+c);
+		//document.getElementById("ddcno").value = udcno.innerHTML;
 		//labors
 		var ulabors = document.getElementById("lab"+c).innerHTML;
 		ulabors = ulabors.substring(0,1);
@@ -152,8 +152,8 @@ function popSaveMember(m,s,c,t1,t2,t3,t4,t5,h1,h2,h3,h4,h5){
 		var blaRadio = document.getElementsByName("bla");
 		blaRadio[ubla].checked = "checked";
 		//dbfd
-		var utbf = document.getElementById("tbf"+c);
-		document.getElementById("dtbfd").value = utbf.innerHTML;
+		//var utbf = document.getElementById("tbf"+c);
+		//document.getElementById("dtbfd").value = utbf.innerHTML;
 		//mid
 		document.getElementById("mid").value=m;
 		
@@ -242,8 +242,8 @@ function subMemberBt(){
 	document.memberForm.action="ybhManageAction_saveMember.action";
 	if(!checkName(document.all.duname)) return;
 	if(!checkAge(document.all.dage)) return;
-	if(!checkDcno(document.all.ddcno)) return;
-	if(!checkDibao(document.all.dtbfd)) return;
+	//if(!checkDcno(document.all.ddcno)) return;
+	//if(!checkDibao(document.all.dtbfd)) return;
 	document.memberForm.submit();
 }
 

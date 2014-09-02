@@ -5,11 +5,11 @@
 <html>
 <head>
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/style/style.css" />
-	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/style/style-b.css" />
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/style/style-b.css?v=1" />
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/jquery-1.5.1.min.js"></script>
 	<style type="text/css">
 		#overlay-member{position:absolute;top:0;left:0;width:100%;height:670px;background:#000;opacity:0.5;filter:alpha(opacity=50);display:none;} 
-		#win-member{position:absolute;top:20%;left:45%;width:500px;height:600px;background:#EAECEA;border:4px solid #F7F7F7;margin:-102px 0 0 -202px;display:none;} 
+		#win-member{position:absolute;top:20%;left:45%;width:500px;height:570px;background:#EAECEA;border:4px solid #F7F7F7;margin:-102px 0 0 -202px;display:none;} 
 		h2{font-size:12px;height:18px;text-align:right;background:#3F89EC;border-bottom:3px solid #F7F7F7;padding:5px;cursor:move;} 
 		h2 span{border:0px solid #f90;padding:0 2px;} 
 		
@@ -52,11 +52,9 @@
 			<td width="4%">在校生</td>
 			<td width="8%">文化程度</td>
 			<td width="8%">身体状况</td>
-			<td width="12%">残疾证号</td>
 			<td width="8%">劳动力状况</td>
 			<td width="8%">打工状况</td>
 			<td width="4%">低保<br/>人口</td>
-			<td width="8%">领取低保金、残疾金(元)</td>
 			<td width="6%">操作</td>
 	    </tr>
 	    <s:iterator value="#session.vts.list" var="ls" status="sc">
@@ -80,9 +78,6 @@
 				<label id="hea<s:property value="#sc.count"/>"><s:property value="#ls.health"/></label>
 			</td>
 			<td>
-				<label id="dcn<s:property value="#sc.count"/>"><s:property value="#ls.dcno"/></label>
-			</td>
-			<td>
 				<label id="lab<s:property value="#sc.count"/>"><s:property value="#ls.labors"/></label>
 			</td>
 			<td>
@@ -90,9 +85,6 @@
 			</td>
 			<td>
 				<label id="bla<s:property value="#sc.count"/>"><s:property value="#ls.bla"/></label>
-			</td>
-			<td>
-				<label id="tbf<s:property value="#sc.count"/>"><s:property value="#ls.tbfd"/></label>
 			</td>
 			<td>
 			<s:if test="#session.vts.isedit==1">
@@ -159,6 +151,7 @@
 			</td>
 			<td></td>
 		</tr>
+		<!--
 		<tr>
 			<td align="right">残疾证号:&nbsp;&nbsp;</td>
 			<td align="left">
@@ -166,6 +159,7 @@
 			</td>
 			<td></td>
 		</tr>
+		-->
 		<tr>
 			<td align="right">劳动力状况:&nbsp;&nbsp;</td>
 			<td align="left">
@@ -187,6 +181,7 @@
 			</td>
 			<td></td>
 		</tr>
+		<!--  
 		<tr>
 			<td align="right">领取低保金、残疾金(元):&nbsp;&nbsp;</td>
 			<td align="left">
@@ -194,6 +189,7 @@
 			</td>
 			<td></td>
 		</tr>
+		-->
 		<!-- 20140831 add begin -->
 		<tr>
 			<td align="right">是否享受残疾补助:&nbsp;&nbsp;</td>

@@ -6,7 +6,7 @@
 		document.all.zhu.focus();
 	}
 </script>
-<script type="text/javascript" src="${pageContext.request.contextPath }/script/familymember.js?v=5"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath }/script/familymember.js?v=6"></script>
 <style type="text/css">
 	.family-errtip{color:#F00; width:570px;}
 </style>
@@ -41,7 +41,7 @@
 			<input type="hidden" name="hezuo" id="hezuo" value="0"/>
 			</s:else>
 		</li>
-		<li><label for="chklz">是否流转</label><s:if test="#session.vts.map.islz==1">
+		<li><label for="chklz">是否愿意流转</label><s:if test="#session.vts.map.islz==1">
 			<input type="checkbox" id="chklz" checked="checked" onclick="checkLiuzhuan(this)">
 			<input type="hidden" name="liuzhuan" id="liuzhuan" value="1"/>
 			</s:if>
