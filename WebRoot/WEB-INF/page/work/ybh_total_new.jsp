@@ -87,17 +87,17 @@
 			</tr>
 			<tr>			
 				<td class="aleft">&nbsp;年人均纯收入（元）</td>
-				<td class="aright"><s:property value="#session.vts.map.inTotal_ap"/>&nbsp;</td>
+				<td class="aright"><s:property value="#session.vts.map.intotal_ap"/>&nbsp;</td>
 				<td></td>
 			</tr>
 			<tr>			
 				<td class="aleft">&nbsp;村集体经营性收入总量（万元）</td>
-				<td class="aright"><s:property value="#session.vts.map.inJY"/>&nbsp;</td>
+				<td class="aright"><s:property value="#session.vts.map.injy"/>&nbsp;</td>
 				<td></td>
 			</tr>
 			<tr>			
 				<td class="aleft">&nbsp;村均集体经性营收入（万元）</td>
-				<td class="aright"><s:property value="#session.vts.map.inJy_Ac"/>&nbsp;</td>
+				<td class="aright"><s:property value="#session.vts.map.injy_ac"/>&nbsp;</td>
 				<td></td>
 			</tr>
 			<tr>			
@@ -136,22 +136,22 @@
 	        <tr>
 	        	<td rowspan="4" align="left">&nbsp;三、样本户收入情况</td>
 	            <td class="aleft">&nbsp;样本户户均家庭纯收入（元/年）</td>
-	            <td class="aright"><s:property value="#session.vts.map.inTotal_a"/>&nbsp;</td>
+	            <td class="aright"><s:property value="#session.vts.map.intotal_a"/>&nbsp;</td>
 				<td></td>
 	        </tr>
 	        <tr>
 	        	<td class="aleft">&nbsp;其中：①经营性收入（元）</td>
-	            <td class="aright"><s:property value="#session.vts.map.inJY_ah"/>&nbsp;</td>
+	            <td class="aright"><s:property value="#session.vts.map.injy_ah"/>&nbsp;</td>
 				<td></td>
 	        </tr>
 	        <tr>
 	        	<td class="aleft">&nbsp;②工资性收入（元）</td>
-	            <td class="aright"><s:property value="#session.vts.map.inWork_a"/>&nbsp;</td>
+	            <td class="aright"><s:property value="#session.vts.map.inwork_a"/>&nbsp;</td>
 				<td></td>
 	        </tr>
 	        <tr>
 	        	<td class="aleft">&nbsp;③财产性和转移性收入（元）</td>
-	            <td class="aright"><s:property value="#session.vts.map.inCZ_a"/>&nbsp;</td>
+	            <td class="aright"><s:property value="#session.vts.map.incz_a"/>&nbsp;</td>
 				<td></td>
 	        </tr>
 	        
@@ -416,7 +416,7 @@
 		        </tr>
 		        <tr>
 		            <td class="aleft">&nbsp;户均生产经营收入（元）</td>
-		            <td class="aright"><s:property value="#session.vts.map.inJy_a"/>&nbsp;</td>
+		            <td class="aright"><s:property value="#session.vts.map.injy_a"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
@@ -447,33 +447,33 @@
 		        </tr>
 		        <tr>
 		            <td class="aleft">&nbsp;户均年纯收入（元/年）</td>
-		            <td class="aright"><s:property value="#session.vts.map.inTotal_a"/>&nbsp;</td>
+		            <td class="aright"><s:property value="#session.vts.map.intotal_a"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
 		            <td class="aleft">&nbsp;其中：①经营性收入（元）</td>
-		            <td class="aright"><s:property value="#session.vts.map.inJY_t"/>&nbsp;</td>
+		            <td class="aright"><s:property value="#session.vts.map.injy_t"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
 		            <td class="aleft">&nbsp;②工资性收入（元）</td>
-		            <td class="aright"><s:property value="#session.vts.map.inWork_t"/>&nbsp;</td>
+		            <td class="aright"><s:property value="#session.vts.map.inwork_t"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
 		            <td class="aleft">&nbsp;③财产性及转移性收入（元）</td>
-		            <td class="aright"><s:property value="#session.vts.map.inCC_t"/>&nbsp;</td>
+		            <td class="aright"><s:property value="#session.vts.map.incz_t"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
 		            <td class="aleft">&nbsp;④各类补贴收入（元）</td>
-		            <td class="aright"><s:property value="#session.vts.map.inBZ_t"/>&nbsp;</td>
+		            <td class="aright"><s:property value="#session.vts.map.inbz_a"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
 		            <td>5</td>
 		            <td class="aleft">&nbsp;年人均纯收入（元/年）</td>
-		            <td class="aright"><s:property value="#session.vts.map.inTotal_ah"/>&nbsp;</td>
+		            <td class="aright"><s:property value="#session.vts.map.intotal_ah"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>

@@ -452,7 +452,7 @@
 		        </tr>
 		        <tr>
 		            <td class="aleft">&nbsp;其中：①经营性收入（元）</td>
-		            <td class="aright"><s:property value="#session.vts.map.inJy_a"/>&nbsp;</td>
+		            <td class="aright"><s:property value="#session.vts.map.inJy_t"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
@@ -467,7 +467,7 @@
 		        </tr>
 		        <tr>
 		            <td class="aleft">&nbsp;④各类补贴收入（元）</td>
-		            <td class="aright"><s:property value="#session.vts.map."/>&nbsp;</td>
+		            <td class="aright"><s:property value="#session.vts.map.inbz_a"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>

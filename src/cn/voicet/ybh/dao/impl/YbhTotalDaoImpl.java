@@ -71,7 +71,7 @@ public class YbhTotalDaoImpl extends BaseDaoImpl implements YbhTotalDao {
 						{
 							//获取数据类型
 							int dataType = rsm.getColumnType(i);
-							colName=rsm.getColumnName(i);
+							colName=rsm.getColumnName(i).toLowerCase();
 							if(dataType==3)
 							{
 								ds.map.put(colName, rs.getFloat(i));
