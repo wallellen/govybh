@@ -266,16 +266,18 @@ public class YbhManageDaoImpl extends BaseDaoImpl implements YbhManageDao {
 					{
 						{"0","s"},
 						{"1","i"},
+						
 						{"5","s"},
 						{"6","s"},
 						{"7","s"},
+						
 						{"9","s"},
 						{"11","s"},
 						{"13","s"},
 						{"14","s"},
-						{"15","s"},
-						{"17","s"},
-						{"19","s"},
+						{"16","s"},
+						{"18","s"},
+						{"20","s"},
 						
 						{"2","i"},
 						{"3","i"},
@@ -285,9 +287,9 @@ public class YbhManageDaoImpl extends BaseDaoImpl implements YbhManageDao {
 						{"10","s"},
 						{"12","s"},
 						
-						{"16","i"},
-						{"18","i"},
-						{"20","i"},
+						{"15","i"},
+						{"17","i"},
+						{"19","i"},
 						{"21","i"}
 					};
 				VTJime.prepareParamFromInputArray(cs, ybhManageForm.getIncometxt(), ix);

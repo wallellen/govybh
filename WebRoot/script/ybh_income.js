@@ -11,19 +11,6 @@ function hideBanfErrTip1()
 	errTip.innerHTML = '';
 }
 
-function showBanfErrTip3(top,c)
-{
-	var errTip=document.getElementById("errTip3");
-	errTip.style.paddingLeft=top+"px";
-	errTip.style.display="";
-	errTip.innerHTML = c;
-}
-function hideBanfErrTip3()
-{
-	var errTip=document.getElementById("errTip3");
-	errTip.innerHTML = '';
-}
-
 /******* 4、家庭年总纯收入 start ********/
 //其中:(1)家庭经营性收入
 function checkInjy(obj)
@@ -112,14 +99,14 @@ function checkZlbz(obj)
 	var item = obj.value;
 	if(reg.test(item))
 	{
-		hideBanfErrTip3();
+		hideBanfErrTip1();
 		income_inbz_total();
 		income_sum();
 		return true;
 	}
 	else
 	{
-		showBanfErrTip3(0,"种粮补助大于等于零，最多可以输入一位小数！");
+		showBanfErrTip1(100,"种粮补助大于等于零，最多可以输入一位小数！");
 		return false;
 	}
 }
@@ -131,14 +118,14 @@ function checkDibao(obj)
 	var item = obj.value;
 	if(reg.test(item))
 	{
-		hideBanfErrTip3();
+		hideBanfErrTip1();
 		income_inbz_total();
 		income_sum();
 		return true;
 	}
 	else
 	{
-		showBanfErrTip3(0,"领取低保、五保金大于等于零，最多可以输入一位小数！");
+		showBanfErrTip1(100,"领取低保、五保金大于等于零，最多可以输入一位小数！");
 		return false;
 	}
 }
@@ -150,14 +137,14 @@ function checkIsv1(obj)
 	var item = obj.value;
 	if(reg.test(item))
 	{
-		hideBanfErrTip3();
+		hideBanfErrTip1();
 		income_inbz_total();
 		income_sum();
 		return true;
 	}
 	else
 	{
-		showBanfErrTip3(0,"领取残疾补助金大于等于零，最多可以输入一位小数！");
+		showBanfErrTip1(100,"领取残疾补助金大于等于零，最多可以输入一位小数！");
 		return false;
 	}
 }
@@ -168,14 +155,14 @@ function checkIsv2(obj)
 	var item = obj.value;
 	if(reg.test(item))
 	{
-		hideBanfErrTip3();
+		hideBanfErrTip1();
 		income_inbz_total();
 		income_sum();
 		return true;
 	}
 	else
 	{
-		showBanfErrTip3(0,"领取新农合报销医疗费大于等于零，最多可以输入一位小数！");
+		showBanfErrTip1(100,"领取新农合报销医疗费大于等于零，最多可以输入一位小数！");
 		return false;
 	}
 }
@@ -186,14 +173,14 @@ function checkIsv3(obj)
 	var item = obj.value;
 	if(reg.test(item))
 	{
-		hideBanfErrTip3();
+		hideBanfErrTip1();
 		income_inbz_total();
 		income_sum();
 		return true;
 	}
 	else
 	{
-		showBanfErrTip3(0,"领取养老金大于等于零，最多可以输入一位小数！");
+		showBanfErrTip1(100,"领取养老金大于等于零，最多可以输入一位小数！");
 		return false;
 	}
 }
@@ -204,14 +191,14 @@ function checkIsv4(obj)
 	var item = obj.value;
 	if(reg.test(item))
 	{
-		hideBanfErrTip3();
+		hideBanfErrTip1();
 		income_inbz_total();
 		income_sum();
 		return true;
 	}
 	else
 	{
-		showBanfErrTip3(0,"领取医疗救助金大于等于零，最多可以输入一位小数！");
+		showBanfErrTip1(100,"领取医疗救助金大于等于零，最多可以输入一位小数！");
 		return false;
 	}
 }
@@ -222,14 +209,14 @@ function checkIsv5(obj)
 	var item = obj.value;
 	if(reg.test(item))
 	{
-		hideBanfErrTip3();
+		hideBanfErrTip1();
 		income_inbz_total();
 		income_sum();
 		return true;
 	}
 	else
 	{
-		showBanfErrTip3(0,"领取其他补助金大于等于零，最多可以输入一位小数！");
+		showBanfErrTip1(100,"领取其他补助金大于等于零，最多可以输入一位小数！");
 		return false;
 	}
 }
@@ -240,7 +227,7 @@ function checkLiuzhuan(obj)
 	var item = obj.value;
 	if(reg.test(item))
 	{
-		hideBanfErrTip3();
+		hideBanfErrTip1();
 		//获取财产性收入
 		$("#incId3")[0].innerHTML=item;
 		income_sum();
@@ -248,7 +235,7 @@ function checkLiuzhuan(obj)
 	}
 	else
 	{
-		showBanfErrTip3(0,"流转耕地租金大于等于零，最多可以输入一位小数！");
+		showBanfErrTip1(100,"流转耕地租金大于等于零，最多可以输入一位小数！");
 		return false;
 	}
 }
@@ -256,23 +243,6 @@ function checkLiuzhuan(obj)
 
 
 /******* 4、家庭年总纯收入 end ********/
-
-
-
-/******* 8、得到帮扶资金 start ********/
-//////////////////////////////tip2分隔  ////////////////////////////////////
-function showBanfErrTip2(top,c)
-{
-	var errTip=document.getElementById("errTip2");
-	errTip.style.paddingLeft=top+"px";
-	errTip.style.display="";
-	errTip.innerHTML = c;
-}
-function hideBanfErrTip2()
-{
-	var errTip=document.getElementById("errTip2");
-	errTip.innerHTML = '';
-}
 //(1)省级扶贫资金
 function checkVv1(obj)
 {
@@ -280,13 +250,13 @@ function checkVv1(obj)
 	var item = obj.value;
 	if(reg.test(item))
 	{
-		hideBanfErrTip2();
+		hideBanfErrTip1();
 		bangfu_sum();
 		return true;
 	}
 	else
 	{
-		showBanfErrTip2(0,"省级扶贫资金大于等于零，最多可以输入一位小数！");
+		showBanfErrTip1(500,"省级扶贫资金大于等于零，最多可以输入一位小数！");
 		return false;
 	}
 }
@@ -297,13 +267,13 @@ function checkVv2(obj)
 	var item = obj.value;
 	if(reg.test(item))
 	{
-		hideBanfErrTip2();
+		hideBanfErrTip1();
 		bangfu_sum();
 		return true;
 	}
 	else
 	{
-		showBanfErrTip2(0,"市、县级扶贫资金大于等于零，最多可以输入一位小数！");
+		showBanfErrTip1(500,"市、县级扶贫资金大于等于零，最多可以输入一位小数！");
 		return false;
 	}
 }
@@ -326,12 +296,12 @@ function checkXe(obj)
 	var item = obj.value;
 	if(reg.test(item))
 	{
-		hideBanfErrTip2();
+		hideBanfErrTip1();
 		return true;
 	}
 	else
 	{
-		showBanfErrTip2(0,"使用小额扶贫贷款数量大于等于零，最多可以输入一位小数！");
+		showBanfErrTip1(500,"使用小额扶贫贷款数量大于等于零，最多可以输入一位小数！");
 		//obj.focus();
 		return false;
 	}
