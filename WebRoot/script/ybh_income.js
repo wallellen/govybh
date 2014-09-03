@@ -355,6 +355,22 @@ function selectFs4(obj)
 	}
 	changechk_fs();
 }
+//(8)其它项目
+function selectFs8(obj)
+{
+	var fsbox8 = document.getElementById("fsbox8");
+	if(obj.checked)
+	{
+		fsbox8.value=1;
+	}
+	else
+	{
+		fsbox8.value=0;
+	}
+	changechk_fs();
+}
+
+
 function changechk_fs()
 {
 	var fs_name = document.getElementsByName("chk_fs_name");

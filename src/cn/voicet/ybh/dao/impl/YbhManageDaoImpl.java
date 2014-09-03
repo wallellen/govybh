@@ -54,7 +54,7 @@ public class YbhManageDaoImpl extends BaseDaoImpl implements YbhManageDao {
 		this.getJdbcTemplate().execute(new ConnectionCallback() {
 			public Object doInConnection(Connection conn) throws SQLException,
 					DataAccessException {
-				CallableStatement cs = conn.prepareCall("{call ybh_family_detailex(?,?)}");
+				CallableStatement cs = conn.prepareCall("{call ybh_family_detail(?,?)}");
 				cs.setString(1, ds.curHM);
 				cs.setInt(2, 1);
 				cs.execute();
@@ -192,7 +192,7 @@ public class YbhManageDaoImpl extends BaseDaoImpl implements YbhManageDao {
 		this.getJdbcTemplate().execute(new ConnectionCallback() {
 			public Object doInConnection(Connection conn) throws SQLException,
 					DataAccessException {
-				CallableStatement cs = conn.prepareCall("{call ybh_family_detailex(?,?)}");
+				CallableStatement cs = conn.prepareCall("{call ybh_family_detail(?,?)}");
 				cs.setString(1, ds.curHM);
 				cs.setInt(2, 1);
 				cs.execute();
@@ -260,8 +260,8 @@ public class YbhManageDaoImpl extends BaseDaoImpl implements YbhManageDao {
 		this.getJdbcTemplate().execute(new ConnectionCallback() {
 			public Object doInConnection(Connection conn) throws SQLException,
 					DataAccessException {
-				CallableStatement cs = conn.prepareCall("{call ybh_year_updateex(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
-				cs.setInt(23, 1);
+				CallableStatement cs = conn.prepareCall("{call ybh_year_update(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
+				cs.setInt(24, 1);
 				String ix[][] = 
 					{
 						{"0","s"},
@@ -269,28 +269,29 @@ public class YbhManageDaoImpl extends BaseDaoImpl implements YbhManageDao {
 						
 						{"5","s"},
 						{"6","s"},
-						{"7","s"},
+						{"8","s"},
 						
-						{"9","s"},
-						{"11","s"},
-						{"13","s"},
+						{"10","s"},
+						{"12","s"},
 						{"14","s"},
-						{"16","s"},
-						{"18","s"},
-						{"20","s"},
+						{"15","s"},
+						{"17","s"},
+						{"19","s"},
+						{"21","s"},
 						
 						{"2","i"},
 						{"3","i"},
 						{"4","i"},
+						{"7","i"},
 						
-						{"8","s"},
-						{"10","s"},
-						{"12","s"},
+						{"9","s"},
+						{"11","s"},
+						{"13","s"},
 						
-						{"15","i"},
-						{"17","i"},
-						{"19","i"},
-						{"21","i"}
+						{"16","i"},
+						{"18","i"},
+						{"20","i"},
+						{"22","i"}
 					};
 				VTJime.prepareParamFromInputArray(cs, ybhManageForm.getIncometxt(), ix);
 				cs.execute();

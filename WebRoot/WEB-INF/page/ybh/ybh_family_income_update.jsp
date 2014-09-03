@@ -5,7 +5,7 @@
 <head>
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/style/style.css?v=3" />
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/jquery-1.5.1.min.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath }/script/ybh_income.js?v=18"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath }/script/ybh_income.js?v=19"></script>
 	<style type="text/css">
 		.tdhead{font-weight:bold;}
 	</style>
@@ -135,10 +135,12 @@
         	<td width="25%" align="right">(8)其它项目:&nbsp;</td>
             <td width="25%" align="left">
 				<s:if test="fs8==1">
-				<input type="checkbox" name="chk_fs_name" class="cuncbox" checked="checked" disabled="disabled" tabindex="78"/>
+				<input type="checkbox" name="chk_fs_name" class="cuncbox" checked="checked" onclick="selectFs8(this)" tabindex="78"/>
+				<input type="hidden" id="fsbox8" name="incometxt" value="1"/>
 				</s:if>
 				<s:else>
-				<input type="checkbox" name="chk_fs_name" class="cuncbox" disabled="disabled" tabindex="78"/>
+				<input type="checkbox" name="chk_fs_name" class="cuncbox" onclick="selectFs8(this)" tabindex="78"/>
+				<input type="hidden" id="fsbox8" name="incometxt" value="0"/>
 				</s:else>
 			</td>
         </tr>
