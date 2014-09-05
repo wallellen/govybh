@@ -183,6 +183,17 @@ function changeZhibiao(i)
 		$(".spanVal"+i).show();
 		$("#a"+i).val(zbId);
 		$("#d"+i).val(2);
+		//
+		var fieldOrMoney;
+		if(zbId==300)
+		{
+			fieldOrMoney = "请输入面积";
+		}
+		else
+		{
+			fieldOrMoney = "请输入金额";
+		}
+		$("#yuan"+i).attr('placeholder',fieldOrMoney);
 	}
 	else
 	{
@@ -211,12 +222,14 @@ function changeCheckBox(i)
 	{
 		ckVal = 1;
 		$("#b"+i).val(1);
+		$("#d"+i).val(1);
 	}
 	else
 	{
 		ckVal = 0;
 		$("#a"+i).val('');
 		$("#b"+i).val(0);
+		$("#d"+i).val(0);
 	}
 	$("#c"+i).attr("value",$("#a"+i).val()+","+ckVal+"#")
 }

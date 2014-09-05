@@ -92,7 +92,7 @@ public class YbhFarmerAction extends BaseAction implements ModelDriven<YbhFarmer
 			
 			
 			//check
-			if(isShowCheck)
+			if(isShowCheck && null!=ybhFarmerForm.getZbId()[i-1])
 			{
 				zbHtml += "&nbsp;<span class='spanCheck"+i+"'>";
 				zbHtml += "<input type='checkbox' id='chk_box"+i+"' checked='checked' onclick=\"changeCheckBox('"+i+"')\"/>";
