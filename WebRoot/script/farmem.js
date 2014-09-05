@@ -163,6 +163,8 @@ function setShebaoValD(o)
 }
 /////////////////////////////////////////////////////////////////////////
 //指标名称 
+var zbcurid=0;
+var zbcurtype;
 function changeZhibiao(i)
 {
 	var zbSelect = $("#zbSelectId"+i)[0];
@@ -186,6 +188,8 @@ function changeZhibiao(i)
 	{
 		$(".spanCheck"+i).hide();
 		$(".spanVal"+i).hide();
+		$("#a"+i).val(zbId);
+		$("#d"+i).val(0);
 	}
 }
 

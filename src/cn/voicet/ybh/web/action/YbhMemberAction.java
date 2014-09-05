@@ -49,7 +49,7 @@ public class YbhMemberAction extends BaseAction implements ModelDriven<YbhMember
 			isShowCheck = false;
 			zbHtml += "<li>";
 			zbHtml += "<span>";
-			zbHtml += "<select id='zbSelectId"+i+"' onchange=\"changeZhibiao('"+i+"')\" class='zb_select'>";
+			zbHtml += "<select name='zbSelectId"+i+"' id='zbSelectId"+i+"' onchange=\"changeZhibiao('"+i+"')\" class='borwer-sel'>";
 			zbHtml += "<option value='0'>«Î—°‘Ò÷∏±Í</option>";
 
 			for(int j=0; j<ds.list2.size(); j++)
@@ -90,7 +90,6 @@ public class YbhMemberAction extends BaseAction implements ModelDriven<YbhMember
 			}	
 			zbHtml += "/>";
 			zbHtml += "</li>";
-			
 		}
 		ds.html2 = zbHtml;
 	}

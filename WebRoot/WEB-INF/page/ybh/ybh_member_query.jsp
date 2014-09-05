@@ -6,9 +6,9 @@
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/style/style.css" />
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/style/style-b.css" />
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/jquery-1.5.1.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath }/script/farmem.js?v=12"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/splitpage.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/changeColor.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath }/script/farmem.js?v=10"></script>
 	<!-- fancybox插件开始 -->
 	<script type="text/javascript" src="${pageContext.request.contextPath }/fancybox/jquery.fancybox-1.3.1.pack.js"></script>
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/fancybox/fancybox.css" />
@@ -208,10 +208,31 @@
 			//设置动画效果,可设置为elastic,fade,none
 			'transitionIn':'none',
 			'transitionOut':'none',
-			'onStart':initFancyCheckbox12
+			'onStart':initFancyCheckbox
 		});			
 		$("#closeBtn").bind('click',disSelectXian);		   
 	});
 
+   	//
+   	$(function(){
+   	   	var tZbid = '<s:property value="zbId"/>';
+   	   	//去除空格
+   	 	tZbid = tZbid.replace(/[ ]/g,"");
+   	   	//alert(tZbid);
+   	   	//转数组
+   	   	tZbid = tZbid.split(",");
+		for(var i=1; i<=tZbid.length; i++)
+		{
+			var zbSelObj = $("#zbSelectId"+i)[0];
+			for(var j=0; j<zbSelObj.options.length; j++)
+			{
+				if(zbSelObj.options[j].id==tZbid[i-1])
+				{
+					zbSelObj.options[j].selected=true;
+				}				
+			}
+		}
+   	});
+   	
 </script>
 </html>
