@@ -274,11 +274,11 @@ public class YbhFarmerAction extends BaseAction implements ModelDriven<YbhFarmer
 		log.info("xmlist:"+ybhFarmerForm.getXmlist());
 		ybhFarmerService.getAllFarmerInfoList(ds, ybhFarmerForm);
 		//从上次查询的list中取数据ds.list
-		log.info("list2 size:"+ds.list2.size());
+		log.info("list3 size:"+ds.list3.size());
 		SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
 		String fileName = "nhcx"+format.format(new Date())+".xls";
 	    String filePath = request.getSession().getServletContext().getRealPath("excelTemplate")+"/"+"farmer.xls";
-	    ExcelTemplateGenerator generator = new ExcelTemplateGenerator(filePath, fileName, 1, ds.list2);
+	    ExcelTemplateGenerator generator = new ExcelTemplateGenerator(filePath, fileName, 1, ds.list3);
 	    generator.setColList("hm,govname,hname");
 	    generator.setDrawBoard();
 	    generator.setEffectColNum(3);

@@ -201,6 +201,27 @@
 		});	
 		$("#closeBtn").bind('click',disSelectXian);			   
 	});
+
+	//查看返回时勾选下拉列表 
+   	$(function(){
+   	   	var tZbid = '<s:property value="zbId"/>';
+   	   	//去除空格
+   	 	tZbid = tZbid.replace(/[ ]/g,"");
+   	   	//alert(tZbid);
+   	   	//转数组
+   	   	tZbid = tZbid.split(",");
+		for(var i=1; i<=tZbid.length; i++)
+		{
+			var zbSelObj = $("#zbSelectId"+i)[0];
+			for(var j=0; j<zbSelObj.options.length; j++)
+			{
+				if(zbSelObj.options[j].id==tZbid[i-1])
+				{
+					zbSelObj.options[j].selected=true;
+				}				
+			}
+		}
+   	});
 </script>
 </body>
 </html>

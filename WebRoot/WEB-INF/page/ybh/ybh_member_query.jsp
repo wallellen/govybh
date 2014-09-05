@@ -213,7 +213,7 @@
 		$("#closeBtn").bind('click',disSelectXian);		   
 	});
 
-   	//
+   	//查看返回时勾选下拉列表 
    	$(function(){
    	   	var tZbid = '<s:property value="zbId"/>';
    	   	//去除空格
