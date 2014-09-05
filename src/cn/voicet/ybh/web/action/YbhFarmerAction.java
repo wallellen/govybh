@@ -147,7 +147,7 @@ public class YbhFarmerAction extends BaseAction implements ModelDriven<YbhFarmer
 			{
 				zbHtml += " value='"+ybhFarmerForm.getYuan()[i-1]+"'";
 			}
-			// onkeyup="value=value.replace(/[^\d]/g,'')"
+
 			zbHtml += " onkeyup=\"value=value.replace(/[^\\d]/g,'')\"";
 			zbHtml += "/>";
 			zbHtml += "</span>";
