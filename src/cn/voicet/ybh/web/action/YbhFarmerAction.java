@@ -48,11 +48,15 @@ public class YbhFarmerAction extends BaseAction implements ModelDriven<YbhFarmer
 		String zbHtml = "";
 		boolean isShowCheck;
 		boolean isShowInput;
+		boolean isShowGtlt1;
+		boolean isShowGtlt2;
 		Map zbMap;
 		for(int i=1; i<10; i++)
 		{
 			isShowCheck = false;
 			isShowInput = false;
+			isShowGtlt1 = false;
+			isShowGtlt2 = false;
 			zbHtml += "<li>";
 			zbHtml += "<span>";
 			zbHtml += "<select id='zbSelectId"+i+"' onchange=\"changeZhibiao('"+i+"')\" class='zb_select'>";
@@ -109,14 +113,42 @@ public class YbhFarmerAction extends BaseAction implements ModelDriven<YbhFarmer
 			zbHtml += ">";
 			zbHtml += "&nbsp;<span class='spanVal"+i+" hide'>";
 			zbHtml += "<select id='glSelectId"+i+"' onchange=\"changeGtLt('"+i+"')\">";
-			zbHtml += "<option value='1'>&gt;=</option>";
-			zbHtml += "<option value='2'>&lt;=</option>";
+			
+			if(null!=ybhFarmerForm.getChkglt())
+			{
+				if(ybhFarmerForm.getChkglt()[i-1].equals("1"))
+				{
+					isShowGtlt1 = true;
+				}
+				if(ybhFarmerForm.getChkglt()[i-1].equals("2"))
+				{
+					isShowGtlt2 = true;
+				}
+			}
+
+			zbHtml += "<option value='1'";
+			if(isShowGtlt1)
+			{
+				zbHtml += " selected='selected'";
+			}
+			zbHtml += ">&gt;=</option>";
+			
+			
+			zbHtml += "<option value='2'";
+			if(isShowGtlt2)
+			{
+				zbHtml += " selected='selected'";
+			}
+			zbHtml += ">&lt;=</option>";
+			
 			zbHtml += "</select>";	
 			zbHtml += "&nbsp;<input type='text' class='input_off2' name='yuan' id='yuan"+i+"' onblur=\"changeZhibVal('"+i+"')\"";
 			if(null!=ybhFarmerForm.getYuan())
 			{
 				zbHtml += " value='"+ybhFarmerForm.getYuan()[i-1]+"'";
 			}
+			// onkeyup="value=value.replace(/[^\d]/g,'')"
+			zbHtml += " onkeyup=\"value=value.replace(/[^\\d]/g,'')\"";
 			zbHtml += "/>";
 			zbHtml += "</span>";
 			
@@ -141,7 +173,6 @@ public class YbhFarmerAction extends BaseAction implements ModelDriven<YbhFarmer
 			{
 				zbHtml += " value='"+ybhFarmerForm.getChkipt()[i-1]+"'";
 			}
-			
 			zbHtml += "/>";
 			
 			zbHtml += "</li>";

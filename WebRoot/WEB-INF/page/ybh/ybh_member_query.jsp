@@ -208,11 +208,10 @@
 			//设置动画效果,可设置为elastic,fade,none
 			'transitionIn':'none',
 			'transitionOut':'none',
-			'onStart':initFancyCheckbox
+			'onStart':initFancyCheckbox12
 		});			
 		$("#closeBtn").bind('click',disSelectXian);		   
 	});
 
-	
 </script>
 </html>

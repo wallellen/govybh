@@ -11,7 +11,7 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath }/datePicker/WdatePicker.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/splitpage.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/changeColor.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath }/script/farmem.js?v=9"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath }/script/farmem.js?v=11"></script>
 	<!-- fancybox插件开始 -->
 	<script type="text/javascript" src="${pageContext.request.contextPath }/fancybox/jquery.fancybox-1.3.1.pack.js"></script>
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/fancybox/fancybox.css" />
@@ -201,27 +201,6 @@
 		});	
 		$("#closeBtn").bind('click',disSelectXian);			   
 	});
-</script>
-<script>
-$(function(){
-	var s = new Array('<s:property value='zbId'/>');
-	/*
-	for(var i=0;i<objSelect.options.length;i++) {  
-        if(objSelect.options[i].id == s) {  
-            objSelect.options[i].selected = true;  
-            break;  
-        }  
-    }  
-	*/
-    var t = '<s:property value='chkglt'/>';
-	var objSelect = $("#zbSelectId1")[0];
-	for(var i=0; i<objSelect.options.length; i++) { 
-        if(objSelect.options[i].id == s[0]) {  
-            objSelect.options[i].selected = true;  
-            break;  
-        }  
-    }  
-});
 </script>
 </body>
 </html>

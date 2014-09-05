@@ -195,7 +195,7 @@ function changeGtLt(i)
 	var glSelect = $("#glSelectId"+i)[0];
 	var glId = glSelect.options[glSelect.selectedIndex].value;
 	$("#b"+i).val(glId);
-	$("#c"+i).attr("value",$("#a"+i).val()+","+glId+","+$("#yuan"+i).val()+"#")
+	$("#c"+i).attr("value",$("#a"+i).val()+","+ glId==1?'>=':'<=' +","+$("#yuan"+i).val()+"#")
 }
 
 //复选框 
