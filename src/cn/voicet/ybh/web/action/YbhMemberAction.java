@@ -180,12 +180,12 @@ public class YbhMemberAction extends BaseAction implements ModelDriven<YbhMember
 		DotSession ds = DotSession.getVTSession(request);
 		log.info("xmlist:"+ybhMemberForm.getXmlist());
 		ybhMemberService.getAllMemberInfoList(ds, ybhMemberForm);
-		log.info("list2 size:"+ds.list2.size());
+		log.info("list3 size:"+ds.list3.size());
 		//从上次查询的list中取数据ds.list
 		SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
 		String fileName = "rkcx"+format.format(new Date())+".xls";
 	    String filePath = request.getSession().getServletContext().getRealPath("excelTemplate")+"/"+"member.xls";
-	    ExcelTemplateGenerator generator = new ExcelTemplateGenerator(filePath, fileName, 1, ds.list2);
+	    ExcelTemplateGenerator generator = new ExcelTemplateGenerator(filePath, fileName, 1, ds.list3);
 	    generator.setColList("hm,govname,uname,sex,age,school,education,hearth,dcno,labors,works,bla,tbfd");
 	    generator.setDrawBoard();
 	    generator.setEffectColNum(13);
