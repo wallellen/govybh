@@ -34,6 +34,122 @@ public class YbhFarmerAction extends BaseAction implements ModelDriven<YbhFarmer
 	/** 样本户农户查询 */
 	public String home(){
 		DotSession ds = DotSession.getVTSession(request);
+		getXianListHtml(ds);
+		getZhibiaoHtml(ds);
+		
+		return "show_farmer";
+	}
+
+	private void getZhibiaoHtml(DotSession ds) {
+		//查询指标列表
+		ybhFarmerService.queryFamilyZBList(ds);
+		/******************** 指标html ************************/
+		
+		String zbHtml = "";
+		boolean isShowCheck;
+		boolean isShowInput;
+		Map zbMap;
+		for(int i=1; i<10; i++)
+		{
+			isShowCheck = false;
+			isShowInput = false;
+			zbHtml += "<li>";
+			zbHtml += "<span>";
+			zbHtml += "<select id='zbSelectId"+i+"' onchange=\"changeZhibiao('"+i+"')\" class='zb_select'>";
+			zbHtml += "<option value='0'>请选择指标</option>";
+			for(int j=0; j<ds.list2.size(); j++)
+			{
+				zbMap = (Map) ds.list2.get(j);
+				zbHtml += "<option id='"+zbMap.get("id")+"'";
+				if(null!=ybhFarmerForm.getZbId() && zbMap.get("id").equals(ybhFarmerForm.getZbId()[i-1].trim())){
+					isShowCheck=true;
+					zbHtml += "selected='selected'";
+				}
+				zbHtml += " value='"+zbMap.get("t")+"'>"+zbMap.get("name")+"</option>";
+			}
+			zbHtml += "</select>";
+			zbHtml += "</span>";
+			
+			if(null!=ybhFarmerForm.getChkipt() && ybhFarmerForm.getChkipt()[i-1].equals("1"))
+			{
+				isShowCheck = true;
+				isShowInput = false;
+			}
+			else if(null!=ybhFarmerForm.getChkipt() && ybhFarmerForm.getChkipt()[i-1].equals("2"))
+			{
+				isShowCheck = false;
+				isShowInput = true;
+			}
+			else
+			{
+				isShowCheck = false;
+				isShowInput = false;
+			}
+			
+			
+			//check
+			if(isShowCheck)
+			{
+				zbHtml += "&nbsp;<span class='spanCheck"+i+"'>";
+				zbHtml += "<input type='checkbox' id='chk_box"+i+"' checked='checked' onclick=\"changeCheckBox('"+i+"')\"/>";
+			}
+			else
+			{
+				zbHtml += "&nbsp;<span class='spanCheck"+i+" hide'>";
+				zbHtml += "<input type='checkbox' id='chk_box"+i+"' onclick=\"changeCheckBox('"+i+"')\"/>";
+			}
+			zbHtml += "</span>";
+			
+			//input
+			zbHtml += "&nbsp;<span class='spanVal"+i;
+			if(!isShowInput)
+			{
+				zbHtml += " hide'";
+			}
+			zbHtml += ">";
+			zbHtml += "&nbsp;<span class='spanVal"+i+" hide'>";
+			zbHtml += "<select id='glSelectId"+i+"' onchange=\"changeGtLt('"+i+"')\">";
+			zbHtml += "<option value='1'>&gt;=</option>";
+			zbHtml += "<option value='2'>&lt;=</option>";
+			zbHtml += "</select>";	
+			zbHtml += "&nbsp;<input type='text' class='input_off2' name='yuan' id='yuan"+i+"' onblur=\"changeZhibVal('"+i+"')\"";
+			if(null!=ybhFarmerForm.getYuan())
+			{
+				zbHtml += " value='"+ybhFarmerForm.getYuan()[i-1]+"'";
+			}
+			zbHtml += "/>";
+			zbHtml += "</span>";
+			
+			//hidden
+			zbHtml += "<input type='hidden' id='a"+i+"' name='zbId'";
+			if(null!=ybhFarmerForm.getZbId())
+			{
+				zbHtml += " value='"+ybhFarmerForm.getZbId()[i-1]+"'";
+			}
+			zbHtml += "/>";
+			zbHtml += "<input type='hidden' id='b"+i+"' name='chkglt' value='1'/>";
+			zbHtml += "<input type='hidden' id='c"+i+"' name='zhibiao'";
+			if(null!=ybhFarmerForm.getZhibiao())
+			{
+				zbHtml += "value='"+ybhFarmerForm.getZhibiao()[i-1]+"'";
+			}	
+			zbHtml += "/>";
+			//控制显示check or input
+
+			zbHtml += "<input type='hidden' id='d"+i+"' name='chkipt'";
+			if(null!=ybhFarmerForm.getChkipt())
+			{
+				zbHtml += " value='"+ybhFarmerForm.getChkipt()[i-1]+"'";
+			}
+			
+			zbHtml += "/>";
+			
+			zbHtml += "</li>";
+		}
+		ds.html2 = zbHtml;
+	}
+
+	private void getXianListHtml(DotSession ds) {
 		ybhFarmerService.getSelectedXianList(ds);
 		Map map;
 		int tid = 0;
@@ -100,117 +216,6 @@ public class YbhFarmerAction extends BaseAction implements ModelDriven<YbhFarmer
 		if(null==ybhFarmerForm.getQstr() && null!=ds.map.get("qarr")){
 			ybhFarmerForm.setQstr((String[]) ds.map.get("qarr"));
 		}
-		
-		//查询指标列表
-		ybhFarmerService.queryFamilyZBList(ds);
-		
-		
-		/******************** 指标html ************************/
-		
-		String zbHtml = "";
-		boolean isShowCheck;
-		boolean isShowInput;
-		Map zbMap;
-		for(int i=1; i<10; i++)
-		{
-			isShowCheck = false;
-			isShowInput = false;
-			zbHtml += "<li>";
-			zbHtml += "<span>";
-			zbHtml += "<select id='zbSelectId"+i+"' onchange=\"changeZhibiao('"+i+"')\" class='zb_select'>";
-			zbHtml += "<option value='0'>请选择指标</option>";
-			for(int j=0; j<ds.list2.size(); j++)
-			{
-				zbMap = (Map) ds.list2.get(j);
-				zbHtml += "<option id='"+zbMap.get("id")+"'";
-				if(null!=ds.zbIds && zbMap.get("id").equals(ds.zbIds[i-1].trim())){
-					isShowCheck=true;
-					zbHtml += "selected='selected'";
-				}
-				zbHtml += " value='"+zbMap.get("t")+"'>"+zbMap.get("name")+"</option>";
-			}
-			zbHtml += "</select>";
-			zbHtml += "</span>";
-			
-			if(null!=ds.chkIpts && ds.chkIpts[i-1].equals("1"))
-			{
-				isShowCheck = true;
-				isShowInput = false;
-			}
-			else if(null!=ds.chkIpts && ds.chkIpts[i-1].equals("2"))
-			{
-				isShowCheck = false;
-				isShowInput = true;
-			}
-			else
-			{
-				isShowCheck = false;
-				isShowInput = false;
-			}
-			
-			
-			//check
-			if(isShowCheck)
-			{
-				zbHtml += "&nbsp;<span class='spanCheck"+i+"'>";
-				zbHtml += "<input type='checkbox' id='chk_box"+i+"' checked='checked' onclick=\"changeCheckBox('"+i+"')\"/>";
-			}
-			else
-			{
-				zbHtml += "&nbsp;<span class='spanCheck"+i+" hide'>";
-				zbHtml += "<input type='checkbox' id='chk_box"+i+"' onclick=\"changeCheckBox('"+i+"')\"/>";
-			}
-			zbHtml += "</span>";
-			
-			//input
-			zbHtml += "&nbsp;<span class='spanVal"+i;
-			if(!isShowInput)
-			{
-				zbHtml += " hide'";
-			}
-			zbHtml += ">";
-			zbHtml += "&nbsp;<span class='spanVal"+i+" hide'>";
-			zbHtml += "<select id='glSelectId"+i+"' onchange=\"changeGtLt('"+i+"')\">";
-			zbHtml += "<option value='1'>&gt;=</option>";
-			zbHtml += "<option value='2'>&lt;=</option>";
-			zbHtml += "</select>";	
-			zbHtml += "&nbsp;<input type='text' class='input_off2' name='yuan' id='yuan"+i+"' onblur=\"changeZhibVal('"+i+"')\"";
-			if(null!=ds.zbYuan)
-			{
-				zbHtml += " value='"+ds.zbYuan[i-1]+"'";
-			}
-			zbHtml += "/>";
-			zbHtml += "</span>";
-			
-			//hidden
-			zbHtml += "<input type='hidden' id='a"+i+"' name='zbId'";
-			if(null!=ds.zbIds)
-			{
-				zbHtml += " value='"+ds.zbIds[i-1]+"'";
-			}
-			zbHtml += "/>";
-			zbHtml += "<input type='hidden' id='b"+i+"' name='chkglt' value='1'/>";
-			zbHtml += "<input type='hidden' id='c"+i+"' name='zhibiao'";
-			if(null!=ybhFarmerForm.getZhibiao())
-			{
-				zbHtml += "value='"+ybhFarmerForm.getZhibiao()[i-1]+"'";
-			}	
-			zbHtml += "/>";
-			//控制显示check or input
-
-			zbHtml += "<input type='hidden' id='d"+i+"' name='chkipt'";
-			if(null!=ybhFarmerForm.getChkipt())
-			{
-				zbHtml += " value='"+ds.chkIpts[i-1]+"'";
-			}
-			
-			zbHtml += "/>";
-			
-			zbHtml += "</li>";
-		}
-		ds.html2 = zbHtml;
-		
-		return "show_farmer";
 	}
 	
 	public String queryFarmer()	{
@@ -221,23 +226,15 @@ public class YbhFarmerAction extends BaseAction implements ModelDriven<YbhFarmer
 		ds.map.put("xmCodeList", ybhFarmerForm.getXmlist());
 		ds.map.put("xmNameList", ybhFarmerForm.getXmname());
 		log.info("year:"+ybhFarmerForm.getYear());
-		
+		getXianListHtml(ds);
+		getZhibiaoHtml(ds);
 		ds.zbIds = ybhFarmerForm.getZbId();
 		ds.chkIpts = ybhFarmerForm.getChkipt();
 		ds.zbYuan = ybhFarmerForm.getYuan();
 		ds.map.put("zbYear", ybhFarmerForm.getYear());
 		ds.map.put("zhibiao", ybhFarmerForm.getZhibiao());
-		
-		if(null!=ds.zbIds)
-		{
-			for(int i=0; i<ds.zbIds.length; i++)
-			{
-				log.info("zbId:"+ds.zbIds[i]);
-			}
-		}
-		
 		ybhFarmerService.getFarmerInfoList(ds, ybhFarmerForm);
-		return home();
+		return "show_farmer";
 	}
 	
 	/** 导出样本户农户信息 */

@@ -34,6 +34,7 @@ public class YbhMemberDaoImpl extends BaseDaoImpl implements YbhMemberDao {
 				cs.setInt(2, 1);
 				cs.execute();
 				ResultSet rs = cs.getResultSet();
+				ds.initData();
 				ds.list = new ArrayList();	
 				Map map;
 				if(rs!=null){
@@ -201,6 +202,7 @@ public class YbhMemberDaoImpl extends BaseDaoImpl implements YbhMemberDao {
 					throws SQLException, DataAccessException {
 				cs.execute();
 				ResultSet rs = cs.getResultSet();
+				ds.initData();
 				ds.list2 = new ArrayList();	
 				Map map;
 				if(rs!=null){
