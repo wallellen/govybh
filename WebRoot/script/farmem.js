@@ -161,4 +161,77 @@ function setShebaoValD(o)
 		shebao_val_d.value="";
 	}
 }
+/////////////////////////////////////////////////////////////////////////
+//指标名称 
+function changeZhibiao(i)
+{
+	var zbSelect = $("#zbSelectId"+i)[0];
+	//指标ID
+	var zbId = zbSelect.options[zbSelect.selectedIndex].id;
+	if(zbSelect.options[zbSelect.selectedIndex].value=='1')
+	{
+		$(".spanCheck"+i).show();
+		$(".spanVal"+i).hide();
+		$("#a"+i).val(zbId);
+		$("#d"+i).val(1);
+	}
+	else if(zbSelect.options[zbSelect.selectedIndex].value=='2')
+	{
+		$(".spanCheck"+i).hide();
+		$(".spanVal"+i).show();
+		$("#a"+i).val(zbId);
+		$("#d"+i).val(2);
+	}
+	else
+	{
+		$(".spanCheck"+i).hide();
+		$(".spanVal"+i).hide();
+	}
+}
+
+//逻辑关系 
+function changeGtLt(i)
+{
+	var glSelect = $("#glSelectId"+i)[0];
+	var glId = glSelect.options[glSelect.selectedIndex].value;
+	$("#b"+i).val(glId);
+	$("#c"+i).attr("value",$("#a"+i).val()+","+glId+","+$("#yuan"+i).val()+"#")
+}
+
+//复选框 
+function changeCheckBox(i)
+{
+	var ckVal = 0;
+	var chkbox = $("#chk_box"+i)[0];
+	if(chkbox.checked)
+	{
+		ckVal = 1;
+		$("#b"+i).val(1);
+	}
+	else
+	{
+		ckVal = 0;
+		$("#a"+i).val('');
+		$("#b"+i).val(0);
+	}
+	$("#c"+i).attr("value",$("#a"+i).val()+","+ckVal+"#")
+}
+
+//指标值 
+function changeZhibVal(i)
+{
+	var lj = $("#b"+i).val();
+	var dyxy;
+	if(lj==1)
+	{
+	 	dyxy=">=";
+	}
+	else
+	{
+		dyxy="<=";
+	}
+	$("#c"+i).attr("value",$("#a"+i).val()+","+dyxy+$("#yuan"+i).val()+"#");
+}
+
+
 

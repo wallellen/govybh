@@ -29,4 +29,8 @@ public class YbhFarmerServiceImpl implements YbhFarmerService{
 		ybhFarmerDao.getAllFarmerInfoList(ds, ybhFarmerForm);
 	}
 
+	public void queryFamilyZBList(DotSession ds) {
+		ybhFarmerDao.queryFamilyZBList(ds);
+	}
+
 }

@@ -8,4 +8,5 @@ public interface YbhFarmerDao extends BaseDao{
 	void getSelectedXianList(DotSession ds);
 	void getFarmerInfoList(DotSession ds, YbhFarmerForm ybhFarmerForm);
 	void getAllFarmerInfoList(DotSession ds, YbhFarmerForm ybhFarmerForm);
+	void queryFamilyZBList(DotSession ds);
 }

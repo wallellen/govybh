@@ -97,6 +97,65 @@ public class YbhMemberAction extends BaseAction implements ModelDriven<YbhMember
 		{
 			ds.map.put("xmNameList", "[全省]");
 		}
+		
+		ybhMemberService.queryMemberZBList(ds);
+
+		///////////////////////////////////////////////////////
+		
+		
+		String zbHtml = "";
+		boolean isShowCheck;
+		Map zbMap;
+		for(int i=1; i<7; i++)
+		{
+			isShowCheck = false;
+			zbHtml += "<li>";
+			zbHtml += "<span>";
+			zbHtml += "<select id='zbSelectId"+i+"' onchange=\"changeZhibiao('"+i+"')\" class='zb_select'>";
+			zbHtml += "<option value='0'>请选择指标</option>";
+
+			for(int j=0; j<ds.list2.size(); j++)
+			{
+				zbMap = (Map) ds.list2.get(j);
+				
+				zbHtml += "<option id='"+zbMap.get("id")+"'";
+				if(null!=ds.zbIds && zbMap.get("id").equals(ds.zbIds[i-1].trim())){
+					isShowCheck=true;
+					zbHtml += "selected='selected'";
+				}
+				zbHtml += " value='"+zbMap.get("t")+"'>"+zbMap.get("name")+"</option>";
+			}
+			zbHtml += "</select>";
+			zbHtml += "</span>";
+			//check
+			if(isShowCheck){
+				zbHtml += "&nbsp;<span class='spanCheck"+i+"'>";
+				zbHtml += "<input type='checkbox' id='chk_box"+i+"' checked='checked' onclick=\"changeCheckBox('"+i+"')\"/>";
+			}else{
+				zbHtml += "&nbsp;<span class='spanCheck"+i+" hide'>";
+				zbHtml += "<input type='checkbox' id='chk_box"+i+"' onclick=\"changeCheckBox('"+i+"')\"/>";
+			}
+			
+			
+			zbHtml += "</span>";
+			zbHtml += "<input type='hidden' id='a"+i+"' name='zbId'";
+			if(null!=ds.zbIds)
+			{
+				zbHtml += " value='"+ds.zbIds[i-1]+"'";
+			}
+			zbHtml += "/>";
+			zbHtml += "<input type='hidden' id='b"+i+"' name='chkglt' value='0'/>";
+			zbHtml += "<input type='hidden' id='c"+i+"' name='zhibiao'";
+			if(null!=ybhMemberForm.getZhibiao())
+			{
+				zbHtml += "value='"+ybhMemberForm.getZhibiao()[i-1]+"'";
+			}	
+			zbHtml += "/>";
+			zbHtml += "</li>";
+			
+		}
+		ds.html2 = zbHtml;
+		
 		return "show_member";
 	}
 	
@@ -106,8 +165,20 @@ public class YbhMemberAction extends BaseAction implements ModelDriven<YbhMember
 		log.info("xmCodeList:"+ybhMemberForm.getXmlist()+", xmNameList:"+ybhMemberForm.getXmname());
 		ds.map.put("xmCodeList", ybhMemberForm.getXmlist());
 		ds.map.put("xmNameList", ybhMemberForm.getXmname());
+		
+		ds.zbIds = ybhMemberForm.getZbId();
+		ds.map.put("zhibiao", ybhMemberForm.getZhibiao());
+		
+		if(null!=ds.zbIds)
+		{
+			for(int i=0; i<ds.zbIds.length; i++)
+			{
+				log.info("zbId:"+ds.zbIds[i]);
+			}
+		}
+		
 		ybhMemberService.getMemberInfoList(ds, ybhMemberForm);
-		return "show_member";
+		return home();
 	}
 	
 	public String exportMemberInfo() throws Exception{

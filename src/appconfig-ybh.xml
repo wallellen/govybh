@@ -163,6 +163,10 @@
 		<item id="2" name="2:丧失劳动力" />
 		<item id="3" name="3:非劳动力" />
 	</list>
+	<list name="optgtlt" describle="选项">
+		<item id="1" name="&gt;=" />
+		<item id="2" name="&lt;=" />
+	</list>
 	<list name="opt" describle="选项">
 		<item id="0" name="不限" />
 		<item id="1" name="&gt;=" />

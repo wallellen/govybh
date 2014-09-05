@@ -91,7 +91,6 @@ public class YbhFarmerAction extends BaseAction implements ModelDriven<YbhFarmer
 		
 		h_content += "</div>";
 		html = h_tab + h_content;
-		//request.setAttribute("h", html);
 		ds.html = html;
 		
 		if(null==ds.map.get("xmNameList"))
@@ -101,6 +100,116 @@ public class YbhFarmerAction extends BaseAction implements ModelDriven<YbhFarmer
 		if(null==ybhFarmerForm.getQstr() && null!=ds.map.get("qarr")){
 			ybhFarmerForm.setQstr((String[]) ds.map.get("qarr"));
 		}
+		
+		//查询指标列表
+		ybhFarmerService.queryFamilyZBList(ds);
+		
+		
+		/******************** 指标html ************************/
+		
+		String zbHtml = "";
+		boolean isShowCheck;
+		boolean isShowInput;
+		Map zbMap;
+		for(int i=1; i<10; i++)
+		{
+			isShowCheck = false;
+			isShowInput = false;
+			zbHtml += "<li>";
+			zbHtml += "<span>";
+			zbHtml += "<select id='zbSelectId"+i+"' onchange=\"changeZhibiao('"+i+"')\" class='zb_select'>";
+			zbHtml += "<option value='0'>请选择指标</option>";
+			for(int j=0; j<ds.list2.size(); j++)
+			{
+				zbMap = (Map) ds.list2.get(j);
+				zbHtml += "<option id='"+zbMap.get("id")+"'";
+				if(null!=ds.zbIds && zbMap.get("id").equals(ds.zbIds[i-1].trim())){
+					isShowCheck=true;
+					zbHtml += "selected='selected'";
+				}
+				zbHtml += " value='"+zbMap.get("t")+"'>"+zbMap.get("name")+"</option>";
+			}
+			zbHtml += "</select>";
+			zbHtml += "</span>";
+			
+			if(null!=ds.chkIpts && ds.chkIpts[i-1].equals("1"))
+			{
+				isShowCheck = true;
+				isShowInput = false;
+			}
+			else if(null!=ds.chkIpts && ds.chkIpts[i-1].equals("2"))
+			{
+				isShowCheck = false;
+				isShowInput = true;
+			}
+			else
+			{
+				isShowCheck = false;
+				isShowInput = false;
+			}
+			
+			
+			//check
+			if(isShowCheck)
+			{
+				zbHtml += "&nbsp;<span class='spanCheck"+i+"'>";
+				zbHtml += "<input type='checkbox' id='chk_box"+i+"' checked='checked' onclick=\"changeCheckBox('"+i+"')\"/>";
+			}
+			else
+			{
+				zbHtml += "&nbsp;<span class='spanCheck"+i+" hide'>";
+				zbHtml += "<input type='checkbox' id='chk_box"+i+"' onclick=\"changeCheckBox('"+i+"')\"/>";
+			}
+			zbHtml += "</span>";
+			
+			//input
+			zbHtml += "&nbsp;<span class='spanVal"+i;
+			if(!isShowInput)
+			{
+				zbHtml += " hide'";
+			}
+			zbHtml += ">";
+			zbHtml += "&nbsp;<span class='spanVal"+i+" hide'>";
+			zbHtml += "<select id='glSelectId"+i+"' onchange=\"changeGtLt('"+i+"')\">";
+			zbHtml += "<option value='1'>&gt;=</option>";
+			zbHtml += "<option value='2'>&lt;=</option>";
+			zbHtml += "</select>";	
+			zbHtml += "&nbsp;<input type='text' class='input_off2' name='yuan' id='yuan"+i+"' onblur=\"changeZhibVal('"+i+"')\"";
+			if(null!=ds.zbYuan)
+			{
+				zbHtml += " value='"+ds.zbYuan[i-1]+"'";
+			}
+			zbHtml += "/>";
+			zbHtml += "</span>";
+			
+			//hidden
+			zbHtml += "<input type='hidden' id='a"+i+"' name='zbId'";
+			if(null!=ds.zbIds)
+			{
+				zbHtml += " value='"+ds.zbIds[i-1]+"'";
+			}
+			zbHtml += "/>";
+			zbHtml += "<input type='hidden' id='b"+i+"' name='chkglt' value='1'/>";
+			zbHtml += "<input type='hidden' id='c"+i+"' name='zhibiao'";
+			if(null!=ybhFarmerForm.getZhibiao())
+			{
+				zbHtml += "value='"+ybhFarmerForm.getZhibiao()[i-1]+"'";
+			}	
+			zbHtml += "/>";
+			//控制显示check or input
+
+			zbHtml += "<input type='hidden' id='d"+i+"' name='chkipt'";
+			if(null!=ybhFarmerForm.getChkipt())
+			{
+				zbHtml += " value='"+ds.chkIpts[i-1]+"'";
+			}
+			
+			zbHtml += "/>";
+			
+			zbHtml += "</li>";
+		}
+		ds.html2 = zbHtml;
+		
 		return "show_farmer";
 	}
 	
@@ -111,8 +220,24 @@ public class YbhFarmerAction extends BaseAction implements ModelDriven<YbhFarmer
 		log.info("xmCodeList:"+ybhFarmerForm.getXmlist()+", xmNameList:"+ybhFarmerForm.getXmname());
 		ds.map.put("xmCodeList", ybhFarmerForm.getXmlist());
 		ds.map.put("xmNameList", ybhFarmerForm.getXmname());
+		log.info("year:"+ybhFarmerForm.getYear());
+		
+		ds.zbIds = ybhFarmerForm.getZbId();
+		ds.chkIpts = ybhFarmerForm.getChkipt();
+		ds.zbYuan = ybhFarmerForm.getYuan();
+		ds.map.put("zbYear", ybhFarmerForm.getYear());
+		ds.map.put("zhibiao", ybhFarmerForm.getZhibiao());
+		
+		if(null!=ds.zbIds)
+		{
+			for(int i=0; i<ds.zbIds.length; i++)
+			{
+				log.info("zbId:"+ds.zbIds[i]);
+			}
+		}
+		
 		ybhFarmerService.getFarmerInfoList(ds, ybhFarmerForm);
-		return "show_farmer";
+		return home();
 	}
 	
 	/** 导出样本户农户信息 */

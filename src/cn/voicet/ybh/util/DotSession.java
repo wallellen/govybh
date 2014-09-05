@@ -49,6 +49,11 @@ public class DotSession {
 	public int sflag;
 	
 	public String html;
+	public String html2;
+	
+	public String[] zbIds;
+	public String[] chkIpts;
+	public String[] zbYuan;
 	
 	private class StackInfo{
 		

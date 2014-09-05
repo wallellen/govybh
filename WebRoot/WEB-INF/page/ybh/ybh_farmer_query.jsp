@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"%>
 <%@taglib uri="/struts-tags" prefix="s" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,7 +11,7 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath }/datePicker/WdatePicker.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/splitpage.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/changeColor.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath }/script/farmem.js?v=8"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath }/script/farmem.js?v=9"></script>
 	<!-- fancybox插件开始 -->
 	<script type="text/javascript" src="${pageContext.request.contextPath }/fancybox/jquery.fancybox-1.3.1.pack.js"></script>
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/fancybox/fancybox.css" />
@@ -46,6 +47,11 @@
 		.Contentbox{clear:both;margin-top:0px;border-top:none;height:150px;padding-top:4px;}
 		.Contentbox ul{list-style:none;margin:7px;padding:0;}
 		.Contentbox ul li{line-height:24px; width:58px; float:left; margin-right:5px;}	
+		
+		.hide{display:none;}
+		.zb_select{width:100px;}
+		select,span,input{vertical-align:middle;}
+		.zb_ul li{float:left; width:280px; height:22px; overflow:hidden;}
 	</style>
 		
 </head>
@@ -118,191 +124,19 @@
 	<!-- advance -->
 	<fieldset style="border:1px solid #3B9FFF; margin:0; padding:0; width:99%;">
 	<legend>高级选项</legend>
-	<div style="height:158px;">
-		<table cellpadding="0" cellspacing="0" width="100%">
-			<tr height="24px;">
-				<td width="12%" align="right">年份：</td>
-				<td width="14%" align="left">
-					<input type="text" onchange="setHiddenYear(this)" value="<s:property value="qstr==null ? #session.vts.workyear : #session.vts.map.qarr[16]"/>" onfocus="WdatePicker({skin:'whyGreen',dateFmt:'yyyy'})" class="Wdate" style="width:80px; height:18px;" maxlength="4"/>
-					<script type="text/javascript">
-					//改变查询参数的顺序 
-					function setHiddenYear(o)
-						{
-							var hyearVal = o.value;
-							$("#hidyear").val(hyearVal);
-						}
-					</script>
-				</td>
-				<td width="16%" align="right">家庭总收入：</td>
-				<td width="8%" align="left">
-					<s:select name="qstr" list="#application.vta.GetList('opt')" listKey="id" listValue="str" value="%{#session.vts.map.qarr[12]}"></s:select>
-				</td>
-				<td width="14%" align="left"><input type="text" name="qstr" class="inptxt2" onfocus="this.className='input_on2'" onblur="this.className='input_off2'" maxlength="5" value="<s:property value="#session.vts.map.qarr[13]"/>" onkeyup="value=value.replace(/[^\d]/g,'')"/></td>
-				<td width="12%" align="right">年人均收入：</td>
-				<td width="8%" align="left">
-					<s:select name="qstr" list="#application.vta.GetList('opt')" listKey="id" listValue="str" value="%{#session.vts.map.qarr[14]}"></s:select>
-				</td>
-				<td width="14%" align="left">
-					<input type="text" name="qstr" class="inptxt2" onfocus="this.className='input_on2'" onblur="this.className='input_off2'" maxlength="5" value="<s:property value="#session.vts.map.qarr[15]"/>" onkeyup="value=value.replace(/[^\d]/g,'')"/>
-					<!-- change year order -->
-					<input type="hidden" id="hidyear" name="qstr" value="<s:property value="qstr==null ? #session.vts.workyear : #session.vts.map.qarr[16]"/>"/>
-				</td>
-			</tr>
-			<tr height="24px;">
-				<td width="12%" align="right"></td>
-				<td width="14%" align="left"></td>
-				<td width="16%" align="right">得到扶贫资金(元)：</td>
-				<td width="8%" align="left">
-					<s:select name="qstr" list="#application.vta.GetList('opt')" listKey="id" listValue="str" value="%{#session.vts.map.qarr[17]}"></s:select>
-				</td>
-				<td width="14%" align="left"><input type="text" name="qstr" class="inptxt2" onfocus="this.className='input_on2'" onblur="this.className='input_off2'" maxlength="5" value="<s:property value="#session.vts.map.qarr[18]"/>" onkeyup="value=value.replace(/[^\d]/g,'')"/></td>
-				<td width="16%" align="right">使用小额扶贫贷款(元)：</td>
-				<td width="8%" align="left">
-					<s:select name="qstr" list="#application.vta.GetList('opt')" listKey="id" listValue="str" value="%{#session.vts.map.qarr[19]}"></s:select>
-				</td>
-				<td width="14%" align="left"><input type="text" name="qstr" class="inptxt2" onfocus="this.className='input_on2'" onblur="this.className='input_off2'" maxlength="5" value="<s:property value="#session.vts.map.qarr[20]"/>" onkeyup="value=value.replace(/[^\d]/g,'')"/></td>
-			</tr>
-		</table>
-		<hr style="color:#3B9FFF; width:95%"/>
-		<div style="height:20px; padding-left:10px;">
-			<s:if test="#session.vts.map.qarr[21]==1">
-				<input type="checkbox" id="fupin" onclick="setFupinVal(this)" checked="checked"/>
-				<input type="hidden" name="qstr" id="fupin_val" value="1"/>
-			</s:if>
-			<s:else>
-				<input type="checkbox" id="fupin" onclick="setFupinVal(this)"/>
-				<input type="hidden" name="qstr" id="fupin_val" value=""/>
-			</s:else>
-			<label for="fupin">享受扶贫项目支持情况(可多选)</label>
-		</div>
-		<table cellpadding="0" cellspacing="0" width="100%">
-			<tr>
-				<td width="5%"></td>
-				<td width="20%" align="left">
-					<s:if test="#session.vts.map.qarr[22]==1">
-						<input type="checkbox" id="fupin1" onclick="setFupinValA(this)" checked="checked"/>
-						<input type="hidden" name="qstr" id="fupin_val_a" value="1"/>
-					</s:if>
-					<s:else>
-						<input type="checkbox" id="fupin1" onclick="setFupinValA(this)"/>
-						<input type="hidden" name="qstr" id="fupin_val_a" value=""/>
-					</s:else>
-					<label for="fupin1">(1)产业发展项目</label>
-				</td>
-				<td width="20%" align="left">
-					<s:if test="#session.vts.map.qarr[23]==1">
-						<input type="checkbox" id="fupin2" onclick="setFupinValB(this)" checked="checked"/>
-						<input type="hidden" name="qstr" id="fupin_val_b" value="1"/>
-					</s:if>
-					<s:else>
-						<input type="checkbox" id="fupin2" onclick="setFupinValB(this)"/>
-						<input type="hidden" name="qstr" id="fupin_val_b" value=""/>
-					</s:else>
-					<label for="fupin2">(2)帮助就业项目</label>
-				</td>
-				<td width="20%" align="left">
-					<s:if test="#session.vts.map.qarr[24]==1">
-						<input type="checkbox" id="fupin3" onclick="setFupinValC(this)" checked="checked"/>
-						<input type="hidden" name="qstr" id="fupin_val_c" value="1"/>
-					</s:if>
-					<s:else>
-						<input type="checkbox" id="fupin3" onclick="setFupinValC(this)"/>
-						<input type="hidden" name="qstr" id="fupin_val_c" value=""/>
-					</s:else>
-					<label for="fupin3">(3)小额扶贫贷款项目</label>
-				</td>
-				<td width="20%" align="left">
-					<s:if test="#session.vts.map.qarr[25]==1">
-						<input type="checkbox" id="fupin4" onclick="setFupinValD(this)" checked="checked"/>
-						<input type="hidden" name="qstr" id="fupin_val_d" value="1"/>
-					</s:if>
-					<s:else>
-						<input type="checkbox" id="fupin4" onclick="setFupinValD(this)"/>
-						<input type="hidden" name="qstr" id="fupin_val_d" value=""/>
-					</s:else>
-					<label for="fupin4">(4)入股收益分红类项目</label>
-				</td>
-				<td width="15%" align="left">
-					<s:if test="#session.vts.map.qarr[26]==1">
-						<input type="checkbox" id="fupin5" onclick="setFupinValE(this)" checked="checked"/>
-						<input type="hidden" name="qstr" id="fupin_val_e" value="1"/>
-					</s:if>
-					<s:else>
-						<input type="checkbox" id="fupin5" onclick="setFupinValE(this)"/>
-						<input type="hidden" name="qstr" id="fupin_val_e" value=""/>
-					</s:else>
-					<label for="fupin5">(5)其它项目</label>
-				</td>
-			</tr>
-		</table>
-		<div style="height:5px;"></div>
-		<hr style="color:#3B9FFF; width:95%"/>
-		<div style="height:20px; padding-left:10px;">
-			<s:if test="#session.vts.map.qarr[27]==1">
-				<input type="checkbox" id="shebao" onclick="setShebaoVal(this)" checked="checked"/>
-				<input type="hidden" name="qstr" id="shebao_val" value="1"/>
-			</s:if>
-			<s:else>
-				<input type="checkbox" id="shebao" onclick="setShebaoVal(this)"/>
-				<input type="hidden" name="qstr" id="shebao_val" value=""/>
-			</s:else>
-			<label for="shebao">参加社会保障情况(可多选)</label>
-		</div>
-		<table cellpadding="0" cellspacing="0" width="100%">
-			<tr>
-				<td width="5%"></td>
-				<td width="20%" align="left">
-					<s:if test="#session.vts.map.qarr[28]==1">
-						<input type="checkbox" id="shebao1" onclick="setShebaoValA(this)" checked="checked"/>
-						<input type="hidden" name="qstr" id="shebao_val_a" value="1"/>
-					</s:if>
-					<s:else>
-						<input type="checkbox" id="shebao1" onclick="setShebaoValA(this)"/>
-						<input type="hidden" name="qstr" id="shebao_val_a" value=""/>
-					</s:else>
-					<label for="shebao1">新农合</label>
-				</td>
-				<td width="20%" align="left">
-					<s:if test="#session.vts.map.qarr[29]==1">
-						<input type="checkbox" id="shebao2" onclick="setShebaoValB(this)" checked="checked"/>
-						<input type="hidden" name="qstr" id="shebao_val_b" value="1"/>
-					</s:if>
-					<s:else>
-						<input type="checkbox" id="shebao2" onclick="setShebaoValB(this)"/>
-						<input type="hidden" name="qstr" id="shebao_val_b" value=""/>
-					</s:else>
-					<label for="shebao2">新农保</label>
-				</td>
-				<td width="20%" align="left">
-					<s:if test="#session.vts.map.qarr[30]==1">
-						<input type="checkbox" id="shebao3" onclick="setShebaoValC(this)" checked="checked"/>
-						<input type="hidden" name="qstr" id="shebao_val_c" value="1"/>
-					</s:if>
-					<s:else>
-						<input type="checkbox" id="shebao3" onclick="setShebaoValC(this)"/>
-						<input type="hidden" name="qstr" id="shebao_val_c" value=""/>
-					</s:else>
-					<label for="shebao3">大病医疗救助</label>
-				</td>
-				<td width="20%" align="left">
-					<s:if test="#session.vts.map.qarr[31]==1">
-						<input type="checkbox" id="shebao4" onclick="setShebaoValD(this)" checked="checked"/>
-						<input type="hidden" name="qstr" id="shebao_val_d" value="1"/>
-					</s:if>
-					<s:else>
-						<input type="checkbox" id="shebao4" onclick="setShebaoValD(this)"/>
-						<input type="hidden" name="qstr" id="shebao_val_d" value=""/>
-					</s:else>
-					<label for="shebao4">参加或享受其它社会保障</label>
-				</td>
-				<td width="15%"></td>
-			</tr>
-		</table>
-			
+	<div style="height:100px; line-height:22px; padding:0px 0px 0px 5px;">
+		<p>
+			<label>年份:</label>
+			<input type="text" name="year" value="<s:property value='year'/>" onfocus="WdatePicker({skin:'whyGreen',dateFmt:'yyyy'})" class="Wdate" style="width:80px; height:18px;" maxlength="4"/>
+		</p>
+		<ul class="zb_ul">
+		<!-- 指标html -->
+		<s:property value="#session.vts.html2" escape="false"/>
+		</ul>
 	</div>
 	</fieldset>
 	</form>
-	<s:if test="#session.vts.list2!=null && #session.vts.list2.size()>0">
+	<s:if test="#session.vts.list3!=null && #session.vts.list3.size()>0">
 	<div style="height:16px; padding-top:2px; border:0px solid red;">
 	<span>符合查询条件农户数：<s:property value="#session.vts.map.farmernt"/>户,</span>
 	<span>人口数：<s:property value="#session.vts.map.peoplent"/>人</span>
@@ -310,7 +144,7 @@
 			<input type="button" value="导出" onclick="location.href='${pageContext.request.contextPath }/ybhFarmerAction_exportFarmerInfo.action?xmlist=<s:property value="xmlist"/>'" class="button43"/>
 		</span>
 	</div>
-	<div class="table-c" style="width:868px; height:285px; border:0px solid red; margin-top:4px;">
+	<div class="table-c" style="width:868px; height:342px; border:0px solid red; margin-top:4px;">
 		<table class="data_list" width="100%" bordercolor="gray" border="0" cellpadding="0" cellspacing="0">
 			<thead>
 			<tr class="tabtr1">
@@ -321,17 +155,17 @@
 			</tr>
 			</thead>
 			<tbody id="splitpage">
-				<s:iterator value="#session.vts.list2" var="ls2">
+				<s:iterator value="#session.vts.list3" var="ls3">
 				<tr align="center" style="height:20px; display:none;">
-					<td align="left">&nbsp;<s:property value="#ls2.hm"/></td>
-					<td align="left">&nbsp;<s:property value="#ls2.govname"/></td>
-					<td align="left">&nbsp;<s:property value="#ls2.hname"/></td>
+					<td align="left">&nbsp;<s:property value="#ls3.hm"/></td>
+					<td align="left">&nbsp;<s:property value="#ls3.govname"/></td>
+					<td align="left">&nbsp;<s:property value="#ls3.hname"/></td>
 					<td align="center">
 						<s:if test="#session.vts.rbm.length()==6">
-						<a href="${pageContext.request.contextPath }/ybhManageAction_detail.action?viewBM=<s:property value="#ls2.hm"/>&rtf=home">编辑</a>&nbsp;
+						<a href="${pageContext.request.contextPath }/ybhManageAction_detail.action?viewBM=<s:property value="#ls3.hm"/>&rtf=home">编辑</a>&nbsp;
 						</s:if>
-						<a href="${pageContext.request.contextPath }/ybhManageAction_viewReportFamily.action?viewBM=<s:property value="#ls2.hm"/>">查看</a>&nbsp;
-			 			<a id="printBt" href="${pageContext.request.contextPath }/ybhManageAction_printFamily.action?viewBM=<s:property value="#ls2.hm"/>" target="printFrame">打印</a>
+						<a href="${pageContext.request.contextPath }/ybhManageAction_viewReportFamily.action?viewBM=<s:property value="#ls3.hm"/>">查看</a>&nbsp;
+			 			<a id="printBt" href="${pageContext.request.contextPath }/ybhManageAction_printFamily.action?viewBM=<s:property value="#ls3.hm"/>" target="printFrame">打印</a>
 					</td>
 				</tr>
 				</s:iterator>
@@ -341,7 +175,7 @@
 	<!-- js分页div -->
 	<div class="split-page">
 		<!-- 每页行数 -->
-		<input type="hidden" id="pageRows" value="13"/>
+		<input type="hidden" id="pageRows" value="16"/>
 		<div id="changePage"></div>
 	</div>
 	</s:if>
@@ -367,6 +201,27 @@
 		});	
 		$("#closeBtn").bind('click',disSelectXian);			   
 	});
+</script>
+<script>
+$(function(){
+	var s = new Array('<s:property value='zbId'/>');
+	/*
+	for(var i=0;i<objSelect.options.length;i++) {  
+        if(objSelect.options[i].id == s) {  
+            objSelect.options[i].selected = true;  
+            break;  
+        }  
+    }  
+	*/
+    var t = '<s:property value='chkglt'/>';
+	var objSelect = $("#zbSelectId1")[0];
+	for(var i=0; i<objSelect.options.length; i++) { 
+        if(objSelect.options[i].id == s[0]) {  
+            objSelect.options[i].selected = true;  
+            break;  
+        }  
+    }  
+});
 </script>
 </body>
 </html>

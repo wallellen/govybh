@@ -11,6 +11,7 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 import org.springframework.dao.DataAccessException;
+import org.springframework.jdbc.core.CallableStatementCallback;
 import org.springframework.jdbc.core.ConnectionCallback;
 import org.springframework.stereotype.Repository;
 
@@ -33,7 +34,6 @@ public class YbhMemberDaoImpl extends BaseDaoImpl implements YbhMemberDao {
 				cs.setInt(2, 1);
 				cs.execute();
 				ResultSet rs = cs.getResultSet();
-				ds.initData();
 				ds.list = new ArrayList();	
 				Map map;
 				if(rs!=null){
@@ -84,7 +84,20 @@ public class YbhMemberDaoImpl extends BaseDaoImpl implements YbhMemberDao {
 					}
 					str+=";";
 				}
-				System.out.println(str);
+				System.out.println("str before:"+str);
+				String zhibiao = "";
+				String[] dsZhibiao = (String[]) ds.map.get("zhibiao");
+				for(int i=0; i<dsZhibiao.length; i++)
+				{
+					zhibiao+=dsZhibiao[i];
+				}
+				System.out.println("zhibiao replace before:"+zhibiao);
+				zhibiao = zhibiao.replace("#", ";");
+
+				System.out.println("zhibiao replace after:"+zhibiao);
+				str=str+zhibiao;
+				
+				System.out.println("str after:"+str);
 				cs.setString(3, str);
 				cs.setString(4, ybhMemberForm.getXmlist());
 				cs.setInt(5, 500);
@@ -92,13 +105,13 @@ public class YbhMemberDaoImpl extends BaseDaoImpl implements YbhMemberDao {
 				cs.execute();
 				ResultSet rs = cs.getResultSet();
 				ds.initData();
-				ds.list2 = new ArrayList();
+				ds.list3 = new ArrayList();
 				Map map;
 				if(rs!=null){
 					while (rs.next()) {
 						map = new HashMap();
 						VTJime.putMapDataByColName(map, rs);
-		        		ds.list2.add(map);
+		        		ds.list3.add(map);
 					}
 				}
 				//取出参(人口总数)
@@ -144,28 +157,61 @@ public class YbhMemberDaoImpl extends BaseDaoImpl implements YbhMemberDao {
 					}
 					str+=";";
 				}
+				System.out.println("str before:"+str);
+				String zhibiao = "";
+				String[] dsZhibiao = (String[]) ds.map.get("zhibiao");
+				for(int i=0; i<dsZhibiao.length; i++)
+				{
+					zhibiao+=dsZhibiao[i];
+				}
+				System.out.println("zhibiao replace before:"+zhibiao);
+				zhibiao = zhibiao.replace("#", ";");
+
+				System.out.println("zhibiao replace after:"+zhibiao);
+				str=str+zhibiao;
+				
+				System.out.println("str after:"+str);
 				cs.setString(3, str);
 				cs.setString(4, ybhMemberForm.getXmlist());
-				//参数设为0，导出所有记录
 				cs.setInt(5, 0);
-				log.info("query param of export member: account:"+ds.account+", rbm:"+ds.rbm+", qstr:"+str+", xmlist:"+ybhMemberForm.getXmlist()+"rownum:"+0);
 				cs.registerOutParameter(6, Types.INTEGER);
 				cs.execute();
 				ResultSet rs = cs.getResultSet();
 				ds.initData();
-				ds.list2 = new ArrayList();
+				ds.list3 = new ArrayList();
 				Map map;
 				if(rs!=null){
 					while (rs.next()) {
 						map = new HashMap();
 						VTJime.putMapDataByColName(map, rs);
-		        		ds.list2.add(map);
+		        		ds.list3.add(map);
 					}
 				}
 				//取出参(人口总数)
 				ds.map.put("membernt", cs.getObject(6));
 				return null;
 			}
-		});			
+		});				
+	}
+
+	public void queryMemberZBList(final DotSession ds) {
+		String procedureSql = "{call ybh_query_member_zblist()}";
+		this.getJdbcTemplate().execute(procedureSql, new CallableStatementCallback() {
+			public Object doInCallableStatement(CallableStatement cs)
+					throws SQLException, DataAccessException {
+				cs.execute();
+				ResultSet rs = cs.getResultSet();
+				ds.list2 = new ArrayList();	
+				Map map;
+				if(rs!=null){
+					while (rs.next()) {
+						map = new HashMap();
+						ds.putMapDataByColName(map, rs);
+		        		ds.list2.add(map);
+					}
+				}
+				return null;
+			}
+		});
 	}
 }

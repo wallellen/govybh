@@ -8,7 +8,7 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/jquery-1.5.1.min.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/splitpage.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/changeColor.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath }/script/farmem.js?v=7"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath }/script/farmem.js?v=10"></script>
 	<!-- fancybox插件开始 -->
 	<script type="text/javascript" src="${pageContext.request.contextPath }/fancybox/jquery.fancybox-1.3.1.pack.js"></script>
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/fancybox/fancybox.css" />
@@ -33,6 +33,12 @@
 		.Contentbox{clear:both;margin-top:0px;border-top:none;height:142px;padding-top:4px;}
 		.Contentbox ul{list-style:none;margin:7px;padding:0;}
 		.Contentbox ul li{line-height:24px; width:58px; float:left; margin-right:5px;}
+		
+		
+		.hide{display:none;}
+		.zb_select{width:100px;}
+		select,span,input{vertical-align:middle;}
+		.zb_ul li{float:left; width:170px; padding-left:90px;}
 	</style>
 	
 	
@@ -83,7 +89,7 @@
 	<!-- advance -->
 	<fieldset style="border:1px solid #3B9FFF; margin:0; padding:0; width:99%;">
 	<legend>高级选项</legend>
-	<div style="height:52px; line-height:24px;">
+	<div style="height:104px; line-height:24px;">
 		<table cellpadding="0" cellspacing="0" width="100%">
 			<tr>
 				<td width="20%" align="right">在校生：</td>
@@ -116,10 +122,14 @@
 				<td width="10%"></td>
 			</tr>
 		</table>	
+		<ul class="zb_ul">
+		<!-- 指标html -->
+		<s:property value="#session.vts.html2" escape="false"/>
+		</ul>
 	</div>
 	</fieldset>
 	</form>
-	<s:if test="#session.vts.list2!=null && #session.vts.list2.size()>0">
+	<s:if test="#session.vts.list3!=null && #session.vts.list3.size()>0">
 	<div style="height:18px; line-height:18px; padding-top:2px;">
 		<span>符合查询条件人口数：<s:property value="#session.vts.map.membernt"/>人</span>
 		<span style="float:right; width:60px;">
@@ -127,8 +137,8 @@
 		</span>
 	</div>
 	</s:if>
-	<s:if test="#session.vts.list2!=null && #session.vts.list2.size()>0">
-	<div class="table-c" style="width:868px; height:450px; border:0px solid red; margin-top:4px;">
+	<s:if test="#session.vts.list3!=null && #session.vts.list3.size()>0">
+	<div class="table-c" style="width:868px; height:398px; border:0px solid red; margin-top:4px;">
 		<table class="data_list" width="100%" bordercolor="gray" border="0" cellpadding="0" cellspacing="0">
 			<thead>
 			<tr class="tabtr1">
@@ -146,20 +156,20 @@
 			</tr>
 			</thead>
 			<tbody id="splitpage">
-				<s:iterator value="#session.vts.list2" var="ls2">
+				<s:iterator value="#session.vts.list3" var="ls3">
 				<tr align="center" style="height:20px; display:none;">
-					<td align="left">&nbsp;<s:property value="#ls2.uname"/></td>
-					<td><s:property value="#ls2.sex"/></td>
-					<td align="right"><s:property value="#ls2.age"/>&nbsp;</td>
-					<td><s:property value="#ls2.school"/></td>
-					<td align="left">&nbsp;<s:property value="#ls2.education"/></td>
-					<td align="left">&nbsp;<s:property value="#ls2.hearth"/></td>
-					<td align="left">&nbsp;<s:property value="#ls2.labors"/></td>
-					<td align="left">&nbsp;<s:property value="#ls2.works"/></td>
-					<td><s:property value="#ls2.bla"/></td>
-					<td align="right"><s:property value="#ls2.tbfd"/>&nbsp;</td>
+					<td align="left">&nbsp;<s:property value="#ls3.uname"/></td>
+					<td><s:property value="#ls3.sex"/></td>
+					<td align="right"><s:property value="#ls3.age"/>&nbsp;</td>
+					<td><s:property value="#ls3.school"/></td>
+					<td align="left">&nbsp;<s:property value="#ls3.education"/></td>
+					<td align="left">&nbsp;<s:property value="#ls3.hearth"/></td>
+					<td align="left">&nbsp;<s:property value="#ls3.labors"/></td>
+					<td align="left">&nbsp;<s:property value="#ls3.works"/></td>
+					<td><s:property value="#ls3.bla"/></td>
+					<td align="right"><s:property value="#ls3.tbfd"/>&nbsp;</td>
 					<td>
-						<a href="${pageContext.request.contextPath }/ybhManageAction_viewReportFamily.action?viewBM=<s:property value="#ls2.hm"/>">查看</a>&nbsp;
+						<a href="${pageContext.request.contextPath }/ybhManageAction_viewReportFamily.action?viewBM=<s:property value="#ls3.hm"/>">查看</a>&nbsp;
 					</td>
 				</tr>
 				</s:iterator>
@@ -169,7 +179,7 @@
 	<!-- js分页div -->
 	<div class="split-page">
 		<!-- 每页行数 -->
-		<input type="hidden" id="pageRows" value="21"/>
+		<input type="hidden" id="pageRows" value="18"/>
 		<div id="changePage"></div>
 	</div>
 	</s:if>
@@ -202,5 +212,7 @@
 		});			
 		$("#closeBtn").bind('click',disSelectXian);		   
 	});
+
+	
 </script>
 </html>

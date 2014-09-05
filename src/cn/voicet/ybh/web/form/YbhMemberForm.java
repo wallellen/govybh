@@ -5,6 +5,9 @@ public class YbhMemberForm {
 	private String xmlist;	//县码列表
 	private String xmname="[全省]";	//县名称列表
 	private String axflag="1";
+	private String[] zhibiao;
+	private String[] chkglt;
+	private String[] zbId;
 	public String[] getMemberstr() {
 		return memberstr;
 	}
@@ -28,5 +31,23 @@ public class YbhMemberForm {
 	}
 	public void setAxflag(String axflag) {
 		this.axflag = axflag;
+	}
+	public String[] getZhibiao() {
+		return zhibiao;
+	}
+	public void setZhibiao(String[] zhibiao) {
+		this.zhibiao = zhibiao;
+	}
+	public String[] getChkglt() {
+		return chkglt;
+	}
+	public void setChkglt(String[] chkglt) {
+		this.chkglt = chkglt;
+	}
+	public String[] getZbId() {
+		return zbId;
+	}
+	public void setZbId(String[] zbId) {
+		this.zbId = zbId;
 	}
 }

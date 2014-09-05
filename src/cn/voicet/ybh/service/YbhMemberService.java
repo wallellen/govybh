@@ -8,4 +8,5 @@ public interface YbhMemberService {
 	void getSelectedXianList(DotSession ds);
 	void getMemberInfoList(DotSession ds, YbhMemberForm ybhMemberForm);
 	void getAllMemberInfoList(DotSession ds, YbhMemberForm ybhMemberForm);
+	void queryMemberZBList(DotSession ds);
 }
