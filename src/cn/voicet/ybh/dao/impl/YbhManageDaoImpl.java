@@ -355,7 +355,7 @@ public class YbhManageDaoImpl extends BaseDaoImpl implements YbhManageDao {
 							}else if(rid == 2){
 								map = new HashMap();
 								int icode=rs.getInt("code");
-								if((icode>=6 && icode<=11 )||(icode >=16))
+								if((icode>=7 && icode<=15 )||(icode >=20))
 								{
 									for(int i=1;i<=5;i++)
 									{
