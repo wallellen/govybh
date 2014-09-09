@@ -11,7 +11,7 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath }/datePicker/WdatePicker.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/splitpage.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/changeColor.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath }/script/farmem.js?v=12"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath }/script/farmem.js?v=13"></script>
 	<!-- fancybox插件开始 -->
 	<script type="text/javascript" src="${pageContext.request.contextPath }/fancybox/jquery.fancybox-1.3.1.pack.js"></script>
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/fancybox/fancybox.css" />

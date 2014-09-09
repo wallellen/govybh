@@ -61,6 +61,7 @@ public class YbhFarmerAction extends BaseAction implements ModelDriven<YbhFarmer
 			isShowGtlt2 = false;
 			isZbEffect=false;
 			sItemSelect = "<li>";
+			//zhiBiao Select
 			sItemSelect+="<span>";
 			sItemSelect += "<select id='zbSelectId"+i+"' onchange=\"changeZhibiao('"+i+"')\" class='zb_select'>";
 			sItemSelect += "<option value='0'>请选择指标</option>";
@@ -68,7 +69,7 @@ public class YbhFarmerAction extends BaseAction implements ModelDriven<YbhFarmer
 			{
 				zbMap = (Map) ds.list2.get(j);
 				sItemSelect += "<option id='"+zbMap.get("id")+"'";
-				if(null!=ybhFarmerForm.getZbId() && zbMap.get("id").equals(ybhFarmerForm.getZbId()[i-1].trim())){
+				if(null!=ybhFarmerForm.getZbId() && zbMap.get("id").equals(ybhFarmerForm.getZbId()[i-1])){
 					isZbEffect=true;
 					sItemSelect += "selected='selected'";
 				}
@@ -90,27 +91,26 @@ public class YbhFarmerAction extends BaseAction implements ModelDriven<YbhFarmer
 					isShowInput = true;
 				}
 			}
+			//yes or no radio
 			sItemSelect+="&nbsp;<span class='spanCheck"+i+" #AA#'>";
 			sItemSelect += "<input type='radio' name='radio_box"+i+"' #1# onclick=\"changeRadioBox('"+i+"')\"/>是";
-			sItemSelect += "<input type='radio' name='radio_box"+i+"' #0# onclick=\"changeRadioBox('"+i+"')\"/>否";
+			sItemSelect += "&nbsp;&nbsp;<input type='radio' name='radio_box"+i+"' #0# onclick=\"changeRadioBox('"+i+"')\"/>否";
 			sItemSelect += "</span>";
-			//check
-			//sItemSelect+="&nbsp;<span class='spanVal"+i;
-			//input
+			//gt or lt select
 			sItemSelect += "&nbsp;<span class='spanVal"+i+" #AB#'";
 			sItemSelect += ">";
-			//zbHtml += "&nbsp;<span class='spanVal"+i+" hide'>";
 			sItemSelect += "<select id='glSelectId"+i+"' onchange=\"changeGtLt('"+i+"')\">";
 			sItemSelect += "<option value='1' #S1#";
 			sItemSelect += ">&gt;=</option>";
 			sItemSelect += "<option value='2' #S2#";
 			sItemSelect += ">&lt;=</option>";
 			sItemSelect += "</select>";	
+			//zhiBiao value input
 			sItemSelect += "&nbsp;<input type='text' class='input_off2' name='yuan' id='yuan"+i+"' onblur=\"changeZhibVal('"+i+"')\" #v#";
-			//zbHtml += " value='"+ybhFarmerForm.getYuan()[i-1]+"'";
 			sItemSelect += " onkeyup=\"value=value.replace(/[^\\d]/g,'')\"";
 			sItemSelect += "/>";
 			sItemSelect += "</span>";
+			//
 			sItemSelect += "<input type='hidden' id='a"+i+"' name='zbId'";
 			//
 			if(null!=ybhFarmerForm.getZbId())
