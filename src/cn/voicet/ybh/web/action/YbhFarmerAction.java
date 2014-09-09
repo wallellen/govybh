@@ -204,6 +204,7 @@ public class YbhFarmerAction extends BaseAction implements ModelDriven<YbhFarmer
 			zbHtml+=sItemSelect;
 		}
 		ds.html2 = zbHtml;
+		
 	}
 
 	private void getXianListHtml(DotSession ds) {

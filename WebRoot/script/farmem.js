@@ -202,6 +202,7 @@ function changeZhibiao(i)
 		$(".spanVal"+i).hide();
 		$("#a"+i).val(zbId);
 		$("#d"+i).val('');
+		$("#c"+i).val('');
 	}
 }
 
