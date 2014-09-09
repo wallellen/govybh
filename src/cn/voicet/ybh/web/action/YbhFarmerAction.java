@@ -50,132 +50,158 @@ public class YbhFarmerAction extends BaseAction implements ModelDriven<YbhFarmer
 		boolean isShowInput;
 		boolean isShowGtlt1;
 		boolean isShowGtlt2;
+		boolean isZbEffect;//zb is Effect
+		String sItemSelect="";
 		Map zbMap;
-		for(int i=1; i<10; i++)
+		for(int i=1; i<=9; i++)
 		{
 			isShowCheck = false;
 			isShowInput = false;
 			isShowGtlt1 = false;
 			isShowGtlt2 = false;
-			zbHtml += "<li>";
-			zbHtml += "<span>";
-			zbHtml += "<select id='zbSelectId"+i+"' onchange=\"changeZhibiao('"+i+"')\" class='zb_select'>";
-			zbHtml += "<option value='0'>请选择指标</option>";
+			isZbEffect=false;
+			sItemSelect = "<li>";
+			sItemSelect+="<span>";
+			sItemSelect += "<select id='zbSelectId"+i+"' onchange=\"changeZhibiao('"+i+"')\" class='zb_select'>";
+			sItemSelect += "<option value='0'>请选择指标</option>";
 			for(int j=0; j<ds.list2.size(); j++)
 			{
 				zbMap = (Map) ds.list2.get(j);
-				zbHtml += "<option id='"+zbMap.get("id")+"'";
+				sItemSelect += "<option id='"+zbMap.get("id")+"'";
 				if(null!=ybhFarmerForm.getZbId() && zbMap.get("id").equals(ybhFarmerForm.getZbId()[i-1].trim())){
-					isShowCheck=true;
-					zbHtml += "selected='selected'";
+					isZbEffect=true;
+					sItemSelect += "selected='selected'";
 				}
-				zbHtml += " value='"+zbMap.get("t")+"'>"+zbMap.get("name")+"</option>";
+				sItemSelect += " value='"+zbMap.get("t")+"'>"+zbMap.get("name")+"</option>";
 			}
-			zbHtml += "</select>";
-			zbHtml += "</span>";
-			
-			if(null!=ybhFarmerForm.getChkipt() && ybhFarmerForm.getChkipt()[i-1].equals("1"))
+			sItemSelect += "</select>";
+			sItemSelect += "</span>";
+			//
+			isShowCheck = false;
+			isShowInput = false;
+			if(null!=ybhFarmerForm.getChkipt() )
 			{
-				isShowCheck = true;
-				isShowInput = false;
+				if(ybhFarmerForm.getChkipt()[i-1].equals("1") || ybhFarmerForm.getChkipt()[i-1].equals("0"))
+				{
+					isShowCheck = true;
+				}
+				else if( ybhFarmerForm.getChkipt()[i-1].equals("2"))
+				{
+					isShowInput = true;
+				}
 			}
-			else if(null!=ybhFarmerForm.getChkipt() && ybhFarmerForm.getChkipt()[i-1].equals("2"))
-			{
-				isShowCheck = false;
-				isShowInput = true;
-			}
-			else
-			{
-				isShowCheck = false;
-				isShowInput = false;
-			}
-			
-			
+			sItemSelect+="&nbsp;<span class='spanCheck"+i+" #AA#'>";
+			sItemSelect += "<input type='radio' name='radio_box"+i+"' #1# onclick=\"changeRadioBox('"+i+"')\"/>是";
+			sItemSelect += "<input type='radio' name='radio_box"+i+"' #0# onclick=\"changeRadioBox('"+i+"')\"/>否";
+			sItemSelect += "</span>";
 			//check
-			if(isShowCheck && null!=ybhFarmerForm.getZbId()[i-1])
-			{
-				zbHtml += "&nbsp;<span class='spanCheck"+i+"'>";
-				zbHtml += "<input type='checkbox' id='chk_box"+i+"' checked='checked' onclick=\"changeCheckBox('"+i+"')\"/>";
-			}
-			else
-			{
-				zbHtml += "&nbsp;<span class='spanCheck"+i+" hide'>";
-				zbHtml += "<input type='checkbox' id='chk_box"+i+"' onclick=\"changeCheckBox('"+i+"')\"/>";
-			}
-			zbHtml += "</span>";
-			
+			//sItemSelect+="&nbsp;<span class='spanVal"+i;
 			//input
-			zbHtml += "&nbsp;<span class='spanVal"+i;
-			if(!isShowInput)
+			sItemSelect += "&nbsp;<span class='spanVal"+i+" #AB#'";
+			sItemSelect += ">";
+			//zbHtml += "&nbsp;<span class='spanVal"+i+" hide'>";
+			sItemSelect += "<select id='glSelectId"+i+"' onchange=\"changeGtLt('"+i+"')\">";
+			sItemSelect += "<option value='1' #S1#";
+			sItemSelect += ">&gt;=</option>";
+			sItemSelect += "<option value='2' #S2#";
+			sItemSelect += ">&lt;=</option>";
+			sItemSelect += "</select>";	
+			sItemSelect += "&nbsp;<input type='text' class='input_off2' name='yuan' id='yuan"+i+"' onblur=\"changeZhibVal('"+i+"')\" #v#";
+			//zbHtml += " value='"+ybhFarmerForm.getYuan()[i-1]+"'";
+			sItemSelect += " onkeyup=\"value=value.replace(/[^\\d]/g,'')\"";
+			sItemSelect += "/>";
+			sItemSelect += "</span>";
+			sItemSelect += "<input type='hidden' id='a"+i+"' name='zbId'";
+			//
+			if(null!=ybhFarmerForm.getZbId())
 			{
-				zbHtml += " hide'";
+				sItemSelect += " value='"+ybhFarmerForm.getZbId()[i-1]+"'";
 			}
-			zbHtml += ">";
-			zbHtml += "&nbsp;<span class='spanVal"+i+" hide'>";
-			zbHtml += "<select id='glSelectId"+i+"' onchange=\"changeGtLt('"+i+"')\">";
+			sItemSelect += "/>";
+			sItemSelect += "<input type='hidden' id='b"+i+"' name='chkglt'";
 			
 			if(null!=ybhFarmerForm.getChkglt())
 			{
-				if(ybhFarmerForm.getChkglt()[i-1].equals("1"))
-				{
-					isShowGtlt1 = true;
-				}
-				if(ybhFarmerForm.getChkglt()[i-1].equals("2"))
-				{
-					isShowGtlt2 = true;
-				}
-			}
-
-			zbHtml += "<option value='1'";
-			if(isShowGtlt1)
+				sItemSelect += " value='"+ybhFarmerForm.getChkglt()[i-1]+"'";
+			}	
+			else
 			{
-				zbHtml += " selected='selected'";
+				sItemSelect += " value='1'";
 			}
-			zbHtml += ">&gt;=</option>";
-			
-			
-			zbHtml += "<option value='2'";
-			if(isShowGtlt2)
-			{
-				zbHtml += " selected='selected'";
-			}
-			zbHtml += ">&lt;=</option>";
-			
-			zbHtml += "</select>";	
-			zbHtml += "&nbsp;<input type='text' class='input_off2' name='yuan' id='yuan"+i+"' onblur=\"changeZhibVal('"+i+"')\"";
-			if(null!=ybhFarmerForm.getYuan())
-			{
-				zbHtml += " value='"+ybhFarmerForm.getYuan()[i-1]+"'";
-			}
-
-			zbHtml += " onkeyup=\"value=value.replace(/[^\\d]/g,'')\"";
-			zbHtml += "/>";
-			zbHtml += "</span>";
-			
-			//hidden
-			zbHtml += "<input type='hidden' id='a"+i+"' name='zbId'";
-			if(null!=ybhFarmerForm.getZbId())
-			{
-				zbHtml += " value='"+ybhFarmerForm.getZbId()[i-1]+"'";
-			}
-			zbHtml += "/>";
-			zbHtml += "<input type='hidden' id='b"+i+"' name='chkglt' value='1'/>";
-			zbHtml += "<input type='hidden' id='c"+i+"' name='zhibiao'";
+			sItemSelect += "/>";
+			sItemSelect += "<input type='hidden' id='c"+i+"' name='zhibiao'";
 			if(null!=ybhFarmerForm.getZhibiao())
 			{
-				zbHtml += "value='"+ybhFarmerForm.getZhibiao()[i-1]+"'";
+				sItemSelect += "value='"+ybhFarmerForm.getZhibiao()[i-1]+"'";
 			}	
-			zbHtml += "/>";
+			sItemSelect += "/>";
 			//控制显示check or input
-
-			zbHtml += "<input type='hidden' id='d"+i+"' name='chkipt'";
+			sItemSelect += "<input type='hidden' id='d"+i+"' name='chkipt'";
 			if(null!=ybhFarmerForm.getChkipt())
 			{
-				zbHtml += " value='"+ybhFarmerForm.getChkipt()[i-1]+"'";
+				sItemSelect += " value='"+ybhFarmerForm.getChkipt()[i-1]+"'";
 			}
-			zbHtml += "/>";
-			
-			zbHtml += "</li>";
+			sItemSelect += "/>";
+			sItemSelect += "</li>";
+			//Replace dynamic for check box
+			if(null!=ybhFarmerForm.getChkglt()&&ybhFarmerForm.getChkglt()[i-1].equals("1"))
+			{
+				sItemSelect=sItemSelect.replace("#1#", "checked='checked'");
+				sItemSelect=sItemSelect.replace("#0#", "");
+			}
+			else if(null!=ybhFarmerForm.getChkglt()&&ybhFarmerForm.getChkglt()[i-1].equals("0"))
+			{
+				sItemSelect=sItemSelect.replace("#1#", "");
+				sItemSelect=sItemSelect.replace("#0#", "checked='checked'");
+			}
+			else
+			{
+				sItemSelect=sItemSelect.replace("#1#", "checked='checked'");
+				sItemSelect=sItemSelect.replace("#0#", "");
+			}
+			//Replace Lg eg
+			if(null!=ybhFarmerForm.getChkglt()&&ybhFarmerForm.getChkglt()[i-1].equals("2"))
+			{
+				isShowGtlt2 = true;
+			}
+			if(isShowGtlt2)
+			{
+				sItemSelect=sItemSelect.replace("#S1#","");
+				sItemSelect=sItemSelect.replace("#S2#"," selected='selected'");
+			}
+			else
+			{
+				sItemSelect=sItemSelect.replace("#S1#"," selected='selected'");
+				sItemSelect=sItemSelect.replace("#S2#","");
+				
+			}
+			//
+			if(isZbEffect=true&&isShowCheck)
+			{
+				sItemSelect=sItemSelect.replace("#AA#","");
+			}
+			else
+			{
+				sItemSelect=sItemSelect.replace("#AA#","hide");
+			}
+			if(isZbEffect=true&&isShowInput)
+			{
+				sItemSelect=sItemSelect.replace("#AB#","");
+			}
+			else
+			{
+				sItemSelect=sItemSelect.replace("#AB#","hide");
+			}
+			//
+			if(null!=ybhFarmerForm.getYuan())
+			{
+				sItemSelect=sItemSelect.replace("#v#"," value='"+ybhFarmerForm.getYuan()[i-1]+"'");
+			}
+			else
+			{
+				sItemSelect=sItemSelect.replace("#v#","");
+			}
+			zbHtml+=sItemSelect;
 		}
 		ds.html2 = zbHtml;
 	}

@@ -176,6 +176,7 @@ function changeZhibiao(i)
 		$(".spanVal"+i).hide();
 		$("#a"+i).val(zbId);
 		$("#d"+i).val(1);
+		$("#c"+i).attr("value",$("#a"+i).val()+","+$("#b"+i).val()+"#");
 	}
 	else if(zbSelect.options[zbSelect.selectedIndex].value=='2')
 	{
@@ -210,7 +211,8 @@ function changeGtLt(i)
 	var glSelect = $("#glSelectId"+i)[0];
 	var glId = glSelect.options[glSelect.selectedIndex].value;
 	$("#b"+i).val(glId);
-	$("#c"+i).attr("value",$("#a"+i).val()+","+ glId==1?'>=':'<=' +","+$("#yuan"+i).val()+"#")
+	glId = glId==1?'>=':'<=';
+	$("#c"+i).attr("value",$("#a"+i).val()+","+ glId +$("#yuan"+i).val()+"#")
 }
 
 //复选框 
@@ -238,6 +240,7 @@ function changeCheckBox(i)
 function changeZhibVal(i)
 {
 	var lj = $("#b"+i).val();
+	var yuan = $("#yuan"+i).val();
 	var dyxy;
 	if(lj==1)
 	{
@@ -247,8 +250,53 @@ function changeZhibVal(i)
 	{
 		dyxy="<=";
 	}
-	$("#c"+i).attr("value",$("#a"+i).val()+","+dyxy+$("#yuan"+i).val()+"#");
+	if(!yuan)
+	{
+		alert("指标值不能为空");
+	}
+	else
+	{
+		$("#c"+i).attr("value",$("#a"+i).val()+","+dyxy+yuan+"#");
+	}
 }
 
+//单选
+function changeRadioBox(i)
+{
+	var ckVal = 0;
+	var radio = document.getElementsByName("radio_box"+i);
+	if(radio[0].checked)
+    {
+		ckVal = 1;
+		$("#b"+i).val(1);
+		$("#d"+i).val(1);
+    }
+	else
+	{
+		ckVal = 0;
+		$("#b"+i).val(0);
+		$("#d"+i).val(0);
+	}
+	$("#c"+i).attr("value",$("#a"+i).val()+","+ckVal+"#")
+}
 
-
+//查询提交校验指标值
+function checkZhibiaoInput()
+{
+	var yuans = $("input[name='yuan']");
+	for(var i=1; i<=yuans.length; i++)
+	{
+		var zbSelect = $("#zbSelectId"+i)[0];
+		//指标ID
+		var zbId = zbSelect.options[zbSelect.selectedIndex].id;
+		if(zbSelect.options[zbSelect.selectedIndex].value=='2')
+		{
+			var yuan=$("#yuan"+i).val();
+			if(!yuan){
+				alert("查询指标值不能为空");
+				return false;
+			}
+		}
+	}
+	
+}

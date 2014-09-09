@@ -58,7 +58,7 @@
 <body onload="loadParam()" style="background:#E0EEFB;">
 <div style="float:right; width:868px; height:668px;">
 	<h3 class="ybh_h3_title">农户查询</h3>
-	<form name="farmerForm" action="${pageContext.request.contextPath }/ybhFarmerAction_queryFarmer.action" method="post" onsubmit="return changeCurPage()">
+	<form name="farmerForm" action="${pageContext.request.contextPath }/ybhFarmerAction_queryFarmer.action" method="post" onsubmit="return checkZhibiaoInput()">
 	<input type="hidden" id="xmlist" name="xmlist" value="<s:property value="#session.vts.map.xmCodeList"/>"/>
 	<input type="hidden" id="xmname" name="xmname" value="<s:property value="#session.vts.map.xmNameList"/>"/>
 	<fieldset style="border:1px solid #3B9FFF; margin:0; padding:0; width:99%;">
