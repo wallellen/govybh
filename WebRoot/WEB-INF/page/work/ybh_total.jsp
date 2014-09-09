@@ -87,17 +87,17 @@
 			</tr>
 			<tr>			
 				<td class="aleft">&nbsp;年人均纯收入（元）</td>
-				<td class="aright"><s:property value="#session.vts.map.inTotal_ap"/>&nbsp;</td>
+				<td class="aright"><s:property value="#session.vts.map.intotal_ap"/>&nbsp;</td>
 				<td></td>
 			</tr>
 			<tr>			
 				<td class="aleft">&nbsp;村集体经营性收入总量（万元）</td>
-				<td class="aright"><s:property value="#session.vts.map.inJY"/>&nbsp;</td>
+				<td class="aright"><s:property value="#session.vts.map.injy"/>&nbsp;</td>
 				<td></td>
 			</tr>
 			<tr>			
 				<td class="aleft">&nbsp;村均集体经性营收入（万元）</td>
-				<td class="aright"><s:property value="#session.vts.map.inJy_Ac"/>&nbsp;</td>
+				<td class="aright"><s:property value="#session.vts.map.injy_ac"/>&nbsp;</td>
 				<td></td>
 			</tr>
 			<tr>			
@@ -136,22 +136,22 @@
 	        <tr>
 	        	<td rowspan="4" align="left">&nbsp;三、样本户收入情况</td>
 	            <td class="aleft">&nbsp;样本户户均家庭纯收入（元/年）</td>
-	            <td class="aright"><s:property value="#session.vts.map.inTotal_a"/>&nbsp;</td>
+	            <td class="aright"><s:property value="#session.vts.map.intotal_a"/>&nbsp;</td>
 				<td></td>
 	        </tr>
 	        <tr>
 	        	<td class="aleft">&nbsp;其中：①经营性收入（元）</td>
-	            <td class="aright"><s:property value="#session.vts.map.inJY_ah"/>&nbsp;</td>
+	            <td class="aright"><s:property value="#session.vts.map.injy_ah"/>&nbsp;</td>
 				<td></td>
 	        </tr>
 	        <tr>
 	        	<td class="aleft">&nbsp;②工资性收入（元）</td>
-	            <td class="aright"><s:property value="#session.vts.map.inWork_a"/>&nbsp;</td>
+	            <td class="aright"><s:property value="#session.vts.map.inwork_a"/>&nbsp;</td>
 				<td></td>
 	        </tr>
 	        <tr>
 	        	<td class="aleft">&nbsp;③财产性和转移性收入（元）</td>
-	            <td class="aright"><s:property value="#session.vts.map.inCZ_a"/>&nbsp;</td>
+	            <td class="aright"><s:property value="#session.vts.map.incz_a"/>&nbsp;</td>
 				<td></td>
 	        </tr>
 	        
@@ -404,7 +404,7 @@
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td rowspan="7">3</td>
+		            <td rowspan="6">3</td>
 		            <td class="aleft">&nbsp;承包耕地总面积（亩）</td>
 		            <td class="aright"><s:property value="#session.vts.map.fields_t"/>&nbsp;</td>
 		            <td></td>
@@ -416,7 +416,7 @@
 		        </tr>
 		        <tr>
 		            <td class="aleft">&nbsp;户均生产经营收入（元）</td>
-		            <td class="aright"><s:property value="#session.vts.map.inJy_a"/>&nbsp;</td>
+		            <td class="aright"><s:property value="#session.vts.map.injy_a"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
@@ -427,11 +427,6 @@
 		        <tr>
 		            <td class="aleft">&nbsp;户均流转面积（亩）</td>
 		            <td class="aright"><s:property value="#session.vts.map.lzmj_a"/>&nbsp;</td>
-		            <td></td>
-		        </tr>
-		        <tr>
-		            <td class="aleft">&nbsp;户均流转耕地年租金（元）</td>
-		            <td class="aright"><s:property value="#session.vts.map.lzzj_a"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
@@ -447,22 +442,22 @@
 		        </tr>
 		        <tr>
 		            <td class="aleft">&nbsp;户均年纯收入（元/年）</td>
-		            <td class="aright"><s:property value="#session.vts.map.inTotal_a"/>&nbsp;</td>
+		            <td class="aright"><s:property value="#session.vts.map.intotal_a"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
 		            <td class="aleft">&nbsp;其中：①经营性收入（元）</td>
-		            <td class="aright"><s:property value="#session.vts.map.inJy_t"/>&nbsp;</td>
+		            <td class="aright"><s:property value="#session.vts.map.injy_t"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
 		            <td class="aleft">&nbsp;②工资性收入（元）</td>
-		            <td class="aright"><s:property value="#session.vts.map.inWork_a"/>&nbsp;</td>
+		            <td class="aright"><s:property value="#session.vts.map.inwork_t"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td class="aleft">&nbsp;③财产性及转移性收入（元）</td>
-		            <td class="aright"><s:property value="#session.vts.map.incz_a"/>&nbsp;</td>
+		            <td class="aleft">&nbsp;③财产性性收入（元）</td>
+		            <td class="aright"><s:property value="#session.vts.map.incz_t"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
@@ -473,23 +468,23 @@
 		        <tr>
 		            <td>5</td>
 		            <td class="aleft">&nbsp;年人均纯收入（元/年）</td>
-		            <td class="aright"><s:property value="#session.vts.map.inTotal_ah"/>&nbsp;</td>
+		            <td class="aright"><s:property value="#session.vts.map.intotal_ah"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
 		            <td rowspan="8">6</td>
-		            <td class="aleft">&nbsp;①因病致贫（户）</td>
+		            <td class="aleft">&nbsp;①因灾致贫（户）</td>
+		            <td class="aright"><s:property value="#session.vts.map.dc3"/>&nbsp;</td>
+		            <td></td>
+		        </tr>
+		        <tr>
+		            <td class="aleft">&nbsp;②因病致贫（户）</td>
 		            <td class="aright"><s:property value="#session.vts.map.dc1"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td class="aleft">&nbsp;②因残致贫（户）</td>
+		            <td class="aleft">&nbsp;③因残致贫（户）</td>
 		            <td class="aright"><s:property value="#session.vts.map.dc2"/>&nbsp;</td>
-		            <td></td>
-		        </tr>
-		        <tr>
-		            <td class="aleft">&nbsp;③因灾致贫（户）</td>
-		            <td class="aright"><s:property value="#session.vts.map.dc3"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
@@ -498,28 +493,27 @@
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td class="aleft">&nbsp;⑤因缺劳力致贫（户）</td>
+		            <td class="aleft">&nbsp;⑤缺技术致贫（户）</td>
+		            <td class="aright"><s:property value="#session.vts.map.dc7"/>&nbsp;</td>
+		            <td></td>
+		        </tr>
+		        <tr>
+		            <td class="aleft">&nbsp;⑥缺劳力致贫（户）</td>
 		            <td class="aright"><s:property value="#session.vts.map.dc5"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td class="aleft">&nbsp;⑥因其它原因致贫（户）</td>
+		            <td class="aleft">&nbsp;⑦缺资金致贫（户）</td>
+		            <td class="aright"><s:property value="#session.vts.map.dc8"/>&nbsp;</td>
+		            <td></td>
+		        </tr>
+		        <tr>
+		            <td class="aleft">&nbsp;⑧其它致贫（户）</td>
 		            <td class="aright"><s:property value="#session.vts.map.dc6"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td class="aleft">&nbsp;⑦缺技术致贫（户）</td>
-		            <td class="aright"><s:property value="#session.vts.map."/>&nbsp;</td>
-		            <td></td>
-		        </tr>
-		        <tr>
-		            <td class="aleft">&nbsp;⑧缺资金致贫（户）</td>
-		            <td class="aright"><s:property value="#session.vts.map."/>&nbsp;</td>
-		            <td></td>
-		        </tr>
-		        
-		        <tr>
-		            <td rowspan="16">7</td>
+		            <td rowspan="15">7</td>
 		            <td class="aleft">&nbsp;得到扶贫项目支持的户数（户）</td>
 		            <td class="aright"><s:property value="#session.vts.map.fs"/>&nbsp;</td>
 		            <td></td>
@@ -530,7 +524,7 @@
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td class="aleft">&nbsp;②得到就业项目支持（户）</td>
+		            <td class="aleft">&nbsp;②得到帮助就业项目支持（户）</td>
 		            <td class="aright"><s:property value="#session.vts.map.fs2"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
@@ -545,31 +539,25 @@
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td class="aleft">&nbsp;⑤得到其它项目支持（户）</td>
+		            <td class="aleft">&nbsp;⑤得到帮助上学项目（户）</td>
 		            <td class="aright"><s:property value="#session.vts.map.fs5"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td class="aleft">&nbsp;⑥未得到任何项目支持（户）</td>
+		            <td class="aleft">&nbsp;⑥得到帮助就医项目（户）</td>
 		            <td class="aright"><s:property value="#session.vts.map.fs6"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td class="aleft">&nbsp;⑦得到帮助上学项目（户）</td>
+		            <td class="aleft">&nbsp;⑦得到帮助参保项目（户）</td>
 		            <td class="aright"><s:property value="#session.vts.map.fs7"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td class="aleft">&nbsp;⑧得到帮助就医项目（户）</td>
+		            <td class="aleft">&nbsp;⑧得到其它项目支持（户）</td>
 		            <td class="aright"><s:property value="#session.vts.map.fs8"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
-		        <tr>
-		            <td class="aleft">&nbsp;⑧得到帮助参保项目（户）</td>
-		            <td class="aright"><s:property value="#session.vts.map."/>&nbsp;</td>
-		            <td></td>
-		        </tr>
-		        
 		        <tr>
 		            <td class="aleft">&nbsp;其中：得到帮扶项目到人人数（人）</td>
 		            <td class="aright"><s:property value="#session.vts.map.rk_fst"/>&nbsp;</td>
@@ -600,8 +588,6 @@
 		            <td class="aright"><s:property value="#session.vts.map.rk_fs5"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
-		        
-		        
 		        <tr>
 		            <td rowspan="6">8</td>
 		            <td class="aleft">&nbsp;得到扶贫资金支持的户数（户）</td>
@@ -686,7 +672,7 @@
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td rowspan="9">11</td>
+		            <td rowspan="8">11</td>
 		            <td class="aleft">&nbsp;累计脱贫户数（户）</td>
 		            <td class="aright"><s:property value="#session.vts.map.tph"/>&nbsp;</td>
 		            <td></td>
@@ -704,11 +690,6 @@
 		        <tr>
 		            <td class="aleft">&nbsp;当年脱贫人口（人）</td>
 		            <td class="aright"><s:property value="#session.vts.map.tprk_c"/>&nbsp;</td>
-		            <td></td>
-		        </tr>
-		        <tr>
-		            <td class="aleft">&nbsp;当年人口脱贫率（%）</td>
-		            <td class="aright"><s:property value="#session.vts.map."/>&nbsp;</td>
 		            <td></td>
 		        </tr>
 		        <tr>

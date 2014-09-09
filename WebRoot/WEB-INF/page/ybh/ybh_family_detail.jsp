@@ -9,10 +9,10 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/jquery-1.5.1.min.js"></script>
 	<style type="text/css">
 		#overlay-member{position:absolute;top:0;left:0;width:100%;height:670px;background:#000;opacity:0.5;filter:alpha(opacity=50);display:none;} 
-		#win-member{position:absolute;top:20%;left:45%;width:500px;height:570px;background:#EAECEA;border:4px solid #F7F7F7;margin:-102px 0 0 -202px;display:none;} 
+		#win-member{position:absolute;top:20%;left:45%;width:500px;height:615px;background:#EAECEA;border:4px solid #F7F7F7;margin:-102px 0 0 -202px;display:none;} 
 		h2{font-size:12px;height:18px;text-align:right;background:#3F89EC;border-bottom:3px solid #F7F7F7;padding:5px;cursor:move;} 
 		h2 span{border:0px solid #f90;padding:0 2px;} 
-		
+		.trhead{font-weight:bold;}
 		.error-tips{
 			position:absolute;
 			width:120px; 
@@ -107,6 +107,12 @@
 <input type="hidden" id="mid" name="mid" value=""/>
 <div class="member-list">
 	<table width="480px" cellpadding="0" cellspacing="0">
+		<tr class="trhead">
+			<td width="40%" align="left">家庭成员基本信息</td>
+			<td width="35%" align="left"></td>
+			<td width="25%">
+			</td>
+		</tr>
 		<tr>
 			<td width="40%" align="right">姓名:&nbsp;&nbsp;</td>
 			<td width="35%" align="left">
@@ -174,6 +180,12 @@
 			</td>
 			<td></td>
 		</tr>
+		<tr class="trhead">
+			<td width="40%" align="left">享受补助情况</td>
+			<td width="35%" align="left"></td>
+			<td width="25%">
+			</td>
+		</tr>
 		<tr>
 			<td align="right">低保人口:&nbsp;&nbsp;</td>
 			<td align="left">
@@ -226,7 +238,12 @@
 			</td>
 			<td></td>
 		</tr>
-		
+		<tr class="trhead">
+			<td width="40%" align="left">享受帮助情况</td>
+			<td width="35%" align="left"></td>
+			<td width="25%">
+			</td>
+		</tr>
 		<tr>
 			<td align="right">是否帮助就业:&nbsp;&nbsp;</td>
 			<td align="left">

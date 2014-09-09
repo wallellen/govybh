@@ -220,7 +220,7 @@ function checkIsv5(obj)
 		return false;
 	}
 }
-//(3)流转耕地租金
+//(3)流转耕地租金--已删除20140909
 function checkLiuzhuan(obj)
 {
 	var reg = /^[0-9]+([.]{1}[0-9]{1})?$/;
@@ -236,6 +236,24 @@ function checkLiuzhuan(obj)
 	else
 	{
 		showBanfErrTip1(100,"流转耕地租金大于等于零，最多可以输入一位小数！");
+		return false;
+	}
+}
+//财产性收入
+function checkCaichan(obj)
+{
+	var reg = /^[0-9]+([.]{1}[0-9]{1})?$/;
+	var item = obj.value;
+	if(reg.test(item))
+	{
+		hideBanfErrTip1();
+		//获取财产性收入
+		income_sum();
+		return true;
+	}
+	else
+	{
+		showBanfErrTip1(100,"财产性收入大于等于零，最多可以输入一位小数！");
 		return false;
 	}
 }
@@ -467,7 +485,7 @@ function saveIncomeBt()
 	if(!checkIsv3(document.all.incId9)) return;
 	if(!checkIsv4(document.all.incId10)) return;
 	if(!checkIsv5(document.all.incId11)) return;
-	if(!checkLiuzhuan(document.all.incId12)) return;
+	if(!checkCaichan(document.all.incId12)) return;
 	if(!checkVv1(document.all.incId13)) return;
 	if(!checkVv2(document.all.incId14)) return;
 	if(!checkXe(document.all.incId15)) return;

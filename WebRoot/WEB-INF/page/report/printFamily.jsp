@@ -55,11 +55,18 @@
 			<td width="8%">在校生<br/>1是2否</td>
 			<td width="4%">文化程度</td>
 			<td width="4%">身体状况</td>
-			<td width="14%">残疾证号</td>
 			<td width="6%">劳动力<br/>状况</td>
 			<td width="4%">打工状况</td>
 			<td width="8%">低保人口<br/>1是2否</td>
-			<td width="12%">领取低保金、五保、残疾金(元)</td>
+			<td width="2%">A1</td>
+			<td width="2%">A2</td>
+			<td width="2%">A3</td>
+			<td width="2%">A4</td>
+			<td width="2%">A5</td>
+			<td width="2%">B1</td>
+			<td width="2%">B2</td>
+			<td width="2%">B3</td>
+			<td width="2%">B4</td>
         </tr>
         <s:iterator value="#session.vts.list" var="ls" status="sc">
 		<tr>
@@ -68,27 +75,32 @@
 			<td>&nbsp;<s:property value="#ls.age"/></td>
 			<td>&nbsp;<s:property value="#ls.school"/></td>
 			<td>&nbsp;<s:property value="#ls.education"/></td>
-			<td>&nbsp;<s:property value="#ls.health"/></td>
-			<td>&nbsp;<s:property value="#ls.dcno"/></td>
+			<td>&nbsp;<s:property value="#ls.hearth"/></td>
 			<td>&nbsp;<s:property value="#ls.labors"/></td>
 			<td>&nbsp;<s:property value="#ls.works"/></td>
 			<td>&nbsp;<s:property value="#ls.bla"/></td>
-			<td>&nbsp;<s:property value="#ls.tbfd"/></td>
+			<td>&nbsp;<s:property value="#ls.ist1==1?'√':''"/></td>
+			<td>&nbsp;<s:property value="#ls.ist2==1?'√':''"/></td>
+			<td>&nbsp;<s:property value="#ls.ist3==1?'√':''"/></td>
+			<td>&nbsp;<s:property value="#ls.ist4==1?'√':''"/></td>
+			<td>&nbsp;<s:property value="#ls.ist5==1?'√':''"/></td>
+			<td>&nbsp;<s:property value="#ls.ish1==1?'√':''"/></td>
+			<td>&nbsp;<s:property value="#ls.ish2==1?'√':''"/></td>
+			<td>&nbsp;<s:property value="#ls.ish3==1?'√':''"/></td>
+			<td>&nbsp;<s:property value="#ls.ish4==1?'√':''"/></td>
 		</tr>
 		</s:iterator>
     </table>
     <table width="100%" cellpadding="0" cellspacing="0">
     	<tr>
-        	<td width="12%">家庭人口(人)</td>
-			<td width="6%">&nbsp;<s:property value="#session.vts.map.population"/></td>
-			<td width="12%">劳动力(人)</td>
-			<td width="6%">&nbsp;<s:property value="#session.vts.map.labornum"/></td>
-			<td width="16%">务工劳动力(个)</td>
-			<td width="6%">&nbsp;<s:property value="#session.vts.map.wlabornum"/></td>
-			<td width="16%">承包耕地面积(亩)</td>
-			<td width="6%">&nbsp;<s:property value="#session.vts.map.fields"/></td>
-			<td width="14%">住房面积(m2)</td>
-			<td width="6%">&nbsp;<s:property value="#session.vts.map.house"/></td>
+        	<td width="15%">家庭人口(人)</td>
+			<td width="10%">&nbsp;<s:property value="#session.vts.map.population"/></td>
+			<td width="15%">劳动力(人)</td>
+			<td width="10%">&nbsp;<s:property value="#session.vts.map.labornum"/></td>
+			<td width="15%">务工劳动力(个)</td>
+			<td width="10%">&nbsp;<s:property value="#session.vts.map.wlabornum"/></td>
+			<td width="15%">住房面积(m2)</td>
+			<td width="10%">&nbsp;<s:property value="#session.vts.map.house"/></td>
         </tr>
     </table>
     <table width="100%" cellpadding="0" cellspacing="0">
@@ -124,12 +136,14 @@
     <!-- 2014-831 add begin -->
     <table width="100%" cellpadding="0" cellspacing="0">
     	<tr>
-        	<td width="15%" align="left">&nbsp;&nbsp;是否流转</td>
-			<td width="15%" align="center">&nbsp;<s:property value="#session.vts.map.islz==1?'1:是':'2:否'"/></td>
-			<td width="10%" align="center">流转面积</td>
-			<td width="20%" align="center">&nbsp;<s:property value="#session.vts.map.lzmj"/></td>
-			<td width="20%" align="center">去年是否脱贫</td>
-			<td width="20%" align="center">&nbsp;<s:property value="#session.vts.map.tpl==1?'1:是':'2:否'"/></td>
+        	<td width="16%">承包耕地面积(亩)</td>
+			<td width="10%">&nbsp;<s:property value="#session.vts.map.fields"/></td>
+        	<td width="14%" align="left">&nbsp;&nbsp;是否流转</td>
+			<td width="10%" align="center">&nbsp;<s:property value="#session.vts.map.islz==1?'1:是':'2:否'"/></td>
+			<td width="14%" align="center">流转面积</td>
+			<td width="10%" align="center">&nbsp;<s:property value="#session.vts.map.lzmj"/></td>
+			<td width="14%" align="center">去年是否脱贫</td>
+			<td width="10%" align="center">&nbsp;<s:property value="#session.vts.map.tpl==1?'1:是':'2:否'"/></td>
         </tr>
     </table>
     <!-- 2014-831 add end -->
@@ -168,6 +182,8 @@
     <p class="view-report-tip1"><font style="font-size:16px;">②</font>身体健状况：1健康，2体弱多病，3长期慢性病，4患有大病，5残疾人；</p>
     <p class="view-report-tip1"><font style="font-size:16px;">③</font>劳动力状况：1劳动力，2丧失劳动力，3非劳动力；</p>
     <p class="view-report-tip1"><font style="font-size:16px;">④</font>打工状况：1在家务农，2县内务工，3县外省内务工，4省外务工，5其他（国外）。</p>
+    <p class="view-report-tip1"><font style="font-size:16px;">⑤</font>A1~A5：享受残疾补助、参加新型农村合作医疗、参加城乡居民基本养老保险、参加大病医疗救助。</p>
+    <p class="view-report-tip1"><font style="font-size:16px;">⑥</font>B1~B4:帮助就业、帮助上学、帮助就医、帮助参保。</p>
 </div>
 </div>
 <s:if test="#session.vts.hasStack()">
