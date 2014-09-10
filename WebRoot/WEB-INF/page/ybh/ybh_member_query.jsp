@@ -151,7 +151,6 @@
 				<td width="10%">劳动力状况</td>
 				<td width="8%">打工状况</td>
 				<td width="6%">低保人口</td>
-				<td width="6%">领取金额</td>
 				<td width="5%">操作</td>
 			</tr>
 			</thead>
@@ -167,7 +166,6 @@
 					<td align="left">&nbsp;<s:property value="#ls3.labors"/></td>
 					<td align="left">&nbsp;<s:property value="#ls3.works"/></td>
 					<td><s:property value="#ls3.bla"/></td>
-					<td align="right"><s:property value="#ls3.tbfd"/>&nbsp;</td>
 					<td>
 						<a href="${pageContext.request.contextPath }/ybhManageAction_viewReportFamily.action?viewBM=<s:property value="#ls3.hm"/>">查看</a>&nbsp;
 					</td>
