@@ -456,7 +456,7 @@
 		            <td></td>
 		        </tr>
 		        <tr>
-		            <td class="aleft">&nbsp;③财产性性收入（元）</td>
+		            <td class="aleft">&nbsp;③财产性收入（元）</td>
 		            <td class="aright"><s:property value="#session.vts.map.incz_t"/>&nbsp;</td>
 		            <td></td>
 		        </tr>
