@@ -138,7 +138,7 @@
     	<tr>
         	<td width="16%">承包耕地面积(亩)</td>
 			<td width="10%">&nbsp;<s:property value="#session.vts.map.fields"/></td>
-        	<td width="14%" align="left">&nbsp;&nbsp;是否流转</td>
+        	<td width="14%" align="left">&nbsp;&nbsp;是否愿意流转</td>
 			<td width="10%" align="center">&nbsp;<s:property value="#session.vts.map.islz==1?'1:是':'2:否'"/></td>
 			<td width="14%" align="center">流转面积</td>
 			<td width="10%" align="center">&nbsp;<s:property value="#session.vts.map.lzmj"/></td>
