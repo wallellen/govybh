@@ -26,21 +26,12 @@
         <li>联系电话：<input type="text" id="htel" name="htel" value="<s:property value="#session.vts.map.telnum"/>" maxlength="15" onfocus="this.className='input_on'" onblur="checkTelphone(this)"/></li>
 	</ul>
     <ul class="info2">
-     	<li>承包耕地面积(亩)：<input type="text" name="fields" value="<s:property value="#session.vts.map.fields"/>" maxlength="10" onfocus="this.className='input_on'" onblur="this.className='input_off'" onkeyup="checkFloatInput(this)"/></li>
         <li>住房面积(m2)：<input type="text" id="house" name="house" value="<s:property value="#session.vts.map.house"/>" maxlength="5" onfocus="this.className='input_on'" onblur="checkHouse(this)"/></li>
         <li>农户属性：<s:select name="property" list="#application.vta.GetList('family')" listKey="id" listValue="str" value="%{#session.vts.map.property}" cssClass="sele"></s:select></li>
 		<li>贫困原因：<s:select name="dcause" list="#application.vta.GetList('dcause')" listKey="id" listValue="str" value="%{#session.vts.map.dcause}" cssClass="sele"></s:select></li>
 	</ul>
 	<ul class="info3">
-		<li><label for="chkhz">是否参加农民专业合作社</label><s:if test="#session.vts.map.isnh==1">
-			<input type="checkbox" id="chkhz" checked="checked" onclick="checkHezuo(this)"/>
-			<input type="hidden" name="hezuo" id="hezuo" value="1"/>
-			</s:if>
-			<s:else>
-			<input type="checkbox" id="chkhz" onclick="checkHezuo(this)"/>
-			<input type="hidden" name="hezuo" id="hezuo" value="0"/>
-			</s:else>
-		</li>
+		<li>承包耕地面积(亩)：<input type="text" name="fields" class="mianji" value="<s:property value="#session.vts.map.fields"/>" maxlength="10" onkeyup="checkFloatInput(this)"/></li>
 		<li><label for="chklz">是否愿意流转</label><s:if test="#session.vts.map.islz==1">
 			<input type="checkbox" id="chklz" checked="checked" onclick="checkLiuzhuan(this)">
 			<input type="hidden" name="liuzhuan" id="liuzhuan" value="1"/>
@@ -58,6 +49,15 @@
 			<s:else>
 			<input type="checkbox" id="chktp" onclick="checkTuopin(this)"/>
 			<input type="hidden" name="tuopin" id="tuopin" value="0"/>
+			</s:else>
+		</li>
+		<li><label for="chkhz">是否参加农民专业合作社</label><s:if test="#session.vts.map.isnh==1">
+			<input type="checkbox" id="chkhz" checked="checked" onclick="checkHezuo(this)"/>
+			<input type="hidden" name="hezuo" id="hezuo" value="1"/>
+			</s:if>
+			<s:else>
+			<input type="checkbox" id="chkhz" onclick="checkHezuo(this)"/>
+			<input type="hidden" name="hezuo" id="hezuo" value="0"/>
 			</s:else>
 		</li>
 	</ul>
