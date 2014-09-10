@@ -60,7 +60,7 @@
     
 	<table width="100%" cellpadding="0" cellspacing="0">
     	<tr>
-        	<td colspan="11">一、低收入农户基本情况</td>
+        	<td colspan="18">一、低收入农户基本情况</td>
         </tr>
         <tr>
         	<td width="10%">姓名</td>
@@ -195,8 +195,8 @@
   	<p class="view-report-tip">注：<font style="font-size:16px;">①</font>文化程度：1文盲、半文盲，2小学，3初中，4高中，5大专，6大专以上，7学龄年儿童；</p>
     <p class="view-report-tip1"><font style="font-size:16px;">②</font>身体健状况：1健康，2体弱多病，3长期慢性病，4患有大病，5残疾人；</p>
     <p class="view-report-tip1"><font style="font-size:16px;">③</font>劳动力状况：1劳动力，2丧失劳动力，3非劳动力；</p>
-    <p class="view-report-tip1"><font style="font-size:16px;">④</font>打工状况：1在家务农，2县内务工，3县外省内务工，4省外务工，5其他（国外）。</p>
-    <p class="view-report-tip1"><font style="font-size:16px;">⑤</font>A1~A5：享受残疾补助、参加新型农村合作医疗、参加城乡居民基本养老保险、参加大病医疗救助。</p>
+    <p class="view-report-tip1"><font style="font-size:16px;">④</font>打工状况：1在家务农，2县内务工，3县外省内务工，4省外务工，5其他（国外）；</p>
+    <p class="view-report-tip1"><font style="font-size:16px;">⑤</font>A1~A5：享受残疾补助、新型农村合作医疗、城乡居民基本养老保险、大病医疗救助、其他补助；</p>
     <p class="view-report-tip1"><font style="font-size:16px;">⑥</font>B1~B4:帮助就业、帮助上学、帮助就医、帮助参保。</p>
     </div>
 </div>
