@@ -41,6 +41,7 @@
 		<servlet-name>VerCode</servlet-name>
 		<servlet-class>cn.voicet.ybh.servlet.VerCode</servlet-class>
 	</servlet>
+
 	<servlet-mapping>
 		<servlet-name>VerCode</servlet-name>
 		<url-pattern>/verCode</url-pattern>
