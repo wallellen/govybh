@@ -274,4 +274,118 @@ public class DotSession {
 			}
 		}
 	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getRoleName() {
+		return roleName;
+	}
+	public void setRoleName(String roleName) {
+		this.roleName = roleName;
+	}
+	public String getRoleID() {
+		return roleID;
+	}
+	public void setRoleID(String roleID) {
+		this.roleID = roleID;
+	}
+	public String getRbm() {
+		return rbm;
+	}
+	public void setRbm(String rbm) {
+		this.rbm = rbm;
+	}
+	public String getRbn() {
+		return rbn;
+	}
+	public void setRbn(String rbn) {
+		this.rbn = rbn;
+	}
+	public String getCurBM() {
+		return curBM;
+	}
+	public void setCurBM(String curBM) {
+		this.curBM = curBM;
+	}
+	public String getCurHM() {
+		return curHM;
+	}
+	public void setCurHM(String curHM) {
+		this.curHM = curHM;
+	}
+	public int getIsedit() {
+		return isedit;
+	}
+	public void setIsedit(int isedit) {
+		this.isedit = isedit;
+	}
+	public int getWorkyear() {
+		return workyear;
+	}
+	public void setWorkyear(int workyear) {
+		this.workyear = workyear;
+	}
+	public Map getMap() {
+		return map;
+	}
+	public void setMap(Map map) {
+		this.map = map;
+	}
+	public List getList() {
+		return list;
+	}
+	public void setList(List list) {
+		this.list = list;
+	}
+	public List getList2() {
+		return list2;
+	}
+	public void setList2(List list2) {
+		this.list2 = list2;
+	}
+	public List getList3() {
+		return list3;
+	}
+	public void setList3(List list3) {
+		this.list3 = list3;
+	}
+	public List getList4() {
+		return list4;
+	}
+	public void setList4(List list4) {
+		this.list4 = list4;
+	}
+	public List getList5() {
+		return list5;
+	}
+	public void setList5(List list5) {
+		this.list5 = list5;
+	}
+	public int getCurYear() {
+		return curYear;
+	}
+	public void setCurYear(int curYear) {
+		this.curYear = curYear;
+	}
+	public String getBmhm() {
+		return bmhm;
+	}
+	public void setBmhm(String bmhm) {
+		this.bmhm = bmhm;
+	}
+	public String getHtml() {
+		return html;
+	}
+	public void setHtml(String html) {
+		this.html = html;
+	}
+	public String getHtml2() {
+		return html2;
+	}
+	public void setHtml2(String html2) {
+		this.html2 = html2;
+	}
 }

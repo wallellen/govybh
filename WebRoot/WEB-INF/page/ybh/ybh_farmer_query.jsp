@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"%>
-<%@taglib uri="/struts-tags" prefix="s" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -136,10 +137,10 @@
 	</div>
 	</fieldset>
 	</form>
-	<s:if test="#session.vts.list3!=null && #session.vts.list3.size()>0">
+	<c:if test="${fn:length(farmList) gt 0 }">
 	<div style="height:16px; padding-top:2px; border:0px solid red;">
-	<span>符合查询条件农户数：<s:property value="#session.vts.map.farmernt"/>户,</span>
-	<span>人口数：<s:property value="#session.vts.map.peoplent"/>人</span>
+	<span>符合查询条件农户数：${sessionScope.vts.map.farmernt }户,</span>
+	<span>人口数：${sessionScope.vts.map.peoplent }人</span>
 		<span style="float:right; width:60px;">
 			<input type="button" value="导出" onclick="location.href='${pageContext.request.contextPath }/ybhFarmerAction_exportFarmerInfo.action?xmlist=<s:property value="xmlist"/>'" class="button43"/>
 		</span>
@@ -155,20 +156,20 @@
 			</tr>
 			</thead>
 			<tbody id="splitpage">
-				<s:iterator value="#session.vts.list3" var="ls3">
+				<c:forEach items="${farmList }" var="ls3">
 				<tr align="center" style="height:20px; display:none;">
-					<td align="left">&nbsp;<s:property value="#ls3.hm"/></td>
-					<td align="left">&nbsp;<s:property value="#ls3.govname"/></td>
-					<td align="left">&nbsp;<s:property value="#ls3.hname"/></td>
+					<td align="left">&nbsp;${ls3.hm }</td>
+					<td align="left">&nbsp;${ls3.govname }</td>
+					<td align="left">&nbsp;${ls3.hname }</td>
 					<td align="center">
-						<s:if test="#session.vts.rbm.length()==6">
-						<a href="${pageContext.request.contextPath }/ybhManageAction_detail.action?viewBM=<s:property value="#ls3.hm"/>&rtf=home">编辑</a>&nbsp;
-						</s:if>
-						<a href="${pageContext.request.contextPath }/ybhManageAction_viewReportFamily.action?viewBM=<s:property value="#ls3.hm"/>">查看</a>&nbsp;
-			 			<a id="printBt" href="${pageContext.request.contextPath }/ybhManageAction_printFamily.action?viewBM=<s:property value="#ls3.hm"/>" target="printFrame">打印</a>
+						<c:if test="${fn:length(sessionScope.vts.rbm) eq 6 }">
+						<a href="${pageContext.request.contextPath }/ybhManageAction_detail.action?viewBM=${ls3.hm }&rtf=home">编辑</a>&nbsp;
+						</c:if>
+						<a href="${pageContext.request.contextPath }/ybhManageAction_viewReportFamily.action?viewBM=${ls3.hm }">查看</a>&nbsp;
+			 			<a id="printBt" href="${pageContext.request.contextPath }/ybhManageAction_printFamily.action?viewBM=${ls3.hm }" target="printFrame">打印</a>
 					</td>
 				</tr>
-				</s:iterator>
+				</c:forEach>
 			</tbody>
 		</table>
 	</div>
@@ -178,7 +179,7 @@
 		<input type="hidden" id="pageRows" value="16"/>
 		<div id="changePage"></div>
 	</div>
-	</s:if>
+	</c:if>
 </div>
 <!-- fancybox start -->
 <div style="display:none;">

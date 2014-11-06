@@ -292,6 +292,8 @@ public class YbhFarmerAction extends BaseAction implements ModelDriven<YbhFarmer
 		ds.map.put("zbYear", ybhFarmerForm.getYear());
 		ds.map.put("zhibiao", ybhFarmerForm.getZhibiao());
 		ybhFarmerService.getFarmerInfoList(ds, ybhFarmerForm);
+		request.setAttribute("farmList", ds.list3);
+		ds.list3=null;
 		return "show_farmer";
 	}
 	

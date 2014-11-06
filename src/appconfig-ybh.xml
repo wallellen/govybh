@@ -24,7 +24,6 @@
 	        <fun name="汇总统计" action="ybhTotalAction_home.action" />
     	</grp>
 		<grp name="管理配置">
-      		<fun name="样本户勾选" action="ybhCheckAction_home.action" />
 			<fun name="下级密码初始化" action="initPassAction_home.action"/>
 		</grp>
 	</role>

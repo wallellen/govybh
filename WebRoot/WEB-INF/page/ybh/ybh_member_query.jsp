@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@taglib uri="/struts-tags" prefix="s" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -129,15 +131,15 @@
 	</div>
 	</fieldset>
 	</form>
-	<s:if test="#session.vts.list3!=null && #session.vts.list3.size()>0">
+	<c:if test="${fn:length(memberList) gt 0 }">
 	<div style="height:18px; line-height:18px; padding-top:2px;">
-		<span>符合查询条件人口数：<s:property value="#session.vts.map.membernt"/>人</span>
+		<span>符合查询条件人口数：${sessionScope.vts.map.membernt }人</span>
 		<span style="float:right; width:60px;">
 			<input type="button" value="导出" onclick="location.href='${pageContext.request.contextPath }/ybhMemberAction_exportMemberInfo.action?xmlist=<s:property value="xmlist"/>'" class="button43"/>
 		</span>
 	</div>
-	</s:if>
-	<s:if test="#session.vts.list3!=null && #session.vts.list3.size()>0">
+	</c:if>
+	<c:if test="${fn:length(memberList) gt 0 }">
 	<div class="table-c" style="width:868px; height:398px; border:0px solid red; margin-top:4px;">
 		<table class="data_list" width="100%" bordercolor="gray" border="0" cellpadding="0" cellspacing="0">
 			<thead>
@@ -155,22 +157,22 @@
 			</tr>
 			</thead>
 			<tbody id="splitpage">
-				<s:iterator value="#session.vts.list3" var="ls3">
+				<c:forEach items="${memberList }" var="ls3">
 				<tr align="center" style="height:20px; display:none;">
-					<td align="left">&nbsp;<s:property value="#ls3.uname"/></td>
-					<td><s:property value="#ls3.sex"/></td>
-					<td align="right"><s:property value="#ls3.age"/>&nbsp;</td>
-					<td><s:property value="#ls3.school"/></td>
-					<td align="left">&nbsp;<s:property value="#ls3.education"/></td>
-					<td align="left">&nbsp;<s:property value="#ls3.hearth"/></td>
-					<td align="left">&nbsp;<s:property value="#ls3.labors"/></td>
-					<td align="left">&nbsp;<s:property value="#ls3.works"/></td>
-					<td><s:property value="#ls3.bla"/></td>
+					<td align="left">&nbsp;${ls3.uname }</td>
+					<td>${ls3.sex }</td>
+					<td align="right">${ls3.age }&nbsp;</td>
+					<td>${ls3.school }</td>
+					<td align="left">&nbsp;${ls3.education }</td>
+					<td align="left">&nbsp;${ls3.hearth }</td>
+					<td align="left">&nbsp;${ls3.labors }</td>
+					<td align="left">&nbsp;${ls3.works }</td>
+					<td>${ls3.bla }</td>
 					<td>
-						<a href="${pageContext.request.contextPath }/ybhManageAction_viewReportFamily.action?viewBM=<s:property value="#ls3.hm"/>">查看</a>&nbsp;
+						<a href="${pageContext.request.contextPath }/ybhManageAction_viewReportFamily.action?viewBM=${ls3.hm }">查看</a>&nbsp;
 					</td>
 				</tr>
-				</s:iterator>
+				</c:forEach>
 			</tbody>
 		</table>
 	</div>
@@ -180,7 +182,7 @@
 		<input type="hidden" id="pageRows" value="18"/>
 		<div id="changePage"></div>
 	</div>
-	</s:if>
+	</c:if>
 </div>
 </body>
 <script type="text/javascript">

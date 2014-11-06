@@ -42,6 +42,8 @@ public class YbhManageAction extends BaseAction implements ModelDriven<YbhManage
 		}
 		ds.subPathTitle.setYbhflag("manage");
 		ds.navPath=ds.subPathTitle.getHtmlString();
+		request.setAttribute("ybhList", ds.list);
+		ds.list=null;
 		return "show_ybh_manage";
 	}
 	
@@ -83,6 +85,7 @@ public class YbhManageAction extends BaseAction implements ModelDriven<YbhManage
 			ds.curHM= ybhManageForm.getViewBM();
 		ds.pushAllList();
 		ybhManageService.getYbhFamilyDetailInfo(ds);
+		
 		return "show_family_detail";
 	}
 	

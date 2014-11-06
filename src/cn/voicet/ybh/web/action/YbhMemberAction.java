@@ -213,6 +213,8 @@ public class YbhMemberAction extends BaseAction implements ModelDriven<YbhMember
 		ds.map.put("zhibiao", ybhMemberForm.getZhibiao());
 		
 		ybhMemberService.getMemberInfoList(ds, ybhMemberForm);
+		request.setAttribute("memberList", ds.list3);
+		ds.list3=null;
 		return "show_member";
 	}
 	
