@@ -106,7 +106,7 @@ public class YbhFarmerDaoImpl extends BaseDaoImpl implements YbhFarmerDao {
 				log.info("str after:"+str);
 				cs.setString(4, str);
 				cs.setString(5, ybhFarmerForm.getXmlist());
-				cs.setInt(6, 200);
+				cs.setInt(6, 500);
 				cs.registerOutParameter(7, Types.INTEGER);
 				cs.registerOutParameter(8, Types.INTEGER);
 				cs.execute();
