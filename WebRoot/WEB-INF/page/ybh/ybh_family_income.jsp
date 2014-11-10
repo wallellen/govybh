@@ -54,20 +54,20 @@
 		    <s:iterator id="ls2" value="#session.vts.list2">
 		    <tr>
 		    	<td><s:property value="#ls2.year"/></td>
-		    	<td><s:property value="#ls2.population"/></td>
-		    	<td><s:property value="#ls2.labornum"/></td>
-		    	<td><s:property value="#ls2.fields"/></td>
+		    	<td><s:property value="#session.vts.map.population"/></td>
+		    	<td><s:property value="#session.vts.map.labornum"/></td>
+		    	<td><s:property value="#session.vts.map.fields"/></td>
 		    	<td><s:property value="#ls2.intotal"/></td>
 		    	<td><s:property value="#ls2.inpersonal"/></td>
 		    	<td>
-		    		<s:if test="#ls2.dcause==1">&nbsp;1:因灾</s:if>
-	            	<s:elseif test="#ls2.dcause==2">&nbsp;2:因病</s:elseif>
-	            	<s:elseif test="#ls2.dcause==3">&nbsp;3:因残</s:elseif>
-	            	<s:elseif test="#ls2.dcause==4">&nbsp;4:因学</s:elseif>
-	            	<s:elseif test="#ls2.dcause==5">&nbsp;5:缺技术</s:elseif>
-	            	<s:elseif test="#ls2.dcause==6">&nbsp;6:缺劳动力</s:elseif>
-	            	<s:elseif test="#ls2.dcause==7">&nbsp;7:缺资金</s:elseif>
-	            	<s:elseif test="#ls2.dcause==8">&nbsp;8:其它</s:elseif>
+		    		<s:if test="#session.vts.map.dcause==1">&nbsp;1:因灾</s:if>
+	            	<s:elseif test="#session.vts.map.dcause==2">&nbsp;2:因病</s:elseif>
+	            	<s:elseif test="#session.vts.map.dcause==3">&nbsp;3:因残</s:elseif>
+	            	<s:elseif test="#session.vts.map.dcause==4">&nbsp;4:因学</s:elseif>
+	            	<s:elseif test="#session.vts.map.dcause==5">&nbsp;5:缺技术</s:elseif>
+	            	<s:elseif test="#session.vts.map.dcause==6">&nbsp;6:缺劳动力</s:elseif>
+	            	<s:elseif test="#session.vts.map.dcause==7">&nbsp;7:缺资金</s:elseif>
+	            	<s:elseif test="#session.vts.map.dcause==8">&nbsp;8:其它</s:elseif>
 		    	</td>
 		    	<td>
 		    		<s:if test="#ls2.fs==1">
@@ -96,7 +96,7 @@
 		    		</s:else>
 		    	</td>
 		    	<td>
-		    		<a href="${pageContext.request.contextPath }/ybhManageAction_editIncome.action?hname=<s:property value="#session.vts.map.hname"/>&year=<s:property value="#ls2.year"/>&population=<s:property value="#ls2.population"/>&labornum=<s:property value="labornum"/>&wlabornum=<s:property value="#ls2.wlabornum"/>&fields=<s:property value="#ls2.fields"/>&lzmj=<s:property value="#ls2.lzmj"/>&intotal=<s:property value="#ls2.intotal"/>&injy=<s:property value="#ls2.injy"/>&inwork=<s:property value="#ls2.inwork"/>&incz=<s:property value="#ls2.incz"/>&lzzj=<s:property value="#ls2.lzzj"/>&inbz=<s:property value="#ls2.inbz"/>&zlbz=<s:property value="#ls2.zlbz"/>&isv1=<s:property value="#ls2.isv1"/>&isv2=<s:property value="#ls2.isv2"/>&isv3=<s:property value="#ls2.isv3"/>&isv4=<s:property value="#ls2.isv4"/>&isv5=<s:property value="#ls2.isv5"/>&isv6=<s:property value="#ls2.isv6"/>&inpersonal=<s:property value="#ls2.inpersonal"/>&dcause=<s:property value="#ls2.dcause"/>&fs=<s:property value="#ls2.fs"/>&fs1=<s:property value="#ls2.fs1"/>&fs2=<s:property value="#ls2.fs2"/>&fs3=<s:property value="#ls2.fs3"/>&fs4=<s:property value="#ls2.fs4"/>&fs5=<s:property value="#ls2.fs5"/>&fs6=<s:property value="#ls2.fs6"/>&fs7=<s:property value="#ls2.fs7"/>&fs8=<s:property value="#ls2.fs8"/>&vv=<s:property value="#ls2.v"/>&vv1=<s:property value="#ls2.v1"/>&vv2=<s:property value="#ls2.v2"/>&xxe=<s:property value="#ls2.xe"/>&bb=<s:property value="#ls2.b"/>&bb1=<s:property value="#ls2.b1"/>&bb2=<s:property value="#ls2.b2"/>&bb3=<s:property value="#ls2.b3"/>&bb4=<s:property value="#ls2.b4"/>&ltp=<s:property value="#ls2.ltp"/>">编辑</a>
+		    		<a href="${pageContext.request.contextPath }/ybhManageAction_editIncome.action?hname=<s:property value="#session.vts.map.hname"/>&year=<s:property value="#ls2.year"/>&population=<s:property value="#session.vts.map.population"/>&labornum=<s:property value="#session.vts.map.labornum"/>&wlabornum=<s:property value="#session.vts.map.wlabornum"/>&fields=<s:property value="#session.vts.map.fields"/>&lzmj=<s:property value="#session.vts.map.lzmj"/>&intotal=<s:property value="#ls2.intotal"/>&injy=<s:property value="#ls2.injy"/>&inwork=<s:property value="#ls2.inwork"/>&incz=<s:property value="#ls2.incz"/>&lzzj=<s:property value="#ls2.lzzj"/>&inbz=<s:property value="#ls2.inbz"/>&zlbz=<s:property value="#ls2.zlbz"/>&isv1=<s:property value="#ls2.isv1"/>&isv2=<s:property value="#ls2.isv2"/>&isv3=<s:property value="#ls2.isv3"/>&isv4=<s:property value="#ls2.isv4"/>&isv5=<s:property value="#ls2.isv5"/>&isv6=<s:property value="#ls2.isv6"/>&inpersonal=<s:property value="#ls2.inpersonal"/>&dcause=<s:property value="#session.vts.map.dcause"/>&fs=<s:property value="#ls2.fs"/>&fs1=<s:property value="#ls2.fs1"/>&fs2=<s:property value="#ls2.fs2"/>&fs3=<s:property value="#ls2.fs3"/>&fs4=<s:property value="#ls2.fs4"/>&fs5=<s:property value="#ls2.fs5"/>&fs6=<s:property value="#ls2.fs6"/>&fs7=<s:property value="#ls2.fs7"/>&fs8=<s:property value="#ls2.fs8"/>&vv=<s:property value="#ls2.v"/>&vv1=<s:property value="#ls2.v1"/>&vv2=<s:property value="#ls2.v2"/>&xxe=<s:property value="#ls2.xe"/>&bb=<s:property value="#ls2.b"/>&bb1=<s:property value="#ls2.b1"/>&bb2=<s:property value="#ls2.b2"/>&bb3=<s:property value="#ls2.b3"/>&bb4=<s:property value="#ls2.b4"/>&ltp=<s:property value="#session.vts.map.ltl"/>">编辑</a>
 		    	</td>
 		    </tr>
 		    </s:iterator>
