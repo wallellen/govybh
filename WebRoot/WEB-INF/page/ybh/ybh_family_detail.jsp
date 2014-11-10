@@ -239,41 +239,41 @@
 			<td></td>
 		</tr>
 		<tr class="trhead">
-			<td width="40%" align="left">享受帮助情况</td>
+			<td width="40%" align="left">享受帮扶情况</td>
 			<td width="35%" align="left"></td>
 			<td width="25%">
 			</td>
 		</tr>
 		<tr>
-			<td align="right">是否帮助就业:&nbsp;&nbsp;</td>
+			<td align="right">是否帮扶就业:&nbsp;&nbsp;</td>
 			<td align="left">
 				<s:radio name="ish1" list="#application.vta.GetList('yesno')" listKey="id" listValue="str"/>
 			</td>
 			<td></td>
 		</tr>
 		<tr>
-			<td align="right">是否帮助上学:&nbsp;&nbsp;</td>
+			<td align="right">是否帮扶上学:&nbsp;&nbsp;</td>
 			<td align="left">
 				<s:radio name="ish2" list="#application.vta.GetList('yesno')" listKey="id" listValue="str"/>
 			</td>
 			<td></td>
 		</tr>
 		<tr>
-			<td align="right">是否帮助就医:&nbsp;&nbsp;</td>
+			<td align="right">是否帮扶就医:&nbsp;&nbsp;</td>
 			<td align="left">
 				<s:radio name="ish3" list="#application.vta.GetList('yesno')" listKey="id" listValue="str"/>
 			</td>
 			<td></td>
 		</tr>
 		<tr>
-			<td align="right">是否帮助参保:&nbsp;&nbsp;</td>
+			<td align="right">是否帮扶参保:&nbsp;&nbsp;</td>
 			<td align="left">
 				<s:radio name="ish4" list="#application.vta.GetList('yesno')" listKey="id" listValue="str"/>
 			</td>
 			<td></td>
 		</tr>
 		<tr>
-			<td align="right">是否有其他帮助:&nbsp;&nbsp;</td>
+			<td align="right">是否有其他帮扶:&nbsp;&nbsp;</td>
 			<td align="left">
 				<s:radio name="ish5" list="#application.vta.GetList('yesno')" listKey="id" listValue="str"/>
 			</td>
