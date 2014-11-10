@@ -40,7 +40,7 @@
           	<fun name="样本村管理" action="ybcManageAction_home.action" />
           	<!--  
       		<fun name="年数据录入" action="yearDataAction_home.action" />
-      		-->
+      		 -->
           	<fun name="汇总统计" action="ybhTotalAction_home.action" />
  		</grp>
 	</role>

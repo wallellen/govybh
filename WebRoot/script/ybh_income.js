@@ -1,4 +1,4 @@
-function showBanfErrTip1(top,c)
+﻿function showBanfErrTip1(top,c)
 {
 	var errTip=document.getElementById("errTip1");
 	errTip.style.paddingLeft=top+"px";
@@ -489,8 +489,7 @@ function saveIncomeBt()
 	if(!checkVv1(document.all.incId13)) return;
 	if(!checkVv2(document.all.incId14)) return;
 	if(!checkXe(document.all.incId15)) return;
-	
-	
+
 	document.form1.action="ybhManageAction_saveIncome.action";
 	document.form1.submit();
 }

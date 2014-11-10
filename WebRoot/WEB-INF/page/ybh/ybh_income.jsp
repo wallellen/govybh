@@ -5,15 +5,6 @@
 <head>
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/style/style.css" />
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/style/style-b.css" />
-	<script type="text/javascript" src="${pageContext.request.contextPath }/script/jquery-1.5.1.min.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath }/script/splitpage.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath }/script/changeColor.js"></script>
-	<script type="text/javascript">
-		window.onload=function(){
-			var v1 = parent.document.getElementById("navigate");
-			v1.innerHTML=document.getElementById('nav-hide').innerHTML;
-		}
-	</script>
 </head>
 <body style="background:#E0EEFB;">
 <div style="display:none;" id="nav-hide">
@@ -36,12 +27,14 @@
         <td width="6%">其中:(1)省级扶贫资金(元)</td>
         <td width="6%">(2)市、县级扶贫资金(元)</td>
         <td width="6%">9、使用小额扶贫贷款数量(元)</td>
-        <td width="6%">操作</td>
+        <td width="6%">
+        	<input type="button" value="返回" onclick="javascript:history.go(-1)" class="button43"/>
+        </td>
     </tr>
 	</thead>
 	<tbody id="splitpage">
 	<s:iterator id="ls" value="#session.vts.list">
-    <tr>
+    <tr style="display:none;">
     	<td align="left" title="<s:property value='#ls.zhu'/>">&nbsp;<s:property value="#ls.zhu.length()>4?#ls.zhu.substring(0,3)+'..':#ls.zhu"/></td>
     	<td align="left" title="<s:property value='#ls.hname'/>">&nbsp;<s:property value="#ls.hname.length()>4?#ls.hname.substring(0,3)+'..':#ls.hname"/></td>
     	<td align="right"><s:property value="#ls.intotal"/>&nbsp;</td>
@@ -70,8 +63,17 @@
     </table>
 </div>
 <div class="split-page">
-	<input type="hidden" id="pageRows" value="29"/>
+	<input type="hidden" id="pageRows" value="26"/>
 	<div id="changePage"></div>
 </div>
+<script type="text/javascript" src="${pageContext.request.contextPath }/script/jquery-1.5.1.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath }/script/splitpage.js?v=4"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath }/script/changeColor.js"></script>
+<script type="text/javascript">
+	window.onload=function(){
+		var v1 = parent.document.getElementById("navigate");
+		v1.innerHTML=document.getElementById('nav-hide').innerHTML;
+	}
+</script>
 </body>
 </html>
