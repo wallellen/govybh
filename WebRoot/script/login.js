@@ -50,6 +50,10 @@ var responseLogin = function(data, textStatus, jqXHR)
 		}
 		window.location.href="userAction_home.action";
 	}
+	else if(data.status=="roleerr")
+	{
+		alert("账号或密码错误");
+	}
 	else if(data.status=="vercodeerror")
 	{
 		alert("验证码错误,请重新输入!");

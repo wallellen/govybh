@@ -8,7 +8,7 @@
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/style/style.css" />
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/jquery-1.5.1.min.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/cookie.js"></script>
- 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/login.js"></script>
+ 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/login.js?v=1"></script>
  	<script type="text/javascript">
  	$(document).ready(function() {
  		document.all.account.focus();

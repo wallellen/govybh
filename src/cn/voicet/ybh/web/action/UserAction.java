@@ -55,9 +55,13 @@ public class UserAction extends BaseAction implements ModelDriven<UserForm>{
 		ds.curBM = ds.rbm;
 		ds.subPathTitle.initPath();
 		log.info("rand:"+request.getSession().getAttribute("rand"));
-		if(!ds.roleID.equals("0"))
+		if(ds.roleID.equals("1") || ds.roleID.equals("2") || ds.roleID.equals("3") || ds.roleID.equals("4"))
 		{
 			json.put("status", "ok");
+		}
+		else
+		{
+			json.put("status", "roleerr");
 		}
 		if(null!=request.getSession().getAttribute("rand") && !userForm.getVercode().trim().equals((String) request.getSession().getAttribute("rand")))
 		{
