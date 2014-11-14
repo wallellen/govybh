@@ -345,6 +345,7 @@ function updata_avg()
 	if(cunId1.value>0 &&cunId18.value>0)
 	{
 		var v=cunId18.value/cunId1.value;
+		qchjdk.innerHTML=v.toFixed(1);
 		cunId22.value=v.toFixed(1);
 	}
 }
@@ -546,7 +547,7 @@ function saveCunBt()
 	if(!checkNhdl(document.all.cunId16)) return;
 	if(!checkVdt(document.all.cunId18)) return;
 	if(!checkVdtl(document.all.cunId20)) return;
-	if(!checkVdpt(document.all.cunId22)) return;
+	//if(!checkVdpt(document.all.cunId22)) return;
 	//
 	if(!checkB1(document.all.cunId15)) return;
 	if(!checkB2(document.all.cunId17)) return;
