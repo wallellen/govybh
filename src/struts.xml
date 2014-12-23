@@ -91,5 +91,8 @@
 		<action name="initPassAction_initPassword" class="initPassAction" method="initPassword">
 			<result type="json"></result>	
 		</action>
+		<action name="deleteYbh" class="ybhCheckAction" method="deleteYbh">
+			<result type="json"></result>	
+		</action>
 	</package>
 </struts>

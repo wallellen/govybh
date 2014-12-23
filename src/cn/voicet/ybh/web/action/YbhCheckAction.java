@@ -69,4 +69,13 @@ public class YbhCheckAction extends BaseAction implements ModelDriven<YbhCheckFo
 		log.info("ybh select complete");
 		return null;
 	}
+	
+
+	public String deleteYbh()
+	{
+		ybhCheckForm.setOpcode(0);
+		log.info("hm:"+ybhCheckForm.getHm()+", opcode:"+ybhCheckForm.getOpcode());
+		ybhCheckService.selectYbhWithOpcode(ybhCheckForm);
+		return null;
+	}
 }

@@ -79,7 +79,7 @@
 						</c:choose>
 					</c:when>
 					<c:otherwise>
-						<tr style="display:none;">
+						<tr style="display:none;" id="rowIndex_${status.count }">
 							<td align="left" height="20px">&nbsp;${ls.hm }</td>
 							<td align="left" title="${ls.zhu }">
 								<c:choose>
@@ -104,7 +104,37 @@
 								<a href="${pageContext.request.contextPath }/ybhManageAction_detail.action?viewBM=${ls.hm }&rtf=home">编辑</a>&nbsp;
 								</c:if>
 								<a href="${pageContext.request.contextPath }/ybhManageAction_viewReportFamily.action?viewBM=${ls.hm }">查看</a>&nbsp;
-					 			<a id="printBt" href="${pageContext.request.contextPath }/ybhManageAction_printFamily.action?viewBM=${ls.hm }" target="printFrame">打印</a>
+					 			<a id="printBt" href="${pageContext.request.contextPath }/ybhManageAction_printFamily.action?viewBM=${ls.hm }" target="printFrame">打印</a>&nbsp;
+					 			<c:if test="${fn:length(sessionScope.vts.rbm) eq 2 }">
+									<a href="javascript:deleteHu('${ls.hm }','${status.count }');">删除</a>
+									<script type="text/javascript">
+										function deleteHu(hm,index)
+										{
+											//tbody
+											var tab = document.getElementById("splitpage");
+											//tr 
+											var row = document.getElementById("rowIndex_"+index);
+											var m=confirm("你确定要删除吗?"); 
+											if(m==true)
+											{ 
+												$.ajax({
+													cache:false,
+													async:false,
+													type:"post",
+													data:{hm:hm},
+													url:"ybhCheckAction_deleteYbh.action",
+													success: function(data) {
+														tab.deleteRow(row.sectionRowIndex);
+													}
+												});
+											} 
+											else
+											{ 
+												
+											} 
+										}
+									</script>
+								</c:if>
 							</td>
 					</c:otherwise>
 				</c:choose>
