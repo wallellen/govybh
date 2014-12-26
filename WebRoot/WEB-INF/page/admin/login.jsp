@@ -8,7 +8,7 @@
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/style/style.css" />
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/jquery-1.5.1.min.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/cookie.js"></script>
- 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/login.js?v=1"></script>
+ 	<script type="text/javascript" src="${pageContext.request.contextPath }/script/login.js?v=2"></script>
  	<script type="text/javascript">
  	$(document).ready(function() {
  		document.all.account.focus();
@@ -73,8 +73,8 @@
 											</colgroup>
 											<tbody>
 												<tr height="24px" style="padding-top:2px;">
-													<th>账号&nbsp;</th>
-													<td><input type="text" id="account" name="account"  autocomplete="off" value="" placeholder="输入账号" tabindex="1" class="inputbox" onblur="this.className='inputbox'" onfocus="this.className='inputbox2'"/></td>
+													<th>帐号&nbsp;</th>
+													<td><input type="text" id="account" name="account"  autocomplete="off" value="" placeholder="输入帐号" tabindex="1" class="inputbox" onblur="this.className='inputbox'" onfocus="this.className='inputbox2'"/></td>
 												</tr>
 												<tr height="24px">
 													<th>密码&nbsp;</th>

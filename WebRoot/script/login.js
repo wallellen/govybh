@@ -4,7 +4,7 @@ function login(){
 	var vercode = $("#vercode").val();
 	if(account=="")
 	{
-		alert("账号不能为空");
+		alert("帐号不能为空");
 		Form1.account.focus();
 		return false;
 	}
@@ -52,7 +52,7 @@ var responseLogin = function(data, textStatus, jqXHR)
 	}
 	else if(data.status=="roleerr")
 	{
-		alert("账号或密码错误");
+		alert("帐号或密码错误");
 	}
 	else if(data.status=="vercodeerror")
 	{
@@ -61,7 +61,7 @@ var responseLogin = function(data, textStatus, jqXHR)
 	}
 	else
 	{
-		alert("账号或密码错误");
+		alert("帐号或密码错误");
 	}
 	verImg.src = "verCode?"+Math.random();
 }
