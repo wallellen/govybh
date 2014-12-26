@@ -47,5 +47,8 @@ public class YbhManageServiceImpl implements YbhManageService{
 	public void getReportFamilyInfo(DotSession ds) {
 		ybhManageDao.getReportFamilyInfo(ds);
 	}
+	public String addYbhByHM(YbhManageForm ybhManageForm) {
+		return ybhManageDao.addYbhByHM(ybhManageForm);
+	}
 
 }

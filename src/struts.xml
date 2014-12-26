@@ -38,6 +38,7 @@
 			<result name="show_family_income_update">/WEB-INF/page/ybh/ybh_family_income_update.jsp</result>
 			<result name="view_ybhFamily">/WEB-INF/page/report/viewFamily.jsp</result>
 			<result name="print_ybhFamily">/WEB-INF/page/report/printFamily.jsp</result>
+			<result name="addybgPage">/WEB-INF/page/new/addybh.jsp</result>
 		</action>
 		
 		<!-- 年数据录入 -->
@@ -92,6 +93,9 @@
 			<result type="json"></result>	
 		</action>
 		<action name="deleteYbh" class="ybhCheckAction" method="deleteYbh">
+			<result type="json"></result>	
+		</action>
+		<action name="addYbh" class="ybhManageAction" method="addYbh">
 			<result type="json"></result>	
 		</action>
 	</package>

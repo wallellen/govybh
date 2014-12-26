@@ -15,4 +15,5 @@ public interface YbhManageService {
 	void saveYbhIncome(YbhManageForm ybhManageForm);
 	String findNavListStr(DotSession ds);
 	void getReportFamilyInfo(DotSession ds);
+	String addYbhByHM(YbhManageForm ybhManageForm);
 }

@@ -10,7 +10,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.log4j.Logger;
 import org.springframework.dao.DataAccessException;
+import org.springframework.jdbc.core.CallableStatementCallback;
 import org.springframework.jdbc.core.ConnectionCallback;
 import org.springframework.stereotype.Repository;
 
@@ -22,7 +24,7 @@ import cn.voicet.ybh.web.form.YbhManageForm;
 @Repository(YbhManageDao.SERVICE_NAME)
 @SuppressWarnings({"unchecked","static-access"})
 public class YbhManageDaoImpl extends BaseDaoImpl implements YbhManageDao {
-
+	private static Logger log = Logger.getLogger(YbhManageDaoImpl.class);
 	/** 显示样本户管理列表 */
 	public void getYbhListByCurBM(final DotSession ds) {
 		this.getJdbcTemplate().execute(new ConnectionCallback() {
@@ -416,5 +418,44 @@ public class YbhManageDaoImpl extends BaseDaoImpl implements YbhManageDao {
 				return null;
 			}
 		});
+	}
+
+	public String addYbhByHM(final YbhManageForm ybhManageForm) {
+		String sql = "select count(1) from familyb where hm="+ybhManageForm.getHm();
+		log.info("sql:"+sql);
+		int count = this.getJdbcTemplate().queryForInt(sql);
+		log.info("count:"+count);
+		if(count==1)
+		{
+			return "1";
+		}
+		else
+		{
+			log.info("sp:ybh_family_update(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+			return (String)this.getJdbcTemplate().execute("{call ybh_family_update(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}", new CallableStatementCallback() {
+				public Object doInCallableStatement(CallableStatement cs)
+						throws SQLException, DataAccessException {
+					cs.setString(1, ybhManageForm.getHm());
+					cs.setString(2, ybhManageForm.getHname());
+					cs.setString(3, null);
+					cs.setString(4, null);
+					cs.setString(5, null);
+					cs.setInt(6, 0);
+					cs.setInt(7, 0);
+					cs.setString(8, null);
+					cs.setString(9, null);
+					cs.setString(10, null);
+					cs.setString(11, null);
+					cs.setString(12, "");
+					cs.setInt(13, 0);
+					cs.setInt(14, 0);
+					cs.setString(15, "");
+					cs.setInt(16, 0);
+					cs.setInt(17, 1);
+					cs.execute();
+					return "0";
+				}
+			});
+		}
 	}
 }

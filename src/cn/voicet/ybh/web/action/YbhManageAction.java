@@ -1,4 +1,6 @@
 package cn.voicet.ybh.web.action;
+import java.io.IOException;
+
 import javax.annotation.Resource;
 
 import org.apache.log4j.Logger;
@@ -206,5 +208,17 @@ public class YbhManageAction extends BaseAction implements ModelDriven<YbhManage
 	}
 	public void setRflag(int rflag) {
 		this.rflag = rflag;
+	}
+	
+	public String add()
+	{
+		return "addybgPage";
+	}
+	
+	public String addYbh() throws IOException
+	{
+		String flag = ybhManageService.addYbhByHM(ybhManageForm);
+		response.getWriter().print(flag);
+		return null;
 	}
 }
