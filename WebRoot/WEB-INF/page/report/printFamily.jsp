@@ -46,7 +46,7 @@
     
 	<table width="100%" cellpadding="0" cellspacing="0">
     	<tr>
-        	<td colspan="18">一、低收入农户基本情况</td>
+        	<td colspan="19">一、低收入农户基本情况</td>
         </tr>
         <tr>
         	<td width="8%">姓名</td>
