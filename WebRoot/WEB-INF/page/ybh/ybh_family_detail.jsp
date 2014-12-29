@@ -180,12 +180,7 @@
 			</td>
 			<td></td>
 		</tr>
-		<tr class="trhead">
-			<td width="40%" align="left">享受补助情况</td>
-			<td width="35%" align="left"></td>
-			<td width="25%">
-			</td>
-		</tr>
+		<!-- 20141229 add begin -->
 		<tr>
 			<td align="right">低保人口:&nbsp;&nbsp;</td>
 			<td align="left">
@@ -193,16 +188,12 @@
 			</td>
 			<td></td>
 		</tr>
-		<!--  
-		<tr>
-			<td align="right">领取低保金、残疾金(元):&nbsp;&nbsp;</td>
-			<td align="left">
-				<input type="text" id="dtbfd" name="tbfd" class="back-input" maxlength="6" placeholder="请输入金额"  onblur="checkDibao(this)"/>
+		<tr class="trhead">
+			<td width="40%" align="left">享受补助情况</td>
+			<td width="35%" align="left"></td>
+			<td width="25%">
 			</td>
-			<td></td>
 		</tr>
-		-->
-		<!-- 20140831 add begin -->
 		<tr>
 			<td align="right">是否享受残疾补助:&nbsp;&nbsp;</td>
 			<td align="left">

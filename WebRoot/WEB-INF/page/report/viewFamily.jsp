@@ -63,7 +63,7 @@
         	<td colspan="18">一、低收入农户基本情况</td>
         </tr>
         <tr>
-        	<td width="10%">姓名</td>
+        	<td width="8%">姓名</td>
             <td width="6%">性别<br/>1男2女</td>
 			<td width="4%">年龄</td>
 			<td width="8%">在校生<br/>1是2否</td>
@@ -81,6 +81,7 @@
 			<td width="2%">B2</td>
 			<td width="2%">B3</td>
 			<td width="2%">B4</td>
+			<td width="2%">B5</td>
         </tr>
         <s:iterator value="#session.vts.list" var="ls" status="sc">
 		<tr>
@@ -102,6 +103,7 @@
 			<td>&nbsp;<s:property value="#ls.ish2==1?'√':''"/></td>
 			<td>&nbsp;<s:property value="#ls.ish3==1?'√':''"/></td>
 			<td>&nbsp;<s:property value="#ls.ish4==1?'√':''"/></td>
+			<td>&nbsp;<s:property value="#ls.ish5==1?'√':''"/></td>
 		</tr>
 		</s:iterator>
     </table>
@@ -197,7 +199,7 @@
     <p class="view-report-tip1"><font style="font-size:16px;">③</font>劳动力状况：1劳动力，2丧失劳动力，3非劳动力；</p>
     <p class="view-report-tip1"><font style="font-size:16px;">④</font>打工状况：1在家务农，2县内务工，3县外省内务工，4省外务工，5其他（国外）；</p>
     <p class="view-report-tip1"><font style="font-size:16px;">⑤</font>A1~A5：享受残疾补助、新型农村合作医疗、城乡居民基本养老保险、大病医疗救助、其他补助；</p>
-    <p class="view-report-tip1"><font style="font-size:16px;">⑥</font>B1~B4:帮助就业、帮助上学、帮助就医、帮助参保。</p>
+    <p class="view-report-tip1"><font style="font-size:16px;">⑥</font>B1~B5:帮助就业、帮助上学、帮助就医、帮助参保、其他帮扶。</p>
     </div>
 </div>
 <s:if test="#session.vts.hasStack()">
