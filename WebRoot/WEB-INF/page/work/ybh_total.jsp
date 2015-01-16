@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"%>
 <%@taglib uri="/struts-tags" prefix="s" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -129,12 +131,15 @@
 	        </tr>
 	        <tr>
 	        	<td class="aleft">&nbsp;村建档户总承包耕地面积（亩）</td>
-	            <td class="aright"><s:property value="#session.vts.map.fl"/>&nbsp;</td>
+	        	
+	            <td class="aright">
+	            	<fmt:formatNumber value="${sessionScope.vts.map.fl }" type="number" pattern="#00.0#" />&nbsp;  
+	            </td>
 				<td></td>
 	        </tr>
 	        
 	        <tr>
-	        	<td rowspan="4" align="left">&nbsp;三、样本户收入情况</td>
+	        	<td rowspan="5" align="left">&nbsp;三、样本户收入情况</td>
 	            <td class="aleft">&nbsp;样本户户均家庭纯收入（元/年）</td>
 	            <td class="aright"><s:property value="#session.vts.map.intotal_a"/>&nbsp;</td>
 				<td></td>
@@ -152,6 +157,11 @@
 	        <tr>
 	        	<td class="aleft">&nbsp;③财产性和转移性收入（元）</td>
 	            <td class="aright"><s:property value="#session.vts.map.incz_a"/>&nbsp;</td>
+				<td></td>
+	        </tr>
+	        <tr>
+	        	<td class="aleft">&nbsp;④各类补贴收入（元）</td>
+	            <td class="aright"><s:property value="#session.vts.map.inbz_a"/>&nbsp;</td>
 				<td></td>
 	        </tr>
 	        

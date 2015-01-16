@@ -36,6 +36,7 @@ public class YbhTotalAction extends BaseAction implements ModelDriven<YbhTotalFo
 	public String stats(){
 		DotSession ds = DotSession.getVTSession(request);
 		ybhTotalService.getYbhTotalInfo(ds, ybhTotalForm);
+		log.info("map:"+ds.map);
 		return "show_total";
 	}
 	

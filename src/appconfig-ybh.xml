@@ -46,6 +46,10 @@
 		<item id="1" name="1:是" />
 		<item id="2" name="2:否" />
 	</list>
+	<list name="yesnobf" describle="享受帮扶情况是与否列表">
+		<item id="1" name="1:是" />
+		<item id="0" name="0:否" />
+	</list>
 	<list name="yesnoex" describle="是与否列表">
 		<item id="0" name="不限" />
 		<item id="1" name="1:是" />

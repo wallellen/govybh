@@ -197,35 +197,35 @@
 		<tr>
 			<td align="right">是否享受残疾补助:&nbsp;&nbsp;</td>
 			<td align="left">
-				<s:radio name="ist1" list="#application.vta.GetList('yesno')" listKey="id" listValue="str"/>
+				<s:radio name="ist1" list="#application.vta.GetList('yesnobf')" listKey="id" listValue="str"/>
 			</td>
 			<td></td>
 		</tr>
 		<tr>
 			<td align="right">是否参加新型农村合作医疗:&nbsp;&nbsp;</td>
 			<td align="left">
-				<s:radio name="ist2" list="#application.vta.GetList('yesno')" listKey="id" listValue="str"/>
+				<s:radio name="ist2" list="#application.vta.GetList('yesnobf')" listKey="id" listValue="str"/>
 			</td>
 			<td></td>
 		</tr>
 		<tr>
 			<td align="right">是否参加城乡居民基本养老保险:&nbsp;&nbsp;</td>
 			<td align="left">
-				<s:radio name="ist3" list="#application.vta.GetList('yesno')" listKey="id" listValue="str"/>
+				<s:radio name="ist3" list="#application.vta.GetList('yesnobf')" listKey="id" listValue="str"/>
 			</td>
 			<td></td>
 		</tr>
 		<tr>
 			<td align="right">是否参加大病医疗救助:&nbsp;&nbsp;</td>
 			<td align="left">
-				<s:radio name="ist4" list="#application.vta.GetList('yesno')" listKey="id" listValue="str"/>
+				<s:radio name="ist4" list="#application.vta.GetList('yesnobf')" listKey="id" listValue="str"/>
 			</td>
 			<td></td>
 		</tr>
 		<tr>
 			<td align="right">是否有其他补助:&nbsp;&nbsp;</td>
 			<td align="left">
-				<s:radio name="ist5" list="#application.vta.GetList('yesno')" listKey="id" listValue="str"/>
+				<s:radio name="ist5" list="#application.vta.GetList('yesnobf')" listKey="id" listValue="str"/>
 			</td>
 			<td></td>
 		</tr>
@@ -238,35 +238,35 @@
 		<tr>
 			<td align="right">是否帮扶就业:&nbsp;&nbsp;</td>
 			<td align="left">
-				<s:radio name="ish1" list="#application.vta.GetList('yesno')" listKey="id" listValue="str"/>
+				<s:radio name="ish1" list="#application.vta.GetList('yesnobf')" listKey="id" listValue="str"/>
 			</td>
 			<td></td>
 		</tr>
 		<tr>
 			<td align="right">是否帮扶上学:&nbsp;&nbsp;</td>
 			<td align="left">
-				<s:radio name="ish2" list="#application.vta.GetList('yesno')" listKey="id" listValue="str"/>
+				<s:radio name="ish2" list="#application.vta.GetList('yesnobf')" listKey="id" listValue="str"/>
 			</td>
 			<td></td>
 		</tr>
 		<tr>
 			<td align="right">是否帮扶就医:&nbsp;&nbsp;</td>
 			<td align="left">
-				<s:radio name="ish3" list="#application.vta.GetList('yesno')" listKey="id" listValue="str"/>
+				<s:radio name="ish3" list="#application.vta.GetList('yesnobf')" listKey="id" listValue="str"/>
 			</td>
 			<td></td>
 		</tr>
 		<tr>
 			<td align="right">是否帮扶参保:&nbsp;&nbsp;</td>
 			<td align="left">
-				<s:radio name="ish4" list="#application.vta.GetList('yesno')" listKey="id" listValue="str"/>
+				<s:radio name="ish4" list="#application.vta.GetList('yesnobf')" listKey="id" listValue="str"/>
 			</td>
 			<td></td>
 		</tr>
 		<tr>
 			<td align="right">是否有其他帮扶:&nbsp;&nbsp;</td>
 			<td align="left">
-				<s:radio name="ish5" list="#application.vta.GetList('yesno')" listKey="id" listValue="str"/>
+				<s:radio name="ish5" list="#application.vta.GetList('yesnobf')" listKey="id" listValue="str"/>
 			</td>
 			<td></td>
 		</tr>
