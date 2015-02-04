@@ -39,7 +39,7 @@ public class YbcManageAction extends BaseAction implements
 	}
 	
 	
-	String splitName[] = { "", "", "苏北5市", "苏北22个县", "矛山革命老区", "黄桥老区", "苏中" };
+	String splitName[] = { "", "", "苏北5市", "苏北22个县", "茅山革命老区", "黄桥老区", "苏中" };
 
 	public String home() {
 		Map map;
